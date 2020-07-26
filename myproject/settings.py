@@ -98,7 +98,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cmis3_db_new',
-        'USER': 'postgres',
+        'USER': 'cmis_user',
         'PASSWORD': '801223001_bwdb',
         'HOST': 'localhost',
         'PORT': '5432',
