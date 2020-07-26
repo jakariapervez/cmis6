@@ -31,7 +31,7 @@ SECRET_KEY = '79g)4t7v8uuj2kw$n=__$-b)87l=!rgm$5o$60gb2r0(p$jio_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = ['139.59.36.4','localhost','127.0.0.1']
 ALLOWED_HOSTS=['139.59.71.251']
