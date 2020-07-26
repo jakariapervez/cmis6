@@ -72,6 +72,10 @@ def checkCumulative(fy,economicCode,expenditure,budget_allocation):
         cumTotal = cumulative['Total']
 
     return {'isValid':isValid,'Total':cumTotal}
+def displayInvoice(invoice):
+    print("Invoice_no={} date={} BatchType={} Description={}".format(invoice.Invoice_no,invoice.date,invoice.BatchType,invoice.Description))
+    print("Financial year={}".format(invoice.FinancialYear))                                                                
+
 
 
 
@@ -97,7 +101,7 @@ def validateExpenditure(exp_form,invoice):
     print("Economic code={} description={}".format(economicCode,budget_allocation.Dpp_allocation.Description))
     expenditure.Budget_allocation =budget_allocation
     expenditure.date = invoice.date
-    if budget_allocation.Total>=total:
+    if budget_allocation.Total>=expenditure.Total:
         isValid=True
     else:
         isValid=False
@@ -115,6 +119,7 @@ def validateExpenditure(exp_form,invoice):
         isValid=False
 
     myyear = financialYearFromDate(invoice.date)
+
     validity=checkCumulative(myyear,economicCode,expenditure,budget_allocation)
     invoice_total = getInvoiceTotal(myyear,invoice)
     invoice_total=invoice_total+float(total)

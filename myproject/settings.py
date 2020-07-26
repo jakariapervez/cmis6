@@ -35,7 +35,7 @@ DEBUG = True
 
 #ALLOWED_HOSTS = ['139.59.36.4','localhost','127.0.0.1']
 ALLOWED_HOSTS=['139.59.71.251']
-
+#ALLOWED_HOSTS=[]
 
 # Application definition
 
