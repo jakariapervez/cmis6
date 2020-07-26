@@ -1,0 +1,31 @@
+     {% for budgetitem in dppitems %}
+			<tr>
+			  <td>{{budgetitem.Dpp_allocation.Ecode}}</td>
+			  <td>{{budgetitem.Dpp_allocation.Description}}</td>
+			  <td>{{budgetitem.Gob}}</td>
+			  <td>{{budgetitem.Rpa}}</td>
+			  <td>{{budgetitem.Dpa}}</td>
+			  <td>{{budgetitem.Total}}</td>  	  
+			  
+			  <td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-ivt"
+												
+							  data-url="{% url 'budget_allocation_update' budgetitem.id  %}">
+						<span class="glyphicon glyphicon-pencil"></span> Edit
+					  </button>
+				</td>
+				
+			  
+			  
+			  
+			  
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Budget Item</td>
+			</tr>
+    {% endfor %}
+  
+

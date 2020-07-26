@@ -1,0 +1,169 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> {% block title %}CMIS {% endblock  %} </title>
+<link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/app.css'  %}">
+<!-- custom css for side nav -->
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+<!-- fontaowsome javascript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- fontaowsome javascript -->
+<script  src="{% static 'js/solid.js' %}"></script>
+<script src="{% static 'js/fontawesome.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/bootstrap-multiselect.css' %}">
+
+</head>
+<body>
+
+<div class="wrapper">
+<!-- sidebar -->
+<nav id="sidebar">
+<div class="sidebar-header">
+<h3>HFMLIP/CMIS</h3>
+</div>
+
+
+
+
+
+
+
+		
+
+
+</nav> <!-- End of Side Bar NAV -->
+<div  id="content">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </div>
+    </nav>
+<div class="container">
+    <div class="row"> <!-- Beginging of Add Row -->
+      <div class="col-md-12">
+        <h2>ADD Report Event</h2>
+        <form id="addMessage" action="" onsubmit="return false" data-url="{% url 'create_report_event' %}" >
+          <div class="form-group row">
+		  <!--- Report Name --->
+          <label for="reportname"  class="col-2 col-form-label" >Report Name</label>
+           <div class="col-10">		  
+            <input class="form-control" type="text" name="name" placeholder="Report Name"  id="reportname" required>
+		</div>
+          </div> <!-- End of Report Name -->
+		 <!--- Starting Date --->
+		<div class="form-group row">
+		<label for="reoprt-start-date" class="col-2 col-form-label">Start Date </label>
+		<div class="col-10">
+		<input class="form-control" type="date" name="start-date" id="report-start-date">
+		</div>
+		</div> <!-- End of Starting Date -->
+		<!--- Finishing Date  --->
+		<div class="form-group row">
+		<label for="reoprt-finish-date" class="col-2 col-form-label">Finish Date </label>
+		<div class="col-10">
+		<input class="form-control" type="date" name="finish-date" id="reoprt-finish-date">
+		</div>
+		</div> <!-- End of Finishing Date  -->
+		<!--- Last Submission Date  --->
+		<div class="form-group row">
+		<label for="report-submission-date" class="col-2 col-form-label">Last Submission Date</label>
+		<div class="col-10" >
+		<input class="form-control" type="date" name="submission-date" id="report-submission-date">
+		</div>
+		</div> <!-- End of Last Submission Date  -->
+		<div class="form-group row">
+		<label for="reporting-person" class="col-2 col-form-lable">Select Reporting Person</label>
+		<div class="col-8">
+		<select multiple="multiple" class="form-control" id="reporting-person" name="reportingPerson[]" >
+		<option value="XEN">EE</option>
+		<option value="CSE">CSE</option>
+		<option value="FSE">FI</option>			
+		</select>
+		</div>
+		<div class="col-2">
+		<button class="btn btn-primary form-control" type="submit">SUBMIT</button>
+		</div>
+		</div>
+         
+          
+        </form> <!-- End of Form -->
+      </div>
+	  </div> <!-- End of Add Row -->
+	 
+	  
+	  <div class="row"> <!-- Begining of Display Row -->
+      <div class="col-md-12">
+        <h3>Report Events</h3>
+        <table id="messageTable" class="table table-striped">
+  <thead>
+      <tr>
+        <th scope="col">Report No</th>
+		<th scope="col">Report Name</th>
+		<th scope="col">Start Date of Reporting</th>
+        <th scope="col">Finishing Date of Reporting</th>
+		<th scope="col">Last Submission Date</th>
+        <th scope="col">Message</th>
+		<th scope="col">Status</th>
+		<th scope="col">Edit</th>
+		<th scope="col">Delete</th>
+      </tr>
+    </thead>
+<tbody>
+{% include "includes/message_table_body2.html" %}         
+</tbody>
+        </table>
+      </div>
+    </div> <!-- End of Display Row -->
+  </div>
+</div> <!-- End of Content -->
+</div> <!-- END of Wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block javascript %}
+ <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+ <script src="{% static 'js/highcharts.js'   %}"></script>
+ <script src="{% static 'js/jspdf.min.js' %}"></script>
+ <script src="{% static 'js/jspdf.plugin.autotable.js' %}"></script>
+ <script src="{% static 'js/tableHTMLExport.js' %}"></script>
+ <!--<script src="{% static 'js/popper.min.js' %}"></script> -->
+  <!--<script src="{% static 'js/popper.min.js' %}"></script> -->
+ <!--<script src="{% static 'js/bootstrap.min.js' %}"></script> -->
+ <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+ <script src="{% static 'js/jquery.mCustomScrollbar.min.js' %}" ></script>
+
+  
+<script src="{% static 'js/sidebar.js' %}" ></script>
+ <!--{{ progress|json_script:"pdata" }} -->
+<script src="{% static 'js/dashboard.js' %}" ></script>
+<script src="{% static 'js/bootstrap-multiselect.js' %}"></script>
+<script src="{% static 'js/multiselect.js' %}"></script>
+<script src="{% static 'js/crudMessage.js' %}"></script> crudMessage
+{% endblock %}
+{% block localscript %}
+
+{% endblock %}
+</body>
+
+</html>

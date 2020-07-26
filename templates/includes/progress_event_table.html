@@ -1,0 +1,15 @@
+{% for Report in Reports %}
+<tr>
+<td> {{ Report.reportCode }} </td>
+<td>{{Report.reportName}}</td>
+<td>{{Report.startingDate}}</td>
+<td>{{Report.finishDate}}</td>
+<td>{{Report.lastSubmissionDate}}</td>
+<td>{{Report.message}}</td>
+<td>{{Report.eventStatus}}</td>
+<td><button class="btn btn-primary btn-md js-edit-report-event " data-url={%url 'edit_report_event' Report.id   %} ><i class="fas fa-edit" style='color:red' ></i>Edit</button> </td>
+<td><button class="btn btn-primary btn-md js-delete-report-event"><i class="fas fa-trash-alt" style='color:red'></i>Delete</button></td>
+</tr>
+{% endfor %}
+
+

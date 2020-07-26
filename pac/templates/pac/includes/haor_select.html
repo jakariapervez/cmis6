@@ -1,0 +1,10 @@
+<select class="custom-select js-haor-sort" id="haor-sort">
+
+<option value="ALL" data-url="{% url 'DPP_Intervention_sort_by_haor_all' %}"> ALL </option>
+
+ {% for haor  in haors %}
+<option value="{{haor.id}}" data-url="{% url 'DPP_Intervention_sort_by_haor' haor.id %}">{{haor.name}}
+
+</option>
+{% endfor %}
+</select>

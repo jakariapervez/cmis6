@@ -1,0 +1,309 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+	overflow-y: scroll;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+	align-items: stretch;
+}
+
+#sidebar {
+    /*width: 250px;
+    
+    z-index: 999;
+    
+    
+    */
+	overflow-y: scroll;
+    height: 100vh; 
+	position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+	min-width: 250px;
+    max-width: 250px;	
+	background: #7386D5;
+	color: #fff;
+	transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+/*Icons color*/
+
+.fa-hand-point-right, .fa-book,.fa-ruler-horizontal,.fa-search-dollar,.fa-money-bill,.fa-money-bill-alt
+{
+	
+	color: #ff4f33;
+	
+}
+/*
+.fa-book
+{
+color: #ff4f33;	
+	
+}
+
+.fa 
+{
+color: #ff4f33;		
+}
+.fas 
+{
+color: #ff4f33;		
+} */
+
+.card-header
+{
+    /*color: #fff; */
+	color:#FFFFFF;
+	/*color: #2ecc71;*/
+	/*background: #2ecc71;
+    /*background: #909ba4;*/	
+	background:#5788e1;
+}
+.card-table th td
+{
+border-collapse:collapse;
+border: 1px solid black;	
+	
+}
+table.card-table thead tr
+{
+/* background-color: #5788e1;*/
+color:#F0F8FF;
+background-color:#525B56;	
+}
+table.card-table tbody tr:nth-child(odd) {
+ /* background-color: #DCAE96; */
+  color:#F0F8FF;
+  background-color:#ABA6BF;
+  border: 1px solid goldenrod; 
+}
+
+table.card-table tbody tr:nth-child(even) {
+  color:#F0F8FF;
+  background-color: #595775;
+  border: 1px solid black; 
+}
+
+table.crad-table tbody tr td
+{
+font-size: 0.1rem;
+border: 1px solid goldenrod; 
+}
+/*.card
+{
+background-color:#967bb6;	
+	
+} */
+
+/*
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+	top:10%;
+	position: fixed;
+	display: static;
+	
+    display: block;
+    
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+	
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+*/
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 250px);
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#content.active {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

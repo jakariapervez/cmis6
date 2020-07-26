@@ -1,0 +1,23 @@
+{% if ivts.has_other_pages  %}
+<ul class="pagination">
+	{% if ivts.has_previous %}
+		<li><a href="?page={{ivts.previous_page_number}}">&laquo;</a></li>
+		{% else %}
+		<li class="diabled">&laquo;<span></li>
+	{% endif %}
+	{% for i in ivts.paginator.page_range %}
+		
+		{% if ivts.number == i %}
+		<li class="page-item active"><a class="page-link" href="?page={{i}}"><span>{{i}}<span></a></li>
+		{% else %}
+		 <li class="page-item"><a class="page-link" href="?page={{i}}"><span>{{i}}<span></a></li>
+		 {% endif %}
+	{% endfor %}
+
+	{% if ivts.has_next %}
+		<li><a href="?page={{ivts.next_page_number}}">&raquo;</a></li>
+		{% else %}
+		<li class="diabled">&raquo;<span></li>
+	{% endif %}
+	</ul>
+{% endif %}

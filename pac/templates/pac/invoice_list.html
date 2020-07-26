@@ -1,0 +1,171 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> {% block title %}CMIS {% endblock  %} </title>
+<link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/app.css'  %}">
+<!-- custom css for side nav -->
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+<!-- fontaowsome javascript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- fontaowsome javascript -->
+<script  src="{% static 'js/solid.js' %}"></script>
+<script src="{% static 'js/fontawesome.js' %}"></script>
+
+
+</head>
+<body>
+
+<div class="wrapper">
+<!-- sidebar -->
+<nav id="sidebar">
+<div class="sidebar-header">
+            <h3>HFMLIP/PD</h3>
+</div>
+<div class="dropdown">
+ <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Progress
+  </a> -->
+  
+  <!--<button class="dropbtn">Progress<i class="fa fa-caret-down"></i></button> -->
+
+<!--  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {% include 'includes/progress_dropdown.html' %}
+  </div> -->
+  <div class="dropdown-divider"></div>
+  <h5>Expenditure Entry</h5>
+
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item reportlink js-view-report-event" href="{% url 'dashboard' %}"><i class="fas fa-book"></i>Dashboard</a>
+  
+
+  
+  
+  
+</div>
+
+
+
+
+
+
+		
+
+
+</nav>
+<div  id="content">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </div>
+    </nav>
+<!-- Expenditure sort -->
+
+					  
+<!-- Expenditure Table -->
+{% include 'pac/includes/invoices/fy_select.html' %}
+{% include 'pac/includes/invoices/month_select.html' %}
+<!--
+ <button type="button" class="btn btn-primary btn-lg js-create-invoice" data-url="{% url 'create_invoice2' %}" image-url="{% url 'upload_invoice_image' %}"   >				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Add Invoice
+					  </button>
+-->
+<button type="button" class="btn btn-primary btn-md js-sort-all" data-url="{% url 'invoice_sort'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Sort
+					  </button>
+<a class="btn btn-primary" href="{% url 'upload_invoice_image'%}" >Add Invoice</a>
+<div id="customers">				  				  
+<table class="table table-bordered table-striped  table-hover" id="ivt-table">
+    <thead class="thead-dark">
+	 
+      <tr>
+		<th>Invoice No</th>	        
+        <th>Date</th>        
+		<th>Total</th>
+		<th>Invoice_Documents</th>
+        <th>Edit Inv</th>
+		<th>Delete Inv</th>
+		<th>Add Exp</th>
+		
+        	
+      </tr>
+    </thead>
+	<tbody>   
+	
+	{% include 'pac/includes/invoices/partial_invoices_list.html' %}
+  </tbody>
+
+</table>
+</div>
+
+<!--Report Modal  -->
+<div class="modal fade" id="reprotmodal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+</div>
+</div>
+</div>
+<!-- End of Report Modal -->
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block javascript %}
+ <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+ <script src="{% static 'js/highcharts.js'   %}"></script>
+ <script src="{% static 'js/jspdf.min.js' %}"></script>
+ <script src="{% static 'js/jspdf.plugin.autotable.js' %}"></script>
+ <script src="{% static 'js/tableHTMLExport.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script> 
+  <!--<script src="{% static 'js/popper.min.js' %}"></script> -->
+ <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+<!-- <script src="{% static 'js/bootstrap.bundle.js' %}"></script>-->
+ <script src="{% static 'js/jquery.mCustomScrollbar.min.js' %}" ></script>
+
+  
+<script src="{% static 'js/sidebar.js' %}" ></script>
+ <!--{{ progress|json_script:"pdata" }} -->
+<script src="{% static 'js/dashboard.js' %}" ></script>
+<!-- Expenditure list Java Script -->
+<!-- <script src="{% static 'pac/js/expenditure_list.js'  %}"></script> -->
+
+<script src="{% static 'pac/js/invoice_list.js'  %}"></script>
+  
+{% endblock %}
+{% block localscript %}
+{% endblock %}
+</body>
+
+</html> 

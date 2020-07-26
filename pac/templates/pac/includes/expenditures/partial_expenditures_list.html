@@ -1,0 +1,39 @@
+     {% for invoice in invoices %}
+			<tr>
+			  <td>{{invoice.date}}</td>
+			  <td>{{invoice.Invoice_details.Invoice_no}}</td> 
+			  <td>{{invoice.Budget_allocation.Dpp_allocation.Ecode }}</td>
+			  <td>{{invoice.Budget_allocation.Dpp_allocation.Shortdescription }}</td>
+			  <td>{{invoice.Gob}}</td>
+			  <td>{{invoice.Rpa}}</td>
+			  <td>{{invoice.Dpa}}</td>
+			  <td>{{invoice.Total}}</td>
+			  <td>{{invoice.Total_amount}}</td>	
+			  <td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-ivt"
+								data-url="{% url 'edit_expenditure' invoice.id %}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span> Edit
+					  </button>
+				</td>
+				<td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-ivt"
+								data-url="{% url 'delete_expenditure' invoice.id %}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Delete
+					  </button>
+				</td>
+
+
+
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Expenditure Item</td>
+			</tr>
+    {% endfor %}
+  
+

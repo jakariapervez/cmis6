@@ -1,0 +1,19 @@
+[('EMBRR','Fulll Embnakment Rehab-Rehab Haor'),('SUBEMBCN', 'Submersible,Embankment Construction New-Haor'),
+           ('SUBEMBRN', 'Submersible,Embankment Rehablitation New-Haor')
+        ,('EXKHLN','Khal Rexcavation New Haor'),('EXRIVN','River Excavtion New Haor'),
+           ('REGCN','Regulator Constyruction New Haor'),
+           ('CASWCN','Causeway Connstruction New Haor'),
+           ('IRINC','Irigation Inlet Construction'),('WMGO','WMG Office'),
+           ('BOXSLCN','Box Sluice Constuction New'),
+           ('EXKHLR', 'Khal Rexcavation Rehablitation Haor'), ('EXRIVR', 'River Excavtion Rehab Haor')
+           ]
+[('IRINC','Irigation Inlet Construction'),('REGRR','Reinstallation/Repair of Regulator/causeway Rehab'),('REGCN','Regulator Construction New Haor'),('CASWCN','Causeway Connstruction New Haor'),('BRIDGCN','Bridge Connstruction New Haor'),('BOXSLCN','Box Sluice Constuction New'),('EXKHLN','Khal Reexcavation New Haor'),('EXRIVN','River Reexcavation New Haor'),('EXKHLR','Khal Reexcavation Rehab Haor'),('EXRIVR','River Reexcavation Rehab Haor'),('EMBR','Full Embankment Repair Rehab Haor'),('SEMBRN','Submersiblesible Embankment Repair New Haor'),('SEMBCN','Submersiblesible Embankment Construction New Haor'),('REGRN','Regulator  Repair New Haor'),('EMBSPW','Embankment Slope Protection Work'),('WMGOC','WMG Office Construction')]
+['IRINC','REGRR','REGCN','CASWCN','BRIDGCN','BOXSLCN','EXKHLN','EXRIVN','EXKHLR','EXRIVR','EMBR','SEMBRN','SEMBCN','REGRN','EMBSPW','WMGOC']
+
+[EMBR','SEMBRN','SEMBCN']
+['EXKHLN','EXKHLR']
+['EXRIVN','EXRIVR']
+['IRINC','REGRR','REGCN','CASWCN','BRIDGCN','BOXSLCN','REGRN']
+['WMGOC']
+['EMBSPW']
+["Inlet","Regulator Repair Rehab","Regulator New Haor","Causeway New Haor","Brdige New Haor","Box Outlet New Haor","Khal New Haor","River New Haor","Khal Rehab Haor","River Rehab Haor",'Full Embankment Repair Rehab Haor','Submersible Emb Repair New Haor','Submersible Emb Const New Haor','Regulator Repair New Haor','Slope Protection Work','WMG Office Building']

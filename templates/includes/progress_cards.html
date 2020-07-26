@@ -1,0 +1,43 @@
+{% for contract in contracts %}
+<div class="card"  id={{contract.item2}}>
+  <div class="card-header" >
+    {{contract.item3.package_short_name}}
+  </div>
+  <div class="container graph-container" id={{contract.item4}} data-url="{% url 'dashboard_graph' contract.item3.id      %}" >
+  </div>
+ 
+  <table class="card-table table">
+    <thead>
+      <tr>
+        <th scope="col">Work Component</th>
+		<th scope="col">Unit</th>
+		<th scope="col">Quantity</th>
+        <th scope="col">Contract <br>Price<br>(BDT Lakh)</th>
+		<th scope="col">Component<br> Progress(%)</th>
+        <th scope="col">Weight<br>in Package</th>
+		<th scope="col">Package<br>Progress(%)</th>
+		<th scope="col">Financial<br>progress<br>(BDT Lakh)</th>
+		<th scope="col">Value Of<br>Work Done<br>(BDT Lakh)</th>
+      </tr>
+    </thead>
+ <tbody>
+ {% include 'includes/progress_table.html' %} 
+<!--      <tr>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
+{% endfor %}
+

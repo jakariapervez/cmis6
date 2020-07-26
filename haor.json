@@ -1,0 +1,292 @@
+[
+{
+   "model": "progress.haor",
+   "pk": 1,
+   "fields": {
+      "name": "Boro Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 2,
+   "fields": {
+      "name": "Naogaon Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 3,
+   "fields": {
+      "name": "Jaliar Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 4,
+   "fields": {
+      "name": "Dharmapasha Rui Beel Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 5,
+   "fields": {
+      "name": "Chandpur Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 6,
+   "fields": {
+      "name": "Suniar Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 7,
+   "fields": {
+      "name": "Badla Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 8,
+   "fields": {
+      "name": "Nunnir Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 9,
+   "fields": {
+      "name": "Dakhshiner Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 10,
+   "fields": {
+      "name": "Chatal Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 11,
+   "fields": {
+      "name": "Ganesh Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 12,
+   "fields": {
+      "name": "Dhakua Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 13,
+   "fields": {
+      "name": "Mokhar Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 14,
+   "fields": {
+      "name": "Noapara Haor Project",
+      "area": null,
+      "project_type": "New",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 15,
+   "fields": {
+      "name": "Dampara Water Management Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 16,
+   "fields": {
+      "name": "Kangsa River Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 17,
+   "fields": {
+      "name": "Singer Beel Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 18,
+   "fields": {
+      "name": "Baraikhali Khal Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 19,
+   "fields": {
+      "name": "Alalia-Bahadia Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 20,
+   "fields": {
+      "name": "Modkhola Bhairagir char Sub-Project Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 21,
+   "fields": {
+      "name": "Ganak khalli Sub-scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 22,
+   "fields": {
+      "name": "Kairdhala Ratna Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 23,
+   "fields": {
+      "name": "Bahira River Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 24,
+   "fields": {
+      "name": "Aralia Khal Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 25,
+   "fields": {
+      "name": "Chandal Beel Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 26,
+   "fields": {
+      "name": "Satdona Beel Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 27,
+   "fields": {
+      "name": "Gangajuri FCD sub-project",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 28,
+   "fields": {
+      "name": "Khaliajuri Polder #02 Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+},
+{
+   "model": "progress.haor",
+   "pk": 29,
+   "fields": {
+      "name": "Khaliajuri Polder #04 Scheme",
+      "area": null,
+      "project_type": "Old",
+      "population": "0"
+   }
+}
+]

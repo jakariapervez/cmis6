@@ -1,0 +1,439 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Haor Flood Management & Livelihood Improvement Project (BWDB Part)</title>
+	<meta name="description" content="Haor Flood Management & Livelihood Improvement Project (BWDB Part)">
+	<meta name="keywords" content="Haor Flood Management & Livelihood Improvement Project (BWDB Part)">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="https://www.bwdb.gov.bd/haor/files/favicon/2606b22194d9ce750dc4a27e7739da3d63feacbe">
+	<link href="https://www.bwdb.gov.bd/haor/content/style.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="https://www.bwdb.gov.bd/haor/content/style-headers.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="https://www.bwdb.gov.bd/haor/content/simplePagination.css" rel="stylesheet" type="text/css" media="screen">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.bwdb.gov.bd/haor/common_content/css/jquery.datetimepicker.css">
+	<link rel="stylesheet" type="text/css" href="https://www.bwdb.gov.bd/haor/content/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="https://www.bwdb.gov.bd/haor/content/w3.css">
+	<link href="https://www.bwdb.gov.bd/haor/content/mzr.css" rel="stylesheet" type="text/css" media="screen">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<link href="https://www.bwdb.gov.bd/haor/content/style-ie.css" rel="stylesheet" type="text/css" media="screen">
+	<![endif]-->
+	<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/js/jquery.js"></script>
+	<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/jquery.simplePagination.js"></script>
+	<script src="https://www.bwdb.gov.bd/haor/common_content/js/jquery.datetimepicker.full.min.js"></script>
+	<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/js/scripts.js"></script>
+	<script>
+	$(document).ready(function(){
+		var wi = $( window ).width();
+		if(wi < 780){
+			$( "table, .table_responsive" ).wrap( "<div style='overflow-x:auto;' />");
+		}
+		
+	});
+	</script>
+<style>
+	tr:nth-child(even) {
+	    background-color: #dddddd;
+	}
+	td p{
+	margin:0px;
+	}
+	.inside-table th,.inside-table td{
+		border:none !important;
+	}
+	.inside-table tr th, .inside-table tr td{
+		border-right:1px solid #000 !important;
+	}
+	.inside-table tr th:last-child, .inside-table tr td:last-child{
+		border:none !important;
+	}
+	</style>
+</head>
+<body class="home boxed shadow p01">
+<div class='loading_div'><img style='width:50px; display:none;' src='https://www.bwdb.gov.bd/haor/content/ajax_loader_vector.gif'></div>
+<div id="id01" class="w3-modal"><div class="w3-modal-content"><div class="w3-container"></div></div></div>
+<div class="root">
+		<header class="h7 no-topbar">
+		<section class="main-header" style="padding-top:10px;">
+			<div class="title header_title">
+				<img style="margin-right:5px;" class="img_icon" src="https://www.bwdb.gov.bd/haor/content/logo.png"> 
+				<span class="head_text1" >Bangladesh Water Development Board</span><br class="br_hide" />
+				<span class="head_text2" >Haor Flood Management & Livelihood Improvement Project (BWDB Part)</span>
+			</div>
+			
+			<nav>
+				<p style="margin: 5px 0;">
+					<button class='button_green lang-search' data='bangla' type='submit' name='subscribe' id='subscribe'>?????</button>				</p>
+			</nav>
+			<div class="title slider_logo">
+				
+	<link rel="stylesheet" type="text/css" href="https://www.bwdb.gov.bd/haor/content/engine1/style.css" />
+	
+	<div id="wowslider-container1">
+	<div class="ws_images"><ul>
+		<li><img src="https://www.bwdb.gov.bd/haor/content/data1/images/dev.png" alt="donor" title="donor" id="wows1_0"/></li>
+		<li><img src="https://www.bwdb.gov.bd/haor/content/data1/images/gob.png" alt="bwdb" title="bwdb" id="wows1_1"/></li>
+		<li><img src="https://www.bwdb.gov.bd/haor/content/data1/images/jica.png" alt="javascript carousel" title="adb" id="wows1_2"/></li>
+	</ul></div>
+	</div>
+	<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/engine1/wowslider.js"></script>
+	<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/engine1/script.js"></script>
+	<!-- End WOWSlider.com BODY section -->
+			</div>
+			<nav class="mainmenu dmenu" >
+				<ul><li><a data1='#FF6600' class='col0' href='https://www.bwdb.gov.bd/haor/' style='color:#FF6600;'>Home </a></li><li><a class='col0' data1='#C40A2A'  style='color:#C40A2A;'>Officials  <img style='width:8px;' src='https://www.bwdb.gov.bd/haor/content/down.png'></a><ul><li ><a href='https://www.bwdb.gov.bd/haor/bwdb_staff' >BWDB Officials</a></li><li ><a href='https://www.bwdb.gov.bd/haor/consultant_staff' >Consultant Officials</a></li><li ><a href='https://www.bwdb.gov.bd/haor/project_staff' >Project Officials</a></li></ul></li><li><a data1='#84154D' class='col0'  style='color:#84154D;'>Sub Project  <img style='width:8px;' src='https://www.bwdb.gov.bd/haor/content/down.png'></a><ul><li ><a href='https://www.bwdb.gov.bd/haor/new_sub_project' >New Sub Project</a></li><li ><a href='https://www.bwdb.gov.bd/haor/rehab_sub_project' >Rehabilitation Sub Projects</a></li></ul></li><li><a data1='#098346' class='col0'  style='color:#098346;'>Tender  <img style='width:8px;' src='https://www.bwdb.gov.bd/haor/content/down.png'></a><ul><li ><a href='https://www.bwdb.gov.bd/haor/live_tender' >Live Tender</a></li><li ><a href='https://www.bwdb.gov.bd/haor/awarded_tender' >Awarded Tender</a></li></ul></li><li><a data1='#1399BE' class='col0' href='https://www.bwdb.gov.bd/haor/activities' style='color:#1399BE;'>Activities </a></li><li><a data1='#8768DE' class='col0' href='https://www.bwdb.gov.bd/haor/notice' style='color:#8768DE;'>Notice </a></li><li><a data1='#84154D' class='col0' href='https://www.bwdb.gov.bd/haor/report' style='color:#84154D;'>Reports </a></li><li><a data1='#C40A2A' class='col0'  style='color:#C40A2A;'>WMO  <img style='width:8px;' src='https://www.bwdb.gov.bd/haor/content/down.png'></a><ul><li ><a href='https://www.bwdb.gov.bd/haor/wmg' >WMO Information</a></li></ul></li><li><a data1='#098346' class='col0'  style='color:#098346;'>Others  <img style='width:8px;' src='https://www.bwdb.gov.bd/haor/content/down.png'></a><ul><li ><a href='https://www.bwdb.gov.bd/haor/gallery' >Photo Gallery</a></li><li ><a href='https://www.bwdb.gov.bd/haor/video' >Video Gallery</a></li></ul></li><li><a data1='#FF6600' class='col0'  style='color:#FF6600;'>Contact Us  <img style='width:8px;' src='https://www.bwdb.gov.bd/haor/content/down.png'></a><ul><li ><a href='https://www.bwdb.gov.bd/haor/custom_page/21' >Contact Us</a></li><li ><a href='https://www.bwdb.gov.bd/haor/suggestion' >Suggestion</a></li><li ><a href='https://www.bwdb.gov.bd/haor/complain' >Complain</a></li></ul></li><ul>
+			</nav>
+			<nav class="mainmenu mobile_menu" style="text-align:left;float: left;clear:both;width:100%;margin-bottom: 5px;">
+					<div class='responsive_menu_div'>
+						<div class="responsive_menu">
+							<img class='img_icon' src='https://www.bwdb.gov.bd/haor/content/menu-icon.png'> 
+							<span>Select Menu</span>
+						</div>
+					</div>
+					<div class='all_responsiv_menu'>
+						<ul class='all_parent_menu'>
+							<li class='current-menu-item parent_menu_li' ><a class='hover_disable' href='https://www.bwdb.gov.bd/haor/'>Home</a></li><li class=' parent_menu_li' ><a class='hover_disable' >Officials</a><img class='toggle_icon' src='https://www.bwdb.gov.bd/haor/content/down.png'><div class='menu_child_div'><ul><li ><a href='https://www.bwdb.gov.bd/haor/bwdb_staff' >BWDB Officials</a></li><li ><a href='https://www.bwdb.gov.bd/haor/consultant_staff' >Consultant Officials</a></li><li ><a href='https://www.bwdb.gov.bd/haor/project_staff' >Project Officials</a></li></ul></div></li><li class=' parent_menu_li' ><a class='hover_disable' >Sub Project</a><img class='toggle_icon' src='https://www.bwdb.gov.bd/haor/content/down.png'><div class='menu_child_div'><ul><li ><a href='https://www.bwdb.gov.bd/haor/new_sub_project' >New Sub Project</a></li><li ><a href='https://www.bwdb.gov.bd/haor/rehab_sub_project' >Rehabilitation Sub Projects</a></li></ul></div></li><li class=' parent_menu_li' ><a class='hover_disable' >Tender</a><img class='toggle_icon' src='https://www.bwdb.gov.bd/haor/content/down.png'><div class='menu_child_div'><ul><li ><a href='https://www.bwdb.gov.bd/haor/live_tender' >Live Tender</a></li><li ><a href='https://www.bwdb.gov.bd/haor/awarded_tender' >Awarded Tender</a></li></ul></div></li><li class=' parent_menu_li' ><a class='hover_disable' href='https://www.bwdb.gov.bd/haor/activities'>Activities</a></li><li class=' parent_menu_li' ><a class='hover_disable' href='https://www.bwdb.gov.bd/haor/notice'>Notice</a></li><li class=' parent_menu_li' ><a class='hover_disable' href='https://www.bwdb.gov.bd/haor/report'>Reports</a></li><li class=' parent_menu_li' ><a class='hover_disable' >WMO</a><img class='toggle_icon' src='https://www.bwdb.gov.bd/haor/content/down.png'><div class='menu_child_div'><ul><li ><a href='https://www.bwdb.gov.bd/haor/wmg' >WMO Information</a></li></ul></div></li><li class=' parent_menu_li' ><a class='hover_disable' >Others</a><img class='toggle_icon' src='https://www.bwdb.gov.bd/haor/content/down.png'><div class='menu_child_div'><ul><li ><a href='https://www.bwdb.gov.bd/haor/gallery' >Photo Gallery</a></li><li ><a href='https://www.bwdb.gov.bd/haor/video' >Video Gallery</a></li></ul></div></li><li class=' parent_menu_li' ><a class='hover_disable' >Contact Us</a><img class='toggle_icon' src='https://www.bwdb.gov.bd/haor/content/down.png'><div class='menu_child_div'><ul><li ><a href='https://www.bwdb.gov.bd/haor/custom_page/21' >Contact Us</a></li><li ><a href='https://www.bwdb.gov.bd/haor/suggestion' >Suggestion</a></li><li ><a href='https://www.bwdb.gov.bd/haor/complain' >Complain</a></li></ul></div></li>						</ul>
+					</div>
+				</nav>
+			<div class="clear"></div>
+		</section>
+	</header>
+	
+				<style>
+	.inside-table, .inside-table tr, .inside-table tr td{
+		border:0 !important;
+	}
+	.inside-table tr td.bold{
+		font-weight: bold;
+    color: #000;
+    font-size: 16px;
+	}
+	</style>
+		<section class="breadcrumb p07">
+		<p><a href="https://www.bwdb.gov.bd/haor/">Home</a> <a href="https://www.bwdb.gov.bd/haor/tender">Tender</a> <a href="https://www.bwdb.gov.bd/haor/"></a></p>
+	</section>
+<section class="content">
+		<section class="main">
+			<section class="latest contact width_70" >
+				<h2 style="margin-bottom: 0px;"><span>Search tender</span></h2>
+				<article class="main">
+					<form  method="post" class="contact-form">
+						<p class="half">
+							<label for="name">Title </label><input id="title_name" name="name" id="name"  >
+						</p>
+						<p class="half float_right" >
+							<label for="email">Procuring Entity </label>
+														<select class="procuring_entity" id="procuring_entity" >
+								<option value="">Select Procuring Entity</option>
+								<option value='9' >ABC</option>								<option value='6' >Gopalgonj O&M Division</option>								<option value='2' >PMO, HFMLIP</option>								<option value='3' >SMO Faridpur O&M Division</option>								<option value='5' >SMO Magura O&M Divsion</option>								<option value='4' >SMO Rajbari O&M Division</option>								<option value='1' >SMO Specialized Division</option>															</select>
+						</p>
+						<p class="half float_left">
+							<label for="phone">Tender Publish Date(Start)</label>
+							<input name="phone" id="email" class="publish_from_date urban_datepicker" readonly>
+						</p>
+						<p class="half float_right">
+							<label for="subject">Tender Publish Date(End)</label>
+							<input name="subject" id="subject" class="publish_to_date urban_datepicker" readonly>
+						</p>
+						<p class="half float_left">
+							<label for="phone">Tender Closing Date(Start)</label>
+							<input name="phone" id="email" class="closing_from_date urban_datepicker" readonly>
+						</p>
+						<p class="half float_right">
+							<label for="subject">Tender Closing Date(End)</label>
+							<input name="subject" id="subject" class="closing_to_date urban_datepicker" readonly>
+						</p>
+						<p class="half"><button type="button" class="button_green search_btn">Search</button></p>
+					</form>
+				</article>
+			</section>
+			<section class="latest loading_div" style="text-align:center; display:none;">
+				<img src="https://www.bwdb.gov.bd/haor/content/ajax_loader_vector.gif" style="width:50px;">
+			</section>
+			<br/>
+			<hr>
+			<section class="latest tender_list">
+								<table id="t01">
+				<caption class="caption_text">Total Awarded Tenders are: 0</caption>
+								<tr>
+				  	<th>SL</th>
+					<th>Package No</th>
+					<th>Tender Name</th>
+				    <th>Publish Date</th>
+					<th>Closing Date</th>
+					<th>Details</th>
+					<th>Download</th>
+				</tr>
+												</table>
+				<br/>
+				<div class="wp-pagenavi" style="float:right;"></div>
+			</section>
+		</section>
+			</section>
+	<script>
+		$(document).on("click",".search_btn",function()
+		{
+			var title = $('#title_name').val();
+			var procuring_entity = $('.procuring_entity').val();
+			var publish_from_date = $('.publish_from_date').val();
+			var publish_to_date = $('.publish_to_date').val();
+			var closing_from_date = $('.closing_from_date').val();
+			var closing_to_date = $('.closing_to_date').val();
+			$.ajax({
+				url : "https://www.bwdb.gov.bd/haor/awarded_tender_search",
+				data: {
+						'title': title,
+						'publish_from_date': publish_from_date,
+						'publish_to_date':publish_to_date,
+						'closing_from_date': closing_from_date,
+						'closing_to_date':closing_to_date,
+						'procuring_entity': procuring_entity,
+					},
+				dataType: "html",
+				type: "POST",
+				beforeSend: function() {
+					$('.loading_div').show();
+				},
+				success: function(data){
+					$('.loading_div').hide();
+					$('.tender_list').html(data);
+				},
+				error: function(data){
+					$('.loading_div').hide();
+				}
+			});
+		});
+		$(document).on("click",".popup_li",function(e)
+		{
+			var id = $(this).attr('data-id');
+			var cal = parseInt($('.modal_container').width())-parseInt($('.modal_body').width()); 
+			var left = ($(window).width() - $('.modal_body').outerWidth())/2;
+			var height = 1600;
+			$.ajax({
+				url : "https://www.bwdb.gov.bd/haor/tender_detail",
+				data: {'id': id,'cal':cal,'left':left,'height':height},
+				dataType: "html",
+				type: "POST",
+				beforeSend: function() {
+					$('.loading_div').show();
+				  },
+				success: function(data){
+					$('.loading_div').hide();
+					$('.w3-modal').show();//modal_body
+						$('.w3-container').html(data);//modal_body
+					 $("html, body").animate({ scrollTop: 0 }, "slow");
+					 //console.log($('.modal_container').width());
+					 // console.log($('.modal_body').width());
+					 // console.log();
+				},
+				error: function(data){
+					$('.loading_div').hide();
+					alert('Error Found');
+				}
+			});
+		});
+		pagination(20);
+		$( document ).on( "click", ".close", function() {
+				$('.modal_body').hide();
+				$('.modal_container').hide();
+			});
+	</script>		<footer>
+		<section class="bottom">
+			<p>© 2016 Bangladesh Water Development Board, All Rights Reserved.</p>
+			<p style="float:right;">Developed & Maintenance by <a href="http://urbanitsolution.com" target="_blank" >Urban IT Solution.</a></p>
+		</section>
+	</footer>	</div>
+</body>
+	<script>
+    function fontSize(size){
+        var Size = size;
+        $(".resize-content").css({"font-size":Size + "px" });
+        $(".resize-content div").css({"font-size":Size + "px" });
+        $(".resize-content p").css({"font-size":Size + "px" });
+        $(".resize-content a").css({"font-size":Size + "px" });
+        $(".resize-content h1").css({"font-size":Size + "px" });
+        $(".resize-content h2").css({"font-size":Size + "px" });
+        $(".resize-content h3").css({"font-size":Size + "px" });
+        $(".resize-content h4").css({"font-size":Size + "px" });
+        $(".resize-content h5").css({"font-size":Size + "px" });
+        $(".resize-content h6").css({"font-size":Size + "px" });
+        $(".resize-content span").css({"font-size":Size + "px" });
+
+    }
+    function fontBgColor(bgColor,fontColor){
+        var FontColor = fontColor;
+        var BgColor = bgColor;
+        $(".resize-content").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content div").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content a").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content p").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content span").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content h1").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content h2").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content h3").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content h4").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content h5").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+        $(".resize-content h6").css({"background-color":"#"+ BgColor, "color":"#"+FontColor});
+    }
+
+</script>
+	<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/jquery.fancybox.min.js"></script>
+	<script>
+		
+		//$().fancybox({
+		$( '[data-fancybox="images"]' ).fancybox({
+		  //selector : '[data-fancybox="filter"]',
+		  infobar : false,
+		  caption : function( instance, item ){
+			//var caption = $(this).data('caption') || '';
+			var caption = '<span class="fancy_caption">'+ $(this).data('caption') + '</span>' || '';
+			  //caption = (caption.length ? '<span class="fancy_caption">'+caption + '</span>' : '');
+			return caption;
+		  }
+		});
+		$(document).on("click",".lang-search",function()
+		{
+			var id = $(this).attr('data');
+			$.ajax({
+				url : "https://www.bwdb.gov.bd/haor/lang/"+id,
+				data: {'id': id},
+				dataType: "html",
+				type: "GET",
+				beforeSend: function () {
+					$('#favicon').attr("href","https://www.bwdb.gov.bd/haor/bwdb/favicon_loading.ico" );
+				},
+				success: function(data){
+					location.href =window.location.href.substr(0, window.location.href.indexOf('#'));
+				}
+			});
+		});
+		$(document).on("focus",".urban_datepicker", function(event){
+			$(this).datetimepicker({
+				format:'d/m/Y',
+				timepicker:false,
+				closeOnDateSelect:true
+			});
+		});
+		$('p, strong, h2, h3, strong, ul, li, div, table, td, tr, thead, tbody').each(function(){
+		    $(this).html($(this).html().replace(/&nbsp;/gi,''));
+		});
+	</script>
+	<script>
+                $(".responsive_menu").click(function() {
+                    $(".all_parent_menu").slideToggle();
+                });
+                $(".toggle_icon").click(function() {
+                    //$(".menu_child_div").hide();
+                    $(this).siblings(".menu_child_div").slideToggle();
+                });
+                $(".col0").hover(
+                    function() {
+                        var this_color = $(this).attr('data1');
+                        $(this).css({
+                            "background-color": this_color
+                        });
+                        $(this).children().css({
+                            "color": "#fff"
+                        });
+                    },
+                    function() {
+                        var this_color = $(this).attr('data1');
+                        $(this).css({
+                            "background-color": "#fff"
+                        });
+                        $(this).children().css({
+                            "color": this_color
+                        });
+                    }
+                );
+            </script>
+			<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/jquery.vticker.js"></script>
+			<script>
+				$('#latest_notice').vTicker('init', {speed: 2000, 
+					pause: 1500,
+					showItems: 1,
+					margin:15,
+					height:0
+				});
+			</script>
+			<script>
+				/*$('#latest_activities').vTicker('init', {speed: 1500, 
+					pause: 1500,
+					showItems: 5,
+					padding:0,
+					margin:18,
+					height:200
+				});*/
+			</script>
+			<script>
+			$( ".col0" ).hover(
+				  function() {
+					var this_color = $(this).attr('data1');
+					$(this).css({"background-color": this_color});
+					$(this).css({"color": "#fff"});
+					$(this).next('ul').css({"border-top": "3px solid "+this_color});
+					
+					
+				  }, function() {
+					var this_color = $(this).attr('data1');
+					//$(this).css({"background-color": "rgb(255, 255, 25)"});
+					$(this).removeAttr('style');
+					$(this).css({"color": this_color});
+					$(this).next('ul').css({"border-top": "3px solid "+this_color});
+					
+				  }
+				);
+			</script>
+			<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/slide/engine1/jssor.slider.min.js"></script>
+	<script type="text/javascript">
+        jssor_1_slider_init = function() {
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:500,$Delay:30,$Cols:18,$Rows:4,$Clip:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:2049,$Easing:$Jease$.$OutQuad},
+              {$Duration:500,$Delay:80,$Cols:18,$Rows:4,$Clip:15,$SlideOut:true,$Easing:$Jease$.$OutQuad},
+              {$Duration:1000,x:-0.2,$Delay:40,$Cols:12,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Assembly:260,$Easing:{$Left:$Jease$.$InOutExpo,$Opacity:$Jease$.$InOutQuad},$Opacity:2,$Outside:true,$Round:{$Top:0.5}},
+              {$Duration:2000,y:-1,$Delay:60,$Cols:15,$SlideOut:true,$Formation:$JssorSlideshowFormations$.$FormationStraight,$Easing:$Jease$.$OutJump,$Round:{$Top:1.5}},
+              {$Duration:1200,x:0.2,y:-0.1,$Delay:20,$Cols:18,$Rows:4,$Clip:15,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$Formation:$JssorSlideshowFormations$.$FormationStraightStairs,$Assembly:260,$Easing:{$Left:$Jease$.$InWave,$Top:$Jease$.$InWave,$Clip:$Jease$.$OutQuad},$Round:{$Left:1.3,$Top:2.5}}
+            ];
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            /*#region responsive code begin*/
+            var MAX_WIDTH = 1300;
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+                if (containerWidth) {
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="https://www.bwdb.gov.bd/haor/content/js/ie.js"></script>
+	<![endif]-->
+	</html>
+	

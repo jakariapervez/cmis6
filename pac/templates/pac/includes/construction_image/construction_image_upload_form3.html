@@ -1,0 +1,48 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> {% block title %}CMIS {% endblock  %} </title>
+<link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/app.css'  %}">
+<!-- custom css for side nav -->
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+<!-- fontaowsome javascript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- fontaowsome javascript -->
+<script  src="{% static 'js/solid.js' %}"></script>
+<script src="{% static 'js/fontawesome.js' %}"></script>
+</head>
+
+<body>
+{% load widget_tweaks %}
+  <form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  
+    {% for field in form %}
+  <div class="form-group{% if field.errors %} has-error{% endif %}">
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {% render_field field class="form-control" %}
+    {% for error in field.errors %}
+      <p class="help-block">{{ error }}</p>
+    {% endfor %}
+	</div>
+	{% endfor %}
+    <button type="submit">Upload</button>
+  </form>
+</body>
+
+
+
+
+
+
+{% block content %}
+
+
+  <p><a href="{% url 'home2' %}">Return to home</a></p>
+{% endblock %}

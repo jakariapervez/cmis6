@@ -1,0 +1,287 @@
+[
+{
+    "model": "progress.dpp_intervention",
+    "pk": 1,
+    "fields": {
+        "haor_id": 5,
+        "name": "Submersible Embankment from 11.95 to 12.33",
+        "start_chainage": "11.950",
+        "finish_chainage": "12.230",
+        "length": "0.315",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 2,
+    "fields": {
+        "haor_id": 1,
+        "name": "Submersible Embankment from 0.000 to 38.130",
+        "start_chainage": "0.000",
+        "finish_chainage": "38.130",
+        "length": "3.879",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 3,
+    "fields": {
+        "haor_id": 14,
+        "name": "Submersible Embankment from 0.100 to 23.39",
+        "start_chainage": "0.100",
+        "finish_chainage": "23.390",
+        "length": "22.030",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 4,
+    "fields": {
+        "haor_id": 8,
+        "name": "Submersible Embankment from 7.366 to 17.749 Part-A",
+        "start_chainage": "7.369",
+        "finish_chainage": "17.749",
+        "length": "10.383",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 5,
+    "fields": {
+        "haor_id": 8,
+        "name": "Submersible Embankment from 0.007 to 6.541 Part-B",
+        "start_chainage": "0.007",
+        "finish_chainage": "6.541",
+        "length": "6.534",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 6,
+    "fields": {
+        "haor_id": 8,
+        "name": "Submersible Embankment from 0 to 19.377 Part-C",
+        "start_chainage": "0.000",
+        "finish_chainage": "19.377",
+        "length": "12.214",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 7,
+    "fields": {
+        "haor_id": 2,
+        "name": "Submersible Embankment from 0 to 28.900 Part-A",
+        "start_chainage": "0.000",
+        "finish_chainage": "28.900",
+        "length": "26.942",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 8,
+    "fields": {
+        "haor_id": 2,
+        "name": "Submersible Embankment from 0.000 to 44.200 Part-B",
+        "start_chainage": "0.000",
+        "finish_chainage": "44.200",
+        "length": "36.104",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 9,
+    "fields": {
+        "haor_id": 11,
+        "name": "Submersible Embankment from 0 to 33.150",
+        "start_chainage": "0.000",
+        "finish_chainage": "33.150",
+        "length": "2.380",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 10,
+    "fields": {
+        "haor_id": 9,
+        "name": "Submersible Embankment from 0.000 to 33.520",
+        "start_chainage": "0.000",
+        "finish_chainage": "33.520",
+        "length": "18.113",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 11,
+    "fields": {
+        "haor_id": 12,
+        "name": "Submersible Embankment from 9.770 to 54.480",
+        "start_chainage": "9.770",
+        "finish_chainage": "54.480",
+        "length": "23.170",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 12,
+    "fields": {
+        "haor_id": 13,
+        "name": "Submersible Embankment from 0.000 to 84.290",
+        "start_chainage": "0.000",
+        "finish_chainage": "84.290",
+        "length": "23.815",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 13,
+    "fields": {
+        "haor_id": 4,
+        "name": "Submersible Embankment from 0.000 to 71.710",
+        "start_chainage": "0.000",
+        "finish_chainage": "71.710",
+        "length": "42.050",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 14,
+    "fields": {
+        "haor_id": 6,
+        "name": "Submersible Embankment from 0.000 to 31.140",
+        "start_chainage": "0.000",
+        "finish_chainage": "31.140",
+        "length": "0.540",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 15,
+    "fields": {
+        "haor_id": 10,
+        "name": "Submersible Embankment from 2.470 to 16.170",
+        "start_chainage": "2.470",
+        "finish_chainage": "16.170",
+        "length": "4.510",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 16,
+    "fields": {
+        "haor_id": 7,
+        "name": "Submersible Embankment from 0.70 to 26.80",
+        "start_chainage": "0.000",
+        "finish_chainage": "26.800",
+        "length": "20.940",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 17,
+    "fields": {
+        "haor_id": 3,
+        "name": "Submersible Embankment from 4.67 to 30.29",
+        "start_chainage": "4.670",
+        "finish_chainage": "30.290",
+        "length": "0.315",
+        "volume": null,
+        "vent_no": null,
+        "dpp_cost": null,
+        "worktype_id": 2
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 18,
+    "fields": {
+        "haor_id": 5,
+        "name": "2-Vent Regulator at Km12.18 in Chandpur Haor Project",
+        "start_chainage": "12.090",
+        "finish_chainage": null,
+        "length": null,
+        "volume": null,
+        "vent_no": 2,
+        "dpp_cost": null,
+        "worktype_id": 5
+    }
+},
+{
+    "model": "progress.dpp_intervention",
+    "pk": 19,
+    "fields": {
+        "haor_id": 8,
+        "name": "1-Vent Regulator at Km23.85 in Nunnir Haor Project",
+        "start_chainage": "12.180",
+        "finish_chainage": null,
+        "length": null,
+        "volume": null,
+        "vent_no": 1,
+        "dpp_cost": null,
+        "worktype_id": 5
+    }
+}
+]

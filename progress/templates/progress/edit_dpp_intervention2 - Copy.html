@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Progress</li>
+{% endblock %}
+{% block content %}
+
+<p>
+    <button type="button" class="btn btn-primary js-create-ivt" data-url="{% url 'dpp_intervention_create' %}">
+      <i class="fas fa-edit"></i>
+     Add Strucre
+    </button>
+  </p>
+<!-- {% include 'progress/includes/partial_ivt_table_pagination.html' %}  -->
+
+<table class="table table-responsive table-bordered table-striped  table-hover" id="ivt-table">
+    <thead class="thead-dark">
+	  <tr>
+	  <th></th>
+	  <th></th>
+	  <th class="col-sm-2"> {% include 'progress/includes/haor_select.html' %}</th>	  
+	  </tr>
+      <tr>
+		<th>Haor Sub-Project</th>
+		<th>Work_type</th>
+        <th class="col-sm-3">Name</th>
+        <th>Cahinage_Start<Br>(Km)</th>
+        <th>Chainage_End<Br> (Km)</th>
+        <th>Length <Br>(Km)</th>
+		<th>volume <Br>(Cum)</th>
+		<th>Vent_no<Br>Numers</th>
+		<th>Cost_in_DPP<Br>(Tk Lakh)</th>	
+        <th>Edit</th>
+        <th>Delete</th>		
+      </tr>
+    </thead>
+	<tbody>    
+	{% include 'progress/includes/partial_ivt_list.html' %}
+  </tbody>
+
+</table>
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
+ {% block localscript %}
+
+<script src="{% static 'progress/js/dpp_intervention.js'  %}"></script>
+
+	{% endblock %}  

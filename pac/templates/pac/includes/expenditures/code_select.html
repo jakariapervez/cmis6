@@ -1,0 +1,6 @@
+<select class="custom-select js-code-select" id="code-select">
+<option value="ALL" data-url="#">ALL</option>
+ {% for dppitem  in dppitems %}
+<option value="{{dppitem.Ecode}}" data-url="#">{{dppitem.Ecode}}</option>
+{% endfor %}
+</select>

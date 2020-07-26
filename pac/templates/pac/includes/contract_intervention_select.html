@@ -1,0 +1,5 @@
+<select class="custom-select js-contract-intervention-select" id="contract-intervention-select">
+ {% for civt  in civts %}
+<option value="{{civt.id}}" data-url="{% url 'get_progress_item' civt.id %}" >{{civt.dpp_intervention_id.name}}</option>
+{% endfor %}
+</select>

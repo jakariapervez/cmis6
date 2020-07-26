@@ -1,0 +1,40 @@
+     {% for ivt  in ivts %}
+			<tr>
+			  <td>{{ivt.haor_id.name}}</td>
+			  <td>{{ivt.worktype_id.wtype}}</td>
+			  <td>{{ivt.name}}</td>
+			  <td>{{ivt.start_chainage}}</td>
+			  <td>{{ivt.finish_chainage}}</td>
+			  <td>{{ivt.length}}</td>
+			  <td>{{ivt.volume}}</td>
+			  <td>{{ivt.vent_no}}</td>
+			  <td>{{ivt.dpp_cost}}</td>	  
+			  
+			  <td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-ivt"
+												
+							  data-url="{% url 'dpp_intervention_update' ivt.id %}">
+						<span class="glyphicon glyphicon-pencil"></span> Edit
+					  </button>
+				</td>
+				<td>
+					  <button type="button"
+							  class="btn btn-danger btn-sm js-delete-ivt"
+							  data-url="{% url 'dpp_intervention_delete' ivt.id %}">
+						<span class="glyphicon glyphicon-trash"></span> Delete
+					  </button>
+				</td>			 
+			  
+			  
+			  
+			  
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Interventions</td>
+			</tr>
+    {% endfor %}
+  
+

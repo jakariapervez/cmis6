@@ -1,0 +1,17 @@
+def list_DPP_Intervention_sort_by_haor(request,pk):
+    print(pk)
+    ivts=DPP_Intervention.objects.filter(haor_id=pk)
+    data=dict()
+    data['html_ivt_list'] = render_to_string('progress/includes/partial_ivt_list.html', {
+        'ivts': ivts
+    })
+
+    return JsonResponse(data)
+def list_DPP_Intervention_sort_by_haor_all(request):
+    ivts=DPP_Intervention.objects.all()
+    data=dict()
+    data['html_ivt_list'] = render_to_string('progress/includes/partial_ivt_list.html', {
+        'ivts': ivts
+    })
+
+    return JsonResponse(data)

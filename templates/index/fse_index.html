@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+<!--{% include '../includes/nav_fse.html' %} -->
+{% block content %}
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>S/L No</th>
+        <th>Package Name</th>
+        <th>Progress</th>        
+      </tr>
+    </thead>
+    <tbody>
+     {% for contract in contracts %}
+	 <tr>
+	 <td></td>
+	 <td>{{contract.package_short_name}}</td>	
+	 <td><a href="{% url 'update_progress_quantity2' contract.id %}">  Update Progress </a></td>
+	 </tr>
+	 {% endfor %}
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

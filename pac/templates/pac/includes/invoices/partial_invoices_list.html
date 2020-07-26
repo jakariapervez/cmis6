@@ -1,0 +1,48 @@
+     {% for invoice in invoices %}
+			<tr>
+			  <td>{{invoice.Invoice_no}}</td>
+			  <td>{{invoice.date}}</td>
+			  <td>{{invoice.Total_amount}}</td>
+			  <td><a href="{{ invoice.document_id.invoice_image.url }}">{{ invoice.document_id.description }}</td>
+			   	  
+			  
+			  <td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-ivt"
+								data-url="{% url 'update_invoice' invoice.id %}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span> Edit
+					  </button>
+				</td>
+				<td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-ivt"
+								data-url="{% url 'delete_invoice' invoice.id %}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Delete
+					  </button>
+				</td>
+				
+				 <td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-primary btn-sm js-create-Expenditure"
+								data-url="{% url 'create_expediture' invoice.id %}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Add Exp
+					  </button>
+				</td>
+				
+				
+			  
+			  
+			  
+			  
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Invoice Item</td>
+			</tr>
+    {% endfor %}
+  
+

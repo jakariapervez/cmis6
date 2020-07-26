@@ -1,0 +1,22 @@
+{% if reports %}
+          {% for report in reports %}
+          <tr id="report-{{rport.pk}}" data-url="{% url 'edit_report_event'  report.pk    %}" >
+              <td class="userName userData" name="name">{{report.reportCode}}</td>
+              <td class="userAddress userData" name="address">{{report.reportName}}</td>
+              <td class="userAge userData" name="age">{{report.startingDate}}</td>
+              <td class="userAge userData" name="age">{{report.finishDate}}</td>
+			  <td class="userAge userData" name="age">{{report.lastSubmissionDate}}</td>
+			  <td class="userAge userData" name="age">{{report.message}}</td>
+			  <td class="userAge userData" name="age">{{report.eventStatus}}</td>
+			  
+			  <td align="center">
+                  <button class="btn btn-success form-control edit-button" data-toggle="modal" data-target="#myModal">EDIT</button>
+              </td>
+              <td align="center">
+                  <button class="btn btn-danger form-control delete-button" >DELETE</button>
+              </td>
+          </tr>
+          {% endfor %}
+          {% else %}		  
+            No Users
+          {% endif %}

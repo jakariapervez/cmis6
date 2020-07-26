@@ -1,0 +1,37 @@
+{% for civt  in civts %}
+			<tr>
+			  <td>{{civt.item_name}}</td>
+			  <td>{{civt.unit}}</td>
+			  <td>{{civt.quantity}}</td>
+			  <td>{{civt.weight}}</td>
+			  <td>{{civt.startdate}}</td>
+			  <td>{{civt.finishdate}}</td>	  
+			  
+			  <td style="width: 150px">
+					  <button type="button button-lg"
+							  class="btn btn-primary btn-sm js-update-progress-item"
+							   civt-id="{{civt.id}}"
+							  data-url="{% url 'progress_item_update' civt.id %}">
+						<span class="glyphicon glyphicon-pencil"></span>Update
+					  </button>
+				</td>
+				<td style="width: 150px">
+					  <button type="button button-lg"
+							  class="btn btn-primary btn-sm js-delete-progress-item"
+							   civt-id="{{civt.id}}"
+							  data-url="{% url 'progress_item_delete' civt.id %}">
+						<span class="glyphicon glyphicon-pencil"></span>Delete
+					  </button>
+				</td>
+						 	 
+			  
+			  
+			  
+			  
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Progress Items</td>
+			</tr>
+    {% endfor %}

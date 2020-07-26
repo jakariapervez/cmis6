@@ -1,0 +1,38 @@
+{% load widget_tweaks %}
+ <form method="post" action="#" class="js-report-event-edit-form" >
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">Edit</h4>
+  </div>
+<!--<div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div> -->
+<div class="modal-body">
+     
+ {% csrf_token %}
+  
+
+    {% for field in form %}
+      <div class="form-group{% if field.errors %} has-error{% endif %}">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {% render_field field class="form-control" %}
+        {% for error in field.errors %}
+          <p class="help-block">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+  
+    <button type="submit" class="btn btn-primary">Edit</button>
+
+      </div>
+	     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	
+	</div>
+ 
+ </form>

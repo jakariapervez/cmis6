@@ -1,0 +1,5 @@
+<select class="custom-select js-contract-select" id="contract-select">
+ {% for contract  in contracts %}
+<option value="{{contract.id}}" data-url="{% url 'get_contract_intervention' contract.id  %}">{{contract.package_short_name}}</option>
+{% endfor %}
+</select>
