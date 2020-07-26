@@ -12,7 +12,7 @@ class Dpp_allocation(models.Model):
     Total = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
 
     def __str__(self):
-        return f'{self.Description}'
+        return f'{self.Shortdescription}'
 
 class FinancialYear(models.Model):
     startDate=models.DateField()
