@@ -104,7 +104,7 @@ Invoice_no=models.CharField(max_length=65,null=True,blank=True)
 
 from django.utils.translation import gettext_lazy as _
 class AddInvoiceFormCombined(forms.ModelForm):
-    invoice_doc=forms.ImageField(label='Upload Documents')
+    invoice_doc=forms.FileField(label='Upload Documents')
     #gob_val=forms.DecimalField(label="GoB(Tk.)")
     #rpa_val=forms.DecimalField(label="RPA(Tk.)")
     #dpa_val=forms.DecimalField(label="DPA(Tk.)")
