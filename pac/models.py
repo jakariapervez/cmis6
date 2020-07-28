@@ -36,6 +36,7 @@ class Budget_allocation(models.Model):
         dppallocation=self.Dpp_allocation
         #return(str(dppallocation.description))
         return (str(self.Dpp_allocation.Ecode)+"_"+str(self.Dpp_allocation.Shortdescription) +"_"+str(self.Financial_year))
+        #return "b1"
 
 class InvoiceImage(models.Model):
     description = models.CharField(max_length=350, blank=True, null=True)

@@ -247,9 +247,8 @@ var sort_by_all =function (){
   $("#ivt-table").on("click", ".js-delete-ivt", loadForm);
   $("#modal-ivt").on("submit", ".js-ivt-delete-form", saveForm2);
   //Add Expenditure Function
-  $("#ivt-table").on("click", ".js-create-Expenditure", loadForm);
-  
-   $("#modal-ivt").on("submit", ".js-expenditure-create-form", saveForm2);
+  $("#ivt-table").on("click", ".js-create-Expenditure", loadForm);  
+  $("#modal-ivt").on("submit", ".js-expenditure-create-form", saveForm2);
 
 /*binding*/
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/

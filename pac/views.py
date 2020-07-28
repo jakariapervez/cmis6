@@ -226,6 +226,7 @@ def Invoice_image_upload2(request):
             month=monthFromDate(form.cleaned_data['date'])
             print("month={}".format(month))
             invoice.Month=month
+            invoice.Total_amount=0.0
             invoice.save()
             return redirect('invoice_index')
             #return redirect('create_invoice')
