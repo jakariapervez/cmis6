@@ -1,8 +1,24 @@
 $(function () {
-
   /* Functions */
-
   var loadForm = function () {
+    var btn = $(this);
+	
+    $.ajax({
+      url: btn.attr("data-url"),
+      type: 'get',
+      dataType: 'json',
+      beforeSend: function () {
+		console.log(btn.attr("data-url"));
+        $("#modal-ivt .modal-content").html("");
+        $("#modal-ivt").modal("show");
+      },
+      success: function (data) {
+        $("#modal-ivt .modal-content").html(data.html_form);
+      }
+    });
+  };
+  /*A second Load Form for Expenditure Edit*/
+   var loadForm2 = function () {
     var btn = $(this);
 	
     $.ajax({
@@ -31,8 +47,9 @@ $(function () {
       success: function (data) {
         if (data.form_is_valid) {
 		  console.log("Intervention data is Valid")
-          $("#ivt-table tbody").html(data.html_ivt_list);
-          $("#modal-ivt").modal("hide");
+		  $("#modal-ivt").modal("hide");
+         // $("#ivt-table tbody").html(data.html_ivt_list);
+          
 		  console.log("restoring previous view of the table")
 		  /*updateTable(value);*/
 		  

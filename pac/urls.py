@@ -10,6 +10,7 @@ urlpatterns=[
     url('^budget_allocation/(?P<pk>\d+)/update/$',views.update_Budget_Allocation,name='budget_allocation_update'),
     url('^budget_allocation/(?P<pk>\d+)/delete/$',views.delete_DPP_Allocation,name='budget_allocation_delete'),
     url('^budget_allocation/(?P<pk>\d+)/list/$',views.list_budget_item_sort_by_fy,name='budget_allocation_yearwise'),
+
     #Invoice Related URL
     url('^upload_invoice_image',views.Invoice_image_upload2,name='upload_invoice_image'),
     url('^invoice_index',views.invoice_list,name='invoice_index'),
