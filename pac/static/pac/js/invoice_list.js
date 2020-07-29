@@ -50,7 +50,7 @@ $(function () {
         if (data.form_is_valid) {
 		  console.log("Intervention data is Valid")
 		  $("#modal-ivt").modal("hide");
-         // $("#ivt-table tbody").html(data.html_ivt_list);
+         $("#ivt-table tbody").html(data.html_ivt_list);
           fy=data.fy
 		  month=data.month		  
 		  console.log("add expenditure was successful...")
