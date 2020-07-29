@@ -39,6 +39,8 @@ $(function () {
   var saveForm = function () {
 	  var value=$("#haor-sort").children(":selected").attr("data-url");
     var form = $(this);
+	var fy
+	var month
     $.ajax({
       url: form.attr("action"),
       data: form.serialize(),
@@ -49,9 +51,13 @@ $(function () {
 		  console.log("Intervention data is Valid")
 		  $("#modal-ivt").modal("hide");
          // $("#ivt-table tbody").html(data.html_ivt_list);
-          
-		  console.log("restoring previous view of the table")
+          fy=data.fy
+		  month=data.month		  
+		  console.log("add expenditure was successful...")
+		  
+		  
 		  /*updateTable(value);*/
+		  //console.log("initiating second ajax request for sorting table data");
 		  
         }
         else {
@@ -60,12 +66,17 @@ $(function () {
         }
       }
     });
+	//target_url=
+	sort_by_all()
+	
+	
     return false;
   };
 
     var saveForm2 = function () {
 	  var value=$("#haor-sort").children(":selected").attr("data-url");
     var form = $(this);
+	
     $.ajax({
       url: form.attr("action"),
       data: form.serialize(),
@@ -89,8 +100,8 @@ $(function () {
     });
 	$("#ivt-table tbody").html("");
 	var value = $(".js-sort-all").attr("data-url");
-	var fy=$(".js-fy-select").children(":selected").attr("value");
-	var month=$(".js-month-select").children(":selected").attr("value");
+	//var fy=$(".js-fy-select").children(":selected").attr("value");
+	//var month=$(".js-month-select").children(":selected").attr("value");
 	console.log("initiating second ajax request for sorting table data");
 	console.log("fy="+fy+"month="+month);
 	updateTable3(value,fy,month);
@@ -152,34 +163,13 @@ function updateTable(target_url)
         
         
       }
-    })
-	
-	
-	
-	
-	
-	
+    })	
 };
 
 
   /* Binding */
 
-  // Create book
-  $(".js-create-ivt").click(loadForm);
-  $("#modal-ivt").on("submit", ".js-ivt-create-form", saveForm);
-  $("#modal-ivt").on("submit","js-invoice-create-form",saveForm3);
 
-  // Update book
-  $("#ivt-table").on("click", ".js-update-ivt", loadForm);
-  $("#modal-ivt").on("submit", ".js-ivt-update-form", saveForm);
-
-  // Delete book
-  $("#ivt-table").on("click", ".js-delete-ivt", loadForm);
-  $("#modal-ivt").on("submit", ".js-ivt-delete-form", saveForm);
-  //Add Expenditure Function
-  $("#ivt-table").on("click", ".js-create-Expenditure", loadForm);
-  
-   $("#modal-ivt").on("submit", ".js-expenditure-create-form", saveForm);
 
   
   /*Ajax Table Sorting function*/
@@ -266,7 +256,7 @@ var sort_by_all =function (){
   
   //Add Expenditure Function
   $("#ivt-table").on("click", ".js-create-Expenditure", loadForm);  
-   $("#modal-ivt").on("submit", ".js-expenditure-create-form", saveForm2);
+   $("#modal-ivt").on("submit", ".js-expenditure-create-form", saveForm);
 
 /*binding*/
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/

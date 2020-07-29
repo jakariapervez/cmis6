@@ -535,17 +535,22 @@ def Add_Expenditure(request,pk):
             print("isvalid={} cumTotal={}".format(myexpenditure['validity'],myexpenditure['cumtotal']))
             expenditure=myexpenditure['expenditure']
             cumTotal=myexpenditure['cumtotal']
+            month=myexpenditure['month']
+            fy=myexpenditure['fyear']
             if myexpenditure['validity']:
                 expenditure.save()
                 #Invoice_details.objects.filter(pk=pk).update(Total=cumTotal)
                 #Expenditure_details.objects.filter(pk=pk).update(Total=cumTotal)
-                invoice.Total_amount=cumTotal
+                previous_total=float(invoice.Total_amount)
+                invoice.Total_amount=cumTotal+previous_total
                 invoice.save()
                 data['form_is_valid'] = True
                 #invoice.save()
                 invoices = Invoice_details.objects.all()
                 data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
                 'invoices': invoices })
+                data['month']=month
+                data['fy']=str(fy)
                 #return redirect(expenditure_list)
                 #return JsonResponse(data)
             #expenditure.save()

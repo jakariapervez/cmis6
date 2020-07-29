@@ -124,9 +124,11 @@ def validateExpenditure(exp_form,invoice):
     invoice_total = getInvoiceTotal(myyear,invoice)
     invoice_total=invoice_total+float(total)
     print("Expenditure={} Cumtotal={}".format(validity['isValid'],validity['Total']))
-
+    #myyear = financialYearFromDate(expenditure.date)
+    fy = financialYearFromDate(expenditure.date)
+    month = monthFromDate(expenditure.date)
     #isValid=checkCumulative(myyear,expenditure)
-    return {'expenditure': expenditure, 'validity': validity['isValid'], 'cumtotal':invoice_total }
+    return {'expenditure': expenditure, 'validity': validity['isValid'], 'cumtotal':invoice_total,'fyear':fy,'month':month }
 
     #return {'expenditure':expenditure,'validity':validity['isValid'],'cumtotal':validity['Total']}
 def validateExpenditureEditForm(exp_form,expenditure):
@@ -155,6 +157,8 @@ def validateExpenditureEditForm(exp_form,expenditure):
         isValid=False
     myyear = financialYearFromDate(invoice.date)
     fy=financialYearFromDate(invoice.date)
+    month=monthFromDate(invoice.date)
+
     economicCode=expenditure.Budget_allocation.Dpp_allocation.Ecode
     cumulative = getCumulative(fy, economicCode)
     cumulative['Gob']=cumulative['Gob']-expenditure.Gob+gob
