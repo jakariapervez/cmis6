@@ -316,6 +316,8 @@ def save_invoice_form(request,form, template_name):
     context = {'form': form}
     data['html_form'] = render_to_string(template_name, context, request=request)
     return JsonResponse(data)
+from .auxilaryquery import financialYearFromDate,monthFromDate
+
 
 def save_invoice_form2(request,form, template_name):
     data = dict()
@@ -323,7 +325,15 @@ def save_invoice_form2(request,form, template_name):
         if form.is_valid():
             form.save()
             data['form_is_valid'] = True
-            invoices = Invoice_details.objects.all()
+            mydate=form.cleaned_data['date']
+            fy=financialYearFromDate(mydate)
+            month=monthFromDate(mydate)
+            data['form_is_valid'] = True
+            data['fy'] = str(fy.id)
+            data['month'] = month
+            invoices = Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+
+            #invoices = Invoice_details.objects.all()
             data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
                 'invoices': invoices
             })
@@ -361,16 +371,33 @@ from .forms import Invoice_details_Forms
 @login_required
 def Edit_invoice(request,pk):
     ivt = get_object_or_404(Invoice_details, pk=pk)
-    war_start =datetime.datetime.now()
-    mydate=datetime.datetime.date(war_start)
-
-    fy=financialYearFromDate(mydate)
-    print("fy={}".format(fy))
     if request.method == 'POST':
         form = Invoice_details_Forms(request.POST, instance=ivt)
     else:
         form = Invoice_details_Forms(instance=ivt)
     return save_invoice_form2(request, form, 'pac/includes/invoices/partial_ivt_update.html')
+
+def Edit_invoice2(request, pk):
+    ivt = get_object_or_404(Invoice_details, pk=pk)
+    data = dict()
+    if request.method == 'POST':
+        fy=ivt.FinancialYear.id
+        month=monthFromDate(ivt.date)
+        ivt.delete()
+        data['form_is_valid'] = True
+        data['fy']=str(fy)
+        data['month']=month
+        invoices = Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+        #invoices = Invoice_details.objects.all()
+        data['html_ivt_list'] =render_to_string('pac/includes/invoices/partial_invoices_list.html', {
+                'invoices': invoices
+            })
+    else:
+        context = {'ivt': ivt}
+        data['html_form'] = render_to_string('pac/includes/invoices/partial_ivt_delete.html', context, request=request)
+    return JsonResponse(data)
+
+
 @login_required
 def Add_invoice(request):
     if request.method == 'POST':

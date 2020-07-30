@@ -282,7 +282,7 @@ var saveDeleteForm4= function ()
 
   // Update Invoice
   $("#ivt-table").on("click", ".js-update-ivt", loadForm);
-  $("#modal-ivt").on("submit", ".js-ivt-update-form", saveForm2);
+  $("#modal-ivt").on("submit", ".js-ivt-update-form", saveForm);
 
   // Delete Invoice
   $("#ivt-table").on("click", ".js-delete-ivt", loadForm);
