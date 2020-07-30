@@ -260,7 +260,7 @@ var sort_by_all =function (){
 
   // Delete Invoice
   $("#ivt-table").on("click", ".js-delete-ivt", loadForm);
-  $("#modal-ivt").on("submit", ".js-ivt-delete-form", saveForm2);
+  $("#modal-ivt").on("submit", ".js-ivt-delete-form", saveForm);
 
 
 

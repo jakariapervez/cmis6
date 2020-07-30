@@ -306,11 +306,6 @@ def save_invoice_form(request,form, template_name):
             invoice.Month=invoice.date.month
             #'Invoice_no', 'date', 'BatchType', 'Description', 'Total_amount', 'document_id',
             invoice.save()
-
-
-
-
-
             data['form_is_valid'] = True
             invoices = Invoice_details.objects.all()
             data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
@@ -417,15 +412,20 @@ def Add_invoice2(request):
     return JsonResponse(data)
 
 
-
+from .auxilaryquery import monthFromDate
 @login_required
 def Delete_invoice(request, pk):
     ivt = get_object_or_404(Invoice_details, pk=pk)
     data = dict()
     if request.method == 'POST':
+        fy=ivt.FinancialYear.id
+        month=monthFromDate(ivt.date)
         ivt.delete()
         data['form_is_valid'] = True
-        invoices = Invoice_details.objects.all()
+        data['fy']=str(fy)
+        data['month']=month
+        invoices = Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+        #invoices = Invoice_details.objects.all()
         data['html_ivt_list'] =render_to_string('pac/includes/invoices/partial_invoices_list.html', {
                 'invoices': invoices
             })
@@ -468,6 +468,7 @@ def save_expenditure_form2(request,form,invoice, template_name):
                 'invoices': invoices
             })
              """
+
             invoices = Expenditure_details.objects.all()
             data['html_ivt_list'] = render_to_string('pac/includes/expenditures/partial_expenditures_list.html', {
                 'invoices': invoices
