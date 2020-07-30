@@ -195,7 +195,7 @@ updateTable(value);
 
 /*binding*/
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
-$(".js-fy-select").change(sort_by_haor)
+//$(".js-fy-select").change(sort_by_haor)
 
 /*
 #################################################################
