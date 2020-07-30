@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pac/static/pac/js/invoice_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/pac/static/pac/js/invoice_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pac/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pac/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +48,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pac/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="-8412">
               <caret line="331" column="35" lean-forward="true" selection-start-line="331" selection-start-column="35" selection-end-line="331" selection-end-column="35" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
@@ -182,7 +179,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.122023806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -281,7 +277,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pac/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
+        <state relative-caret-position="-8412">
           <caret line="331" column="35" lean-forward="true" selection-start-line="331" selection-start-column="35" selection-end-line="331" selection-end-column="35" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
