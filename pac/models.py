@@ -29,14 +29,13 @@ class Budget_allocation(models.Model):
     Dpa= models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
     Rpa= models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
     Total = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-    Dpp_allocation = models.ForeignKey(Dpp_allocation, on_delete=models.SET_NULL, null=True, blank=True)
-    Financial_year = models.ForeignKey(FinancialYear, on_delete=models.SET_NULL, null=True, blank=True)
+    Dpp_allocation = models.ForeignKey(Dpp_allocation, on_delete=models.CASCADE, null=True, blank=True)
+    Financial_year = models.ForeignKey(FinancialYear, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         dppallocation=self.Dpp_allocation
         #return(str(dppallocation.description))
         return (str(self.Dpp_allocation.Ecode)+"_"+str(self.Dpp_allocation.Shortdescription) +"_"+str(self.Financial_year))
-        #return "b1"
 
 class InvoiceImage(models.Model):
     description = models.CharField(max_length=350, blank=True, null=True)

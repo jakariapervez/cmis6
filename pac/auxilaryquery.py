@@ -76,23 +76,6 @@ def displayInvoice(invoice):
     print("Invoice_no={} date={} BatchType={} Description={}".format(invoice.Invoice_no,invoice.date,invoice.BatchType,invoice.Description))
     print("Financial year={}".format(invoice.FinancialYear))                                                                
 
-def displayBudgetAllocation(budgetAllocation):
-    #Gob = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-    #Dpa = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-    #Rpa = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-    #Total = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-    #Dpp_allocation = models.ForeignKey(Dpp_allocation, on_delete=models.SET_NULL, null=True, blank=True)
-    #Financial_year = models.ForeignKey(FinancialYear, on_delete=models.SET_NULL, null=True, blank=True
-    Gob=budgetAllocation.Gob
-    Dpa=budgetAllocation.Dpa
-    Rpa=budgetAllocation.Rpa
-    Total=budgetAllocation.Total
-    Dppitem=budgetAllocation.Dpp_alloication.Shortdescription
-    fy=budgetAllocation.Financial_year
-    print("displaying budget allocation..........")
-    print("gob={} dpa={} rpa={} total={} Dppitem={} fy={}".format(Gob,Dpa,Rpa,Total,Dppitem,fy))
-
-
 
 
 
@@ -100,7 +83,6 @@ def displayBudgetAllocation(budgetAllocation):
 
 def validateExpenditure(exp_form,invoice):
     #print(exp_form)
-
     expenditure=Expenditure_details()
     gob = exp_form.cleaned_data['Gob']
     rpa = exp_form.cleaned_data['Rpa']
@@ -115,12 +97,6 @@ def validateExpenditure(exp_form,invoice):
     expenditure.Rpa = rpa
     expenditure.Total = total
     budget_allocation=exp_form.cleaned_data['Budget_allocation']
-    print("printing budget allocation.....................")
-    print("tyype of budget allocation={}".format(type(budget_allocation)))
-    print(budget_allocation)
-    print("gob={} dpa={} rpa={} total={}".format(budget_allocation.Gob,budget_allocation.Dpa,budget_allocation.Rpa,budget_allocation.Total))
-    #displayBudgetAllocation(budget_allocation)
-
     economicCode=budget_allocation.Dpp_allocation.Ecode
     print("Economic code={} description={}".format(economicCode,budget_allocation.Dpp_allocation.Description))
     expenditure.Budget_allocation =budget_allocation
@@ -146,11 +122,13 @@ def validateExpenditure(exp_form,invoice):
 
     validity=checkCumulative(myyear,economicCode,expenditure,budget_allocation)
     invoice_total = getInvoiceTotal(myyear,invoice)
-    invoice_total=invoice_total+float(total)
+    invoice_total=invoice_total+float(expenditure.Total)
     print("Expenditure={} Cumtotal={}".format(validity['isValid'],validity['Total']))
-
+    #myyear = financialYearFromDate(expenditure.date)
+    fy = financialYearFromDate(expenditure.date)
+    month = monthFromDate(expenditure.date)
     #isValid=checkCumulative(myyear,expenditure)
-    return {'expenditure': expenditure, 'validity': validity['isValid'], 'cumtotal':invoice_total }
+    return {'expenditure': expenditure, 'validity': validity['isValid'], 'cumtotal':invoice_total,'fyear':fy,'month':month }
 
     #return {'expenditure':expenditure,'validity':validity['isValid'],'cumtotal':validity['Total']}
 def validateExpenditureEditForm(exp_form,expenditure):
@@ -160,7 +138,6 @@ def validateExpenditureEditForm(exp_form,expenditure):
     total = gob + dpa + rpa
     print("GoB={} DPA={} RPA={} Total={}".format(gob, dpa, rpa, total))
     budget_allocation = expenditure.Budget_allocation
-    displayBudgetAllocation(budget_allocation)
     invoice = expenditure.Invoice_details
     if budget_allocation.Total>=total:
         isValid=True
@@ -180,6 +157,8 @@ def validateExpenditureEditForm(exp_form,expenditure):
         isValid=False
     myyear = financialYearFromDate(invoice.date)
     fy=financialYearFromDate(invoice.date)
+    month=monthFromDate(invoice.date)
+
     economicCode=expenditure.Budget_allocation.Dpp_allocation.Ecode
     cumulative = getCumulative(fy, economicCode)
     cumulative['Gob']=cumulative['Gob']-expenditure.Gob+gob

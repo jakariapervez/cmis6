@@ -226,7 +226,6 @@ def Invoice_image_upload2(request):
             month=monthFromDate(form.cleaned_data['date'])
             print("month={}".format(month))
             invoice.Month=month
-            invoice.Total_amount=0.0
             invoice.save()
             return redirect('invoice_index')
             #return redirect('create_invoice')
@@ -536,17 +535,26 @@ def Add_Expenditure(request,pk):
             print("isvalid={} cumTotal={}".format(myexpenditure['validity'],myexpenditure['cumtotal']))
             expenditure=myexpenditure['expenditure']
             cumTotal=myexpenditure['cumtotal']
+            month=myexpenditure['month']
+            fy=myexpenditure['fyear']
             if myexpenditure['validity']:
                 expenditure.save()
                 #Invoice_details.objects.filter(pk=pk).update(Total=cumTotal)
                 #Expenditure_details.objects.filter(pk=pk).update(Total=cumTotal)
+                #previous_total=float(invoice.Total_amount)
+                #invoice.Total_amount=cumTotal+previous_total
                 invoice.Total_amount=cumTotal
                 invoice.save()
                 data['form_is_valid'] = True
                 #invoice.save()
-                invoices = Invoice_details.objects.all()
+                data['month'] = month
+                #data['fy'] =str( fy)
+                data['fy']=fy.id
+                invoices = Invoice_details.objects.all().filter(FinancialYear=fy,Month=month)
                 data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
                 'invoices': invoices })
+                print("year_id={} month={}".format(fy.id,month))
+
                 #return redirect(expenditure_list)
                 #return JsonResponse(data)
             #expenditure.save()
