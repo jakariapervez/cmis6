@@ -37,7 +37,7 @@ $(function () {
   };
 
   var saveForm = function () {
-	  var value=$("#haor-sort").children(":selected").attr("data-url");
+	var value=$("#haor-sort").children(":selected").attr("data-url");
     var form = $(this);
 	var fy
 	var month
@@ -168,6 +168,7 @@ function updateTable(target_url)
 		  console.log("Intervention data is Valid")
           $("#ivt-table tbody").html(data.html_ivt_list);
           $("#modal-ivt").modal("hide");
+		  
         
         
       }
@@ -246,6 +247,31 @@ var sort_by_all =function (){
 	
 	console.log("FY="+fy+"month="+month)
     updateTable3(value,fy,month);	
+	
+};
+var saveDeleteForm4= function ()
+{
+	 var value=$("#haor-sort").children(":selected").attr("data-url");
+    var form = $(this);
+	var fy
+	var month
+	$.ajax({
+	  url: form.attr("action"),
+      data: form.serialize(),
+      type: form.attr("method"),
+      dataType: 'json',
+	  sucess:function (data) 
+	  {
+		 $("#modal-ivt").modal("hide"); 
+		 $("#fy-select").val(fy);
+		 $("#month-select").val(month)
+		  
+	  }
+		
+		
+		
+		
+	})
 	
 };
 /* Binding */

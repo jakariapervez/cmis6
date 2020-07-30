@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pac/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pac/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pac/static/pac/js/invoice_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/pac/static/pac/js/invoice_list.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pac/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-765">
-              <caret line="420" column="31" lean-forward="true" selection-start-line="420" selection-start-column="31" selection-end-line="420" selection-end-column="31" />
+            <state relative-caret-position="1941">
+              <caret line="427" column="49" selection-start-line="427" selection-start-column="49" selection-end-line="427" selection-end-column="49" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -253,8 +253,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pac/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
-          <caret line="420" column="31" lean-forward="true" selection-start-line="420" selection-start-column="31" selection-end-line="420" selection-end-column="31" />
+        <state relative-caret-position="1941">
+          <caret line="427" column="49" selection-start-line="427" selection-start-column="49" selection-end-line="427" selection-end-column="49" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
