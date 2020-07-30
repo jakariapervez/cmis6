@@ -50,6 +50,7 @@ $(function () {
         if (data.form_is_valid) {
 		  console.log("Intervention data is Valid")
 		  $("#modal-ivt").modal("hide");
+
          // $("#ivt-table tbody").html(data.html_ivt_list);
           fy=data.fy
 		  month=data.month		  
@@ -58,6 +59,7 @@ $(function () {
 		  $("#ivt-table tbody").html(data.html_ivt_list);
 		  $("#fy-select").val(fy)
 		  $("#month-select").val(month)
+
 		  /*updateTable(value);*/
 		  //console.log("initiating second ajax request for sorting table data");
 		  
@@ -69,7 +71,11 @@ $(function () {
       }
     });
 	//target_url=
+
 	//sort_by_all()
+
+	//sort_by_all()
+
 	
 	
     return false;
@@ -255,10 +261,15 @@ var sort_by_all =function (){
   // Delete Invoice
   $("#ivt-table").on("click", ".js-delete-ivt", loadForm);
   $("#modal-ivt").on("submit", ".js-ivt-delete-form", saveForm2);
+
+
+
   
   //Add Expenditure Function
   $("#ivt-table").on("click", ".js-create-Expenditure", loadForm);  
    $("#modal-ivt").on("submit", ".js-expenditure-create-form", saveForm);
+
+
 
 /*binding*/
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
