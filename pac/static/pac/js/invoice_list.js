@@ -278,7 +278,7 @@ var saveDeleteForm4= function ()
 
   // Create Invoice
   $(".js-create-ivt").click(loadForm);
-  $("#modal-ivt").on("submit", ".js-ivt-create-form", saveForm3);
+  $("#modal-ivt").on("submit", ".js-ivt-create-form", saveForm);
 
   // Update Invoice
   $("#ivt-table").on("click", ".js-update-ivt", loadForm);

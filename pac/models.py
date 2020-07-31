@@ -45,6 +45,10 @@ class InvoiceImage(models.Model):
 
     def __str__(self):
         return f'{self.description}'
+    def delete(self,*args,**kwargs):
+        self.invoice_image.delete()
+        super(InvoiceImage, self).delete(*args,**kwargs)
+
 
 
 

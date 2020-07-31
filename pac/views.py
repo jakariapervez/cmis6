@@ -302,12 +302,20 @@ def save_invoice_form(request,form, template_name):
             invoice.Description=form.cleaned_data['Description']
             invoice.Total_amount=0.0
             invoice.document_id=form.cleaned_data['document_id']
-            invoice.FinancialYear=financialYearFromDate(invoice.date)
+            fy=financialYearFromDate(invoice.date)
+            month=monthFromDate(invoice.date)
+            invoice.FinancialYear=fy
             invoice.Month=invoice.date.month
+
+            data['fy'] = str(fy)
+            data['month'] = month
+
+            invoices = Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+
             #'Invoice_no', 'date', 'BatchType', 'Description', 'Total_amount', 'document_id',
             invoice.save()
             data['form_is_valid'] = True
-            invoices = Invoice_details.objects.all()
+            #invoices = Invoice_details.objects.all()
             data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
                 'invoices': invoices
             })
@@ -353,6 +361,7 @@ def save_invoice_form3(request,form, template_name):
             image.uploaded_date = form.cleaned_data['uploaded_date']
             image.description = form.cleaned_data['description']
             image.save()
+
             data['form_is_valid'] = True
             invoices = Invoice_details.objects.all()
             data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
@@ -447,6 +456,8 @@ def Delete_invoice(request, pk):
     if request.method == 'POST':
         fy=ivt.FinancialYear.id
         month=monthFromDate(ivt.date)
+        document=ivt.document_id
+        document.delete()
         ivt.delete()
         data['form_is_valid'] = True
         data['fy']=str(fy)
