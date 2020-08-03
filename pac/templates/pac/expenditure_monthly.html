@@ -41,6 +41,7 @@
   <h5>Expenditures</h5>
   <div class="dropdown-content">
   <a class="dropdown-item financiallink" href="{% url 'invoice_index' %}"><i class="fas fa-money-bill-alt"></i>Invoice List</a>
+  <a class="dropdown-item reportlink js-view-report-event" href="{% url 'expenditure_index' %}"><i class="fas fa-book"></i>Expenditure List</a>
   <a class="dropdown-item reportlink js-view-report-event" href="{% url 'pac_index' %}"><i class="fas fa-book"></i>Project Accounting</a>
   </div>
     <div class="dropdown-divider"></div>
@@ -98,22 +99,38 @@
     <thead class="thead-dark">
 	 
       <tr>
-		<th>Date</th>
-		<th>Batch No</th>
-        <th>Item Code</th> 
-        <th>Description</th>		
-		<th>GoB</th>
-		<th>RPA</th>
-        <th>DPA</th>
-		<th>Total</th>
-		<th>Edit</th>
-		<th>Delete</th>
-		
-        	
+		<th>Code</th>
+		<th>Description</th>
+		<!-- Writing Budget Allocation --->
+        <th >B_Gob</th>
+		<th >B_RPA</th>
+		<th>B_DPA</th>
+		<th>B_Total</th>
+		<!-- Writing Expenditure Upto Previous Month --->
+		<th >PM_Gob</th>
+		<th >PM_RPA</th>
+		<th>PM_DPA</th>
+		<th>PM_Total</th> 
+		<!-- Writing Expenditure of the current month --->
+		<th >CM_Gob</th>
+		<th >CM_RPA</th>
+		<th>CM_DPA</th>
+		<th>CM_Total</th>
+		<!-- Cumulative Expenditure upto current month --->
+		<th >TEC_Gob</th>
+		<th >TEC_RPA</th>
+		<th>TEC_DPA</th>
+		<th>TEC_Total</th>		
+		<!-- Remaining Budget --->
+		<th >RMB_Gob</th>
+		<th >RMB_RPA</th>
+		<th>RMB_DPA</th>
+		<th>RMB_Total</th> 
+              	
       </tr>
     </thead>
 	<tbody>    
-	{% include 'pac/includes/expenditures/partial_expenditures_list.html' %}
+	{% include 'pac/includes/monthly/partial_monthly_expenditure.html' %}
   </tbody>
 
 </table>
@@ -169,7 +186,7 @@
 <script src="{% static 'js/dashboard.js' %}" ></script>
 <!-- Expenditure list Java Script -->
 <!-- <script src="{% static 'pac/js/expenditure_list.js'  %}"></script> -->
-<script src="{% static 'pac/js/expenditure_list.js'  %}"></script>
+<script src="{% static 'pac/js/monthly_expenditure_list.js'  %}"></script>
   
 {% endblock %}
 {% block localscript %}

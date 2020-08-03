@@ -8,6 +8,13 @@ import datetime
 #dpp allocation................................................................................
 ...........................................................................................
 """
+@login_required
+def accounts_index(request):
+    dppitems = Dpp_allocation.objects.all()
+    return render(request, 'pac/accounts_dashboard.html', {'dppitems': dppitems})
+
+
+
 def index(request):
     #now=datetime.datetime.now()
     #html="<html><body> It is now %s </body></html>"%now
@@ -385,6 +392,77 @@ def Edit_invoice(request,pk):
     else:
         form = Invoice_details_Forms(instance=ivt)
     return save_invoice_form2(request, form, 'pac/includes/invoices/partial_ivt_update.html')
+from .forms import InvoiceDocEditForm
+from .forms import InvoiceImageForm
+
+def Edit_invoice_doc(request,pk):
+    invoice=get_object_or_404(Invoice_details,pk=pk)
+    initial_doc=invoice.document_id
+    data=dict()
+
+    if request.method=="POST":
+        print("sucessfully traped post method.....")
+        print(request.POST)
+        print(request.FILES)
+        form=InvoiceDocEditForm(request.POST,request.FILES)
+        print(form.errors.as_data())
+        if form.is_valid():
+            image = InvoiceImage()
+            image.invoice_image = form.cleaned_data['invoice_image']
+            image.issuing_date = invoice.date
+            image.description = invoice.Description
+            initial_doc.delete()
+            image.save()
+            invoice.document_id = image
+            invoice.save()
+            fy = invoice.FinancialYear.id
+            month = monthFromDate(invoice.date)
+            data['form_is_valid'] = True
+            data['fy'] = str(fy)
+            data['month'] = month
+            invoices = Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+            data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
+                'invoices': invoices
+            })
+
+            print("form is valid")
+        else:
+            print("from is not valid....")
+
+
+        """" 
+        
+            image = InvoiceImage()
+            image.invoice_image = form.cleaned_data['invoice_doc ']
+            image.issuing_date = invoice.date
+            image.description = invoice.Description
+            image.save()
+            #form.save()
+            invoice.document_id=image
+            invoice.save()
+            
+            
+            
+            fy=invoice.FinancialYear.id
+            month=monthFromDate(invoice.date)
+            data['form_is_valid'] = True
+            data['fy'] = str(fy)
+            data['month'] = month
+            invoices = Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+            data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
+                'invoices': invoices
+            })
+        else:
+            print("form is not valid.....")
+            print(form.errors)
+            data['form_is_valid'] = False
+     """
+    else:
+        form = InvoiceDocEditForm()
+        context = {'invoice': invoice,'form':form}
+        data['html_form'] = render_to_string('pac/includes/invoices/partial_ivt_doc_update.html', context, request=request)
+    return JsonResponse(data)
+
 
 def Edit_invoice2(request, pk):
     ivt = get_object_or_404(Invoice_details, pk=pk)
@@ -511,9 +589,6 @@ def save_expenditure_form2(request,form,invoice, template_name):
             data['html_ivt_list'] = render_to_string('pac/includes/expenditures/partial_expenditures_list.html', {
                 'invoices': invoices
             })
-
-
-
         else:
             data['form_is_valid'] = False
         context = {'form': form,'invoice':invoice}
@@ -862,3 +937,23 @@ def list_DPP_Intervention(request):
     
     #return HttpResponse(html)
 """
+""""
+This parts deals with expentiture reporting
+"""
+import datetime
+from .auxilaryquery import createMonthlyReportItems
+def MonthlyExpenditure(request):
+    mydate=datetime.datetime(2020,6,29)
+    fy = financialYearFromDate(mydate)
+    print(fy)
+    #Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+    buddget_allocation=Budget_allocation.objects.all().filter(Financial_year=fy).order_by('Report_serial')
+    report_items=createMonthlyReportItems(buddget_allocation,fy,4)
+    #buddget_allocation = Budget_allocation.objects.all()
+    dppitems = Dpp_allocation.objects.all()
+    invoices = Expenditure_details.objects.all()
+    fyears = FinancialYear.objects.all()
+    months = ["ALL", 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+    return render(request, 'pac/expenditure_monthly.html',
+                  {'invoices': invoices, 'fyears': fyears, 'dppitems': dppitems, 'months': months,
+                   'budgets': buddget_allocation,'ritems':report_items})

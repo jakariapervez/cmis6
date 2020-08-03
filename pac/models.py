@@ -31,6 +31,7 @@ class Budget_allocation(models.Model):
     Total = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
     Dpp_allocation = models.ForeignKey(Dpp_allocation, on_delete=models.CASCADE, null=True, blank=True)
     Financial_year = models.ForeignKey(FinancialYear, on_delete=models.CASCADE, null=True, blank=True)
+    Report_serial=models.IntegerField(null=True,blank=True)
 
     def __str__(self):
         dppallocation=self.Dpp_allocation

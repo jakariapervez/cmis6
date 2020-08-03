@@ -61,7 +61,9 @@ INSTALLED_APPS = [
     'boards.apps.BoardsConfig',
     'accounts.apps.AccountsConfig',
     'progress.apps.ProgressConfig',
-    'pac.apps.PacConfig'
+    'pandas',
+    'pac.apps.PacConfig',
+
 ]
 
 MIDDLEWARE = [

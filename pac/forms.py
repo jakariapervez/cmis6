@@ -15,6 +15,14 @@ class InvoiceImageForm(forms.ModelForm):
     class Meta:
         model = InvoiceImage
         fields = ('description', 'invoice_image','issuing_date', 'uploaded_date',)
+
+
+
+
+
+
+
+
 from .models import Invoice_details
 
 class Invoice_details_Forms(forms.ModelForm):
@@ -40,7 +48,7 @@ class Expenditure_details_Forms(forms.ModelForm):
 class Expenditure_details_Edit_Forms(forms.ModelForm):
     class Meta:
         model=Expenditure_details
-        fields=('Gob','Dpa','Rpa' )
+        fields=('Gob','Dpa','Rpa','Budget_allocation' )
 """    
 class DocumentForm(forms.ModelForm):
     class Meta:
@@ -114,6 +122,16 @@ class AddInvoiceFormCombined(forms.ModelForm):
         fields=('BatchType','Description','date')
         labels={'BatchType':_('Bath No'),'Description':_('Batch Description'),'date':_('Payment Date')}
         #fields = ('description', 'invoice_image','issuing_date', 'uploaded_date',)
+
+class InvoiceDocEditForm(forms.ModelForm):
+    class Meta:
+        model = InvoiceImage
+        fields = ('invoice_image',)
+    def clean_invoice_image(self):
+        invoice_image=self.cleaned_data['invoice_image']
+        return invoice_image
+
+
 
 
 

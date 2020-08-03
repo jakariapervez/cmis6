@@ -2,7 +2,7 @@ from django.urls import path,re_path
 from django.conf.urls import url
 from . import views
 urlpatterns=[
-    url(r'^$',views.index,name='pac_index'),
+    url(r'^$',views.accounts_index,name='pac_index'),
     url('^dpp_allocation/(?P<pk>\d+)/update/$',views.update_DPP_Allocation,name='dpp_allocation_update'),
     url('^dpp_allocation/(?P<pk>\d+)/delete/$',views.delete_DPP_Allocation,name='dpp_allocation_delete'),
     url('^dpp_allocation/create/$', views.create_DPP_Allocation, name='dpp_allocation_create'),
@@ -15,6 +15,7 @@ urlpatterns=[
     url('^upload_invoice_image',views.Invoice_image_upload2,name='upload_invoice_image'),
     url('^invoice_index',views.invoice_list,name='invoice_index'),
     url('^invoice/(?P<pk>\d+)/update/$',views.Edit_invoice,name='update_invoice'),
+    url('^invoice/(?P<pk>\d+)/doc/update/$',views.Edit_invoice_doc,name='update_invoice_doc'),
     url('^invoice/(?P<pk>\d+)/delete/$',views.Delete_invoice,name='delete_invoice'),
     url('^invoice/add/$',views.Add_invoice,name='create_invoice'),
     url('^invoice/add2/$',views.Add_invoice2,name='create_invoice2'),
@@ -34,5 +35,7 @@ urlpatterns=[
     url('^expenditure/report/$',views.progressReport,name='progress_report'),
     #PD Dash Board for financial progress
     url('^financial/progress/category/$',views.dashboardCategory,name="dashboard_category"),
+    url('^report/expenditure/monthly/$', views.MonthlyExpenditure, name="monthly_expenditure"),
+
 
 ]

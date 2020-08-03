@@ -81,6 +81,71 @@ $(function () {
     return false;
   };
 
+  var saveInvoiceDocForm = function () {
+	var value=$("#haor-sort").children(":selected").attr("data-url");
+	
+    var form = $(this);
+	var form2=$("form").get(0)
+	var fy
+	var month
+	fd=new FormData(form2)
+	//file=$("#id_invoice_image")[0].files[0]
+	//fd.append('file':file)
+	
+	//console.log(file)
+	//console.log(form)
+	//console.log($("#id_invoice_image")[0].files[0])
+	//var fd=new FormData($("#invoice-doc-update").get[])
+	//formData.append('file', $('input[type=file]')[0].files[0]);
+	//$("#invoice-doc-update")
+	//console.log(fd)
+    $.ajax({
+      url: form.attr("action"),
+	  contentType: false,
+		processData: false,
+      //data: form.serialize(),
+	  data:fd,
+      type: form.attr("method"),
+      dataType: 'json',
+      success: function (data) {
+        if (data.form_is_valid) {
+		  console.log("Intervention data is Valid")
+		  $("#modal-ivt").modal("hide");
+
+         // $("#ivt-table tbody").html(data.html_ivt_list);
+          fy=data.fy
+		  month=data.month		  
+		  console.log("Updating Invoice doc was sucessful...")
+		  $("#ivt-table tbody").html("");
+		  $("#ivt-table tbody").html(data.html_ivt_list);
+		  $("#fy-select").val(fy)
+		  $("#month-select").val(month)
+
+		  /*updateTable(value);*/
+		  //console.log("initiating second ajax request for sorting table data");
+		  
+        }
+        else {
+		  console.log("Intervention data is InValid")
+          $("#modal-ivt .modal-content").html(data.html_form);
+        }
+      }
+    });
+	//target_url=
+
+	//sort_by_all()
+
+	//sort_by_all()
+
+	
+	
+    return false;
+  };
+
+
+
+
+
     var saveForm2 = function () {
 	  var value=$("#haor-sort").children(":selected").attr("data-url");
     var form = $(this);
@@ -288,8 +353,10 @@ var saveDeleteForm4= function ()
   $("#ivt-table").on("click", ".js-delete-ivt", loadForm);
   $("#modal-ivt").on("submit", ".js-ivt-delete-form", saveForm);
 
-
-
+  // Update Invoice Doc  
+    $("#ivt-table").on("click", ".js-update-ivt-doc", loadForm);
+	$("#modal-ivt").on("submit",".js-ivt-update-doc-form",saveInvoiceDocForm )
+	
   
   //Add Expenditure Function
   $("#ivt-table").on("click", ".js-create-Expenditure", loadForm);  

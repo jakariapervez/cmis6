@@ -38,14 +38,18 @@
     {% include 'includes/progress_dropdown.html' %}
   </div> -->
   <div class="dropdown-divider"></div>
-  <h5>Expenditure Entry</h5>
+  <h5>Invoices</h5>
   
   <div class="dropdown-divider"></div>
   <a class="dropdown-item reportlink js-view-report-event" href="{% url 'expenditure_index' %}"><i class="fas fa-book"></i>Expenditure List</a>
 
   <div class="dropdown-divider"></div>
   <a class="dropdown-item reportlink js-view-report-event" href="{% url 'pac_index' %}"><i class="fas fa-book"></i>Project Accounting</a>
-  
+   <div class="dropdown-divider"></div>
+  <h5>User Authentication</h5>
+  <div class="dropdown-conten"> 
+  <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-money-bill"></i>Logout</a>
+  </div>
 
   
   
@@ -100,6 +104,7 @@
 		<th>Invoice_Documents</th>
         <th>Edit Inv</th>
 		<th>Delete Inv</th>
+		<th>Edit Inv Doc</th>
 		<th>Add Exp</th>
 		
         	
