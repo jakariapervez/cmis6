@@ -320,9 +320,13 @@ var buildName =function (fy,month)
 {
 years=["2014_15","2015_16","2016_17","2017_18","2018_19","2019_20","2020_21","2021_22"]
 months=["January","February","March","April","May","June","July","Agust","September","October","November","December"]
+mydate=new Date()
+ts=mydate.valueOf()
 fy1=years[fy-1]
 month1=months[month-1]
-filename="Report_"+fy1+"_"+month1+".pdf"
+filename="Report_"+fy1+"_"+month1+ "_"+ts+".pdf"
+
+
 return filename	
 }
 
