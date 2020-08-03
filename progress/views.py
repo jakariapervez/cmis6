@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 #from django.contrib.auth.models import
 # Create your views here.
 from .models import Contract
+
 @login_required
 def siteHome(request):
     user=request.user

@@ -224,7 +224,7 @@ class MonthlyReportItem:
         self.rpa_cm = 0.0
         self.dpa_cm = 0.0
         self.total_cm = 0.0
-        """Expenditue upto total month"""
+        """Expenditue upto current month"""
         self.gob_cmt = 0.0
         self.rpa_cmt = 0.0
         self.dpa_cmt = 0.0
@@ -239,6 +239,23 @@ class MonthlyReportItem:
         self.rpa_cm = rpa
         self.dpa_cm = dpa
         self.total_cm = total
+    def setPreviousMonthExpenditure(self,gob,rpa,dpa,total):
+        self.gob_pm = round(gob,2)
+        self.rpa_pm = round(rpa,2)
+        self.dpa_pm = round(dpa,2)
+        self.total_pm = round(total,2)
+    def calCulateTotalUptoMonth(self):
+        self.gob_cmt =  self.gob_pm+self.gob_cm
+        self.rpa_cmt = self.rpa_pm+self.rpa_cm
+        self.dpa_cmt = self.dpa_pm+self.dpa_cm
+        self.total_cmt =self.total_pm+self.total_cm
+    def  calCulateRemainingBudget(self):
+        self.gob_rm =self.gob_allocation-self.gob_cmt
+        self.rpa_rm = self.rpa_allocation-self.rpa_cmt
+        self.dpa_rm = self.dpa_allocation-self.dpa_cmt
+        self.total_rm =self.total_allocation-self.total_cmt
+
+
 
 
         """"   
@@ -319,8 +336,10 @@ def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_tota
     for i in  range(2,monthindex):
         pm_gob=pm_gob+myframe_gob.iloc[dataIndex,i]
         pm_rpa=pm_rpa+myframe_rpa.iloc[dataIndex,i]
-        pm_dpa=pm_gob+myframe_dpa.iloc[dataIndex,i]
-        pm_total=pm_gob+myframe_total.iloc[dataIndex,i]
+        pm_dpa=pm_dpa+myframe_dpa.iloc[dataIndex,i]
+        pm_total=pm_total+myframe_total.iloc[dataIndex,i]
+    pmexpenditure={"pm_gob":pm_gob,'pm_rpa':pm_rpa,'pm_dpa':pm_dpa,'pm_total':pm_total }
+    return pmexpenditure
 
 
 
@@ -350,6 +369,14 @@ def createMonthlyReportItems(budgets,fy,month):
         dpa_cm=round(monthly_dpa.iloc[index,month_index],2)
         total_cm=round(monthly_total.iloc[index,month_index],2)
         ri.setCurrentMonthExpenditure(gob_cm,rpa_cm,dpa_cm,total_cm)
+        """calculating previous month expenditure"""
+        pmexpenditure=caclculateExpenditureUptoPM(monthly_gob,monthly_rpa,monthly_dpa, monthly_total,index,month_index)
+        pmexpenditure['pm_gob']
+        ri.setPreviousMonthExpenditure( pmexpenditure['pm_gob'], pmexpenditure['pm_rpa'], pmexpenditure['pm_dpab'], pmexpenditure['pm_total'])
+        ri.calCulateTotalUptoMonth()
+        ri.calCulateRemainingBudget()
+        print(pmexpenditure)
+
         #print("index={} description={}".format(index,description))
         report_items.append(ri)
         #disPlayTotalExpenditure(budget,6)
