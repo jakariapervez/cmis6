@@ -36,6 +36,8 @@ urlpatterns=[
     #PD Dash Board for financial progress
     url('^financial/progress/category/$',views.dashboardCategory,name="dashboard_category"),
     url('^report/expenditure/monthly/$', views.MonthlyExpenditure, name="monthly_expenditure"),
+    url('^report/expenditure/monthly/yearwise/$', views.MonthlyExpenditureYearwise, name="monthly_expenditure_yearwise"),
+
 
 
 ]

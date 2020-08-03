@@ -354,7 +354,7 @@ def createMonthlyReportItems(budgets,fy,month):
     report_items=[]
     #month=6
     myExpenditureDf=createMonthlyExpenditureDF()
-    print(monthly_gob)
+    #print(monthly_gob)
     code_list=list(monthly_gob.iloc[:,1])
     months = [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
     month_index = months.index(month) + 2
@@ -372,10 +372,10 @@ def createMonthlyReportItems(budgets,fy,month):
         """calculating previous month expenditure"""
         pmexpenditure=caclculateExpenditureUptoPM(monthly_gob,monthly_rpa,monthly_dpa, monthly_total,index,month_index)
         pmexpenditure['pm_gob']
-        ri.setPreviousMonthExpenditure( pmexpenditure['pm_gob'], pmexpenditure['pm_rpa'], pmexpenditure['pm_dpab'], pmexpenditure['pm_total'])
+        ri.setPreviousMonthExpenditure( pmexpenditure['pm_gob'], pmexpenditure['pm_rpa'], pmexpenditure['pm_dpa'], pmexpenditure['pm_total'])
         ri.calCulateTotalUptoMonth()
         ri.calCulateRemainingBudget()
-        print(pmexpenditure)
+        #print(pmexpenditure)
 
         #print("index={} description={}".format(index,description))
         report_items.append(ri)

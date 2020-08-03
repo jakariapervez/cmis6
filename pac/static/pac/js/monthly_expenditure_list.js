@@ -351,12 +351,45 @@ columnStyles: {0: {columnWidth:1},1: {columnWidth:2},}
 doc.save("Report.pdf");
 	
 }
+/*Functions for sorting monthly data table*/
+var monthlyExpenditureSelect=function ()
+{
+console.log("Sucessfully Triggered Monthly Expenditure Creation......")	
+fy=$("#fy-select").children(":selected").attr("value")
+month=$("#fy-select").children(":selected").attr("value")
+console.log("fy="+fy+"month="+month)
+target_url=$(this).attr("data-url")
+console.log("url="+target_url)
+$.ajax({
+      url: target_url,      
+      type: 'get',
+      dataType: 'json',
+	  data:{'fy':fy,'month':month},
+	  beforeSend: function () {
+		console.log("Sending Ajax request calculating monthly report...");
+		//console.log(data)
+		$("#ivt-table tbody").html("");
+        
+      },
+      success: function (data) {
+         
+		  console.log("Intervention data is Valid")
+          $("#ivt-table tbody").html(data.html_ivt_list);
+          $("#modal-ivt").modal("hide");
+        
+        
+      }
+    })
+
+} 
+
 /*binding*/
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
 //$(".js-fy-select").change(sort_by_haor)
 //$(".js-month-select").change(sort_by_haor)
 //$(".js-code-select").change(sort_by_haor)
-$(".js-sort-all").click(sort_by_all);
+//$(".js-sort-all").click(sort_by_all);
 //$(".js-report").click(generteReport)
+$(".js-sort-all").click(monthlyExpenditureSelect)
 $(".js-report").click(generateReport3)
 });

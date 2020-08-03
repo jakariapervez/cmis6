@@ -943,17 +943,58 @@ This parts deals with expentiture reporting
 import datetime
 from .auxilaryquery import createMonthlyReportItems
 def MonthlyExpenditure(request):
+    data=dict()
     mydate=datetime.datetime(2020,6,29)
-    fy = financialYearFromDate(mydate)
-    print(fy)
+    fy=financialYearFromDate(mydate)
+    month=monthFromDate(mydate)
+    print(request)
+    #fy = financialYearFromDate(mydate)
+    #year_id = request.GET['fy']
+    #month_value = request.GET['month']
+    #print(year_id)
+    #print(month_value)
+    #print(fy)
+    #data['fy']=year_id
+    #data['month']=month_value
     #Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
     buddget_allocation=Budget_allocation.objects.all().filter(Financial_year=fy).order_by('Report_serial')
-    report_items=createMonthlyReportItems(buddget_allocation,fy,4)
+    report_items=createMonthlyReportItems(buddget_allocation,fy,month)
     #buddget_allocation = Budget_allocation.objects.all()
     dppitems = Dpp_allocation.objects.all()
     invoices = Expenditure_details.objects.all()
     fyears = FinancialYear.objects.all()
     months = ["ALL", 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+
     return render(request, 'pac/expenditure_monthly.html',
                   {'invoices': invoices, 'fyears': fyears, 'dppitems': dppitems, 'months': months,
                    'budgets': buddget_allocation,'ritems':report_items})
+
+    #return JsonResponse(data)
+
+def MonthlyExpenditureYearwise(request):
+    data = dict()
+    mydate = datetime.datetime(2020, 6, 29)
+    fy = financialYearFromDate(mydate)
+    month = monthFromDate(mydate)
+    print(request)
+    # fy = financialYearFromDate(mydate)
+    year_id = request.GET['fy']
+    month_value = request.GET['month']
+    print(year_id)
+    print(month_value)
+    print(fy)
+    data['fy'] = year_id
+    data['month'] = month_value
+    # Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+    buddget_allocation = Budget_allocation.objects.all().filter(Financial_year=fy).order_by('Report_serial')
+    report_items = createMonthlyReportItems(buddget_allocation, fy, month)
+    # buddget_allocation = Budget_allocation.objects.all()
+    dppitems = Dpp_allocation.objects.all()
+    invoices = Expenditure_details.objects.all()
+    fyears = FinancialYear.objects.all()
+    months = ["ALL", 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+
+
+
+    return JsonResponse(data)
+

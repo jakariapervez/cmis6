@@ -81,9 +81,9 @@
 <!-- Expenditure sort -->
 {% include 'pac/includes/expenditures/fy_select.html' %}
 {% include 'pac/includes/expenditures/month_select.html' %}
-{% include 'pac/includes/expenditures/code_select.html' %}
+<!--{% include 'pac/includes/expenditures/code_select.html' %} -->
 <!-- Expenditure Navigation Buttons -->
- <button type="button" class="btn btn-primary btn-md js-sort-all" data-url="{% url 'expenditure_sort'%}">				
+ <button type="button" class="btn btn-primary btn-md js-sort-all" data-url="{% url 'monthly_expenditure_yearwise'%}">				
 							 
 						<span class="glyphicon glyphicon-pencil"></span>Sort
 					  </button>
@@ -92,7 +92,7 @@
 						<span class="glyphicon glyphicon-pencil"></span>Print
 					  </button>
 
- <a class="btn btn-primary" href="{% url 'invoice_index' %}"><i class="fas fa-money-bill-alt"></i>Create Expenditure</a>					  
+ 				  
 <!-- Expenditure Table -->
 <div id="customers">				  				  
 <table class="table table-bordered table-striped  table-hover" id="ivt-table">
