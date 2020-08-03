@@ -315,9 +315,25 @@ doc.autoTable({
 doc.save("Report.pdf");
 
 }
+//builiding report name from data
+var buildName =function (fy,month)
+{
+years=["2014_15","2015_16","2016_17","2017_18","2018_19","2019_20","2020_21","2021_22"]
+months=["January","February","March","April","May","June","July","Agust","September","October","November","December"]
+fy1=years[fy-1]
+month1=months[month-1]
+filename="Report_"+fy1+"_"+month1+".pdf"
+return filename	
+}
+
 var generateReport3= function () 
 {
 console.log("sucessfully intitiated reporot generations....")
+fy=$("#fy-select").children("option:selected").val();
+month=$("#month-select").children("option:selected").val();
+//filename2="Report_"+fy+"_"+month+".pdf"
+//alert(filename2)
+//filename="Report_2019_20_7.pdf"
 var doc = new jsPDF('l','in',[16.5,11.7]);
 
 var heading=[['Code','Description','B_GoB','B_RPA','B_DPA','B_Total',
@@ -346,9 +362,11 @@ bodyStyles:{fillColor: [216, 216, 216],textColor:50,fontSize:9,},
 columnStyles: {0: {columnWidth:1},1: {columnWidth:2},}
 })
 
-
+//filename="report_"+fy+"_"+month+".pdf"
+//alert(filename)
 //doc.autoTable({html:"#ivt-table",theme: 'grid',});
-doc.save("Report.pdf");
+filename= buildName(fy,month)
+doc.save(filename);
 	
 }
 /*Functions for sorting monthly data table*/
@@ -373,9 +391,13 @@ $.ajax({
       },
       success: function (data) {
          
-		  console.log("Intervention data is Valid")
-          $("#ivt-table tbody").html(data.html_ivt_list);
-          $("#modal-ivt").modal("hide");
+		  console.log("Expenditure list is valid......")
+		  fy=data.fy
+		  month=data.month
+          $("#ivt-table tbody").html(data.expenditure_list);
+		  //$("#fy-select").val(fy)
+		  //$("#month-select").val(month)
+          //$("#modal-ivt").modal("hide");
         
         
       }

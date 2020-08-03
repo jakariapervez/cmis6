@@ -973,21 +973,29 @@ def MonthlyExpenditure(request):
 
 def MonthlyExpenditureYearwise(request):
     data = dict()
-    mydate = datetime.datetime(2020, 6, 29)
-    fy = financialYearFromDate(mydate)
-    month = monthFromDate(mydate)
-    print(request)
+    #mydate = datetime.datetime(2020, 6, 29)
+    #fy = financialYearFromDate(mydate)
+    #month = monthFromDate(mydate)
+    #print(request)
     # fy = financialYearFromDate(mydate)
     year_id = request.GET['fy']
-    month_value = request.GET['month']
-    print(year_id)
-    print(month_value)
-    print(fy)
-    data['fy'] = year_id
-    data['month'] = month_value
+    month = int(request.GET['month'])
+    #print(year_id)
+    #print(month_value)
+    fy=get_object_or_404(FinancialYear,pk=year_id)
+    #fy2=FinancialYear,get_object_or_404(pk=year_id)
+    #print("fy={} fy from request={}".format(fy,fy2))
+    data['fy'] = str(fy)
+    data['month'] = str(month)
+
     # Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
     buddget_allocation = Budget_allocation.objects.all().filter(Financial_year=fy).order_by('Report_serial')
     report_items = createMonthlyReportItems(buddget_allocation, fy, month)
+    context={'ritems':report_items}
+    expenditure_list = render_to_string('pac/includes/monthly/partial_monthly_expenditure.html',context )
+    print(expenditure_list)
+    data['expenditure_list']=expenditure_list
+    #print(report_items)
     # buddget_allocation = Budget_allocation.objects.all()
     dppitems = Dpp_allocation.objects.all()
     invoices = Expenditure_details.objects.all()
