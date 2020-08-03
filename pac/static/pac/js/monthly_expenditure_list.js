@@ -378,7 +378,7 @@ var monthlyExpenditureSelect=function ()
 {
 console.log("Sucessfully Triggered Monthly Expenditure Creation......")	
 fy=$("#fy-select").children(":selected").attr("value")
-month=$("#fy-select").children(":selected").attr("value")
+month=$("#month-select").children(":selected").attr("value")
 console.log("fy="+fy+"month="+month)
 target_url=$(this).attr("data-url")
 console.log("url="+target_url)

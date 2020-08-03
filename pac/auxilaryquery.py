@@ -333,6 +333,8 @@ def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_tota
     pm_rpa = 0.0
     pm_dpa = 0.0
     pm_total = 0.0
+    months = [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+    print("prevoius month={}".format(monthindex-1))
 
     for i in  range(2,monthindex):
         pm_gob=pm_gob+myframe_gob.iloc[dataIndex,i]
