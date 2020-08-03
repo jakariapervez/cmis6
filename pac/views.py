@@ -993,7 +993,7 @@ def MonthlyExpenditureYearwise(request):
     report_items = createMonthlyReportItems(buddget_allocation, fy, month)
     context={'ritems':report_items}
     expenditure_list = render_to_string('pac/includes/monthly/partial_monthly_expenditure.html',context )
-    print(expenditure_list)
+    #print(expenditure_list)
     data['expenditure_list']=expenditure_list
     #print(report_items)
     # buddget_allocation = Budget_allocation.objects.all()

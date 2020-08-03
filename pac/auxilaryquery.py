@@ -333,6 +333,7 @@ def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_tota
     pm_rpa = 0.0
     pm_dpa = 0.0
     pm_total = 0.0
+
     for i in  range(2,monthindex):
         pm_gob=pm_gob+myframe_gob.iloc[dataIndex,i]
         pm_rpa=pm_rpa+myframe_rpa.iloc[dataIndex,i]
@@ -357,6 +358,7 @@ def createMonthlyReportItems(budgets,fy,month):
     #print(monthly_gob)
     code_list=list(monthly_gob.iloc[:,1])
     months = [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+    print(monthly_gob)
     month_index = months.index(month) + 2
     #print(code_list)
     for budget in budgets:
