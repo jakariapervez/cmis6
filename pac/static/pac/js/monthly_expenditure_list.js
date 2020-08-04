@@ -340,10 +340,10 @@ month=$("#month-select").children("option:selected").val();
 //filename="Report_2019_20_7.pdf"
 var doc = new jsPDF('l','in',[16.5,11.7]);
 
-var heading=[['Code','Description','B_GoB','B_RPA','B_DPA','B_Total',
-'PM_GoB','PM_RPA','PM_DPA','PM_Total','CM_GoB','CM_RPA','CM_DPA','CM_Total',
-'TEC_GoB','TEC_RPA','TEC_DPA','TEC_Total',
-'RM_GoB','RM_RPA','RM_DPA','RM_Total']]
+var heading=[['Code','Description','B_G','B_R','B_D','B_T',
+'PM_G','PM_R','PM_D','PM_T','CM_G','CM_R','CM_D','CM_T',
+'TUC_G','TUC_R','TUC_D','TUC_T',
+'RM_G','RM_R','RM_D','RM_T']]
 /*creating rows and column of Pdf */
 var rows=$("#ivt-table tr");
 var myDataArr=[[]];

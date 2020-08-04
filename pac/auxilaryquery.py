@@ -210,10 +210,10 @@ class MonthlyReportItem:
     def __init__(self,budget):
         self.Ecode=budget.Dpp_allocation.Ecode
         self.description=budget.Dpp_allocation.Shortdescription
-        self.gob_allocation=(float(budget.Gob)/100000.00)
-        self.rpa_allocation=(float(budget.Rpa)/100000.00)
-        self.dpa_allocation=(float(budget.Dpa)/100000.00)
-        self.total_allocation=(float(budget.Total)/100000.00)
+        self.gob_allocation=float(budget.Gob)
+        self.rpa_allocation=float(budget.Rpa)
+        self.dpa_allocation=float(budget.Dpa)
+        self.total_allocation=float(budget.Total)
         """Expenditure upto previous month"""
         self.gob_pm =0.0
         self.rpa_pm =0.0
@@ -240,10 +240,10 @@ class MonthlyReportItem:
         self.dpa_cm = dpa
         self.total_cm = total
     def setPreviousMonthExpenditure(self,gob,rpa,dpa,total):
-        self.gob_pm = round(gob,2)
-        self.rpa_pm = round(rpa,2)
-        self.dpa_pm = round(dpa,2)
-        self.total_pm = round(total,2)
+        self.gob_pm = gob
+        self.rpa_pm = rpa
+        self.dpa_pm = dpa
+        self.total_pm = total
     def calCulateTotalUptoMonth(self):
         self.gob_cmt =  self.gob_pm+self.gob_cm
         self.rpa_cmt = self.rpa_pm+self.rpa_cm
@@ -255,8 +255,32 @@ class MonthlyReportItem:
         self.dpa_rm = self.dpa_allocation-self.dpa_cmt
         self.total_rm =self.total_allocation-self.total_cmt
 
-
-
+    def round2Lakh(self):
+        self.gob_allocation =round(( self.gob_allocation/100000.00),2)
+        self.rpa_allocation = round(( self.rpa_allocation/100000.00),2)
+        self.dpa_allocation = round(( self.dpa_allocation/100000.00),2)
+        self.total_allocation = round(( self.total_allocation/100000.00),2)
+        """Expenditure upto previous month"""
+        self.gob_pm = round( self.gob_pm/100000.00,2)
+        #self.rpa_pm=self.rpa_pm/100000.0
+        self.rpa_pm = round( self.rpa_pm/100000.00,2)
+        self.dpa_pm =round( self.dpa_pm/100000.00,2)
+        self.total_pm =round( self.total_pm/100000.00,2)
+        """Expenditure of the current month month"""
+        self.gob_cm = round( self.gob_cm/100000.00,2)
+        self.rpa_cm = round( self.rpa_cm/100000.00,2)
+        self.dpa_cm = round( self.dpa_cm/100000.00,2)
+        self.total_cm =round( self.total_cm/100000.00,2)
+        """Expenditue upto current month"""
+        self.gob_cmt = round( self.gob_cmt/100000.00,2)
+        self.rpa_cmt =round( self.rpa_cmt/100000.00,2)
+        self.dpa_cmt = round( self.dpa_cmt/100000.00,2)
+        self.total_cmt = round( self.total_cmt/100000.00,2)
+        """budget remaining"""
+        self.gob_rm = round( self.gob_rm/100000.00,2)
+        self.rpa_rm = round( self.rpa_rm/100000.00,2)
+        self.dpa_rm = round( self.dpa_rm/100000.00,2)
+        self.total_rm = round( self.total_rm/100000.00,2)
 
         """"   
         Gob = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
@@ -284,10 +308,10 @@ def calculateCodeWiseMonthlyExpenditure(fy):
             for exp in expenditures:
                 code=exp.Budget_allocation.Dpp_allocation.Shortdescription
                 index = code_list.index(code)
-                gob=float(exp.Gob)/100000.00
-                rpa=float(exp.Rpa)/100000.00
-                dpa=float(exp.Dpa)/100000.00
-                total=float(exp.Total)/100000.00
+                gob=float(exp.Gob)
+                rpa=float(exp.Rpa)
+                dpa=float(exp.Dpa)
+                total=float(exp.Total)
                 monthly_gob.iloc[index,month_index]=monthly_gob.iloc[index,month_index]+gob
                 monthly_rpa.iloc[index, month_index] = monthly_rpa.iloc[index, month_index] + rpa
                 monthly_dpa.iloc[index, month_index] = monthly_dpa.iloc[index, month_index] + dpa
@@ -323,19 +347,20 @@ def createMonthlyExpenditureDF():
     myframe['6'] = 0
     #invoices=Invoice_details.objects.all().filter(Month=month)
     #print(myframe)
-
     return myframe
+
 def displayMonthlyExpenditure(myframe):
     for index,row in myframe.iterrows():
         print(row)
+
+
 def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_total,dataIndex,monthindex):
     pm_gob = 0.0
     pm_rpa = 0.0
     pm_dpa = 0.0
     pm_total = 0.0
     months = [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
-    print("prevoius month={}".format(monthindex-1))
-
+    #print("prevoius month={}".format(monthindex-1))
     for i in  range(2,monthindex):
         pm_gob=pm_gob+myframe_gob.iloc[dataIndex,i]
         pm_rpa=pm_rpa+myframe_rpa.iloc[dataIndex,i]
@@ -343,6 +368,13 @@ def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_tota
         pm_total=pm_total+myframe_total.iloc[dataIndex,i]
     pmexpenditure={"pm_gob":pm_gob,'pm_rpa':pm_rpa,'pm_dpa':pm_dpa,'pm_total':pm_total }
     return pmexpenditure
+def subtotalAllownaces(ritems):
+    
+
+    pass
+def displayRitems(ritems):
+    for ritem in ritems:
+        print(ritem.description)
 
 
 
@@ -379,11 +411,15 @@ def createMonthlyReportItems(budgets,fy,month):
         ri.setPreviousMonthExpenditure( pmexpenditure['pm_gob'], pmexpenditure['pm_rpa'], pmexpenditure['pm_dpa'], pmexpenditure['pm_total'])
         ri.calCulateTotalUptoMonth()
         ri.calCulateRemainingBudget()
+        ri. round2Lakh()
         #print(pmexpenditure)
 
         #print("index={} description={}".format(index,description))
         report_items.append(ri)
         #disPlayTotalExpenditure(budget,6)
+    print("totla expenditure entries={}".format(len(report_items)))
+    report_items=report_items[::-1]
+    displayRitems(report_items)
     return report_items
 
 
