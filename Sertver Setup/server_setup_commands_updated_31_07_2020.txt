@@ -1,0 +1,103 @@
+ipaddress:139.59.71.251
+webaddress/:139.59.71.251:8000
+
+adduser mitch
+pwd:abcd1234
+"giving permission to use sudo"
+usermod -aG sudo mitch 
+
+"keygen for ssh"
+ssh-keygen
+sudo mv authorized_keys /home/mitch/.ssh
+
+"""firewall setup"""
+sudo ufw allow openssh
+sudo ufw enable
+sudo ufw status
+
+""setting up python 3.8 for server"""
+sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python3.6 2
+sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python3.7 1
+sudo update-alternatives --install /usr/local/bin/python python /usr/bin/python3.8 3
+sudo update-alternatives --config python
+
+"""installing pip """
+sudo apt-get install -y python3-pip
+
+"""installing python virtual environment"""""""""""
+sudo -H pip3 install virtualenv
+
+"""change to user directory where mitch is the user name********
+cd /home/mitch
+"""make a directory djangoprojectdir""""""""""""
+mkdir djangoprojectdir
+"""change to djangoprojectdir"""
+cd djangoprojectdir
+"""create a virtual environment*******
+virtualenv djangoprojectenv
+ ""activate virtual environemt*******
+source djangoprojectenv/bin/activate
+"""install gunicorn*******
+pip3 install gunicorn
+"""install django*******
+pip3 install django
+"""move to user foler******
+cd ..
+"""create a django project inside djangoprojectdir*******
+django-admin startproject mysite djangoprojectdir
+"drag and drop file from local machine to remote server*********
+python manage.py makemigations
+python manage.py migrate
+python manage.py collectstatic
+"""allow 8000 port through firewall******
+sudo ufw allow 8000
+"""test server inside virtual environment""""""
+python manage.py runserver 0.0.0.0:8000
+"""bind gunicorn to the website inside virtual environement"""""
+gunicorn --bind 0.0.0.0:8000 myproject.wsgi
+
+
+"""setingup gunicorn system socket and service file""""
+deactivate
+
+"navigate to /etc/systemd/system/ 
+create a file named gunicorn.socket
+create a file named gunicorn.service
+
+""start socket and then service"""
+sudo systemctl start gunicorn.socket                      ----start the socket
+sudo systemctl enable gunicorn.socket                      ----- enable socket 
+file /run/gunicorn.sock                                   ---- check socket file propely created
+sudo systemctl status gunicorn.socket                     ------check status of gunicorn socket file
+curl --unix-socket /run/gunicorn.sock localhost           ------To test the socket activation mechanism
+
+sudo systemctl status gunicorn
+"""restart gunicorn""""
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn
+sudo systemctl status gunicorn                             --status of gunicorn
+""""create a file named nginx configaration file djangoproject inside /etc/nginx/sites-available/*************
+sudo ln -s /etc/nginx/sites-available/djangoproject /etc/nginx/sites-enabled         ------link the file with sites-enabled
+
+sudo nginx -t                                             ---test nginx
+sudo systemctl restart nginx
+sudo systemctl status nginx
+
+sudo ufw delete allow 8000                                       ---disable port 8000 at firewall
+sudo ufw allow 'Nginx Full'
+
+********if you need to shutdown use***************
+sudo shutdown -r now
+
+
+"""securing site with https*****************8
+sudo certbot --nginx -d www.hfmlip.com -d hfmlip.com -d 139.59.71.251
+
+
+
+bwdb_haor_1234
+
+
+
+
+
