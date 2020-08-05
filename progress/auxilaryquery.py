@@ -829,7 +829,17 @@ def convertReportObject_to_dic(myreportEvent):
     data['status'] =myreportEvent.eventStatus
     data["message"]=myreportEvent.message
     return data
+class structure:
 
+    def __init__(self,name):
+        self.name=name
+
+
+
+
+def build_structure_list(contract_interventions):
+    for ivt in contract_interventions:
+        print(ivt.contract_id)
 
 
 

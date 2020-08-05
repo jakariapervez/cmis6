@@ -1101,9 +1101,11 @@ class createReportEvent2(View):
         returnData=dict()
         returnData["tbody"]=html_table_body
         return JsonResponse(returnData)
-
+from .auxilaryquery import build_structure_list
 def contractInterventionList(request):
-    return HttpResponse("The page is under contraction")
+    civts=Contract_Intervention.objects.all().order_by('contract_id')
+    build_structure_list(civts)
+    return render (request,'progress/structure_list2.html',{})
 
 
 
