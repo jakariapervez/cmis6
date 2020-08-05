@@ -1072,7 +1072,10 @@ class viewReportEvent(ListView):
     return render(request,'includes/report_index.html',context,)
     #return JsonResponse(data)
     """
+
+
 from .auxilaryquery import crerateProgressReportEventData2,convertReportObject_to_dic
+
 class createReportEvent2(View):
     def get(self, request):
         #crerateProgressReportEventData2
@@ -1097,8 +1100,8 @@ class createReportEvent2(View):
         #print(html_table_body)
         returnData=dict()
         returnData["tbody"]=html_table_body
-
         return JsonResponse(returnData)
+
 def contractInterventionList(request):
     return HttpResponse("The page is under contraction")
 

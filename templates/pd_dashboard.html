@@ -49,6 +49,9 @@
   <h5>Progress</h5>
   <div class="dropdown-content">
   <a class="dropdown-item reportlink js-view-report-event" href="#"><i class="fas fa-book"></i>Progress Report</a>
+  <a class="dropdown-item reportlink js-view-report-event" href="{% url 'contract_intervention_list2' %}">
+  <i class="fas fa-book"></i>Structure List
+  </a>
   </div>
   <div class="dropdown-divider"></div>
   <h5>User Authentication</h5>
@@ -92,7 +95,6 @@
 
 {% include 'includes/progress_cards.html' %} 
 {% include 'includes/progress_event_cards.html' %}
--->
 
 
 <div class="modal fade" id="reprotmodal">
