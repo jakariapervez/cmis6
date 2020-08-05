@@ -368,8 +368,8 @@ def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_tota
         pm_total=pm_total+myframe_total.iloc[dataIndex,i]
     pmexpenditure={"pm_gob":pm_gob,'pm_rpa':pm_rpa,'pm_dpa':pm_dpa,'pm_total':pm_total }
     return pmexpenditure
-def subtotalAllownaces(ritems):
 
+def subtotalAllownaces(ritems):
 
     pass
 def displayRitems(ritems):
