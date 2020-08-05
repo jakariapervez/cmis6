@@ -369,7 +369,7 @@ def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_tota
     pmexpenditure={"pm_gob":pm_gob,'pm_rpa':pm_rpa,'pm_dpa':pm_dpa,'pm_total':pm_total }
     return pmexpenditure
 def subtotalAllownaces(ritems):
-    
+
 
     pass
 def displayRitems(ritems):

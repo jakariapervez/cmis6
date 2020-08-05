@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pac/auxilaryquery.py" beforeDir="false" afterPath="$PROJECT_DIR$/pac/auxilaryquery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pac/static/pac/js/monthly_expenditure_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/pac/static/pac/js/monthly_expenditure_list.js" afterDir="false" />
-    </list>
+    <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/pac/auxilaryquery.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2992">
-              <caret line="371" column="4" selection-start-line="371" selection-start-column="4" selection-end-line="371" selection-end-column="4" />
+              <caret line="371" selection-start-line="371" selection-end-line="371" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -144,7 +141,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -217,7 +213,7 @@
     <entry file="file://$PROJECT_DIR$/pac/auxilaryquery.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2992">
-          <caret line="371" column="4" selection-start-line="371" selection-start-column="4" selection-end-line="371" selection-end-column="4" />
+          <caret line="371" selection-start-line="371" selection-end-line="371" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
