@@ -185,6 +185,10 @@ class ProgressItem(models.Model):
     actualDuration=models.IntegerField(default=0)
     executionStatus=models.CharField(choices=work_status_choices,max_length=20,default="TO_BE_STARTED")
     actualQuantity=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)#quantity actually executed
+    startdate=models.DateField(default=timezone.now,null=True,blank=True)
+    finishdate=models.DateField(default=timezone.now,null=True,blank=True)
+    #"startdate"
+    #"finishdate"
 
     def __str__(self):
         return f'{self.item_name}'

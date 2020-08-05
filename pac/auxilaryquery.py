@@ -205,6 +205,8 @@ from reportlab.lib.styles import getSampleStyleSheet
 from io import BytesIO
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib import colors
+
+
 """creating Cass for monthly Report"""
 class MonthlyReportItem:
     def __init__(self,budget):
@@ -704,7 +706,6 @@ def createMonthlyReportItems(budgets,fy,month):
     report_items.insert(44,revenue)
     report_items.insert(71,capital)
     report_items.append(grandtotal)
-
 
     return report_items
 
