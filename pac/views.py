@@ -1003,3 +1003,25 @@ def MonthlyExpenditureYearwise(request):
     months = ["ALL", 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
     return JsonResponse(data)
 
+def build_structure_list(contract_interventions):
+    structures=[]
+    for ivt in contract_interventions:
+        name=ivt.dpp_intervention_id.name
+        start=ivt.dpp_intervention_id.start_chainage
+        finish=ivt.dpp_intervention_id.finish_chainage
+        length=ivt.dpp_intervention_id.length
+        element=structure(name,start,finish,length)
+        structures.append(element)
+        #print(ivt.contract_id)
+    return structures
+
+"""Structure List Related View"""
+from progress.models import  Contract_Intervention
+def contractInterventionList(request):
+    civts=Contract_Intervention.objects.all().order_by('contract_id')
+    structures=build_structure_list(civts)
+    for structure in structures:
+        print("name={}".format(structure.name))
+    #print(values)
+    context={'structures': structures}
+    return render (request,'progress/structure_list2.html',context)
