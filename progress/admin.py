@@ -8,11 +8,11 @@ class Division_Admin(ImportExportModelAdmin):
     pass
 from .models import Haor,WorkType,ContractComponent,DPP_Intervention
 
-admin.site.register(Haor)
-"""  
+#admin.site.register(Haor)
+@admin.register(Haor)
 class Haor_Admin(ImportExportModelAdmin):
     pass
-"""
+
 @admin.register(WorkType)
 class WorkType_Admin(ImportExportModelAdmin):
     pass

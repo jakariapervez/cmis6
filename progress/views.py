@@ -1099,6 +1099,8 @@ class createReportEvent2(View):
         returnData["tbody"]=html_table_body
 
         return JsonResponse(returnData)
+def contractInterventionList(request):
+    return HttpResponse("The page is under contraction")
 
 
 
