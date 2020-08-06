@@ -46,7 +46,9 @@
   <a class="dropdown-item financiallink" href="{% url 'invoice_index' %}"><i class="fas fa-money-bill-alt"></i>Invoice List</a>
  <a class="dropdown-item financiallink" href="{% url 'expenditure_index' %}"><i class="fas fa-money-bill-alt"></i>Expenditure List</a>  
   </div>
- 
+     <a class="dropdown-item reportlink js-view-report-event" href="{% url 'dashboard' %}">
+  <i class="fas fa-book"></i>Dashbaord
+  </a>
   <div class="dropdown-divider"></div>
   <h5>User Authentication</h5>
   <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-money-bill"></i>Logout</a>

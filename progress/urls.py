@@ -49,6 +49,7 @@ urlpatterns=[
     #path('dashboard/reportevent/view/',views.viewReportEvent,name='vierw_report_event'),
     path('dashboard/reportevent/edit/<int:pk>/',views.editReportEvent,name='edit_report_event'),
     path('dashboard/reportevent/edit/',views.editReportEvent2,name='edit_report_event2'),
+
     #A Temporary URL for viewing contract Interventioin
-    url(r'^list_contract_intervention',views.contractInterventionList,name="contract_intervention_list"),
+
 ]

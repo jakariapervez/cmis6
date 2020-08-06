@@ -1001,8 +1001,46 @@ def MonthlyExpenditureYearwise(request):
     invoices = Expenditure_details.objects.all()
     fyears = FinancialYear.objects.all()
     months = ["ALL", 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
-
-
-
     return JsonResponse(data)
 
+
+from progress.models import  Contract_Intervention
+from progress.models import Contract,DPP_Intervention
+
+
+class structure:
+    def __init__(self,name,start,finish,length,package_name, wtype):
+        self.name=name
+        self.start=start
+        self.finish=finish
+        self.length=length
+        self.package=package_name
+        self.worktype=wtype
+
+def build_structure_list(contract_interventions):
+    structures=[]
+    for ivt in contract_interventions:
+        package_name = ivt.contract_id.package_short_name
+        work_type=ivt.dpp_intervention_id.worktype_id. wtype
+        name=ivt.dpp_intervention_id.name
+        start=ivt.dpp_intervention_id.start_chainage
+        finish=ivt.dpp_intervention_id.finish_chainage
+        length=ivt.dpp_intervention_id.length
+        element=structure(name,start,finish,length,package_name, work_type)
+        structures.append(element)
+        #print(ivt.contract_id)
+    return structures
+
+"""Structure List Related View"""
+
+
+def contractInterventionList(request):
+    civts=Contract_Intervention.objects.all().order_by('contract_id')
+    structures=build_structure_list(civts)
+    for structure in structures:
+        print("name={}".format(structure.name))
+    #print(values)
+    context={'structures': structures}
+    return render (request,'progress/structure_list2.html',context)
+def BlankMap(request):
+    return render(request,'pac/blank_map.html')

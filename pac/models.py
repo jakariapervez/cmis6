@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from datetime import datetime
 # Create your models here.
+
 class Dpp_allocation(models.Model):
     Ecode=models.IntegerField(null=True,blank=True)
     Description=models.CharField(max_length=400)

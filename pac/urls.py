@@ -20,9 +20,7 @@ urlpatterns=[
     url('^invoice/add/$',views.Add_invoice,name='create_invoice'),
     url('^invoice/add2/$',views.Add_invoice2,name='create_invoice2'),
     url('^invoice/(?P<pk>\d+)/yearwise/$',views.list_invoices_sort_by_fy,name='invoice_yearwise'),
-
     url('^invoice/sort/all/$',views.invoice_list_sort_by_all,name='invoice_sort'),
-
 
     #Expediture Related URL
     url('^expenditure/(?P<pk>\d+)/add/$',views.Add_Expenditure,name='create_expediture'),
@@ -37,6 +35,10 @@ urlpatterns=[
     url('^financial/progress/category/$',views.dashboardCategory,name="dashboard_category"),
     url('^report/expenditure/monthly/$', views.MonthlyExpenditure, name="monthly_expenditure"),
     url('^report/expenditure/monthly/yearwise/$', views.MonthlyExpenditureYearwise, name="monthly_expenditure_yearwise"),
+    path('list_contract_intervention2/',views.contractInterventionList,name="contract_intervention_list2"),
+    path('blankmap',views.BlankMap,name="blank_map"),
+
+    #Civil works related url
 
 
 

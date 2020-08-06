@@ -205,6 +205,8 @@ from reportlab.lib.styles import getSampleStyleSheet
 from io import BytesIO
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib import colors
+
+
 """creating Cass for monthly Report"""
 class MonthlyReportItem:
     def __init__(self,budget):
@@ -282,16 +284,69 @@ class MonthlyReportItem:
         self.dpa_rm = round( self.dpa_rm/100000.00,2)
         self.total_rm = round( self.total_rm/100000.00,2)
 
-        """"   
-        Gob = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-        Dpa = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-        Rpa = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-        Total = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=18)
-        """
+    def roundToDigit(self,digit):
+        self.gob_allocation =round(( self.gob_allocation/1.0),digit)
+        self.rpa_allocation = round(( self.rpa_allocation/1.0),digit)
+        self.dpa_allocation = round(( self.dpa_allocation/1.0),digit)
+        self.total_allocation = round(( self.total_allocation/1.0),digit)
+        """Expenditure upto previous month"""
+        self.gob_pm = round( self.gob_pm/1.0,digit)
+        #self.rpa_pm=self.rpa_pm/100000.0
+        self.rpa_pm = round( self.rpa_pm/1.0,digit)
+        self.dpa_pm =round( self.dpa_pm/1.0,digit)
+        self.total_pm =round( self.total_pm/1.0,digit)
+        """Expenditure of the current month month"""
+        self.gob_cm = round( self.gob_cm/1.0,digit)
+        self.rpa_cm = round( self.rpa_cm/1.0,digit)
+        self.dpa_cm = round( self.dpa_cm/1.0,digit)
+        self.total_cm =round( self.total_cm/1.0,digit)
+        """Expenditue upto current month"""
+        self.gob_cmt = round( self.gob_cmt/1.0,digit)
+        self.rpa_cmt =round( self.rpa_cmt/1.0,digit)
+        self.dpa_cmt = round( self.dpa_cmt/1.0,digit)
+        self.total_cmt = round( self.total_cmt/1.0,digit)
+        """budget remaining"""
+        self.gob_rm = round( self.gob_rm/1.0,digit)
+        self.rpa_rm = round( self.rpa_rm/1.0,digit)
+        self.dpa_rm = round( self.dpa_rm/1.0,digit)
+        self.total_rm = round( self.total_rm/1.0,digit)
+
+
+    def initialize2zero(self):
+            self.gob_allocation = 0.0
+            self.rpa_allocation = 0.0
+            self.dpa_allocation = 0.0
+            self.total_allocation = 0.0
+            """Expenditure upto previous month"""
+            self.gob_pm = 0.0
+            self.rpa_pm = 0.0
+            self.dpa_pm = 0.0
+            self.total_pm = 0.0
+            """Expenditure of the current month month"""
+            self.gob_cm = 0.0
+            self.rpa_cm = 0.0
+            self.dpa_cm = 0.0
+            self.total_cm = 0.0
+            """Expenditue upto current month"""
+            self.gob_cmt = 0.0
+            self.rpa_cmt = 0.0
+            self.dpa_cmt = 0.0
+            self.total_cmt = 0.0
+            """budget remaining"""
+            self.gob_rm = 0.0
+            self.rpa_rm = 0.0
+            self.dpa_rm = 0.0
+            self.total_rm =0.0
+
+
+
 import pandas as pd
 from django_pandas.io import read_frame
 
 from .models import Expenditure_details
+
+
+
 def calculateCodeWiseMonthlyExpenditure(fy):
     monthly_gob=createMonthlyExpenditureDF()
     monthly_rpa = createMonthlyExpenditureDF()
@@ -329,7 +384,6 @@ def createMonthlyExpenditureDF():
     print("ecode={} description={} total={}".format(budget.Dpp_allocation.Ecode,
                             budget.Dpp_allocation.Shortdescription,budget.Total))
      """
-
     item_codes=Dpp_allocation.objects.all().order_by('pk').values("Ecode","Shortdescription")
     myframe = read_frame(item_codes)
     months=['7','8','9','10','11','12','1','2','3','4','5','6']
@@ -369,9 +423,229 @@ def caclculateExpenditureUptoPM(myframe_gob,myframe_rpa,myframe_dpa,myframe_tota
     pmexpenditure={"pm_gob":pm_gob,'pm_rpa':pm_rpa,'pm_dpa':pm_dpa,'pm_total':pm_total }
     return pmexpenditure
 
-def subtotalAllownaces(ritems):
 
-    pass
+import copy
+def subtotalAllownaces(ritems):
+    sub_total_item=copy.deepcopy(ritems[0])
+    sub_total_item.initialize2zero()
+    sub_total_item.Ecode="Sub-Total"
+    sub_total_item.description="Allownaces"
+    for i in range(0,3):
+        sub_total_item.gob_allocation = sub_total_item.gob_allocation+ritems[i].gob_allocation
+        sub_total_item.rpa_allocation = sub_total_item.rpa_allocation+ritems[i].rpa_allocation
+        sub_total_item.dpa_allocation = sub_total_item.dpa_allocation+ritems[i].dpa_allocation
+        sub_total_item.total_allocation = sub_total_item.total_allocation+ritems[i].total_allocation
+        """Expenditure upto previous month"""
+        sub_total_item.gob_pm = sub_total_item.gob_pm+ritems[i].gob_pm
+        sub_total_item.rpa_pm = sub_total_item.rpa_pm+ritems[i].rpa_pm
+        sub_total_item.dpa_pm = sub_total_item.dpa_pm+ritems[i].dpa_pm
+        sub_total_item.total_pm = sub_total_item.total_pm+ritems[i].total_pm
+        """Expenditure of the current month month"""
+        sub_total_item.gob_cm = sub_total_item.gob_cm+ritems[i].gob_cm
+        sub_total_item.rpa_cm = sub_total_item.rpa_cm+ritems[i].rpa_cm
+        sub_total_item.dpa_cm = sub_total_item.dpa_cm+ritems[i].dpa_cm
+        sub_total_item.total_cm = sub_total_item.total_cm+ritems[i].total_cm
+        """Expenditue upto current month"""
+        sub_total_item.gob_cmt = sub_total_item.gob_cmt+ritems[i].gob_cmt
+        sub_total_item.rpa_cmt = sub_total_item.rpa_cmt+ritems[i].rpa_cmt
+        sub_total_item.dpa_cmt = sub_total_item.dpa_cmt+ritems[i].dpa_cmt
+        sub_total_item.total_cmt = sub_total_item.total_cmt+ritems[i].total_cmt
+        """budget remaining"""
+        sub_total_item.gob_rm = sub_total_item.gob_rm+ritems[i].gob_rm
+        sub_total_item.rpa_rm = sub_total_item.rpa_rm+ritems[i].rpa_rm
+        sub_total_item.dpa_rm = sub_total_item.dpa_rm+ritems[i].dpa_rm
+        sub_total_item.total_rm = sub_total_item.total_rm+ritems[i].total_rm
+    print("Allownances Total={} ".format(sub_total_item.total_allocation))
+    #print("item11={} item2={}".format( sub_total_item.Ecode,ritems[0].Ecode))
+    sub_total_item.roundToDigit(2)
+    return sub_total_item
+
+def subtotalSupplyAndServices(ritems):
+    sub_total_item=copy.deepcopy(ritems[0])
+    sub_total_item.initialize2zero()
+    sub_total_item.Ecode = "Sub-Total"
+    sub_total_item.description ="Supply & Services"
+    for i in range(3,31):
+        sub_total_item.gob_allocation = sub_total_item.gob_allocation+ritems[i].gob_allocation
+        sub_total_item.rpa_allocation = sub_total_item.rpa_allocation+ritems[i].rpa_allocation
+        sub_total_item.dpa_allocation = sub_total_item.dpa_allocation+ritems[i].dpa_allocation
+        sub_total_item.total_allocation = sub_total_item.total_allocation+ritems[i].total_allocation
+        """Expenditure upto previous month"""
+        sub_total_item.gob_pm = sub_total_item.gob_pm+ritems[i].gob_pm
+        sub_total_item.rpa_pm = sub_total_item.rpa_pm+ritems[i].rpa_pm
+        sub_total_item.dpa_pm = sub_total_item.dpa_pm+ritems[i].dpa_pm
+        sub_total_item.total_pm = sub_total_item.total_pm+ritems[i].total_pm
+        """Expenditure of the current month month"""
+        sub_total_item.gob_cm = sub_total_item.gob_cm+ritems[i].gob_cm
+        sub_total_item.rpa_cm = sub_total_item.rpa_cm+ritems[i].rpa_cm
+        sub_total_item.dpa_cm = sub_total_item.dpa_cm+ritems[i].dpa_cm
+        sub_total_item.total_cm = sub_total_item.total_cm+ritems[i].total_cm
+        """Expenditue upto current month"""
+        sub_total_item.gob_cmt = sub_total_item.gob_cmt+ritems[i].gob_cmt
+        sub_total_item.rpa_cmt = sub_total_item.rpa_cmt+ritems[i].rpa_cmt
+        sub_total_item.dpa_cmt = sub_total_item.dpa_cmt+ritems[i].dpa_cmt
+        sub_total_item.total_cmt = sub_total_item.total_cmt+ritems[i].total_cmt
+        """budget remaining"""
+        sub_total_item.gob_rm = sub_total_item.gob_rm+ritems[i].gob_rm
+        sub_total_item.rpa_rm = sub_total_item.rpa_rm+ritems[i].rpa_rm
+        sub_total_item.dpa_rm = sub_total_item.dpa_rm+ritems[i].dpa_rm
+        sub_total_item.total_rm = sub_total_item.total_rm+ritems[i].total_rm
+    print("Allownances Total={} ".format(sub_total_item.total_allocation))
+    #print("item11={} item2={}".format( sub_total_item.Ecode,ritems[0].Ecode))
+    sub_total_item.roundToDigit(2)
+    return sub_total_item
+
+
+def subtotalRepairAndMaintenance(ritems):
+    sub_total_item=copy.deepcopy(ritems[0])
+    sub_total_item.initialize2zero()
+    sub_total_item.Ecode = "Sub-Total"
+    sub_total_item.description = "Repair & Maintenance"
+
+    for i in range(31,41):
+        sub_total_item.gob_allocation = sub_total_item.gob_allocation+ritems[i].gob_allocation
+        sub_total_item.rpa_allocation = sub_total_item.rpa_allocation+ritems[i].rpa_allocation
+        sub_total_item.dpa_allocation = sub_total_item.dpa_allocation+ritems[i].dpa_allocation
+        sub_total_item.total_allocation = sub_total_item.total_allocation+ritems[i].total_allocation
+        """Expenditure upto previous month"""
+        sub_total_item.gob_pm = sub_total_item.gob_pm+ritems[i].gob_pm
+        sub_total_item.rpa_pm = sub_total_item.rpa_pm+ritems[i].rpa_pm
+        sub_total_item.dpa_pm = sub_total_item.dpa_pm+ritems[i].dpa_pm
+        sub_total_item.total_pm = sub_total_item.total_pm+ritems[i].total_pm
+        """Expenditure of the current month month"""
+        sub_total_item.gob_cm = sub_total_item.gob_cm+ritems[i].gob_cm
+        sub_total_item.rpa_cm = sub_total_item.rpa_cm+ritems[i].rpa_cm
+        sub_total_item.dpa_cm = sub_total_item.dpa_cm+ritems[i].dpa_cm
+        sub_total_item.total_cm = sub_total_item.total_cm+ritems[i].total_cm
+        """Expenditue upto current month"""
+        sub_total_item.gob_cmt = sub_total_item.gob_cmt+ritems[i].gob_cmt
+        sub_total_item.rpa_cmt = sub_total_item.rpa_cmt+ritems[i].rpa_cmt
+        sub_total_item.dpa_cmt = sub_total_item.dpa_cmt+ritems[i].dpa_cmt
+        sub_total_item.total_cmt = sub_total_item.total_cmt+ritems[i].total_cmt
+        """budget remaining"""
+        sub_total_item.gob_rm = sub_total_item.gob_rm+ritems[i].gob_rm
+        sub_total_item.rpa_rm = sub_total_item.rpa_rm+ritems[i].rpa_rm
+        sub_total_item.dpa_rm = sub_total_item.dpa_rm+ritems[i].dpa_rm
+        sub_total_item.total_rm = sub_total_item.total_rm+ritems[i].total_rm
+    print("Allownances Total={} ".format(sub_total_item.total_allocation))
+    #print("item11={} item2={}".format( sub_total_item.Ecode,ritems[0].Ecode))
+    sub_total_item.roundToDigit(2)
+    return sub_total_item
+
+
+
+def subtotalCapital(ritems):
+    sub_total_item=copy.deepcopy(ritems[0])
+    sub_total_item.initialize2zero()
+    sub_total_item.Ecode = "Sub-Total"
+    sub_total_item.description = "Capital"
+    for i in range(41,67):
+        sub_total_item.gob_allocation = sub_total_item.gob_allocation+ritems[i].gob_allocation
+        sub_total_item.rpa_allocation = sub_total_item.rpa_allocation+ritems[i].rpa_allocation
+        sub_total_item.dpa_allocation = sub_total_item.dpa_allocation+ritems[i].dpa_allocation
+        sub_total_item.total_allocation = sub_total_item.total_allocation+ritems[i].total_allocation
+        """Expenditure upto previous month"""
+        sub_total_item.gob_pm = sub_total_item.gob_pm+ritems[i].gob_pm
+        sub_total_item.rpa_pm = sub_total_item.rpa_pm+ritems[i].rpa_pm
+        sub_total_item.dpa_pm = sub_total_item.dpa_pm+ritems[i].dpa_pm
+        sub_total_item.total_pm = sub_total_item.total_pm+ritems[i].total_pm
+        """Expenditure of the current month month"""
+        sub_total_item.gob_cm = sub_total_item.gob_cm+ritems[i].gob_cm
+        sub_total_item.rpa_cm = sub_total_item.rpa_cm+ritems[i].rpa_cm
+        sub_total_item.dpa_cm = sub_total_item.dpa_cm+ritems[i].dpa_cm
+        sub_total_item.total_cm = sub_total_item.total_cm+ritems[i].total_cm
+        """Expenditue upto current month"""
+        sub_total_item.gob_cmt = sub_total_item.gob_cmt+ritems[i].gob_cmt
+        sub_total_item.rpa_cmt = sub_total_item.rpa_cmt+ritems[i].rpa_cmt
+        sub_total_item.dpa_cmt = sub_total_item.dpa_cmt+ritems[i].dpa_cmt
+        sub_total_item.total_cmt = sub_total_item.total_cmt+ritems[i].total_cmt
+        """budget remaining"""
+        sub_total_item.gob_rm = sub_total_item.gob_rm+ritems[i].gob_rm
+        sub_total_item.rpa_rm = sub_total_item.rpa_rm+ritems[i].rpa_rm
+        sub_total_item.dpa_rm = sub_total_item.dpa_rm+ritems[i].dpa_rm
+        sub_total_item.total_rm = sub_total_item.total_rm+ritems[i].total_rm
+    print("Allownances Total={} ".format(sub_total_item.total_allocation))
+    #print("item11={} item2={}".format( sub_total_item.Ecode,ritems[0].Ecode))
+    sub_total_item.roundToDigit(2)
+    return sub_total_item
+
+def subtotalRevenue(ritems):
+    sub_total_item=copy.deepcopy(ritems[0])
+    sub_total_item.initialize2zero()
+    sub_total_item.Ecode = "Sub-Total"
+    sub_total_item.description = "Revenue"
+
+    for i in range(0,40):
+        sub_total_item.gob_allocation = sub_total_item.gob_allocation+ritems[i].gob_allocation
+        sub_total_item.rpa_allocation = sub_total_item.rpa_allocation+ritems[i].rpa_allocation
+        sub_total_item.dpa_allocation = sub_total_item.dpa_allocation+ritems[i].dpa_allocation
+        sub_total_item.total_allocation = sub_total_item.total_allocation+ritems[i].total_allocation
+        """Expenditure upto previous month"""
+        sub_total_item.gob_pm = sub_total_item.gob_pm+ritems[i].gob_pm
+        sub_total_item.rpa_pm = sub_total_item.rpa_pm+ritems[i].rpa_pm
+        sub_total_item.dpa_pm = sub_total_item.dpa_pm+ritems[i].dpa_pm
+        sub_total_item.total_pm = sub_total_item.total_pm+ritems[i].total_pm
+        """Expenditure of the current month month"""
+        sub_total_item.gob_cm = sub_total_item.gob_cm+ritems[i].gob_cm
+        sub_total_item.rpa_cm = sub_total_item.rpa_cm+ritems[i].rpa_cm
+        sub_total_item.dpa_cm = sub_total_item.dpa_cm+ritems[i].dpa_cm
+        sub_total_item.total_cm = sub_total_item.total_cm+ritems[i].total_cm
+        """Expenditue upto current month"""
+        sub_total_item.gob_cmt = sub_total_item.gob_cmt+ritems[i].gob_cmt
+        sub_total_item.rpa_cmt = sub_total_item.rpa_cmt+ritems[i].rpa_cmt
+        sub_total_item.dpa_cmt = sub_total_item.dpa_cmt+ritems[i].dpa_cmt
+        sub_total_item.total_cmt = sub_total_item.total_cmt+ritems[i].total_cmt
+        """budget remaining"""
+        sub_total_item.gob_rm = sub_total_item.gob_rm+ritems[i].gob_rm
+        sub_total_item.rpa_rm = sub_total_item.rpa_rm+ritems[i].rpa_rm
+        sub_total_item.dpa_rm = sub_total_item.dpa_rm+ritems[i].dpa_rm
+        sub_total_item.total_rm = sub_total_item.total_rm+ritems[i].total_rm
+    print("Allownances Total={} ".format(sub_total_item.total_allocation))
+    #print("item11={} item2={}".format( sub_total_item.Ecode,ritems[0].Ecode))
+    sub_total_item.roundToDigit(2)
+    return sub_total_item
+
+def grandTotal(ritems):
+    sub_total_item=copy.deepcopy(ritems[0])
+    sub_total_item.initialize2zero()
+    sub_total_item.Ecode = "Grand Total"
+    sub_total_item.description = "Grand Total"
+
+    for i in range(0,69):
+        sub_total_item.gob_allocation = sub_total_item.gob_allocation+ritems[i].gob_allocation
+        sub_total_item.rpa_allocation = sub_total_item.rpa_allocation+ritems[i].rpa_allocation
+        sub_total_item.dpa_allocation = sub_total_item.dpa_allocation+ritems[i].dpa_allocation
+        sub_total_item.total_allocation = sub_total_item.total_allocation+ritems[i].total_allocation
+        """Expenditure upto previous month"""
+        sub_total_item.gob_pm = sub_total_item.gob_pm+ritems[i].gob_pm
+        sub_total_item.rpa_pm = sub_total_item.rpa_pm+ritems[i].rpa_pm
+        sub_total_item.dpa_pm = sub_total_item.dpa_pm+ritems[i].dpa_pm
+        sub_total_item.total_pm = sub_total_item.total_pm+ritems[i].total_pm
+        """Expenditure of the current month month"""
+        sub_total_item.gob_cm = sub_total_item.gob_cm+ritems[i].gob_cm
+        sub_total_item.rpa_cm = sub_total_item.rpa_cm+ritems[i].rpa_cm
+        sub_total_item.dpa_cm = sub_total_item.dpa_cm+ritems[i].dpa_cm
+        sub_total_item.total_cm = sub_total_item.total_cm+ritems[i].total_cm
+        """Expenditue upto current month"""
+        sub_total_item.gob_cmt = sub_total_item.gob_cmt+ritems[i].gob_cmt
+        sub_total_item.rpa_cmt = sub_total_item.rpa_cmt+ritems[i].rpa_cmt
+        sub_total_item.dpa_cmt = sub_total_item.dpa_cmt+ritems[i].dpa_cmt
+        sub_total_item.total_cmt = sub_total_item.total_cmt+ritems[i].total_cmt
+        """budget remaining"""
+        sub_total_item.gob_rm = sub_total_item.gob_rm+ritems[i].gob_rm
+        sub_total_item.rpa_rm = sub_total_item.rpa_rm+ritems[i].rpa_rm
+        sub_total_item.dpa_rm = sub_total_item.dpa_rm+ritems[i].dpa_rm
+        sub_total_item.total_rm = sub_total_item.total_rm+ritems[i].total_rm
+    print("Allownances Total={} ".format(sub_total_item.total_allocation))
+    #print("item11={} item2={}".format( sub_total_item.Ecode,ritems[0].Ecode))
+    sub_total_item.roundToDigit(2)
+    return sub_total_item
+
+
+
+
+
+
 def displayRitems(ritems):
     for ritem in ritems:
         print(ritem.description)
@@ -417,17 +691,23 @@ def createMonthlyReportItems(budgets,fy,month):
         #print("index={} description={}".format(index,description))
         report_items.append(ri)
         #disPlayTotalExpenditure(budget,6)
-    print("totla expenditure entries={}".format(len(report_items)))
-    report_items=report_items[::-1]
-    displayRitems(report_items)
+    print("total expenditure entries={}".format(len(report_items)))
+    #report_items=report_items[::-1] revesing of a list
+    #displayRitems(report_items)
+    allownances=subtotalAllownaces(report_items)
+    services=subtotalSupplyAndServices(report_items)
+    repair_maintain=subtotalRepairAndMaintenance(report_items)
+    capital=subtotalCapital(report_items)
+    revenue=subtotalRevenue(report_items)
+    grandtotal=grandTotal(report_items)
+    report_items.insert(3,allownances)
+    report_items.insert(32,services)
+    report_items.insert(43,repair_maintain)
+    report_items.insert(44,revenue)
+    report_items.insert(71,capital)
+    report_items.append(grandtotal)
+
     return report_items
-
-
-
-
-
-
-
 
 
 def createProgressReport():
@@ -448,12 +728,7 @@ def createProgressReport():
     myheading1="HFMLIP:Monthly Expenditure Report"
     myparagraph1 = Paragraph(myheading1, custom_body_style)
     flowables.append(myparagraph1)
-
-
-
-
     doc.build(flowables)
-
     pdf_value = pdf_buffer.getvalue()
     pdf_buffer.close()
     return pdf_value

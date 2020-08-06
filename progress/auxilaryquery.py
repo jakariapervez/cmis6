@@ -830,6 +830,43 @@ def convertReportObject_to_dic(myreportEvent):
     data["message"]=myreportEvent.message
     return data
 
+class structure:
+    def __init__(self,name,start,finish,length,):
+        self.name=name
+        self.start=start
+        self.finish=finish
+        self.length=length
+"""  
+contract_status_choices = [("HAVE_CONTRACT", "HAVE_CONTRACT"), ("HAVE_NO_CONTRACT", "HAVE_NO_CONTRACT")]
+work_status_choices = [("OG", "OG"), ("COMP", "COMP"), ("TO_BE_STARTED", "TO_BE_STARTED")]
+haor_id = models.ForeignKey(Haor, on_delete=models.SET_NULL, null=True, blank=True)
+name = models.CharField(max_length=400)
+start_chainage = models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+finish_chainage = models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+length = models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+volume = models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+vent_no = models.IntegerField(null=True, blank=True)
+dpp_cost=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+worktype_id = models.ForeignKey(WorkType, on_delete=models.SET_NULL, null=True, blank=True)
+contract_status = models.CharField(max_length=100, choices=contract_status_choices, null=True, blank=True,
+                                       default= "HAVE_NO_CONTRACT")
+work_status = models.CharField(max_length=100, choices=work_status_choices, blank=True, null=True,
+                                   default= "OG")
+
+"""
+#package_short_name
+def build_structure_list(contract_interventions):
+    structures=[]
+    for ivt in contract_interventions:
+        name=ivt.dpp_intervention_id.name
+        start=ivt.dpp_intervention_id.start_chainage
+        finish=ivt.dpp_intervention_id.finish_chainage
+        length=ivt.dpp_intervention_id.length
+        element=structure(name,start,finish,length)
+        structures.append(element)
+        #print(ivt.contract_id)
+
+    return structures
 
 
 
