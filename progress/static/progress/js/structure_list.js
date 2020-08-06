@@ -254,26 +254,14 @@ for(c=0;c<cellCount-3;c++)
 	//console.log(rows[r].cells[c].firstChild.nodeValue);
 	cols.push(rows[r].cells[c].firstChild.nodeValue);
 }
-total_gob=total_gob+parseFloat(rows[r].cells[4].firstChild.nodeValue);
-total_rpa=total_rpa+parseFloat(rows[r].cells[5].firstChild.nodeValue);
-total_dpa=total_dpa+parseFloat(rows[r].cells[6].firstChild.nodeValue);
-grand_total=grand_total+parseFloat(rows[r].cells[7].firstChild.nodeValue);
+
 
 //console.log(cols)
 myDataArr.push(cols);
 
 	
 }
-total_gob=total_gob.toFixed(2);
-total_rpa=total_rpa.toFixed(2);
-total_dpa=total_dpa.toFixed(2);
-grand_total=grand_total.toFixed(2);
-console.log("GoB Total="+total_gob );
-console.log("RPA Total="+total_rpa );
-console.log("DPA Total="+total_dpa);
-console.log("Grand Tota="+grand_total)
-totalcols=["","","","TOTAL",total_gob,total_rpa,total_dpa,grand_total]
-myDataArr.push(totalcols);
+
 //console.log(myDataArr);
 //console.log("total rows="+rowCount)	
 /*PDF CREATION
@@ -281,7 +269,7 @@ myDataArr.push(totalcols);
 *******************************************************************
 ******************************************************************
 PDF CREATION */
-var heading=[['Date','Batch No','Code','Description','GoB','RPA','DPA','TOTAL']]
+var heading=[['Package No','Structure Name','Str Type','Start','Finish','Length','Current Status',]]
 var doc= new jsPDF('p','pt','a4');	
 doc.autoTable({
 	head:heading,

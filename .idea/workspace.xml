@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/static/progress/js/structure_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/progress/static/progress/js/structure_list.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pac/auxilaryquery.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="370" selection-start-line="370" selection-end-line="370" />
+            <state relative-caret-position="7208">
+              <caret line="425" selection-start-line="425" selection-end-line="425" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -57,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/progress/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
+            <state relative-caret-position="680">
               <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="39" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
@@ -69,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/progress/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="1101" column="4" selection-start-line="1101" selection-start-column="4" selection-end-line="1101" selection-end-column="28" />
+            <state relative-caret-position="19108">
+              <caret line="1130" column="4" selection-start-line="1130" selection-start-column="4" selection-end-line="1130" selection-end-column="4" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -81,7 +81,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/progress/auxilaryquery.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-765">
+            <state>
               <folding>
                 <element signature="e#0#89#0" expanded="true" />
               </folding>
@@ -128,11 +128,6 @@
             <path>
               <item name="cmis6" type="b2602c69:ProjectViewProjectNode" />
               <item name="cmis6" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cmis6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cmis6" type="462c0819:PsiDirectoryNode" />
-              <item name="pac" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -244,19 +239,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/progress/views.py">
+    <entry file="file://$PROJECT_DIR$/pac/auxilaryquery.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="1101" column="4" selection-start-line="1101" selection-start-column="4" selection-end-line="1101" selection-end-column="28" />
+        <state relative-caret-position="7208">
+          <caret line="425" selection-start-line="425" selection-end-line="425" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/progress/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
+        <state relative-caret-position="680">
           <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="39" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
@@ -264,19 +259,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pac/auxilaryquery.py">
+    <entry file="file://$PROJECT_DIR$/progress/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="370" selection-start-line="370" selection-end-line="370" />
+        <state relative-caret-position="19108">
+          <caret line="1130" column="4" selection-start-line="1130" selection-start-column="4" selection-end-line="1130" selection-end-column="4" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/progress/auxilaryquery.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
+        <state>
           <folding>
             <element signature="e#0#89#0" expanded="true" />
           </folding>
