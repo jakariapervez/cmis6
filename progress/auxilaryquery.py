@@ -11,7 +11,7 @@ startdate = models.DateField(default=timezone.now)
 finishdate = models.DateField(default=timezone.now)
 
 """
-import datetime
+from datetime import datetime
 """   
 progress_item_id = models.ForeignKey(ProgressItem, on_delete=models.SET_NULL, null=True, blank=True)
 date = models.DateField(default=timezone.now)
@@ -22,7 +22,7 @@ document_id = models.ForeignKey(ConstructionImage, on_delete=models.CASCADE, nul
 
 
 def createProgressQuantity(pitem,contract):
-    now = datetime.datetime.now()
+    now = datetime.now()
     user1=contract.xen_id
     user2=contract.cse_id
     user3=contract.fse_id

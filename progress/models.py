@@ -148,8 +148,8 @@ class Contract_Intervention(models.Model):
     contract_id=models.ForeignKey(Contract,on_delete=models.CASCADE,null=True,blank=True)
     dpp_intervention_id=models.ForeignKey(DPP_Intervention,on_delete=models.CASCADE)
     contract_component_id = models.ForeignKey(ContractComponent, on_delete=models.SET_NULL, null=True, blank=True)
-    physical_weight = models.DecimalField(blank=True,default=0.10,max_digits=4,decimal_places=3)
-    financial_weight = models.DecimalField(blank=True, default=0.10,max_digits=4,decimal_places=3)
+    physical_weight = models.DecimalField(blank=True,default=0.10,max_digits=8,decimal_places=6)
+    financial_weight = models.DecimalField(blank=True, default=0.10,max_digits=8,decimal_places=6)
 
     """       
     so_id=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL, null=True,
