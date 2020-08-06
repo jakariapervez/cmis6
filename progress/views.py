@@ -423,7 +423,7 @@ def list_contract_Intervention(request):
     haors = Haor.objects.all()
     contracts = Contract.objects.all()
     context = {'haors': haors, 'contracts': contracts}
-    return render(request, 'progress/edit_drop_contract_intervention.html', context)
+    return render(request, 'progress/edit_drop_contract_intervention2.html', context)
 
 @login_required
 def update_contract_Intervention(request, pk):
