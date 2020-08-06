@@ -20,14 +20,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pac/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pac/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pac/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pac/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0002_auto_20190220_1235.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0003_auto_20190220_1303.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0004_progress_quantity_user_id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0005_auto_20190221_0507.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0006_auto_20190221_1352.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0007_document.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0008_auto_20190227_1753.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0009_auto_20190227_1820.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0010_auto_20190227_1905.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0011_auto_20190304_2238.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0012_auto_20190305_2057.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0013_auto_20190305_2234.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0014_auto_20190309_0124.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0015_auto_20190309_1907.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0016_auto_20190309_1949.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0017_auto_20190317_0021.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0018_auto_20190319_2243.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0019_auto_20190320_0001.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0020_auto_20190322_0248.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0021_auto_20190322_0253.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0022_auto_20190324_0702.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0023_schedule.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0024_auto_20190827_2137.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0025_auto_20190827_2307.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0026_auto_20190831_1213.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0027_landacquisitiondata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0028_auto_20190831_1345.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0029_auto_20190831_1350.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0030_auto_20190831_1811.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0031_auto_20191005_0355.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0032_auto_20191005_0547.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0033_auto_20191005_0634.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0034_auto_20191006_0026.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0035_auto_20191009_0230.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0036_auto_20191016_2019.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0037_auto_20200805_2312.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/progress/migrations/0038_auto_20200806_1646.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/progress/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/static/progress/js/structure_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/progress/static/progress/js/structure_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pd_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pd_dashboard.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,13 +81,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/progress/models.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myproject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+            <state relative-caret-position="-1685">
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#310#319#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/progress/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,6 +163,18 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/progress/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1258">
+              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -140,6 +195,7 @@
         <option value="$PROJECT_DIR$/progress/views.py" />
         <option value="$PROJECT_DIR$/pac/views.py" />
         <option value="$PROJECT_DIR$/progress/models.py" />
+        <option value="$PROJECT_DIR$/progress/admin.py" />
       </list>
     </option>
   </component>
@@ -308,16 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pac/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="1037" column="70" selection-start-line="1037" selection-start-column="70" selection-end-line="1037" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/progress/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -328,12 +374,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pac/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="1037" column="70" selection-start-line="1037" selection-start-column="70" selection-end-line="1037" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myproject/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1685">
+          <folding>
+            <element signature="e#310#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/progress/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+        <state relative-caret-position="1258">
+          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/progress/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

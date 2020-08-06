@@ -2,11 +2,17 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 # Register your models here.
 from .models import District,Division
-admin.site.register(District)
+@admin.register(District)
+
+
+
+class District_Admin(ImportExportModelAdmin):
+    pass
 @admin.register(Division)
 class Division_Admin(ImportExportModelAdmin):
     pass
 from .models import Haor,WorkType,ContractComponent,DPP_Intervention
+
 
 #admin.site.register(Haor)
 @admin.register(Haor)
@@ -73,4 +79,5 @@ class ReportEvent_admin(ImportExportModelAdmin):
 @admin.register(ReportSubmissionStatus)
 class ReportSubmissionStatus_Admin(ImportExportModelAdmin):
     pass
+
 admin.site.register(Reportdocument)

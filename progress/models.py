@@ -169,6 +169,27 @@ class Contract_Intervention(models.Model):
 
 """Use camelCase Variable Name    """
 
+
+from django.contrib.auth.models import User
+
+class Document(models.Model):
+    description = models.CharField(max_length=255, blank=True,null=True)
+    document = models.ImageField(upload_to='documents/%Y/%m/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    uploaded_by=models.ForeignKey(User,on_delete=models.CASCADE)
+
+class ConstructionImage(models.Model):
+    description = models.CharField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to='structures/%Y/%m/%d/')
+    acquisition_date=models.DateTimeField(default=datetime.now)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    structure_id = models.ForeignKey(Contract_Intervention, on_delete=models.CASCADE, null=True, blank=True)
+
+
+
+
+
 class ProgressItem(models.Model):
     work_status_choices=[("OG", "OG"), ("COMP", "COMP"), ("TO_BE_STARTED", "TO_BE_STARTED"),("HALTED","HALTED"),("ABANDONED","ABANDONED")]
     intervention_id=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
@@ -192,23 +213,6 @@ class ProgressItem(models.Model):
 
     def __str__(self):
         return f'{self.item_name}'
-from django.contrib.auth.models import User
-
-class Document(models.Model):
-    description = models.CharField(max_length=255, blank=True,null=True)
-    document = models.ImageField(upload_to='documents/%Y/%m/')
-    uploaded_at = models.DateTimeField(auto_now_add=True)
-    uploaded_by=models.ForeignKey(User,on_delete=models.CASCADE)
-
-class ConstructionImage(models.Model):
-    description = models.CharField(max_length=255, blank=True, null=True)
-    image = models.ImageField(upload_to='structures/%Y/%m/%d/')
-    acquisition_date=models.DateTimeField(default=datetime.now)
-    uploaded_at = models.DateTimeField(auto_now_add=True)
-    uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    structure_id = models.ForeignKey(Contract_Intervention, on_delete=models.CASCADE, null=True, blank=True)
-
-
 class Progress_Quantity(models.Model):
     progress_item_id=models.ForeignKey(ProgressItem,on_delete=models.CASCADE,null=True,blank=True)
     date=models.DateField(default=timezone.now)
@@ -226,6 +230,18 @@ class ProgresSchedule(models.Model):
     def __str__(self):
         return f'{self.quantity}'
 
+
+
+
+
+
+
+
+
+
+
+
+
 """"Classes for Value of Workdone      """
 class Schedule(models.Model):
     codeNo=models.CharField(max_length=100,null=True,blank=True)
@@ -233,6 +249,10 @@ class Schedule(models.Model):
     unit=models.CharField(max_length=50,null=True,blank=True)
     def __str__(self):
         return f'{self.codeNo}'
+
+
+
+
 class BoQ(models.Model):
     quantity=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
     rate=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
