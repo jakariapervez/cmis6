@@ -35,8 +35,9 @@ urlpatterns=[
     url('^financial/progress/category/$',views.dashboardCategory,name="dashboard_category"),
     url('^report/expenditure/monthly/$', views.MonthlyExpenditure, name="monthly_expenditure"),
     url('^report/expenditure/monthly/yearwise/$', views.MonthlyExpenditureYearwise, name="monthly_expenditure_yearwise"),
-    path('list_contract_intervention2/',views.contractInterventionList,name="contract_intervention_list2"),
-    path('blankmap',views.BlankMap,name="blank_map"),
+    # structure view related function
+    path('list_contract_intervention2/', views.contractInterventionList, name="contract_intervention_list2"),
+    path('blankmap', views.BlankMap, name="blank_map"),
 
     #Civil works related url
 

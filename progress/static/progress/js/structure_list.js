@@ -248,7 +248,7 @@ cellCount=cells.length
 //console.log(rows[r].cells[2]);	
 //console.log(rows[r].cells[2].firstChild.nodeValue);	
 //console.log("Total cells="+cellCount);
-for(c=0;c<cellCount-3;c++)
+for(c=0;c<cellCount;c++)
 {
 	 
 	//console.log(rows[r].cells[c].firstChild.nodeValue);
@@ -283,13 +283,13 @@ doc.autoTable({
         },
 	headerStyles:{
 		fillColor:[0,0,0],
-		fontSize:8
+		fontSize:12
 		
 	},
 	bodyStyles:{
 		fillColor: [216, 216, 216],
         textColor: 50,
-		fontSize:8
+		fontSize:12
 		
 		
 	},

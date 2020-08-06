@@ -50,6 +50,7 @@ urlpatterns=[
     path('dashboard/reportevent/edit/<int:pk>/',views.editReportEvent,name='edit_report_event'),
     path('dashboard/reportevent/edit/',views.editReportEvent2,name='edit_report_event2'),
 
+
     #A Temporary URL for viewing contract Interventioin
 
 ]
