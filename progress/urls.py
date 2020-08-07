@@ -49,6 +49,8 @@ urlpatterns=[
     #path('dashboard/reportevent/view/',views.viewReportEvent,name='vierw_report_event'),
     path('dashboard/reportevent/edit/<int:pk>/',views.editReportEvent,name='edit_report_event'),
     path('dashboard/reportevent/edit/',views.editReportEvent2,name='edit_report_event2'),
+    #url for qualitative progrss
+    #pthh('qualitative_progress/',views.Qualitative_progress,name='qualitative_progress'),
 
 
     #A Temporary URL for viewing contract Interventioin
