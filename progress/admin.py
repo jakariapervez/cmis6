@@ -13,6 +13,9 @@ class Division_Admin(ImportExportModelAdmin):
     pass
 from .models import Haor,WorkType,ContractComponent,DPP_Intervention
 
+@admin.register(ContractComponent)
+class ContractComponent_Admin(ImportExportModelAdmin):
+    pass
 
 #admin.site.register(Haor)
 @admin.register(Haor)
@@ -22,7 +25,7 @@ class Haor_Admin(ImportExportModelAdmin):
 @admin.register(WorkType)
 class WorkType_Admin(ImportExportModelAdmin):
     pass
-admin.site.register(ContractComponent)
+#admin.site.register(ContractComponent)
 @admin.register(DPP_Intervention)
 class DPP_Intervention_Admin(ImportExportModelAdmin):
     pass

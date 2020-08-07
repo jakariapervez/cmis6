@@ -32,7 +32,7 @@ class Contractor(models.Model):
     tradelicense=models.CharField(max_length=10,blank=True,null=True)
     Vat_registration=models.CharField(max_length=11,blank=True,null=True)
     TIN_No=models.CharField(max_length=12,blank=True,null=True)
-    egp_id=models.CharField(max_length=14,blank=True)
+    egp_id=models.CharField(max_length=14,blank=True,null=True)
     national_id=models.ImageField(null=True,blank=True)
     def __str__(self):
         return f' {self.farm_name} '
@@ -362,7 +362,17 @@ class Reportdocument(models.Model):
 """A New model for keep tracking of Qualitative progress"""
 class qualitativeStatus(models.Model):
     contract_status_choices = [("C", "Completed"), ("OG", "On Going"),("P","Problamatic")]
+    problems_status_choices=[("LA", "Land Acquisition"), ("SR", "Structure Relocated"),
+                             ("LP","Local Peoplles's Obstruction"),("RE","River Erosion"),
+                             ("GC"," inappropriate Sub-surface Condition"),("NP","None"),("OT","Others"),]
     contract_ivt=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
+    overall_status=models.CharField(max_length=100,choices=contract_status_choices,default="OG")
+    current_progress= models.DecimalField(null=True, blank=True, decimal_places=5, max_digits=6)
+    problems=models.CharField(max_length=100,choices= problems_status_choices,default="NP")
+
+    def __str__(self):
+        return f'{str(self.contract_ivt)+"_"+str(self.overall_status)}'
+
 
 
 
