@@ -359,6 +359,12 @@ class Reportdocument(models.Model):
     reportingPerson = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
                                         null=True, blank=True)
 
+"""A New model for keep tracking of Qualitative progress"""
+class qualitativeStatus(models.Model):
+    contract_status_choices = [("C", "Completed"), ("OG", "On Going"),("P","Problamatic")]
+    contract_ivt=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
+
+
 
 
 
