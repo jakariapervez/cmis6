@@ -864,7 +864,7 @@ def dashBoard(request):
         return render(request, 'pd_dashboard.html', context)
     else:
         return render(request, 'xen_dashboard_rev1.html', context)
-from .auxilaryquery import calculatePackageProgressData,fillBlankProgressQuantity
+from .auxilaryquery import calculatePackageProgressData2,fillBlankProgressQuantity
 
 def dashBoard_Graph(request,pk):
     data=dict()
@@ -877,8 +877,8 @@ def dashBoard_Graph(request,pk):
     #print(user)
    #print(contract)
     civts=list(Contract_Intervention.objects.filter(contract_id=pk))
-    mydata=calculatePackageProgressData(civts,user)
-    print(mydata['pdatas'])
+    mydata=calculatePackageProgressData2(civts,user)
+    #print(mydata['pdatas'])
     context={'pdatas':mydata['pdatas']}
     mytable=render_to_string('includes/progress_table.html',context, request=request)
     #print(mytable)
@@ -935,7 +935,7 @@ def dashBoard_Graph(request,pk):
     #mydata=dict()
     #data['target']=mydata['mydata']
     #mydata = {'target': filteredTarget, 'achivment': fiteredProg, 'filteredItem': filteredItem}
-    print(mydata)
+    #print(mydata)
     #mydata = data
     return JsonResponse(mydata)
 from .auxilaryquery import dummyProgressQuantity

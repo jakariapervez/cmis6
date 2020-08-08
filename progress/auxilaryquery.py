@@ -493,8 +493,10 @@ def calculateStructureProgress(contrcactIvt,user):
 
 def findProgressIndex(dpp_item):
     #codelist=['EMBRR','SUBEMBCN','SUBEMBRN','EXKHLN','EXRIVN','REGCN','CASWCN','IRINC','BOXSLCN','EXKHLR','EXRIVR']
-    codelist=['IRINC','REGRR','REGCN','CASWCN','BRIDGCN','BOXSLCN','EXKHLN','EXRIVN','EXKHLR','EXRIVR','EMBR','SEMBRN',
+    codelist=['IRINCN','REGRR','REGCN','CASWCN','BRIDGCN','BOXSLCN','EXKHLN','EXRIVN','EXKHLR','EXRIVR','EMBRR','SEMBRN',
               'SEMBCN','REGRN','EMBSPW','WMGOC']
+
+
     code=str(dpp_item.worktype_id)
     code=code.strip()
     index=codelist.index(code)
@@ -550,6 +552,132 @@ def calculatePackageProgressData(civts,user):
         index=findProgressIndex(dpp_item)
         #print("index of item={}".format(index))
         prog=calculateStructureProgress(ivt,user)
+        #print("structue={}  structural progress={}".format(ivt,prog))
+        """calculating unit progress"""
+        if code in codelist:
+            length=1.0
+        else:
+            length=float(dpp_item.length)
+        #length=dpp_item.length
+        completion=length*prog
+        #print("index={} structure={} length={} completed={}".format(index,ivt,length,completion))
+        q1=completedQuantity[index]
+        completedQuantity[index]=q1+completion
+        #print(completedQuantity)
+        q2=totalQuantity[index]
+        totalQuantity[index] =q2+length
+        weight=float(ivt.physical_weight)
+        pp=prog*weight
+        progress[index]+=pp
+        target[index] +=weight
+    #print("Printing total quantity..............")
+    #print("total={} completed={}".format(totalQuantity,completedQuantity))
+
+    for i in range(n):
+        if target[i]!=0:
+            fiteredProg.append(progress[i])
+            filteredTarget.append(target[i])
+            filteredItem.append(names[i])
+            filteredTotalQuantity.append(round(totalQuantity[i],3))
+            filteredCompletedQuantity.append(round(completedQuantity[i],3))
+            remaining=round((totalQuantity[i]-completedQuantity[i]),3)
+            filteredRemainingItem.append(remaining)
+            filteredUnit.append(units[i])
+
+    n2=len(filteredItem)
+    sum1=0
+    sum2=0
+    sum3=0
+    for i in range(n2):
+        pdata=[]
+        pdata.append(filteredItem[i])
+        pdata.append(filteredUnit[i])
+        pdata.append(filteredTotalQuantity[i])
+        itemprog=filteredCompletedQuantity[i]/filteredTotalQuantity[i]
+        itemprog=round((itemprog*100),3)
+        pdata.append("-")
+        pdata.append(itemprog)
+        weight=filteredTarget[i]
+        weight=round(weight,3)
+        pdata.append(weight)
+        packprog=itemprog*weight
+        packprog=round(packprog,3)
+        pdata.append(packprog)
+        sum1+=packprog
+        pdata.append("-")
+        pdata.append("-")
+        pdatas.append(pdata)
+    pdata=[]
+    pdata.append("Package Total")
+    pdata.append("")
+    pdata.append("")
+    pdata.append("")
+    pdata.append("")
+    pdata.append("")
+    pdata.append(sum1)
+    pdata.append("")
+    pdata.append("")
+    pdatas.append(pdata)
+
+
+
+
+
+    mydata={'target':filteredTarget,'achievement':fiteredProg,'filteredItem':filteredItem,
+            'total':filteredTotalQuantity,'completed':filteredCompletedQuantity,
+            'rest':filteredRemainingItem,'unit':filteredUnit,'pdatas':pdatas
+            }
+    return mydata
+from .models import qualitativeStatus
+def calculatePackageProgressData2(civts,user):
+    """
+    names = ['Fulll Embnakment Rehab-Rehab Haor', 'Submersible Embankment Construction New-Haor',
+             'Submersible Embankment Construction New-Haor', 'Khal Rexcavation New Haor',
+             'River Excavtion New Haor',
+             'Regulator Constyruction New Haor', 'Causeway Connstruction New Haor', 'Irigation Inlet Construction',
+             'Box Sluice Constuction New', 'Khal Rexcavation Rehablitation Haor', 'River Excavtion Rehab Haor']
+     """
+    names=["Inlet","Regulator Repair Rehab","Regulator New Haor","Causeway New Haor",
+           "Brdige New Haor","Box Outlet New "
+         ,"Khal New Haor","River New Haor","Khal Rehab Haor","River Rehab Haor",'Full Embankment Repair Rehab Haor',
+           'Submersible Emb Repair New Haor','Submersible Emb Const New Haor','Regulator Repair New Haor',
+           'Slope Protection Work','WMG Office Building']
+    units=['Nos','Nos','Nos','Nos','Nos','Nos','Km','Km','Km','Km','Km','Km',
+           'Km','Nos','meter','Nos']
+    #number=['IRINC','REGRR','REGCN','CASWCN','BRIDGCN','BOXSLCN','REGRN','WMGOC']
+    codelist = ['IRINC', 'REGRR', 'REGCN', 'CASWCN', 'BRIDGCN', 'BOXSLCN',
+                 'REGRN',  'WMGOC']
+    padtas=[]
+    n=len(names)
+    progress=[0 for i in range(n)]
+    target=[0 for i in range(n)]
+    totalQuantity=[0 for i in range(n)]
+    completedQuantity=[0 for i in range(n)]
+    fiteredProg=[]
+    filteredTarget=[]
+    filteredItem=[]
+    filteredTotalQuantity=[]
+    filteredCompletedQuantity=[]
+    filteredRemainingItem=[]
+    filteredUnit=[]
+    #conntractivts=Contract_Intervention.objects.filter(contract_id=contract)
+    pdatas=[]
+
+    for ivt in civts:
+        #qs_data=qualitativeStatus.objects.all().filter(contract_ivt=ivt)
+        qs_data=qualitativeStatus.objects.get(contract_ivt=ivt)
+        print(qs_data)
+        dpp_item=ivt.dpp_intervention_id
+        #dpp_itenm=qs_data
+        code = str(dpp_item.worktype_id)
+        code = code.strip()
+        #print("printing code...")
+        #print("nname={} code={}".format(dpp_item.name,code))
+        index=findProgressIndex(dpp_item)
+        #print("index of item={}".format(index))
+        #prog=calculateStructureProgress(ivt,user)
+        prog=float(qs_data.current_progress)
+        print("progress={}".format(qs_data.current_progress))
         #print("structue={}  structural progress={}".format(ivt,prog))
         """calculating unit progress"""
         if code in codelist:
