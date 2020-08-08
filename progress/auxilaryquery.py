@@ -629,6 +629,8 @@ def calculatePackageProgressData(civts,user):
             }
     return mydata
 from .models import qualitativeStatus
+
+
 def calculatePackageProgressData2(civts,user):
     """
     names = ['Fulll Embnakment Rehab-Rehab Haor', 'Submersible Embankment Construction New-Haor',

@@ -494,7 +494,7 @@ def list_contract_Intervention_sort_by_contract(request, pk):
 
 @login_required
 def list_contract_Intervention_sort_by_contract_all(request):
-    ivts = Contract_Intervention.objects.all()
+    ivts = Contract_Intervention.objects.all().order_by('contract_id__package_short_name')
     data = dict()
     data['html_ivt_list'] = render_to_string('progress/includes/partial_contract_list.html', {
         'ivts': ivts
