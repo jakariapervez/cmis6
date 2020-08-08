@@ -1108,11 +1108,43 @@ def Qualitative_progress(request):
     structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
     context={"structures":structures,"contracts":contracts}
     return render(request,"progress/qualitative_progress_list2.html",context)
-def Qualitative_progress_sort(request,pk):
-    myid=pk
-    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
-    context={"structures":structures}
-    return render(request,"progress/qualitative_progress_list2.html",context)
+from .models import Division
+def Qualitative_progress_sort(request):
+    print("sucessfully trapped sort events for progress update.....")
+    data = dict()
+    divisions=["KISH-ALL","HOBI-ALL","NETR-ALL","SUNM-DIV-I-ALL","SUNM-DIV-II-ALL" ]
+    div_index=[1,6,3,4,5]
+    whole_project=["WHOLE-PROJECT"]
+    search_id= request.GET['contract_id']
+    if search_id in divisions:
+
+        idx=divisions.index(search_id)
+        div_pr_key=div_index[idx]
+        mydivision=get_object_or_404(Division,pk=div_pr_key)
+        print("Now searching division {}".format(mydivision.division_name))
+        print(div_pr_key)
+        contrats=Contract.objects.all().filter(division_id=mydivision)
+        print(contrats)
+        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id__division_id=mydivision)
+        #structures=qualitativeStatus.objects.select_related('contract_ivt__contract_id__division_id').all()
+        print(structures)
+    elif search_id in whole_project:
+        structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    else:
+        contract_package=get_object_or_404(Contract,pk=search_id)
+        print("package name={}".format(contract_package.package_short_name))
+        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id=contract_package)
+    context={'structures':structures}
+    table_data=render_to_string('progress/includes/structures/partial_qualitative_progress_list.html',context,request=request)
+    #print(table_data)
+    #print(contract_id)
+    #print(structures)
+    data['html_ivt_list']=table_data
+    return JsonResponse(data)
+
+    #structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    #context={"structures":structures}
+    #return render(request,"progress/qualitative_progress_list2.html",context)
 
 def Qualitative_progress_update(request,pk):
     myid=pk

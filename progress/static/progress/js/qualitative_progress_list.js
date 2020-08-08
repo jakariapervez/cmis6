@@ -167,18 +167,33 @@ updateTable2(value);
 var sort_by_all =function (){
 	console.log("Successfully triggered select by all event");
 	var myurl=$(this).attr("data-url")
-	contract=$("#package-sort").val()
+	var contract=$("#package-sort").val()
 	console.log(myurl)
 	
-/*	$.ajax({
+$.ajax({
 		url:myurl,
 		type:'get',
 		dataType:'json',
+		data:{'contract_id':contract},
+		beforeSend:function ()
+		{
+		console.log("Sending Ajax request for updating table");
+		//console.log(data)
+		$("#ivt-table tbody").html("");
+			
+		},
+		success:function (data)
+		{
+			
+		console.log("sucessfully returned from ajax request......");
+		$("#ivt-table tbody").html(data.html_ivt_list);
+			
+		}
 		
 		
 		
 		
-	}); */
+	});
 	/*
 	var selector =$(this);
 	var selector =$(this);
