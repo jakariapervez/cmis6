@@ -421,7 +421,7 @@ from .models import Contract
 @login_required
 def list_contract_Intervention(request):
     haors = Haor.objects.all()
-    contracts = Contract.objects.all()
+    contracts = Contract.objects.all().order_by('package_short_name')
     context = {'haors': haors, 'contracts': contracts}
     return render(request, 'progress/edit_drop_contract_intervention2.html', context)
 
