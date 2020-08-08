@@ -15,9 +15,9 @@
 <td>{{structure.problems}}</td>
 <td>					  
 <button type="button button-lg"
-							  class="btn btn-primary btn-sm "
+							  class="btn btn-primary btn-sm js-update-qualitative-progress "
 							   
-							  data-url="{% url 'qualitative_progress_update' structure.id %}">
+							  data-url="{% url 'qualitative_progress_update' pk=structure.id %}">
 						<span class="glyphicon glyphicon-pencil"></span>Update
 					  </button>
 					  </td>

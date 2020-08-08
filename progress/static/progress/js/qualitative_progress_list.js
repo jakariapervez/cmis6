@@ -206,7 +206,7 @@ $.ajax({
 	console.log("FY="+fy+"month="+month+"code="+ecode)
     updateTable3(value,fy,month,ecode);	
 	*/
-	
+	 return false;
 };
 
 var generteReport =function()
@@ -339,13 +339,70 @@ filename="Status_"+ts+".pdf"
 doc.save(filename);
 
 }
+var loadUpdateForm= function ()
+{
+var btn = $(this);	
+myurl=$(this).attr("data-url");
+console.log(myurl);
+    $.ajax({
+      url: myurl,
+      type: 'get',
+      dataType: 'json',
+      beforeSend: function () {
+		console.log(btn.attr("data-url"));
+        $("#modal-ivt .modal-content").html("");
+        $("#modal-ivt").modal("show");
+      },
+      success: function (data) {
+        $("#modal-ivt .modal-content").html(data.html_form);
+      }
+    });	
+}
+var saveUpdateForm=function ()
+{
+console.log("sucessfully Initiated form Submission Event.......")
+ var form = $(this);
+ myurl=form.attr("action")
+ console.log(myurl)
+    $.ajax({
+      url: form.attr("action"),
+      data: form.serialize(),
+      type: form.attr("method"),
+      dataType: 'json',
+      success: function (data) {
+        if (data.form_is_valid) {
+		  console.log("Intervention data is Valid")
+          $("#ivt-table tbody").html(data.html_ivt_list);
+          $("#modal-ivt").modal("hide");
+		  console.log("restoring previous view of the table")
+		  /*updateTable(value);*/
+		  
+        }
+        else {
+		  console.log("Intervention data is InValid")
+          $("#modal-ivt .modal-content").html(data.html_form);
+        }
+      }
+    });
+    return false;	
+	
+	
+	
+}
+
+
+
+
 /*binding*/
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
 //$(".js-fy-select").change(sort_by_haor)
 //$(".js-month-select").change(sort_by_haor)
 //$(".js-code-select").change(sort_by_haor)
-
+//progres update
+$(".js-update-qualitative-progress").click(loadUpdateForm);
+$("#modal-ivt").on("submit", ".js-progress-update-form", saveUpdateForm);
 $(".js-sort-all").click(sort_by_all);
 //$(".js-report").click(generteReport)
 $(".js-report").click(generateReport2)
+
 });

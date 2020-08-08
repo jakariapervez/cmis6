@@ -135,3 +135,10 @@ report_event_status=[("Live","Live"),("Dead","Dead")]
     message=models.TextField(null=True,blank=True)
     eventStatus=models.CharField(max_length=100,choices=report_event_status,default="Live")
 """
+from .models import qualitativeStatus
+class qprogresForm(forms.ModelForm):
+
+    class Meta:
+
+        model =qualitativeStatus
+        fields = ('overall_status', 'current_progress', 'problems', 'value_of_work_done',)

@@ -1144,12 +1144,31 @@ def Qualitative_progress_sort(request):
     #structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
     #context={"structures":structures}
     #return render(request,"progress/qualitative_progress_list2.html",context)
-
+from .forms import qprogresForm
 def Qualitative_progress_update(request,pk):
-    myid=pk
-    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
-    context={"structures":structures}
-    return render(request,"progress/qualitative_progress_list2.html",context)
+    ivt = get_object_or_404(qualitativeStatus, pk=pk)
+    print(ivt)
+    data=dict()
+
+    if request.method == 'POST':
+        form = qprogresForm(request.POST, instance=ivt)
+        if form.is_valid():
+            form.save()
+            structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+            context = {'structures': structures}
+            table_data = render_to_string('progress/includes/structures/partial_qualitative_progress_list.html',
+                                          context, request=request)
+            data['form_is_valid']=True
+            data['html_ivt_list']=table_data
+        else:
+            data['form_is_valid'] = True
+
+    else:
+        form = qprogresForm(instance=ivt)
+        context={'form':form}
+        data['html_form']=render_to_string('progress/includes/structures/partial_ivt_update_form.html',context,request=request)
+    return JsonResponse(data)
+
 
 
 
