@@ -1110,22 +1110,21 @@ def Qualitative_progress(request):
     return render(request,"progress/qualitative_progress_list2.html",context)
 from .models import Division
 def Qualitative_progress_sort(request):
-    print("sucessfully trapped sort events for progress update.....")
+    #print("sucessfully trapped sort events for progress update.....")
     data = dict()
     divisions=["KISH-ALL","HOBI-ALL","NETR-ALL","SUNM-DIV-I-ALL","SUNM-DIV-II-ALL" ]
     div_index=[1,6,3,4,5]
     whole_project=["WHOLE-PROJECT"]
     search_id= request.GET['contract_id']
     if search_id in divisions:
-
         idx=divisions.index(search_id)
         div_pr_key=div_index[idx]
         mydivision=get_object_or_404(Division,pk=div_pr_key)
-        print("Now searching division {}".format(mydivision.division_name))
-        print(div_pr_key)
-        contrats=Contract.objects.all().filter(division_id=mydivision)
-        print(contrats)
-        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id__division_id=mydivision)
+        #print("Now searching division {}".format(mydivision.division_name))
+        #print(div_pr_key)
+        #contrats=Contract.objects.all().filter(division_id=mydivision.pk)
+        #print(contrats)
+        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id__division_id=mydivision).order_by('contract_ivt__contract_id')
         #structures=qualitativeStatus.objects.select_related('contract_ivt__contract_id__division_id').all()
         print(structures)
     elif search_id in whole_project:
