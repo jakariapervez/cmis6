@@ -901,3 +901,9 @@ def build_structure_list(contract_interventions):
 
 
 
+
+
+
+
+
+

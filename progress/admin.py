@@ -84,3 +84,7 @@ class ReportSubmissionStatus_Admin(ImportExportModelAdmin):
     pass
 
 admin.site.register(Reportdocument)
+from .models import qualitativeStatus
+@admin.register(qualitativeStatus)
+class qualitativeStatus_Admin(ImportExportModelAdmin):
+    pass

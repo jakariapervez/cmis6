@@ -1101,13 +1101,27 @@ class createReportEvent2(View):
         returnData=dict()
         returnData["tbody"]=html_table_body
         return JsonResponse(returnData)
+"""views for qualitative progress """
+from .models import qualitativeStatus
+def Qualitative_progress(request):
+    contracts=Contract.objects.all().order_by('package_short_name')
+    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    context={"structures":structures,"contracts":contracts}
+    return render(request,"progress/qualitative_progress_list2.html",context)
+def Qualitative_progress_sort(request,pk):
+    myid=pk
+    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    context={"structures":structures}
+    return render(request,"progress/qualitative_progress_list2.html",context)
+
+def Qualitative_progress_update(request,pk):
+    myid=pk
+    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    context={"structures":structures}
+    return render(request,"progress/qualitative_progress_list2.html",context)
 
 
 
-
-
-
-from .auxilaryquery import build_structure_list
 
 
 

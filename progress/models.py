@@ -369,6 +369,7 @@ class qualitativeStatus(models.Model):
     overall_status=models.CharField(max_length=100,choices=contract_status_choices,default="OG")
     current_progress= models.DecimalField(null=True, blank=True, decimal_places=5, max_digits=6)
     problems=models.CharField(max_length=100,choices= problems_status_choices,default="NP")
+    value_of_work_done=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=7,default=0)
 
     def __str__(self):
         return f'{str(self.contract_ivt)+"_"+str(self.overall_status)}'
