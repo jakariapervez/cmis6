@@ -1105,7 +1105,8 @@ class createReportEvent2(View):
 from .models import qualitativeStatus
 def Qualitative_progress(request):
     contracts=Contract.objects.all().order_by('package_short_name')
-    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id__package_short_name',
+                                                          'contract_ivt__dpp_intervention_id__worktype_id')
     context={"structures":structures,"contracts":contracts}
     return render(request,"progress/qualitative_progress_list2.html",context)
 from .models import Division
