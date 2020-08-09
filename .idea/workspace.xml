@@ -19,23 +19,6 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/progress/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0002_auto_20190220_1235.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0003_auto_20190220_1303.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0004_progress_quantity_user_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0005_auto_20190221_0507.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0006_auto_20190221_1352.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0007_document.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0008_auto_20190227_1753.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0009_auto_20190227_1820.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0010_auto_20190227_1905.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0011_auto_20190304_2238.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0012_auto_20190305_2057.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0013_auto_20190305_2234.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0014_auto_20190309_0124.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0015_auto_20190309_1907.py" beforeDir="false" />
     <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
