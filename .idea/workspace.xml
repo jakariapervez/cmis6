@@ -36,31 +36,7 @@
       <change beforePath="$PROJECT_DIR$/progress/migrations/0013_auto_20190305_2234.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/progress/migrations/0014_auto_20190309_0124.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/progress/migrations/0015_auto_20190309_1907.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0016_auto_20190309_1949.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0017_auto_20190317_0021.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0018_auto_20190319_2243.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0019_auto_20190320_0001.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0020_auto_20190322_0248.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0021_auto_20190322_0253.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0022_auto_20190324_0702.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0023_schedule.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0024_auto_20190827_2137.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0025_auto_20190827_2307.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0026_auto_20190831_1213.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0027_landacquisitiondata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0028_auto_20190831_1345.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0029_auto_20190831_1350.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0030_auto_20190831_1811.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0031_auto_20191005_0355.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0032_auto_20191005_0547.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0033_auto_20191005_0634.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0034_auto_20191006_0026.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0035_auto_20191009_0230.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0036_auto_20191016_2019.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0037_auto_20200805_2312.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/migrations/0038_auto_20200806_1646.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/progress/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/progress/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="53a8d635-5493-4a30-8b07-b9b13930bb87" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +241,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
