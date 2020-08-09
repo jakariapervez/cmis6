@@ -1035,7 +1035,7 @@ def build_structure_list(contract_interventions):
 
 
 def contractInterventionList(request):
-    civts=Contract_Intervention.objects.all().order_by('contract_id','')
+    civts=Contract_Intervention.objects.all().order_by('contract_id__package_short_name')
     structures=build_structure_list(civts)
     for structure in structures:
         print("name={}".format(structure.name))

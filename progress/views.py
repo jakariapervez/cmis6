@@ -421,9 +421,9 @@ from .models import Contract
 @login_required
 def list_contract_Intervention(request):
     haors = Haor.objects.all()
-    contracts = Contract.objects.all()
+    contracts = Contract.objects.all().order_by('package_short_name')
     context = {'haors': haors, 'contracts': contracts}
-    return render(request, 'progress/edit_drop_contract_intervention.html', context)
+    return render(request, 'progress/edit_drop_contract_intervention2.html', context)
 
 @login_required
 def update_contract_Intervention(request, pk):
@@ -494,7 +494,7 @@ def list_contract_Intervention_sort_by_contract(request, pk):
 
 @login_required
 def list_contract_Intervention_sort_by_contract_all(request):
-    ivts = Contract_Intervention.objects.all()
+    ivts = Contract_Intervention.objects.all().order_by('contract_id__package_short_name')
     data = dict()
     data['html_ivt_list'] = render_to_string('progress/includes/partial_contract_list.html', {
         'ivts': ivts
@@ -864,7 +864,7 @@ def dashBoard(request):
         return render(request, 'pd_dashboard.html', context)
     else:
         return render(request, 'xen_dashboard_rev1.html', context)
-from .auxilaryquery import calculatePackageProgressData,fillBlankProgressQuantity
+from .auxilaryquery import calculatePackageProgressData2,fillBlankProgressQuantity
 
 def dashBoard_Graph(request,pk):
     data=dict()
@@ -877,8 +877,8 @@ def dashBoard_Graph(request,pk):
     #print(user)
    #print(contract)
     civts=list(Contract_Intervention.objects.filter(contract_id=pk))
-    mydata=calculatePackageProgressData(civts,user)
-    print(mydata['pdatas'])
+    mydata=calculatePackageProgressData2(civts,user)
+    #print(mydata['pdatas'])
     context={'pdatas':mydata['pdatas']}
     mytable=render_to_string('includes/progress_table.html',context, request=request)
     #print(mytable)
@@ -935,7 +935,7 @@ def dashBoard_Graph(request,pk):
     #mydata=dict()
     #data['target']=mydata['mydata']
     #mydata = {'target': filteredTarget, 'achivment': fiteredProg, 'filteredItem': filteredItem}
-    print(mydata)
+    #print(mydata)
     #mydata = data
     return JsonResponse(mydata)
 from .auxilaryquery import dummyProgressQuantity
@@ -1101,13 +1101,77 @@ class createReportEvent2(View):
         returnData=dict()
         returnData["tbody"]=html_table_body
         return JsonResponse(returnData)
+"""views for qualitative progress """
+from .models import qualitativeStatus
+def Qualitative_progress(request):
+    contracts=Contract.objects.all().order_by('package_short_name')
+    structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    context={"structures":structures,"contracts":contracts}
+    return render(request,"progress/qualitative_progress_list2.html",context)
+from .models import Division
+def Qualitative_progress_sort(request):
+    #print("sucessfully trapped sort events for progress update.....")
+    data = dict()
+    divisions=["KISH-ALL","HOBI-ALL","NETR-ALL","SUNM-DIV-I-ALL","SUNM-DIV-II-ALL" ]
+    div_index=[1,6,3,4,5]
+    whole_project=["WHOLE-PROJECT"]
+    search_id= request.GET['contract_id']
+    if search_id in divisions:
+        idx=divisions.index(search_id)
+        div_pr_key=div_index[idx]
+        mydivision=get_object_or_404(Division,pk=div_pr_key)
+        #print("Now searching division {}".format(mydivision.division_name))
+        #print(div_pr_key)
+        #contrats=Contract.objects.all().filter(division_id=mydivision.pk)
+        #print(contrats)
+        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id__division_id=mydivision).order_by('contract_ivt__contract_id')
+        #structures=qualitativeStatus.objects.select_related('contract_ivt__contract_id__division_id').all()
+        print(structures)
+    elif search_id in whole_project:
+        structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    else:
+        contract_package=get_object_or_404(Contract,pk=search_id)
+        print("package name={}".format(contract_package.package_short_name))
+        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id=contract_package)
+    context={'structures':structures}
+    table_data=render_to_string('progress/includes/structures/partial_qualitative_progress_list.html',context,request=request)
+    #print(table_data)
+    #print(contract_id)
+    #print(structures)
+    data['html_ivt_list']=table_data
+    return JsonResponse(data)
+
+    #structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+    #context={"structures":structures}
+    #return render(request,"progress/qualitative_progress_list2.html",context)
+from .forms import qprogresForm
+def Qualitative_progress_update(request,pk):
+    ivt = get_object_or_404(qualitativeStatus, pk=pk)
+    print(ivt)
+    data=dict()
+
+    if request.method == 'POST':
+        form = qprogresForm(request.POST, instance=ivt)
+        if form.is_valid():
+            form.save()
+            structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+            context = {'structures': structures}
+            table_data = render_to_string('progress/includes/structures/partial_qualitative_progress_list.html',
+                                          context, request=request)
+            data['form_is_valid']=True
+            data['html_ivt_list']=table_data
+        else:
+            data['form_is_valid'] = True
+
+    else:
+        form = qprogresForm(instance=ivt)
+        context={'form':form}
+        data['html_form']=render_to_string('progress/includes/structures/partial_ivt_update_form.html',context,request=request)
+    return JsonResponse(data)
 
 
 
 
-
-
-from .auxilaryquery import build_structure_list
 
 
 

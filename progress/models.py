@@ -32,7 +32,7 @@ class Contractor(models.Model):
     tradelicense=models.CharField(max_length=10,blank=True,null=True)
     Vat_registration=models.CharField(max_length=11,blank=True,null=True)
     TIN_No=models.CharField(max_length=12,blank=True,null=True)
-    egp_id=models.CharField(max_length=14,blank=True)
+    egp_id=models.CharField(max_length=14,blank=True,null=True)
     national_id=models.ImageField(null=True,blank=True)
     def __str__(self):
         return f' {self.farm_name} '
@@ -148,8 +148,8 @@ class Contract_Intervention(models.Model):
     contract_id=models.ForeignKey(Contract,on_delete=models.CASCADE,null=True,blank=True)
     dpp_intervention_id=models.ForeignKey(DPP_Intervention,on_delete=models.CASCADE)
     contract_component_id = models.ForeignKey(ContractComponent, on_delete=models.SET_NULL, null=True, blank=True)
-    physical_weight = models.DecimalField(blank=True,default=0.10,max_digits=4,decimal_places=3)
-    financial_weight = models.DecimalField(blank=True, default=0.10,max_digits=4,decimal_places=3)
+    physical_weight = models.DecimalField(blank=True,default=0.10,max_digits=8,decimal_places=6)
+    financial_weight = models.DecimalField(blank=True, default=0.10,max_digits=8,decimal_places=6)
 
     """       
     so_id=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL, null=True,
@@ -358,6 +358,23 @@ class Reportdocument(models.Model):
     reportEvent_id=models.ForeignKey(ReportEvent,on_delete=models.CASCADE,null=True,blank=True)
     reportingPerson = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
                                         null=True, blank=True)
+
+"""A New model for keep tracking of Qualitative progress"""
+class qualitativeStatus(models.Model):
+    contract_status_choices = [("C", "Completed"), ("OG", "On Going"),("P","Problamatic")]
+    problems_status_choices=[("LA", "Land Acquisition"), ("SR", "Structure Relocated"),
+                             ("LP","Local Peoplles's Obstruction"),("RE","River Erosion"),
+                             ("GC"," inappropriate Sub-surface Condition"),("NP","None"),("OT","Others"),]
+    contract_ivt=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
+    overall_status=models.CharField(max_length=100,choices=contract_status_choices,default="OG")
+    current_progress= models.DecimalField(null=True, blank=True, decimal_places=5, max_digits=6)
+    problems=models.CharField(max_length=100,choices= problems_status_choices,default="NP")
+    value_of_work_done=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=7,default=0)
+
+    def __str__(self):
+        return f'{str(self.contract_ivt)+"_"+str(self.overall_status)}'
+
+
 
 
 

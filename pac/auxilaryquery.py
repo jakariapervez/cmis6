@@ -131,6 +131,7 @@ def validateExpenditure(exp_form,invoice):
     return {'expenditure': expenditure, 'validity': validity['isValid'], 'cumtotal':invoice_total,'fyear':fy,'month':month }
 
     #return {'expenditure':expenditure,'validity':validity['isValid'],'cumtotal':validity['Total']}
+
 def validateExpenditureEditForm(exp_form,expenditure):
     gob = exp_form.cleaned_data['Gob']
     rpa = exp_form.cleaned_data['Rpa']

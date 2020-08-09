@@ -1,0 +1,11 @@
+<select class="custom-select js-package-select" id="package-sort" >
+ {% for contract  in contracts %}
+<option value="{{contract.id}}" >{{contract.package_short_name}}</option>
+{% endfor %}
+<option value="KISH-ALL">KISH WD DIV</option>
+<option value="HOBI-ALL">HOBI-ALL</option>
+<option value="NETR-ALL">NETR-ALL</option>
+<option value="SUNM-DIV-I-ALL">SUNM-DIV-I-ALL</option>
+<option value="SUNM-DIV-II-ALL">SUNM-DIV-II-ALL</option>
+<option value="WHOLE-PROJECT">WHOLE-PROJECT</option>
+</select>
