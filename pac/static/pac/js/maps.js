@@ -14,7 +14,10 @@ var showmap= function (){
 	console.log(showStatus)
 	 map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11'
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [91.2781751,24.39824583],
+ zoom:12
+
 });	
 	showStatus=true;	
 	}
