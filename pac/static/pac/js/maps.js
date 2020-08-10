@@ -15,10 +15,15 @@ var showmap= function (){
 	 map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/satellite-streets-v11',
-center: [91.2781751,24.39824583],
+center: [ 91.27817518,24.39824583],
  zoom:17
 
 });	
+var popup =new mapboxgl.Popup({offset:25}).setText("Box Drainage Outlet")
+var marker=new mapboxgl.Marker()
+.setLngLat([91.27817518, 24.39824583])
+.setPopup(popup)
+.addTo(map);
 	showStatus=true;	
 	}
 	
