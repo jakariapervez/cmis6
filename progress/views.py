@@ -459,7 +459,7 @@ def delete_contract_Intervention(request, pk):
         # print("pk={}".format(pk))
         contract_id = ivt.contract_id
         print("contract id={}".format(contract_id))
-        deleteProgressItem(ivt)
+        #deleteProgressItem(ivt)
         ivt.delete()
         data['form_is_valid'] = True
 
