@@ -1135,6 +1135,7 @@ def Qualitative_progress_sort(request):
         print("package name={}".format(contract_package.package_short_name))
         structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id=contract_package)
     context={'structures':structures}
+
     table_data=render_to_string('progress/includes/structures/partial_qualitative_progress_list.html',context,request=request)
     #print(table_data)
     #print(contract_id)

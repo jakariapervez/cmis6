@@ -194,19 +194,8 @@ $.ajax({
 		
 		
 	});
-	/*
-	var selector =$(this);
-	var selector =$(this);
-	var value = $(this).attr("data-url");
-	console.log(value);
-	fy=$(".js-fy-select").children(":selected").attr("value");
-	month=$(".js-month-select").children(":selected").attr("value")
-	ecode=$(".js-code-select").children(":selected").attr("value")
 	
-	console.log("FY="+fy+"month="+month+"code="+ecode)
-    updateTable3(value,fy,month,ecode);	
-	*/
-	 return false;
+	
 };
 
 var generteReport =function()
@@ -341,6 +330,7 @@ doc.save(filename);
 }
 var loadUpdateForm= function ()
 {
+console.log("sucessfully triggered progress update event.....")
 var btn = $(this);	
 myurl=$(this).attr("data-url");
 console.log(myurl);
@@ -399,7 +389,8 @@ console.log("sucessfully Initiated form Submission Event.......")
 //$(".js-month-select").change(sort_by_haor)
 //$(".js-code-select").change(sort_by_haor)
 //progres update
-$(".js-update-qualitative-progress").click(loadUpdateForm);
+//$(".js-update-qualitative-progress").click(loadUpdateForm);
+$("#ivt-table").on("click",".js-update-qualitative-progress",loadUpdateForm)
 $("#modal-ivt").on("submit", ".js-progress-update-form", saveUpdateForm);
 $(".js-sort-all").click(sort_by_all);
 //$(".js-report").click(generteReport)
