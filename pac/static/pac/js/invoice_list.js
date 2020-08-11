@@ -66,7 +66,8 @@ $(function () {
         }
         else {
 		  console.log("Intervention data is InValid")
-          $("#modal-ivt .modal-content").html(data.html_form);
+		 //$("#modal-ivt").modal("hide");
+         $("#modal-ivt .modal-content").html(data.html_form);
         }
       }
     });
@@ -339,6 +340,12 @@ var saveDeleteForm4= function ()
 	})
 	
 };
+var hideErrorForm= function () 
+{
+var form = $(this);	
+ $("#modal-ivt").modal("hide"); 	
+	
+}
 /* Binding */
 
   // Create Invoice
@@ -361,6 +368,8 @@ var saveDeleteForm4= function ()
   //Add Expenditure Function
   $("#ivt-table").on("click", ".js-create-Expenditure", loadForm);  
    $("#modal-ivt").on("submit", ".js-expenditure-create-form", saveForm);
+   //Error in Expenditure
+   $("#modal-ivt").on("submit",".js-ivt-error-form",hideErrorForm)
 
 
 

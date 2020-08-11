@@ -50,28 +50,43 @@ def getCumulative(myyear,economicCode):
     return {'Gob':gob,'Dpa':dpa,'Rpa':rpa,'Total':total}
 def checkCumulative(fy,economicCode,expenditure,budget_allocation):
     cumulative = getCumulative(fy,economicCode)
-    if(budget_allocation.Gob-cumulative['Gob'])>=expenditure.Gob:
+    print(cumulative)
+    print("budget allocation gob={} dpa={} rpa={} total={}".format(budget_allocation.Gob,budget_allocation.Dpa,
+                                                                   budget_allocation.Rpa,budget_allocation.Total))
+
+    error_message=[]
+    if budget_allocation.Gob>=expenditure.Gob+cumulative['Gob']:
         isValid=True
     else:
         isValid=False
-    if (budget_allocation.Dpa - cumulative['Dpa']) >= expenditure.Dpa:
+        error_message.append("Gob exceeds budget allocation")
+        print("fails at gob")
+    if budget_allocation.Dpa  >= expenditure.Dpa+cumulative['Dpa']:
         isValid = True
     else:
         isValid = False
-    if (budget_allocation.Rpa - cumulative['Rpa']) >= expenditure.Rpa:
+        error_message.append("Dpa exceeds budget allocation")
+        print("fails at dpa")
+    if budget_allocation.Rpa >= expenditure.Rpa+cumulative['Rpa']:
         isValid = True
     else:
         isValid = False
-    if (budget_allocation.Total - cumulative['Total']) >= expenditure.Total:
+        error_message.append("Rpa exceeds budget allocation")
+        print("fails at rpa")
+    if budget_allocation.Total  >= expenditure.Total+cumulative['Total']:
         isValid = True
     else:
         isValid = False
+        error_message.append("Total exceeds budget allocation")
+        print("fails at Total")
+    print(isValid)
     if isValid:
         cumTotal=cumulative['Total']+expenditure.Total
     else:
         cumTotal = cumulative['Total']
-
-    return {'isValid':isValid,'Total':cumTotal}
+    return {'isValid':isValid,'Total':cumTotal,
+            "meassage":error_message,"cum_gob": cumulative['Gob']+expenditure.Gob,
+            "cum_dpa":cumulative['Dpa']+expenditure.Dpa,"cum_rpa":cumulative['Rpa']+expenditure.Rpa}
 def displayInvoice(invoice):
     print("Invoice_no={} date={} BatchType={} Description={}".format(invoice.Invoice_no,invoice.date,invoice.BatchType,invoice.Description))
     print("Financial year={}".format(invoice.FinancialYear))                                                                
@@ -117,7 +132,7 @@ def validateExpenditure(exp_form,invoice):
         isValid=True
     else:
         isValid=False
-
+    print("Individula test for validation......")
     myyear = financialYearFromDate(invoice.date)
 
     validity=checkCumulative(myyear,economicCode,expenditure,budget_allocation)
@@ -128,7 +143,20 @@ def validateExpenditure(exp_form,invoice):
     fy = financialYearFromDate(expenditure.date)
     month = monthFromDate(expenditure.date)
     #isValid=checkCumulative(myyear,expenditure)
-    return {'expenditure': expenditure, 'validity': validity['isValid'], 'cumtotal':invoice_total,'fyear':fy,'month':month }
+    allocation=[]
+    allocation.append(budget_allocation.Gob)
+    allocation.append(budget_allocation.Dpa)
+    allocation.append(budget_allocation.Rpa)
+    cum_exp=[]
+    cum_exp.append(validity['cum_gob'])
+    cum_exp.append(validity['cum_dpa'])
+    cum_exp.append(validity['cum_rpa'])
+    economicCode = str(budget_allocation.Dpp_allocation.Ecode)+":"+str(budget_allocation.Dpp_allocation.Shortdescription)
+
+    return {'expenditure': expenditure, 'validity': validity['isValid'],
+            'cumtotal':invoice_total,'fyear':fy,'month':month,"message":validity['meassage'],
+            "cum_gob":validity['cum_gob'],"cum_dpa":validity['cum_dpa'],"cum_rpa":validity['cum_rpa'],
+            "allocation":allocation,'cum_exp':cum_exp,"Ecode":economicCode}
 
     #return {'expenditure':expenditure,'validity':validity['isValid'],'cumtotal':validity['Total']}
 

@@ -2,7 +2,7 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 # Register your models here.
 from .models import Dpp_allocation,Budget_allocation, Expenditure_details,FinancialYear,Invoice_details,InvoiceImage,InvoiceSupporting
-admin.site.register(InvoiceImage)
+#admin.site.register(InvoiceImage)
 
 admin.site.register(InvoiceSupporting)
 @admin.register(Dpp_allocation)
@@ -20,4 +20,7 @@ class FinancialYear_Admin(ImportExportModelAdmin):
     pass
 @admin.register(Invoice_details)
 class Invoice_details_Admin(ImportExportModelAdmin):
+    pass
+@admin.register(InvoiceImage)
+class InvoiceImage_Admin(ImportExportModelAdmin):
     pass

@@ -658,9 +658,6 @@ def Add_Expenditure(request,pk):
                 #previous_total=float(invoice.Total_amount)
                 #invoice.Total_amount=cumTotal+previous_total
                 invoice.Total_amount=cumTotal
-
-               
-
                 invoice.save()
                 data['form_is_valid'] = True
                 #invoice.save()
@@ -670,12 +667,25 @@ def Add_Expenditure(request,pk):
                 invoices = Invoice_details.objects.all().filter(FinancialYear=fy,Month=month)
                 data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
                 'invoices': invoices })
-
                 print("year_id={} month={}".format(fy.id,month))
 
 
                 data['month']=month
                 data['fy']=str(fy)
+            else:
+                data['form_is_valid'] = False
+                message=myexpenditure['message'][0]
+                data['form_is_valid']
+                allocation=myexpenditure['allocation']
+                cum_exp=myexpenditure['cum_exp']
+                headings = ["Gob", "Dpa", "Rpa"]
+                items=zip(headings,allocation,cum_exp)
+                Ecode=myexpenditure["Ecode"]
+                context={"message":message,"allocation":allocation,"cum_exp":cum_exp,
+                         "headings":headings,"items":items,"Ecode":Ecode}
+                data['html_form'] = render_to_string('pac/includes/invoices/partial_ivt_error.html', context,
+                                                     request=request)
+
 
                 #return redirect(expenditure_list)
                 #return JsonResponse(data)
