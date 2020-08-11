@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+
+
+
+
 from decouple import config, Csv
 import dj_database_url
 
@@ -19,6 +23,20 @@ import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+"""Setting up environments for geodjango"""
+if os.name == 'nt':
+    VIRTUAL_ENV_BASE = os.environ['VIRTUAL_ENV']
+    os.environ['PATH'] = os.path.join(VIRTUAL_ENV_BASE, r'.\Lib\site-packages\osgeo') + ';' + os.environ['PATH']
+    os.environ['PROJ_LIB'] = os.path.join(VIRTUAL_ENV_BASE, r'.\Lib\site-packages\osgeo\data\proj') + ';' + os.environ['PATH']
+
+
+
+
+
+
+
+
 #SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = '79g)4t7v8uuj2kw$n=__$-b)87l=!rgm$5o$60gb2r0(p$jio_'
 #DEBUG = config('DEBUG', default=False, cast=bool)
@@ -63,6 +81,8 @@ INSTALLED_APPS = [
     'progress.apps.ProgressConfig',
     'pandas',
     'pac.apps.PacConfig',
+    'django.contrib.gis',
+    'haormaps.apps.HaormapsConfig',
 
 ]
 
@@ -104,7 +124,9 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'cmis3_db_new',
         'USER': 'postgres',
         'PASSWORD': '801223001_bwdb',

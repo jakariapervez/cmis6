@@ -88,3 +88,4 @@ from .models import qualitativeStatus
 @admin.register(qualitativeStatus)
 class qualitativeStatus_Admin(ImportExportModelAdmin):
     pass
+

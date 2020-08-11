@@ -2,7 +2,8 @@ from __future__ import unicode_literals
 
 
 
-from django.db import models
+
+from django.contrib.gis.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from datetime import datetime
 from django.urls import reverse
@@ -373,6 +374,7 @@ class qualitativeStatus(models.Model):
 
     def __str__(self):
         return f'{str(self.contract_ivt)+"_"+str(self.overall_status)}'
+
 
 
 
