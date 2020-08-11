@@ -1156,7 +1156,10 @@ def Qualitative_progress_update(request,pk):
         form = qprogresForm(request.POST, instance=ivt)
         if form.is_valid():
             form.save()
-            structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+            contract_package=ivt.contract_ivt.contract_id
+            #structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+            structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id=contract_package).order_by('contract_ivt__dpp_intervention_id__worktype_id')
+            #.order_by('contract_ivt__dpp_intervention_id__worktype_id ')
             context = {'structures': structures}
             table_data = render_to_string('progress/includes/structures/partial_qualitative_progress_list.html',
                                           context, request=request)
