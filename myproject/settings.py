@@ -82,7 +82,7 @@ INSTALLED_APPS = [
     'pandas',
     'pac.apps.PacConfig',
     'django.contrib.gis',
-    'haormaps.apps.HaormapsConfig',
+
 
 ]
 

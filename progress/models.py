@@ -3,12 +3,14 @@ from __future__ import unicode_literals
 
 
 
-from django.contrib.gis.db import models
+from django.contrib.gis.db.models import PointField
+from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from datetime import datetime
 from django.urls import reverse
 from django.conf import settings
 from django.utils import timezone
+
 class District(models.Model):
     name=models.CharField(max_length=50)
     def __str__(self):
@@ -82,6 +84,7 @@ class ContractComponent(models.Model):
     def __str__(self):
         return f' {self.component_name}'
 # Create your models here.
+
 class Contract(models.Model):
     #Package name
     package_short_name=models.CharField(max_length=200,default='xxx')
@@ -124,6 +127,7 @@ class Contract(models.Model):
         """Returns the url to access a particular book instance."""
         #return reverse('contract_detail', args=[str(self.id)])
         return reverse('contract_detail',args=[str(self.package_id)])
+
 class DPP_Intervention(models.Model):
     contract_status_choices = [("HAVE_CONTRACT", "HAVE_CONTRACT"), ("HAVE_NO_CONTRACT", "HAVE_NO_CONTRACT")]
     work_status_choices = [("OG", "OG"), ("COMP", "COMP"), ("TO_BE_STARTED", "TO_BE_STARTED")]
@@ -140,6 +144,8 @@ class DPP_Intervention(models.Model):
                                        default= "HAVE_NO_CONTRACT")
     work_status = models.CharField(max_length=100, choices=work_status_choices, blank=True, null=True,
                                    default= "OG")
+    location=PointField(null=True,blank=True)
+
 
     def __str__(self):
         return f'{self.name}'+ ' in ' +f'{self.haor_id.name}'
