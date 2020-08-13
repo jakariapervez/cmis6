@@ -1,0 +1,7 @@
+sudo apt-get update     --- update your list of available packages
+sudo apt-get install postgis  --install postgis extension
+sudo -i -u postgres       --- Using the sudo command and switch to the Postgres user
+psql -d cmis3_db_new2     --- Connect to Database 
+CREATE EXTENSION postgis;  --- Enable the PostGIS extension on the database
+SELECT PostGIS_version();  --- verify that everything worked correctly.
+\q                         ---quit pistgress sql command prompt
