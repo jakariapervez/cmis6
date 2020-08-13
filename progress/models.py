@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 
 
-from django.contrib.gis.db.models import PointField,LineStringField
+from django.contrib.gis.db.models import PointField,LineStringField,PolygonField
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from datetime import datetime
@@ -50,6 +50,7 @@ class Haor(models.Model):
     area=models.DecimalField(null=True,blank=True,decimal_places=2,max_digits=8)
     project_type=models.CharField(max_length=50,choices=Types)
     population=models.DecimalField(max_digits=8,decimal_places=0,blank=True,null=True,default=0)
+    boundary=PolygonField(null=True,blank=True)
 
     def __str__(self):
         return f' {self.name},{self.project_type},'
@@ -158,6 +159,7 @@ class Contract_Intervention(models.Model):
     contract_component_id = models.ForeignKey(ContractComponent, on_delete=models.SET_NULL, null=True, blank=True)
     physical_weight = models.DecimalField(blank=True,default=0.10,max_digits=8,decimal_places=6)
     financial_weight = models.DecimalField(blank=True, default=0.10,max_digits=8,decimal_places=6)
+    contract_value=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
 
     """       
     so_id=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL, null=True,
