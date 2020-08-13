@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 
 
-from django.contrib.gis.db.models import PointField
+from django.contrib.gis.db.models import PointField,LineStringField
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from datetime import datetime
@@ -145,6 +145,7 @@ class DPP_Intervention(models.Model):
     work_status = models.CharField(max_length=100, choices=work_status_choices, blank=True, null=True,
                                    default= "OG")
     location=PointField(null=True,blank=True)
+    lines=LineStringField(null=True,blank=True)
 
 
     def __str__(self):
