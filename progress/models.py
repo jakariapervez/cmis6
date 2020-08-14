@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 
 from django.contrib.gis.db.models import PointField,LineStringField,PolygonField
+from django.contrib.gis.db import models as gismodel
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from datetime import datetime
@@ -46,11 +47,11 @@ class Haor(models.Model):
         (Old, 'Rehablitation'),
         (New, 'New Haor'),    )
 
-    name=models.CharField(max_length=400)
-    area=models.DecimalField(null=True,blank=True,decimal_places=2,max_digits=8)
-    project_type=models.CharField(max_length=50,choices=Types)
-    population=models.DecimalField(max_digits=8,decimal_places=0,blank=True,null=True,default=0)
-    boundary=PolygonField(null=True,blank=True)
+    name=gismodel.CharField(max_length=400)
+    area=gismodel.DecimalField(null=True,blank=True,decimal_places=2,max_digits=8)
+    project_type=gismodel.CharField(max_length=50,choices=Types)
+    population=gismodel.DecimalField(max_digits=8,decimal_places=0,blank=True,null=True,default=0)
+    boundary=gismodel.PolygonField(null=True,blank=True)
 
     def __str__(self):
         return f' {self.name},{self.project_type},'
