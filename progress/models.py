@@ -46,7 +46,7 @@ class Haor(models.Model):
         (Old, 'Rehablitation'),
         (New, 'New Haor'),    )
 
-    name=models.CharField(max_length=100)
+    name=models.CharField(max_length=400)
     area=models.DecimalField(null=True,blank=True,decimal_places=2,max_digits=8)
     project_type=models.CharField(max_length=50,choices=Types)
     population=models.DecimalField(max_digits=8,decimal_places=0,blank=True,null=True,default=0)
