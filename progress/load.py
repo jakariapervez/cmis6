@@ -14,17 +14,25 @@ haor_mapping={
 }
 haor_shp=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Haor_Area.shp'),)
 haor_txt=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Haor_Area.txt'),)
-haor_wkt=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Haor_Area.wkt'),)
+haor_wkt=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','h.wkt'),)
+
+def test_file(vervose=True):
+    p=fromfile(haor_wkt)
+    myhaor = get_object_or_404(Haor, pk=2)
+    myhaor.boundary = p
+    print(p)
 
 def test_gpd(verbose=True):
     gdf=gpd.read_file(haor_shp)
     print(gdf)
-    myhaor=get_object_or_404(Haor,pk=2)
+
     print(myhaor)
     geoms=gdf['geometry']
     g=geoms[0]
     g2=Polygon(fromstr(str(g)))
     print(g)
+
+
     #myhaor.boundary=g
     #print(geoms)
 
