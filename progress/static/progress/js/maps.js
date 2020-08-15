@@ -23,8 +23,34 @@ center: [ 91.27817518,24.39824583],
  zoom:17
 	
 });	
-map.addsource('boundary',{})
+map.on('load',function(mydata)
+{
+map.addSource('maine', {
+	'type': 'geojson',
+	'data':mydata.boundary
+	
+	
+}) //closing of addsoure	
+
+map.addLayer({
+'id': 'maine',
+'type': 'fill',
+'source': 'maine',
+'layout': {},
+'paint': {
+'fill-color': '#088',
+'fill-opacity': 0.8
 }
+});
+
+
+
+	
+	
+})//clising of on load
+
+
+} //closing of showmap
 
 
 	
