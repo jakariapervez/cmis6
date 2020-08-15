@@ -1101,6 +1101,7 @@ class createReportEvent2(View):
         returnData=dict()
         returnData["tbody"]=html_table_body
         return JsonResponse(returnData)
+
 """views for qualitative progress """
 from .models import qualitativeStatus
 def Qualitative_progress(request):
@@ -1109,7 +1110,9 @@ def Qualitative_progress(request):
                                                           'contract_ivt__dpp_intervention_id__worktype_id')
     context={"structures":structures,"contracts":contracts}
     return render(request,"progress/qualitative_progress_list2.html",context)
+
 from .models import Division
+
 def Qualitative_progress_sort(request):
     #print("sucessfully trapped sort events for progress update.....")
     data = dict()
@@ -1146,6 +1149,7 @@ def Qualitative_progress_sort(request):
     #structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
     #context={"structures":structures}
     #return render(request,"progress/qualitative_progress_list2.html",context)
+
 from .forms import qprogresForm
 def Qualitative_progress_update(request,pk):
     ivt = get_object_or_404(qualitativeStatus, pk=pk)
@@ -1173,6 +1177,8 @@ def Qualitative_progress_update(request,pk):
         context={'form':form}
         data['html_form']=render_to_string('progress/includes/structures/partial_ivt_update_form.html',context,request=request)
     return JsonResponse(data)
+def BlankMap(request):
+    return render(request,'pac/blank_map.html')
 
 
 

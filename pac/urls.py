@@ -37,7 +37,7 @@ urlpatterns=[
     url('^report/expenditure/monthly/yearwise/$', views.MonthlyExpenditureYearwise, name="monthly_expenditure_yearwise"),
     # structure view related function
     path('list_contract_intervention2/', views.contractInterventionList, name="contract_intervention_list2"),
-    path('blankmap', views.BlankMap, name="blank_map"),
+
 
     #Civil works related url
 

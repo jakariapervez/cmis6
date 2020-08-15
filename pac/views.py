@@ -1052,5 +1052,3 @@ def contractInterventionList(request):
     #print(values)
     context={'structures': structures}
     return render (request,'progress/structure_list2.html',context)
-def BlankMap(request):
-    return render(request,'pac/blank_map.html')

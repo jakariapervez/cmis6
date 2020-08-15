@@ -1,7 +1,7 @@
 import os
 from django.contrib.gis.utils import LayerMapping
-from  .models import Haor
-from django.contrib.gis.geos import fromstr,Polygon,GEOSGeometry,fromfile,fromstr,MultiPolygon
+from  .models import Haor,DPP_Intervention
+from django.contrib.gis.geos import fromstr,Polygon,GEOSGeometry,fromfile,fromstr,MultiPolygon,Point
 import geopandas as gpd
 from django.shortcuts import render, get_object_or_404, redirect
 haor_mapping={
@@ -12,25 +12,74 @@ haor_mapping={
     'boundary':'MULTIPOLYGON',
 
 }
-haor_shp=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Haor_Area.shp'),)
+haor_shp=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Haor_Area2.shp'),)
 haor_txt=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Haor_Area.txt'),)
 haor_wkt=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','h.wkt'),)
+structure_shp=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Structures.shp'),)
 
 def test_file(vervose=True):
     p=fromfile(haor_wkt)
     myhaor = get_object_or_404(Haor, pk=2)
     myhaor.boundary = p
     print(p)
+    myhaor.save()
 
-def test_gpd(verbose=True):
+def haor_gpd(verbose=True):
     gdf=gpd.read_file(haor_shp)
     print(gdf)
+    for data in gdf.to_dict("records"):
+        Data_id=data.pop("DataID")
+        myhaor = get_object_or_404(Haor, pk=Data_id)
+        #print(data)
+        geometry_str = str(data.pop('geometry'))
+        #geometry = MultiPolygon(fromstr(str(data["geometry"])))
+        geometry = MultiPolygon(fromstr(geometry_str))
+        myhaor.boundary = geometry
+        myhaor.save()
+        #print(geometry_str)
+        #print(geometry_str)
+        try:
+            #geometry = GEOSGeometry(geometry_str)
+            #geometry2=MultiPolygon(fromstr(str(data["geometry"])))
+           print(1)
 
-    print(myhaor)
-    geoms=gdf['geometry']
-    g=geoms[0]
-    g2=Polygon(fromstr(str(g)))
-    print(g)
+        except (TypeError, ValueError) as exc:
+            # If the geometry_str is not a valid WKT, EWKT or HEXEWKB string
+            # or is None then either continue, break or do something else.
+            # I will go with continue here.
+            print("error encountred......")
+            continue
+
+        if geometry.geom_type != 'Polygon':
+            # If the created geometry is not a Polygon don't pass it on MyModel
+            continue
+        #print(geometry)
+def structures_gpd(verbose=True):
+    gdf = gpd.read_file(structure_shp)
+    print(gdf)
+    for data in gdf.to_dict("records"):
+        sid=data.pop("Dpp_ivt_co")
+        mystructue = get_object_or_404(DPP_Intervention,pk=sid)
+        print(mystructue.name)
+        #print(data)
+        #geometry_str = str(data.pop('geometry'))
+        #geometry = Point(fromstr(geometry_str))
+        geometry_str = data.pop('geometry')
+        print(geometry_str.x)
+        geometry = Point(geometry_str.x,geometry_str.y)
+        mystructue.location=geometry
+        mystructue.save()
+        print(geometry)
+        #myhaor.boundary = geometry
+        #myhaor.save()
+
+
+
+
+
+
+
+
 
 
     #myhaor.boundary=g
