@@ -1177,8 +1177,20 @@ def Qualitative_progress_update(request,pk):
         context={'form':form}
         data['html_form']=render_to_string('progress/includes/structures/partial_ivt_update_form.html',context,request=request)
     return JsonResponse(data)
+
+""""Map Related views goes here"""
+from django.core.serializers import serialize
+from .models import Haor
 def BlankMap(request):
-    return render(request,'pac/blank_map.html')
+    #haor_data=get_object_or_404(Haor,pk=2)
+    haor_data=Haor.objects.all().filter(pk=2)
+    print(haor_data)
+    #mydata=serialize('geojson',Haor.objects.all(),geometry_field='boundary',fields=('name','project_type',))
+    mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
+    print(mydata)
+    
+
+    return render(request,'progress/includes/maps/blank_map.html')
 
 
 
