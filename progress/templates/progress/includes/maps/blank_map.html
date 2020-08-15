@@ -18,8 +18,8 @@
 <script src="{% static 'js/fontawesome.js' %}"></script>
 <!-- Mapbox -->
 
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
 </head>
 <body>
@@ -91,7 +91,9 @@
 
         </div>
     </nav>
-<a class="btn btn-primary js-map"  ><i class="fas fa-money-bill-alt"></i>Chandpur Haor</a>
+{% include 'progress/includes/maps/haor_select.html' %}
+<button class="btn btn-primary js-sort-map"  ><i class="fas fa-money-bill-alt"></i>Sort</button>
+<a class="btn btn-primary js-map"  ><i class="fas fa-money-bill-alt"></i>Show Map</a>
 
 
 
@@ -148,7 +150,7 @@
 <script src="{% static 'js/sidebar.js' %}" ></script>
  <!--{{ progress|json_script:"pdata" }} -->
 <script src="{% static 'js/dashboard.js' %}" ></script>
-<script src="{% static 'pac/js/maps.js'  %}"></script>
+<script src="{% static 'progress/js/maps.js'  %}"></script>
  
   
 {% endblock %}

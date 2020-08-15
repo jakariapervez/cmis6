@@ -1,0 +1,7 @@
+<select class="custom-select js-haor-sort" id="map-haor-sort">
+ {% for haor  in haors %}
+<option value="{{haor.id}}" data-url="{% url 'haor_map' haor.id %}">{{haor.name}}
+
+</option>
+{% endfor %}
+</select>

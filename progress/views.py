@@ -1183,14 +1183,39 @@ from django.core.serializers import serialize
 from .models import Haor
 def BlankMap(request):
     #haor_data=get_object_or_404(Haor,pk=2)
-    haor_data=Haor.objects.all().filter(pk=2)
-    print(haor_data)
+    haor_data=Haor.objects.all().order_by('pk')
+    #print(haor_data)
     #mydata=serialize('geojson',Haor.objects.all(),geometry_field='boundary',fields=('name','project_type',))
-    mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
-    print(mydata)
-    
+    #mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
+    #print(mydata)
+    context={"haors":haor_data}
+    return render(request,'progress/includes/maps/blank_map.html',context)
+from django.contrib.gis.db.models.functions import Centroid
+from django.contrib.gis.geos import fromstr,Polygon,GEOSGeometry,fromfile,fromstr,MultiPolygon,Point
+def HaorMap(request,pk):
+    data=dict()
+    myid=request.GET['pk']
+    print("haor_id={}".format(myid))
+    # haor_data=get_object_or_404(Haor,pk=2)
+    haor_data = Haor.objects.all().filter(pk=myid)
+    for haor in haor_data:
+        mycenter=haor.boundary.centroid
+        mycenter2=Point(mycenter.x,mycenter.y)
+        #print(mycenter.x)
 
-    return render(request,'progress/includes/maps/blank_map.html')
+    #print(haor_data)
+    # mydata=serialize('geojson',Haor.objects.all(),geometry_field='boundary',fields=('name','project_type',))
+    mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
+    #centroid=serialize('geojson',mycenter2)
+    #print(centroid)
+    #print(mydata)
+    data['boundary']=mydata
+    #data['centroid']=centroid
+
+    return JsonResponse(data)
+
+    #return render(request, 'progress/includes/maps/blank_map.html')
+
 
 
 
