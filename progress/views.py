@@ -1181,6 +1181,7 @@ def Qualitative_progress_update(request,pk):
 """"Map Related views goes here"""
 from django.core.serializers import serialize
 from .models import Haor
+
 def BlankMap(request):
     #haor_data=get_object_or_404(Haor,pk=2)
     haor_data=Haor.objects.all().order_by('pk')
@@ -1189,7 +1190,8 @@ def BlankMap(request):
     #mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
     #print(mydata)
     context={"haors":haor_data}
-    return render(request,'progress/includes/maps/blank_map.html',context)
+    return render(request,'progress/includes/maps/blank_map_Leaflet.html',context)
+
 from django.contrib.gis.db.models.functions import Centroid
 from django.contrib.gis.geos import fromstr,Polygon,GEOSGeometry,fromfile,fromstr,MultiPolygon,Point
 def HaorMap(request,pk):

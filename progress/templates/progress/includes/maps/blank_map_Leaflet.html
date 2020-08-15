@@ -1,0 +1,171 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> {% block title %}CMIS {% endblock  %} </title>
+<link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/app.css'  %}">
+<!-- custom css for side nav -->
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+<!-- fontaowsome javascript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- fontaowsome javascript -->
+<script  src="{% static 'js/solid.js' %}"></script>
+<script src="{% static 'js/fontawesome.js' %}"></script>
+<!-- Mapbox -->
+<!--
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+-->
+<!---Leaflet Reference First CSS and then Java Script --->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+
+
+
+</head>
+<body>
+
+<div class="wrapper">
+<!-- sidebar -->
+<nav id="sidebar">
+<div class="sidebar-header">
+            <h3>HFMLIP/PD</h3>
+</div>
+<div class="dropdown">
+ <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Progress
+  </a> -->
+  
+  <!--<button class="dropbtn">Progress<i class="fa fa-caret-down"></i></button> -->
+
+<!--  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {% include 'includes/progress_dropdown.html' %}
+  </div> -->
+  <div class="dropdown-divider"></div>
+  <h5>Financial</h5>
+  <div class="dropdown-content">
+
+  <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill-alt"></i>View Total Expenditure</a>
+  <a class="dropdown-item financiallink" href={% url 'monthly_expenditure' %}><i class="fas fa-money-bill-alt"></i>View Monthly Expenditure</a>
+  <a class="dropdown-item financiallink" href="{% url 'invoice_index' %}"><i class="fas fa-money-bill-alt"></i>Invoice List</a>
+ <a class="dropdown-item financiallink" href="{% url 'expenditure_index' %}"><i class="fas fa-money-bill-alt"></i>Expenditure List</a>  
+  </div>
+     <a class="dropdown-item reportlink js-view-report-event" href="{% url 'dashboard' %}">
+  <i class="fas fa-book"></i>Dashbaord
+  </a>
+  <div class="dropdown-divider"></div>
+  <h5>User Authentication</h5>
+  <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-money-bill"></i>Logout</a>
+  <!--<h5>Reports</h5> -->
+  <!-- 
+  
+  <div class="dropdown-content">
+ <a class="dropdown-item reportlink js-create-report-event" href="#" data-url="{% url 'create_report_event' %}"  ><i class="fas fa-book"></i>Create Report Event</a>
+ <a class="dropdown-item reportlink js-view-report-event" href="#PE1" data-url="{% url 'vierw_report_event' %}"  ><i class="fas fa-book"></i>View Report Event</a>
+ <a class="dropdown-item reportlink" href="#"><i class="fas fa-ruler-horizontal"></i>Create Measurement</a>
+   </div>
+   -->
+  <div class="dropdown-divider"></div>
+  <h5>Progress</h5>  
+   <div class="dropdown-content">
+   {% include 'includes/progress_dropdown2.html' %}
+   </div>
+</div>
+
+
+
+
+
+
+		
+
+
+</nav>
+<div  id="content">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </div>
+    </nav>
+{% include 'progress/includes/maps/haor_select.html' %}
+<button class="btn btn-primary js-sort-map"  ><i class="fas fa-money-bill-alt"></i>Sort</button>
+<a class="btn btn-primary js-map"  ><i class="fas fa-money-bill-alt"></i>Show Map</a>
+
+
+
+
+<div id='map' style='width: 800px; height: 1294px;'></div>
+
+	
+	
+	
+	
+	
+<!--{% include 'includes/progress_cards.html' %} 
+{% include 'includes/progress_event_cards.html' %}
+-->
+<!--Report Modal  -->
+<div class="modal fade" id="reprotmodal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+</div>
+</div>
+</div>
+<!-- End of Report Modal -->
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block javascript %}
+ <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+ <script src="{% static 'js/highcharts.js'   %}"></script>
+ <script src="{% static 'js/jspdf.min.js' %}"></script>
+ <script src="{% static 'js/jspdf.plugin.autotable.js' %}"></script>
+ <script src="{% static 'js/tableHTMLExport.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script> 
+  <!--<script src="{% static 'js/popper.min.js' %}"></script> -->
+ <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+<!-- <script src="{% static 'js/bootstrap.bundle.js' %}"></script>-->
+ <script src="{% static 'js/jquery.mCustomScrollbar.min.js' %}" ></script>
+
+  
+<script src="{% static 'js/sidebar.js' %}" ></script>
+ <!--{{ progress|json_script:"pdata" }} -->
+<script src="{% static 'js/dashboard.js' %}" ></script>
+<script src="{% static 'progress/js/maps2.js'  %}"></script>
+ 
+  
+{% endblock %}
+{% block localscript %}
+{% endblock %}
+</body>
+
+</html>
