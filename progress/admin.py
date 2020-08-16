@@ -88,4 +88,7 @@ from .models import qualitativeStatus
 @admin.register(qualitativeStatus)
 class qualitativeStatus_Admin(ImportExportModelAdmin):
     pass
-
+from .models import SheduleItemGroup
+@admin.register(SheduleItemGroup)
+class SheduleItemGroupAdmin(ImportExportModelAdmin):
+    pass
