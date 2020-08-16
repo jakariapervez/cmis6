@@ -10,4 +10,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+	migrations.AddField(
+            model_name='contract_intervention',
+            name='dpp_cost',
+            field=models.DecimalField(blank=True, decimal_places=3, max_digits=13, null=True),
+        ),
     ]
