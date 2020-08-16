@@ -115,11 +115,14 @@ def getInvoiceTotal(invoice):
     for exp in expenditures:
         invoice_total+=float(exp.Total)
         print("exp_total={} invoice_total={}".format(exp.Total,invoice_total))
+    return invoice_total
 def updateInvoiceTotal(verbose=True):
     invoices=Invoice_details.objects.all().filter(FinancialYear=5)
     for invoice in invoices:
         print(invoice.Invoice_no)
-        getInvoiceTotal(invoice)
+        invoice_total=getInvoiceTotal(invoice)
+        invoice.Total_amount=invoice_total
+        invoice.save()
 
 
 def run(verbose=True):
