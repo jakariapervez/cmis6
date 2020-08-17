@@ -146,7 +146,7 @@ def saveDataFrame(dataframes,filepath,names):
 
 
 
-from .models import Contract_Intervention
+from .models import Contract_Intervention,Schedule,BoQ
 def exportContractIntervention(verbose=True):
     ids=[]
     names=[]
@@ -165,5 +165,48 @@ def exportContractIntervention(verbose=True):
     mynames=[]
     myframes.append(myframe)
     mynames.append("structure_ids")
+    """Creating frames for Item code"""
+    items=Schedule.objects.all()
+    item_code=[]
+    item_description=[]
+    itemid=[]
+    for item in items:
+        item_code.append(item.codeNo)
+        item_description.append(item.shortDescription)
+        itemid.append(item.pk)
+    d={"code":item_code,"description":item_description,"dbase_id":itemid}
+    item_dframe=pd.DataFrame(data=d)
+    myframes.append(item_dframe)
+    mynames.append("schedule_item")
     saveDataFrame(myframes,structure_ids_export_file,mynames)
+BoQ_path=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','BoQ.xlsx'),)
+
+def inputBoQItemFromExcel(verbose=True):
+    sheet='BoQ'
+    myframe=pd.read_excel(BoQ_path,sheet_name=sheet)
+    myframe.fillna(0,inplace=True)
+
+    for index,row in myframe.iterrows():
+        myframe.iloc[index,5]=myframe.iloc[index,4]*myframe.iloc[index,3]
+    #quantity=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+    #rate=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+    #amount=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+    #schedule_id=models.ForeignKey(Schedule,on_delete=models.CASCADE,null=True,blank=True)
+    #structure_id=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
+    BoQ.objects.all().delete()
+
+    for index, row in myframe.iterrows():
+        icode = row['Item_Code']
+        schedule = Schedule.objects.get(codeNo=icode)
+        structure=Contract_Intervention.objects.get(pk=row['structure_id'])
+        tendered_qunatity=row['Quantity']
+        quoted_rate=row['Rate']
+        quoted_amount=row['Amount']
+        myboq=BoQ(quantity= tendered_qunatity,rate=quoted_rate,amount=quoted_amount,schedule_id=schedule,structure_id=structure,)
+        myboq.save()
+        print(myboq)
+
+
+
+
 
