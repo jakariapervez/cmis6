@@ -4,6 +4,7 @@ from  .models import Haor,DPP_Intervention
 from django.contrib.gis.geos import fromstr,Polygon,GEOSGeometry,fromfile,fromstr,MultiPolygon,Point
 import geopandas as gpd
 from django.shortcuts import render, get_object_or_404, redirect
+import pandas as pd
 haor_mapping={
     'name':'name',
     'area':'area',
@@ -129,3 +130,20 @@ def run(verbose=True):
     lm = LayerMapping(Haor,haor_shp,haor_mapping, transform=False)
     #lm.save(strict=True, verbose=verbose)
     print(lm)
+
+
+
+structure_ids_export_file=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Structid.xlsx'),)
+from .models import Contract_Intervention
+def exportContractIntervention(verbose=True):
+    ids=[]
+    names=[]
+    civts=Contract_Intervention.objects.all()
+    for civt in civts:
+        ids.append(civt.pk)
+        names.append(civt.dpp_intervention_id.name)
+    myframe=pd.DataFrame()
+    myframe=myframe.assign(id=ids)
+    myframe=myframe.assign(structure_name=names)
+    print(myframe)
+
