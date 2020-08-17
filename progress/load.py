@@ -134,16 +134,36 @@ def run(verbose=True):
 
 
 structure_ids_export_file=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Structid.xlsx'),)
+
+def saveDataFrame(dataframes,filepath,names):
+    #writer = pd.ExcelWriter(filepath, engine='xlsxwriter')
+    writer=pd.ExcelWriter(filepath)
+    for df,sname in zip(dataframes,names):
+        df.to_excel(writer,sheet_name=sname)
+    writer.save()
+
+
+
+
+
 from .models import Contract_Intervention
 def exportContractIntervention(verbose=True):
     ids=[]
     names=[]
+    packageno=[]
     civts=Contract_Intervention.objects.all()
     for civt in civts:
         ids.append(civt.pk)
         names.append(civt.dpp_intervention_id.name)
+        packageno.append(civt.contract_id.package_short_name)
     myframe=pd.DataFrame()
     myframe=myframe.assign(id=ids)
     myframe=myframe.assign(structure_name=names)
+    myframe=myframe.assign(package=packageno)
     print(myframe)
+    myframes=[]
+    mynames=[]
+    myframes.append(myframe)
+    mynames.append("structure_ids")
+    saveDataFrame(myframes,structure_ids_export_file,mynames)
 
