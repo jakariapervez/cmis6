@@ -13,7 +13,7 @@ var addBoundary=function (mydata)
 	
 var showMap=function (mydata) 
 {
-console.log(mydata.boundary)
+console.log(mydata.boundary.)
 mapboxgl.accessToken = 'pk.eyJ1IjoiamFrYXJpYXBlcnZleiIsImEiOiJjazY0dnJ4ZmkxMGhzM29wZXUxOWw4dTV4In0.ZFnBYL5QF_8aLrddh2JqBA';	
 var map= new mapboxgl.Map({
 	

@@ -254,12 +254,25 @@ class ProgresSchedule(models.Model):
 
 
 """"Classes for Value of Workdone      """
+class SheduleItemGroup(models.Model):
+    codeNo=models.CharField(max_length=100,null=True,blank=True)
+    description=models.CharField(max_length=100,null=True,blank=True)
+    def __str__(self):
+        return f'{self.codeNo+":"+self.description}'
+
+
+
+
+
 class Schedule(models.Model):
+    group=models.ForeignKey(SheduleItemGroup,on_delete=models.CASCADE,null=True,blank=True)
     codeNo=models.CharField(max_length=100,null=True,blank=True)
     itemDescription=models.TextField()
     unit=models.CharField(max_length=50,null=True,blank=True)
+    shortDescription=models.CharField(max_length=400,null=True,blank=True)
+
     def __str__(self):
-        return f'{self.codeNo}'
+        return f'{self.codeNo+":"+self.shortDescription}'
 
 
 
@@ -384,7 +397,16 @@ class qualitativeStatus(models.Model):
 
     def __str__(self):
         return f'{str(self.contract_ivt)+"_"+str(self.overall_status)}'
-
+"""Model for Keep Track of IPC   """
+class IPC(models.Model):
+    contract=models.ForeignKey(Contract,on_delete=models.CASCADE,null=True,blank=True)
+    ipcNo=models.IntegerField(null=True,blank=True)
+    ipcName=models.CharField(max_length=500,null=True,blank=True)
+    ipcAmount=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+class IPC_Item(models.Model):
+    ipc=models.ForeignKey(IPC,on_delete=models.CASCADE,null=True,blank=True)
+    boq=models.ForeignKey(BoQ,on_delete=models.CASCADE,null=True,blank=True)
+    quantity_paid=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
 
 
 

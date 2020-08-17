@@ -346,6 +346,94 @@ var form = $(this);
  $("#modal-ivt").modal("hide"); 	
 	
 }
+/*Function for saving PDF Report*/
+var savePDFTable =function ()
+{
+console.log("Sucessfully Trigggered PDF Report Generation")
+var table=$("#ivt-table");
+var rows=$("#ivt-table tr");
+//console.log(table);
+//console.log(rows);	
+/*Data Pulling from Table
+*****************************************************************
+*******************************************************************
+******************************************************************
+*/
+
+rowCount=rows.length
+var myDataArr=[[]];
+total=0
+for(r=1;r<rowCount;r++)
+{
+cells=rows[r].cells
+var cols=[]
+cellCount=cells.length
+//console.log(rows[r].cells[2]);	
+//console.log(rows[r].cells[2].firstChild.nodeValue);	
+//console.log("Total cells="+cellCount);
+for(c=0;c<4;c++)
+{
+	 
+	//console.log(rows[r].cells[c].firstChild.nodeValue);
+	cols.push(rows[r].cells[c].firstChild.nodeValue);
+	if (c==3)
+	{
+	total=total+parseFloat(rows[r].cells[c].firstChild.nodeValue)
+	}
+}
+	
+
+//console.log(cols)
+myDataArr.push(cols);
+
+	
+}
+totalcols=["","","Total of The Month",total]
+myDataArr.push(totalcols);
+
+//console.log(myDataArr);
+//console.log("total rows="+rowCount)	
+/*PDF CREATION
+*****************************************************************
+*******************************************************************
+******************************************************************
+PDF CREATION */
+			 	
+var heading=[['Invoice No','Date','Description','Total']]
+var doc= new jsPDF('p','pt','a4');	
+doc.autoTable({
+	head:heading,
+	body:myDataArr,
+	tableLineColor: [189, 195, 199],
+	tableLineWidth: 0.15,
+	styles: {
+            font: 'Meta',
+            lineColor: [44, 62, 80],
+            lineWidth: 0.15
+        },
+	headerStyles:{
+		fillColor:[0,0,0],
+		fontSize:8
+		
+	},
+	bodyStyles:{
+		fillColor: [216, 216, 216],
+        textColor: 50,
+		fontSize:8
+		
+		
+	},
+	 alternateRowStyles: {
+            fillColor: [250, 250, 250]
+        },
+	columnStyles: {0: {columnWidth:70},2: {columnWidth:288},      }
+	
+});
+
+doc.save("Invoice_details.pdf");
+
+}
+
 /* Binding */
 
   // Create Invoice
@@ -377,5 +465,6 @@ var form = $(this);
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
 //$(".js-fy-select").change(sort_by_haor);
 $(".js-sort-all").click(sort_by_all);
-
+$(".js-print-report").on("click",savePDFTable)
+//js-print-report
 });

@@ -108,6 +108,21 @@ def build_poly(verbose=True):
 
     #p = Polygon()
     #print(p)
+from pac.models import Invoice_details,Expenditure_details
+def getInvoiceTotal(invoice):
+    invoice_total=0
+    expenditures=Expenditure_details.objects.all().filter(Invoice_details=invoice)
+    for exp in expenditures:
+        invoice_total+=float(exp.Total)
+        print("exp_total={} invoice_total={}".format(exp.Total,invoice_total))
+    return invoice_total
+def updateInvoiceTotal(verbose=True):
+    invoices=Invoice_details.objects.all().filter(FinancialYear=5)
+    for invoice in invoices:
+        print(invoice.Invoice_no)
+        invoice_total=getInvoiceTotal(invoice)
+        invoice.Total_amount=invoice_total
+        invoice.save()
 
 
 def run(verbose=True):

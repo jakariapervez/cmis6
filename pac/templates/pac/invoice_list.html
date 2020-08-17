@@ -93,13 +93,18 @@
 						<span class="glyphicon glyphicon-pencil"></span>Sort
 					  </button>
 <a class="btn btn-primary" href="{% url 'upload_invoice_image'%}" >Add Invoice</a>
+<button type="button" class="btn btn-primary btn-md js-print-report">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Print
+					  </button>
 <div id="customers">				  				  
 <table class="table table-bordered table-striped  table-hover" id="ivt-table">
     <thead class="thead-dark">
 	 
       <tr>
 		<th>Invoice No</th>	        
-        <th>Date</th>        
+        <th>Date</th> 
+		<th>Description</th>
 		<th>Total</th>
 		<th>Invoice_Documents</th>
         <th>Edit Inv</th>

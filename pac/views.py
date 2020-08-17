@@ -664,7 +664,7 @@ def Add_Expenditure(request,pk):
                 data['month'] = month
                 #data['fy'] =str( fy)
                 data['fy']=fy.id
-                invoices = Invoice_details.objects.all().filter(FinancialYear=fy,Month=month)
+                invoices = Invoice_details.objects.all().filter(FinancialYear=fy,Month=month).order_by('-date').order_by('-Invoice_no')
                 data['html_ivt_list'] = render_to_string('pac/includes/invoices/partial_invoices_list.html', {
                 'invoices': invoices })
                 print("year_id={} month={}".format(fy.id,month))

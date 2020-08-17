@@ -34,6 +34,7 @@ mkdir djangoprojectdir
 """change to djangoprojectdir"""
 cd djangoprojectdir
 """create a virtual environment*******
+
 virtualenv djangoprojectenv
  ""activate virtual environemt*******
 source djangoprojectenv/bin/activate
@@ -96,6 +97,17 @@ sudo certbot --nginx -d www.hfmlip.com -d hfmlip.com -d 139.59.71.251
 
 
 bwdb_haor_1234
+
+########################################################commands for server update##################################################3
+cd /home/mitch/djangoprojectdir/
+source djangoprojectenv/bin/activate
+python manage.py makemigrations
+python manage.py migrate
+python manage.py collectstatic
+deactivate
+sudo shutdown -r now
+
+
 
 
 
