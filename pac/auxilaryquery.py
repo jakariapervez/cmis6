@@ -112,7 +112,7 @@ def validateExpenditure(exp_form,invoice):
     expenditure.Rpa = rpa
     expenditure.Total = total
     budget_allocation=exp_form.cleaned_data['Budget_allocation']
-    economicCode=budget_allocation.Dpp_allocation.Ecode
+    economicCode=budget_allocation.Dpp_allocation.Description
     print("Economic code={} description={}".format(economicCode,budget_allocation.Dpp_allocation.Description))
     expenditure.Budget_allocation =budget_allocation
     expenditure.date = invoice.date
