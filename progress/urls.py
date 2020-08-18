@@ -55,6 +55,9 @@ urlpatterns=[
     path('qualitative_progress/sort/',views.Qualitative_progress_sort,name='qualitative_progress_sort'),
     path('blankmap', views.BlankMap, name="blank_map"),
     path('map/haor/<int:pk>',views.HaorMap,name='haor_map'),
+    #url for qualitative progrss
+    path('ipc/addIPCquantity/',views.AddIPCQuantity,name="add_ipc_quantity")
+
 
     #A Temporary URL for viewing contract Interventioin
 
