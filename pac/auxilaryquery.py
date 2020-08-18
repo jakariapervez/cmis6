@@ -39,7 +39,7 @@ def getCumulative(myyear,economicCode):
     total=0
     #expenditures=Expenditure_details.objects.filter( Budget_allocation__Financial_year=myyear).filter(Budget_allocation_Dpp_allocation_ Ecode=economicCode)
     #expenditures = Expenditure_details.objects.filter(Budget_allocation__Dpp_allocation__Ecode=economicCode).filter(Budget_allocation__Financial_year=myyear)
-    expenditures = Expenditure_details.objects.filter(Budget_allocation__Dpp_allocation__Ecode=economicCode).filter(
+    expenditures = Expenditure_details.objects.filter(Budget_allocation__Dpp_allocation__Description=economicCode).filter(
     Budget_allocation__Financial_year=myyear)
     print(expenditures)
     for expenditure in expenditures:
