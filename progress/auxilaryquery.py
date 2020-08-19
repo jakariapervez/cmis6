@@ -1010,21 +1010,35 @@ def build_structure_select_options(civts):
     amount=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
     schedule_id=models.ForeignKey(Schedule,on_delete=models.CASCADE,null=True,blank=True)
     structure_id=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
-    <td>{{ipcitem.itemcode}}</td>
-<td>{{ipcitem.shortDescription}}</td>
-<td>{{ipcitem.unit}}</td>
-<td>{{ipcitem.rate }}</td>
-<td>{{ipcitem.totalQuantity }}</td>
+ 
+ <td>{{ipcitem.TQ }}</td>
+<td>{{ipcitem.PQ}}</td>
+<td>{{ipcitem.RM}}</td>
+<td>{{ipcitem.QIC}}</td>
+ 
+ 
+ 
+ 
 """
-class boq_item()
+class boq_item:
     def __init__(self,schedule):
-        self.itemcode
-        self.shortDescription
-        self.unit
-        pass
+        self.itemcode=schedule.codeNo
+        self.shortDescription=schedule.shortDescription
+        self.unit=schedule.unit
+        self.TQ=0
+        self.PQ=0
+        self.RM=0
+        self.QIC=0
+
 def build_ipc_quantity(boqs_items):
+    ipc_items=[]
     for item in boqs_items:
         schedule=item.schedule_id
+        ipc_quantity=boq_item(schedule)
+        ipc_items.append(ipc_quantity)
+    return ipc_items
+
+
 
 
 

@@ -416,14 +416,41 @@ $("#structure-sort ").append(myhtml)
 	
 	
 });
-
 	
 }
+
+/*Functions for Loading BoQ*/
+var loadBoQ=function () 
+{
+console.log("sucessfully traped loadBoQ function....")
+myurl=$(this).attr('data-url')
+structur_id=$("#structure-sort").val()
+console.log(myurl)
+console.log(structur_id)
+$.ajax({
+url: myurl,      
+type: 'get',
+dataType: 'json',
+data:{'structureid':structur_id},
+success: function (data)
+{
+console.log("sucessfully returned from ajax request......")	
+console.log(data.ipc_quantity)
+$("#ivt-table tbody").html(data.ipc_quantity);
+	
+} 	
+	
+	
+});
+}
+
+
 
 
 
 /*binding*/
 $("#package-sort").on("change",structureSelect);
+$("#load-boq").on("click",loadBoQ)
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
 //$(".js-fy-select").change(sort_by_haor)
 //$(".js-month-select").change(sort_by_haor)

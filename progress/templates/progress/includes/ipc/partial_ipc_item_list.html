@@ -4,21 +4,12 @@
 <td>{{ipcitem.shortDescription}}</td>
 <td>{{ipcitem.unit}}</td>
 <td>{{ipcitem.rate }}</td>
-<td>{{ipcitem.totalQuantity }}</td>
-<td>{{structure.contract_ivt.dpp_intervention_id.length}}</td>
-<td>{{structure.contract_ivt.dpp_intervention_id.vent_no}}</td>
-<td>{{structure.overall_status}}</td>
-<td>{{structure.current_progress}}</td>
-<td>{{structure.value_of_work_done}}</td>
-<td>{{structure.problems}}</td>
-<td>					  
-<button type="button button-lg"
-							  class="btn btn-primary btn-sm js-update-qualitative-progress "
-							   
-							  data-url="{% url 'qualitative_progress_update' pk=structure.id %}">
-						<span class="glyphicon glyphicon-pencil"></span>Update
-					  </button>
-					  </td>
+<td>{{ipcitem.TQ }}</td>
+<td>{{ipcitem.PQ}}</td>
+<td>{{ipcitem.RM}}</td>
+<td><input class="form-control js-progress-input" type="number" value="0" id="example-number-input"></td>
+
+
 
 </tr>
 
