@@ -403,6 +403,7 @@ class IPC(models.Model):
     ipcNo=models.IntegerField(null=True,blank=True)
     ipcName=models.CharField(max_length=500,null=True,blank=True)
     ipcAmount=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+
 class IPC_Item(models.Model):
     ipc=models.ForeignKey(IPC,on_delete=models.CASCADE,null=True,blank=True)
     boq=models.ForeignKey(BoQ,on_delete=models.CASCADE,null=True,blank=True)

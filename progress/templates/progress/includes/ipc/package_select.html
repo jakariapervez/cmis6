@@ -1,0 +1,6 @@
+<select class="custom-select js-package-select" id="package-sort" data-url="{% url 'add_ipc_quantity-package-sort'      %}" >
+ {% for contract  in contracts %}
+<option value="{{contract.id}}" >{{contract.package_short_name}}</option>
+{% endfor %}
+
+</select>

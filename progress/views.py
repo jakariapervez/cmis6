@@ -1222,7 +1222,33 @@ def HaorMap(request,pk):
 
 """IPC Related Views"""
 def AddIPCQuantity(request):
-    pass
+    contracts=Contract.objects.all().order_by('package_short_name')
+    context={"contracts":contracts}
+    return render(request,'progress/includes/ipc/addIPCQuantity.html',context)
+
+from .auxilaryquery import build_structure_select_options
+
+def AddIPCQuantity_PcakageSort(request):
+    packageName=request.GET['package_name']
+    mycontract= Contract.objects.get(pk=packageName)
+    print(mycontract)
+    structures=Contract_Intervention.objects.all().filter(contract_id=mycontract)
+    structure_options=build_structure_select_options(structures)
+    print(structure_options)
+    context={"structures":structures}
+    data=dict()
+    data['ids']=structure_options['ids']
+    data['package_names']=structure_options['package_names']
+    #data['structure_list']=render_to_string('progress/includes/ipc/structure_select.html',context,request=request)
+    return JsonResponse(data)
+
+from .models import BoQ
+
+def AddIPCQuantity_LoadBoq(request):
+    structure_id = request.GET['structureid']
+    structure=get_object_or_404(Contract_Intervention,pk=structure_id)
+    boq_objects=BoQ.objects.all().filter(structure_id=structure)
+
 
 
 

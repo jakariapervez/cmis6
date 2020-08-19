@@ -85,7 +85,12 @@
 {% include 'pac/includes/expenditures/month_select.html' %}
 {% include 'pac/includes/expenditures/code_select.html' %}
 -->
-{% include 'progress/includes/structures/package_select.html' %}
+{% include 'progress/includes/ipc/package_select.html' %}
+
+<select class="custom-select js-structre-select" id="structure-sort" >
+{% include 'progress/includes/ipc/structure_select.html' %}
+</select>
+
 <!-- Expenditure Navigation Buttons -->
  <button type="button" class="btn btn-primary btn-md js-sort-all" data-url="{% url 'qualitative_progress_sort'%}">				
 							 

@@ -380,10 +380,50 @@ console.log("sucessfully Initiated form Submission Event.......")
 	
 }
 
+var structureSelect=function () 
+{
+console.log("sucessfuly triggered structure select....")	
+myurl=$(this).attr('data-url')
+console.log(myurl)
+package_name=$(this).val()
+console.log(package_name)
+
+$.ajax({
+url: myurl,      
+type: 'get',
+dataType: 'json',
+data:{'package_name':package_name},
+success: function (data)
+{
+console.log("sucessfully returned from ajax request......")	
+console.log(data.package_names)
+console.log(data.ids)
+$("#structure-sort ").empty()
+for(i=0;i<data.ids.length;i++)
+{
+optionValue=data.ids[i]
+optionText=data.package_names[i]
+myhtml="<option value="+optionValue+">"+optionText+"</option>"
+console.log(myhtml)
+$("#structure-sort ").append(myhtml)
+//$("#structure-sort ").append('<option value="${optionValue}">${optionText}</option>')	
+	
+	
+}
+
+	
+} 	
+	
+	
+});
+
+	
+}
 
 
 
 /*binding*/
+$("#package-sort").on("change",structureSelect);
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
 //$(".js-fy-select").change(sort_by_haor)
 //$(".js-month-select").change(sort_by_haor)
@@ -395,5 +435,6 @@ $("#modal-ivt").on("submit", ".js-progress-update-form", saveUpdateForm);
 $(".js-sort-all").click(sort_by_all);
 //$(".js-report").click(generteReport)
 $(".js-report").click(generateReport2)
+
 
 });

@@ -995,8 +995,30 @@ def build_structure_list(contract_interventions):
         element=structure(name,start,finish,length)
         structures.append(element)
         #print(ivt.contract_id)
-
     return structures
+
+def build_structure_select_options(civts):
+    ids=[]
+    names=[]
+    for civt in civts:
+        ids.append(civt.id)
+        names.append(civt.dpp_intervention_id.name)
+    return {"ids":ids,"package_names":names}
+"""    
+    quantity=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+    rate=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+    amount=models.DecimalField(null=True, blank=True, decimal_places=3, max_digits=13)
+    schedule_id=models.ForeignKey(Schedule,on_delete=models.CASCADE,null=True,blank=True)
+    structure_id=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
+
+"""
+class boq_item()
+    def __init__(self):
+def build_ipc_quantity(boqs_items):
+    for item in boqs_items:
+        pass
+
+
 
 
 

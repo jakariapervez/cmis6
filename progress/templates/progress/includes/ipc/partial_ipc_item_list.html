@@ -1,12 +1,10 @@
-{% for structure  in structures %}
-<tr>
-
-  
-<td>{{structure.contract_ivt.contract_id}}</td>
-<td>{{structure.contract_ivt.dpp_intervention_id.name}}</td>
-<td>{{structure.contract_ivt.dpp_intervention_id.worktype_id}}</td>
-<td>{{structure.contract_ivt.dpp_intervention_id.start_chainage }}</td>
-<td>{{structure.contract_ivt.dpp_intervention_id.finish_chainage }}</td>
+{% for ipcitem  in ipcitems %}
+<tr>  
+<td>{{ipcitem.contract_ivt.contract_id}}</td>
+<td>{{ipcitem.contract_ivt.dpp_intervention_id.name}}</td>
+<td>{{ipcitem.contract_ivt.dpp_intervention_id.worktype_id}}</td>
+<td>{{ipcitem.contract_ivt.dpp_intervention_id.start_chainage }}</td>
+<td>{{ipcitem.contract_ivt.dpp_intervention_id.finish_chainage }}</td>
 <td>{{structure.contract_ivt.dpp_intervention_id.length}}</td>
 <td>{{structure.contract_ivt.dpp_intervention_id.vent_no}}</td>
 <td>{{structure.overall_status}}</td>

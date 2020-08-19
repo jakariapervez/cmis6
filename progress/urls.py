@@ -56,7 +56,8 @@ urlpatterns=[
     path('blankmap', views.BlankMap, name="blank_map"),
     path('map/haor/<int:pk>',views.HaorMap,name='haor_map'),
     #url for qualitative progrss
-    path('ipc/addIPCquantity/',views.AddIPCQuantity,name="add_ipc_quantity")
+    path('ipc/addIPCquantity/',views.AddIPCQuantity,name="add_ipc_quantity"),
+    path('ipc/addIPCquantity/package_sort/',views.AddIPCQuantity_PcakageSort,name="add_ipc_quantity-package-sort")
 
 
     #A Temporary URL for viewing contract Interventioin
