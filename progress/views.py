@@ -1220,6 +1220,12 @@ def HaorMap(request,pk):
 
 
 
+"""IPC Related Views"""
+def AddIPCQuantity(request):
+    pass
+
+
+
 
 
 
