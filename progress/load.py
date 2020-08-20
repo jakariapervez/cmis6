@@ -205,6 +205,22 @@ def inputBoQItemFromExcel(verbose=True):
         myboq=BoQ(quantity= tendered_qunatity,rate=quoted_rate,amount=quoted_amount,schedule_id=schedule,structure_id=structure,)
         myboq.save()
         print(myboq)
+progress_path=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Work Completion Status.xlsx'),)
+from .models import qualitativeStatus
+def inputProgressQuantityFromExcel(verbose=True):
+    sheet="Qstatus"
+    myframe = pd.read_excel(progress_path, sheet_name=sheet)
+    myframe.fillna(0, inplace=True)
+    for index,row in myframe.iterrows():
+        wname=(row['Structure/Works Name'])
+        civt=Contract_Intervention.objects.all().filter(dpp_intervention_id__name=wname)
+        print(civt)
+        pitem=qualitativeStatus.objects.all().filter(contract_ivt=civt)
+        pitem.current_progress=row['Current Progress']
+        pitem.save()
+
+    #print(myframe)
+
 
 
 
