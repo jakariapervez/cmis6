@@ -73,6 +73,19 @@ def structures_gpd(verbose=True):
         print(geometry)
         #myhaor.boundary = geometry
         #myhaor.save()
+def saveCentroid(verbose=True):
+    gdf = gpd.read_file(haor_shp)
+    for data in gdf.to_dict("records"):
+        Data_id=data.pop("DataID")
+        myhaor = get_object_or_404(Haor, pk=Data_id)
+        mypoint=Point(91.025781,24.44398)
+        myhaor.centroid=mypoint
+        myhaor.save()
+        print(mypoint)
+
+
+
+
 
 
 

@@ -52,6 +52,7 @@ class Haor(models.Model):
     project_type=gismodel.CharField(max_length=50,choices=Types)
     population=gismodel.DecimalField(max_digits=8,decimal_places=0,blank=True,null=True,default=0)
     boundary=gismodel.MultiPolygonField(null=True,blank=True)
+    centroid=gismodel.PointField(null=True,blank=True)
 
     def __str__(self):
         return f' {self.name},{self.project_type},'
