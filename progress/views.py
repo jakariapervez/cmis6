@@ -1128,15 +1128,16 @@ def Qualitative_progress_sort(request):
         #print(div_pr_key)
         #contrats=Contract.objects.all().filter(division_id=mydivision.pk)
         #print(contrats)
-        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id__division_id=mydivision).order_by('contract_ivt__contract_id')
+        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id__division_id=mydivision).order_by('contract_ivt__contract_id__package_short_name','contract_ivt__dpp_intervention_id__worktype_id')
         #structures=qualitativeStatus.objects.select_related('contract_ivt__contract_id__division_id').all()
         print(structures)
     elif search_id in whole_project:
-        structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id')
+        #structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id__package_short_name')
+        structures = qualitativeStatus.objects.all().order_by('contract_ivt__contract_id__package_short_name','contract_ivt__dpp_intervention_id__worktype_id')
     else:
         contract_package=get_object_or_404(Contract,pk=search_id)
         print("package name={}".format(contract_package.package_short_name))
-        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id=contract_package)
+        structures = qualitativeStatus.objects.all().filter(contract_ivt__contract_id=contract_package).order_by('contract_ivt__dpp_intervention_id__worktype_id')
     context={'structures':structures}
 
     table_data=render_to_string('progress/includes/structures/partial_qualitative_progress_list.html',context,request=request)

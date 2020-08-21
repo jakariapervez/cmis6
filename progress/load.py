@@ -212,11 +212,19 @@ def inputProgressQuantityFromExcel(verbose=True):
     myframe = pd.read_excel(progress_path, sheet_name=sheet)
     myframe.fillna(0, inplace=True)
     for index,row in myframe.iterrows():
-        wname=(row['Structure/Works Name'])
-        civt=Contract_Intervention.objects.all().filter(dpp_intervention_id__name=wname)
-        print(civt)
-        pitem=qualitativeStatus.objects.all().filter(contract_ivt=civt)
+        sid=row['ids']
+        civt=Contract_Intervention.objects.get(pk=sid)
+        #wname=(row['Structure/Works Name'])
+        #print(wname)
+        #dpp_ivt=DPP_Intervention.objects.get(name=wname)
+        #print(dpp_ivt)
+        #civt=Contract_Intervention.objects.get(dpp_intervention_id__name=wname)
+        print(civt.dpp_intervention_id.name)
+        pitem=qualitativeStatus.objects.get(contract_ivt=civt)
         pitem.current_progress=row['Current Progress']
+        pitem.overall_status=row['Current Status']
+        print(pitem.overall_status)
+        #print(pitem.current_progress)
         pitem.save()
 
     #print(myframe)

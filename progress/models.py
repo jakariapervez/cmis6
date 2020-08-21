@@ -388,6 +388,7 @@ class qualitativeStatus(models.Model):
     contract_status_choices = [("C", "Completed"), ("OG", "On Going"),("P","Problamatic")]
     problems_status_choices=[("LA", "Land Acquisition"), ("SR", "Structure Relocated"),
                              ("LP","Local Peoplles's Obstruction"),("RE","River Erosion"),
+                             ("AB","Structure is Abandoned"),("OV","Overlap With Other Project"),
                              ("GC"," inappropriate Sub-surface Condition"),("NP","None"),("OT","Others"),]
     contract_ivt=models.ForeignKey(Contract_Intervention,on_delete=models.CASCADE,null=True,blank=True)
     overall_status=models.CharField(max_length=100,choices=contract_status_choices,default="OG")
