@@ -1204,10 +1204,17 @@ def HaorMap(request,pk):
     for haor in haor_data:
         mycenter=haor.boundary.centroid
         mycenter2=Point(mycenter.x,mycenter.y)
+        myboundary = haor.boundary
+        #print(myboundary)
+        mycoords=myboundary.coords
+        for p in mycoords:
+            print(p)
+            #print(mycoords)
         #print(mycenter.x)
 
     #print(haor_data)
     # mydata=serialize('geojson',Haor.objects.all(),geometry_field='boundary',fields=('name','project_type',))
+
     mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
     #centroid=serialize('geojson',mycenter2)
     #print(centroid)
