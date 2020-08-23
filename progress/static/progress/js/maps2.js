@@ -8,9 +8,10 @@ var addBoundary=function (mydata)
 	
 	
 }	
-
+//center:[24.44398,91.025781],
 var mapOptions={
-center:[24.44398,91.025781],
+
+center:[24.450065, 91.039566],
 zoom:21	
 }	
 	
@@ -32,7 +33,15 @@ var mapboxTiles = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite
        zoomOffset: -1
 });
 map.addLayer(mapboxTiles)
-L.geoJSON(mydata.boundary).addTo(map);		
+var myStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    
+};
+mycoords=[[24.510698,90.995575],[ 24.378833,91.088681]]
+var myLines = [{"type": "LineString","coordinates":mycoords }]
+//L.geoJSON(mydata.boundary,{style: myStyle}).addTo(map);
+L.geoJSON(myLines,{style: myStyle}).addTo(map);		
 	map_is_created=true	
 		
 
@@ -48,7 +57,7 @@ myurl=$("#map-haor-sort option:selected").attr("data-url")
 console.log(myurl)
 $.ajax({
 	url:myurl,
-    data:{"pk":$("#map-haor-sort option:selected").val()},
+    data:{"haorid":$("#map-haor-sort option:selected").val()},
       type: 'get',
       dataType: 'json',
 	  beforeSend:function ()
@@ -61,7 +70,8 @@ $.ajax({
 	  }},
 	  success: function (data) {
       console.log("sucessfully returned from ajax request.....")
-	  console.log(data.boundary)
+	  //console.log(data.boundary)
+	  console.log(data.boundary_coords)
 	  showMap(data)
      
 	  
