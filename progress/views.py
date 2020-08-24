@@ -1197,9 +1197,9 @@ from django.contrib.gis.db.models.functions import Centroid
 from django.contrib.gis.geos import fromstr,Polygon,GEOSGeometry,fromfile,fromstr,MultiPolygon,Point
 def HaorMap(request,pk):
     data=dict()
-    myid=request.GET['pk']
+    myid=request.GET['haorid']
     print("haor_id={}".format(myid))
-    # haor_data=get_object_or_404(Haor,pk=2)
+    #haor_data=get_object_or_404(Haor,pk=2)
     haor_data = Haor.objects.all().filter(pk=myid)
     for haor in haor_data:
         mycenter=haor.boundary.centroid
@@ -1207,19 +1207,26 @@ def HaorMap(request,pk):
         myboundary = haor.boundary
         #print(myboundary)
         mycoords=myboundary.coords
-        for p in mycoords:
-            print(p)
+        for p in myboundary:
+            a=p.area
+            #geom_typeid
+            print("area={} type={}".format(a,p.geom_typeid))
+            mypoly=p.geojson
+            data['boundary']=mypoly
+            data['boundary_coords']=p.coords
+            print(mypoly)
+            #print(p)
             #print(mycoords)
         #print(mycenter.x)
 
     #print(haor_data)
     # mydata=serialize('geojson',Haor.objects.all(),geometry_field='boundary',fields=('name','project_type',))
 
-    mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
+    #mydata = serialize('geojson', haor_data, geometry_field='boundary', fields=('name', 'project_type',))
     #centroid=serialize('geojson',mycenter2)
     #print(centroid)
     #print(mydata)
-    data['boundary']=mydata
+    #data['boundary']=mydata
     #data['centroid']=centroid
 
     return JsonResponse(data)
