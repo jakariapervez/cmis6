@@ -1038,6 +1038,42 @@ def build_ipc_quantity(boqs_items):
         ipc_items.append(ipc_quantity)
     return ipc_items
 
+from .models import qualitativeStatus
+from django.shortcuts import get_object_or_404
+def buildMarkerData(civts):
+    names=[]
+    current_status=[]
+    present_progress=[]
+    structure_types=[]
+    locations=[]
+    lats=[]
+    lons=[]
+    lines=[]
+    for civt in civts:
+        dpp_ivt=civt.dpp_intervention_id
+        qs = get_object_or_404(qualitativeStatus, contract_ivt=civt)
+        name = dpp_ivt.name
+        struc_type= dpp_ivt.worktype_id.wtype
+        location=dpp_ivt.location
+        line=dpp_ivt.lines
+        if location:
+            curr_status=qs.overall_status
+            curr_prog=qs.current_progress
+            names.append(name)
+            structure_types.append(struc_type)
+            locations.append(location.coords)
+            lats.append(location.coords[1])
+            lons.append(location.coords[0])
+            #lines.append(line.coords)
+            current_status.append(curr_status)
+            present_progress.append(curr_prog)
+
+    myvalues={"names":names,'structure_types':structure_types,'locations':locations,
+              'lines':lines,'current_status':current_status,'present_progress':present_progress,
+              'lats':lats,'lons':lons}
+    return myvalues
+
+
 
 
 

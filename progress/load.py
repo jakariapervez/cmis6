@@ -219,7 +219,9 @@ def inputBoQItemFromExcel(verbose=True):
         myboq.save()
         print(myboq)
 progress_path=os.path.abspath(os.path.join(os.path.dirname(__file__),'data','Work Completion Status.xlsx'),)
+
 from .models import qualitativeStatus
+from django.shortcuts import get_object_or_404
 def inputProgressQuantityFromExcel(verbose=True):
     sheet="Qstatus"
     myframe = pd.read_excel(progress_path, sheet_name=sheet)

@@ -1,11 +1,82 @@
 $(function () {
 
-var map	
-var addBoundary=function (mydata)
+var map
+var getPresentStatus=function (statuscode)
+{
+var structure_status
+if (statuscode=="C")
+{
+ structure_status="Completed"
+}	
+else if (statuscode=="OG")	
+{
+structure_status="Construction on going"	
+	
+}
+else
 {
 	
+structure_status="Construction is Stopped due to problems"	
+	
+}
+return structure_status
+}
+var addStructureLocation= function (mydata)
+
+{
+var marker
+var information
+lats=mydata.lats
+lons=mydata.lons
+names=mydata.names
+ps=mydata.current_status
+pp=mydata.present_progress
+
+for (i=0;i<lats.length;i++)	
+{
+status_text=getPresentStatus(ps[i])
+information="<b>"+names[i]+"</b>"+"<br>"+"<b>"+"present status:" +"</b>"+status_text+"<br>"+"<b>"+"present progress:"+"</b>"+pp[i]*100+"%"
+marker = L.marker([lats[i],lons[i]]).addTo(map);	
+marker.bindPopup(information)	
+}
 	
 	
+}//end of addition of marker	
+var createBoundaryPoints=function (mycoords)
+{
+var lat
+var lon
+var mypoint
+var pointlist= new Array();
+coordPoint=mycoords[0]
+for (i=0;i<coordPoint.length;i++)
+{
+//console.log(coordPoint[i])	
+lon=coordPoint[i][0]
+lat=coordPoint[i][1]
+pointlist.push(new L.LatLng(lat,lon))	
+//console.log(lat)
+//console.log(lon)
+	
+}
+console.log(pointlist)
+/*
+mycoords.forEach(function (item,index,array)
+{
+lon=item[index][0]
+lat=item[index][1]
+mypoint=new L.LatLng(lat,lon)
+pointlist.push(new L.LatLng(lat,lon))
+//console.log(lat)
+//console.log(lon)
+}
+
+
+
+
+)*/	
+
+return 	pointlist
 	
 }	
 //center:[24.44398,91.025781],
@@ -38,10 +109,25 @@ var myStyle = {
     "weight": 5,
     
 };
-mycoords=[[24.510698,90.995575],[ 24.378833,91.088681]]
-var myLines = [{"type": "LineString","coordinates":mycoords }]
+ var pointA = new L.LatLng(24.510698, 90.995575);
+ var pointB = new L.LatLng(24.378833, 91.088681);
+//var pointList = [pointA, pointB];
+var pointList= createBoundaryPoints(mydata.boundary_coords)
+//console.log(pointList)
+ var firstpolyline = new L.Polyline(pointList, {
+    color: 'red',
+    weight: 3,
+    opacity: 0.5,
+    smoothFactor: 1
+
+    });
+
+map.addLayer(firstpolyline);
+addStructureLocation(mydata);
+
+//var myLines = [{"type": "LineString","coordinates":mycoords }]
 //L.geoJSON(mydata.boundary,{style: myStyle}).addTo(map);
-L.geoJSON(myLines,{style: myStyle}).addTo(map);		
+//L.geoJSON(myLines,{style: myStyle}).addTo(map);		
 	map_is_created=true	
 		
 
@@ -71,7 +157,7 @@ $.ajax({
 	  success: function (data) {
       console.log("sucessfully returned from ajax request.....")
 	  //console.log(data.boundary)
-	  console.log(data.boundary_coords)
+	  console.log(data.names)
 	  showMap(data)
      
 	  

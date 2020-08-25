@@ -1195,13 +1195,17 @@ def BlankMap(request):
 
 from django.contrib.gis.db.models.functions import Centroid
 from django.contrib.gis.geos import fromstr,Polygon,GEOSGeometry,fromfile,fromstr,MultiPolygon,Point
+from .auxilaryquery import buildMarkerData
+
 def HaorMap(request,pk):
     data=dict()
     myid=request.GET['haorid']
     print("haor_id={}".format(myid))
     #haor_data=get_object_or_404(Haor,pk=2)
     haor_data = Haor.objects.all().filter(pk=myid)
+
     for haor in haor_data:
+        haor_name=haor
         mycenter=haor.boundary.centroid
         mycenter2=Point(mycenter.x,mycenter.y)
         myboundary = haor.boundary
@@ -1228,6 +1232,16 @@ def HaorMap(request,pk):
     #print(mydata)
     #data['boundary']=mydata
     #data['centroid']=centroid
+    structures=Contract_Intervention.objects.all().filter(dpp_intervention_id__haor_id=haor_name)
+    #filter(dpp_intervention_id__haor_id=haor_data)
+    #print(structures)
+    myvalues=buildMarkerData(structures)
+    data['lats']=myvalues['lats']
+    data['lons']=myvalues['lons']
+    data['names']=myvalues['names']
+    data['current_status']=myvalues['current_status']
+    data['present_progress']=myvalues['present_progress']
+    print(myvalues)
 
     return JsonResponse(data)
 
