@@ -106,7 +106,26 @@ python manage.py migrate
 python manage.py collectstatic
 deactivate
 sudo shutdown -r now
+########################################commands for seting up geodjango environment##########################################
+sudo apt install gdal-bin libgdal-dev
+sudo apt install python3-gdal
+sudo apt install binutils libproj-dev
+####################################################Loading Haour Boundaries in Geo Database##############################
+python manage.py shell
+from progress import load
+load. haor_gpd()                                       -----load haor boundary
+load.structures_gpd()                                  -----load structure points
+load.saveCentroid()				       -----load centroid
+load.inputBoQItemFromExcel()
 
+####################################################Acessing Postgres SQL Server##########################################
+sudo -i -u cmis_user               switchuser
+psql -U postgres                   login to posgress
+\c cmis3_db_new2
+
+psql 'cmis3_db_new2' postgres
+\d+ progress_haor                      ---know the column of pogress_haor table
+ALTER TABLE progress_haor ALTER COLUMN boundary TYPE geometry(MultiPolygon,4326);
 
 
 
