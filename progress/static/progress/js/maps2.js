@@ -36,6 +36,7 @@ for (i=0;i<lats.length;i++)
 {
 status_text=getPresentStatus(ps[i])
 information="<b>"+names[i]+"</b>"+"<br>"+"<b>"+"present status:" +"</b>"+status_text+"<br>"+"<b>"+"present progress:"+"</b>"+pp[i]*100+"%"
+
 marker = L.marker([lats[i],lons[i]]).addTo(map);	
 marker.bindPopup(information)	
 }
