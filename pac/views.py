@@ -553,7 +553,7 @@ def Delete_invoice(request, pk):
 
 """" View Function for Expenditure details   """
 from .models import Expenditure_details
-from .forms import Expenditure_details_Forms
+from .forms import Expenditure_details_Forms,Expenditure_details_Forms2
 @login_required
 def save_expenditure_form(request,form,invoice, template_name):
     data = dict()
@@ -642,7 +642,7 @@ def Add_Expenditure(request,pk):
     expenditure=Expenditure_details()
     data = dict()
     if request.method=='POST':
-        form=Expenditure_details_Forms(request.POST)
+        form=Expenditure_details_Forms2(request.POST)
         #print(form)
         if form.is_valid():
             myexpenditure=validateExpenditure(form,invoice)
@@ -696,7 +696,7 @@ def Add_Expenditure(request,pk):
             data['form_is_valid'] = False
 
     else:
-        form=Expenditure_details_Forms()
+        form=Expenditure_details_Forms2()
         #form.fields["Invoice_details"].initial =  invoice
         #form.fields['date'].initial=invoice.date
         context = {'form': form, 'invoice': invoice}
@@ -886,11 +886,11 @@ def expenditure_list_sort_by_all(request):
     month=request.GET['month']
     ecode=request.GET['ecode']
     fy=FinancialYear.objects.get(pk=year_id)
-    invoices=Expenditure_details.objects.filter(Budget_allocation__Financial_year=fy)
+    invoices=Expenditure_details.objects.filter(Budget_allocation__Financial_year=fy).order_by('-Invoice_details__Invoice_no')
     if month !="ALL":
         invoices=invoices.filter(Invoice_details__Month=month)
     if ecode !="ALL":
-        invoices=invoices.filter(Budget_allocation__Dpp_allocation__Ecode=ecode)
+        invoices=invoices.filter(Budget_allocation__Dpp_allocation__Shortdescription=ecode)
     print("FY={} month={} ecode={}".format(year_id,month,ecode))
     #dppitems = Expenditure_details.objects.all()
     data['html_ivt_list'] = render_to_string('pac/includes/expenditures/partial_expenditures_list.html', {

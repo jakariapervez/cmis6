@@ -41,6 +41,16 @@ class Expenditure_details_Forms(forms.ModelForm):
         #fields=('Gob','Dpa','Rpa','Total','Budget_allocation','date','Invoice_details' )
         fields = ('Gob', 'Dpa', 'Rpa',  'Budget_allocation')
         #widgets = {'Total': forms.NumberInput(attrs={'disabled': True}),'date':forms.DateInput(attrs={'disabled': True}),'Invoice_details':forms.TextInput(attrs={'disabled': True})}
+class Expenditure_details_Forms2(forms.ModelForm):
+    #date=forms.DateField(required=False)
+    dpp_allocation = forms.ModelChoiceField(queryset=Dpp_allocation.objects.all())
+    class Meta:
+        model=Expenditure_details
+
+        #fields=('Gob','Dpa','Rpa','Total','Budget_allocation','date','Invoice_details' )
+        #fields = ('Gob', 'Dpa', 'Rpa',  'Budget_allocation')
+        fields = ('Gob', 'Dpa', 'Rpa')
+        #widgets = {'Total': forms.NumberInput(attrs={'disabled': True}),'date':forms.DateInput(attrs={'disabled': True}),'Invoice_details':forms.TextInput(attrs={'disabled': True})}
 
 
 

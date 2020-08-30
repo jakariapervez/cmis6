@@ -104,6 +104,7 @@ def validateExpenditure(exp_form,invoice):
     dpa = exp_form.cleaned_data['Dpa']
     total = gob + dpa + rpa
     print("GoB={} DPA={} RPA={} Total={}".format(gob, dpa, rpa, total))
+
     # form.fields['Total']=total
     # form.cleaned_data['Total']=total
     expenditure.Invoice_details = invoice
@@ -111,7 +112,9 @@ def validateExpenditure(exp_form,invoice):
     expenditure.Dpa = dpa
     expenditure.Rpa = rpa
     expenditure.Total = total
-    budget_allocation=exp_form.cleaned_data['Budget_allocation']
+    dpp_allocation=exp_form.cleaned_data['dpp_allocation']
+    budget_allocation=Budget_allocation.objects.get(Dpp_allocation=dpp_allocation,Financial_year=expenditure.Invoice_details.FinancialYear)
+    #budget_allocation=exp_form.cleaned_data['Budget_allocation']
     economicCode=budget_allocation.Dpp_allocation.Description
     print("Economic code={} description={}".format(economicCode,budget_allocation.Dpp_allocation.Description))
     expenditure.Budget_allocation =budget_allocation

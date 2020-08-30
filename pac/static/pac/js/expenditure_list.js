@@ -320,7 +320,8 @@ doc.save("Report.pdf");
 //$(".js-fy-select").change(sort_by_haor)
 //$(".js-month-select").change(sort_by_haor)
 //$(".js-code-select").change(sort_by_haor)
-$(".js-sort-all").click(sort_by_all);
+//$(".js-sort-all").click(sort_by_all);
+$(".js-sort-all").on("click",sort_by_all)
 //$(".js-report").click(generteReport)
 $(".js-report").click(generateReport2)
 });
