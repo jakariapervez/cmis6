@@ -32,15 +32,14 @@ def getInvoiceTotal2(invoice):
         total +=float(exp.Total)
     return total
 from .models import Expenditure_details,Budget_allocation,Dpp_allocation,Invoice_details
-def getCumulative(myyear,economicCode):
+def getCumulative(myyear,economicCode,budget_allocation):
     dpa=0
     gob=0
     rpa=0
     total=0
     #expenditures=Expenditure_details.objects.filter( Budget_allocation__Financial_year=myyear).filter(Budget_allocation_Dpp_allocation_ Ecode=economicCode)
     #expenditures = Expenditure_details.objects.filter(Budget_allocation__Dpp_allocation__Ecode=economicCode).filter(Budget_allocation__Financial_year=myyear)
-    expenditures = Expenditure_details.objects.filter(Budget_allocation__Dpp_allocation__Description=economicCode).filter(
-    Budget_allocation__Financial_year=myyear)
+    expenditures = Expenditure_details.objects.filter(Budget_allocation=budget_allocation)
     print(expenditures)
     for expenditure in expenditures:
         dpa+=expenditure.Dpa
@@ -49,7 +48,7 @@ def getCumulative(myyear,economicCode):
         total+=expenditure.Total
     return {'Gob':gob,'Dpa':dpa,'Rpa':rpa,'Total':total}
 def checkCumulative(fy,economicCode,expenditure,budget_allocation):
-    cumulative = getCumulative(fy,economicCode)
+    cumulative = getCumulative(fy,economicCode,budget_allocation)
     print(cumulative)
     print("budget allocation gob={} dpa={} rpa={} total={}".format(budget_allocation.Gob,budget_allocation.Dpa,
                                                                    budget_allocation.Rpa,budget_allocation.Total))
