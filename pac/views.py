@@ -804,11 +804,14 @@ def UpdateExpenditure(request, pk):
         form = Expenditure_details_Edit_Forms(request.POST,instance=ivt)
         if form.is_valid():
             data = dict()
-            myexpenditure = validateExpenditureEditForm(form,ivt)
+            #myexpenditure = validateExpenditureEditForm(form,ivt)
+            myexpenditure = validateExpenditure(form, invoice)
             #print("isvalid={}".format(myexpenditure['isValid'], myexpenditure['cumtotal']))
             expenditure = myexpenditure['expenditure']
+            expenditure = myexpenditure['expenditure']
             #cumTotal = myexpenditure['cumtotal']
-            if myexpenditure['isValid']:
+            if myexpenditure['validity']:
+                ivt.delete()
                 expenditure.save()
                 cumtotal=getInvoiceTotal2(invoice)
                 print("total before update={} cumtotal={}".format(invoice.Total_amount,cumtotal))

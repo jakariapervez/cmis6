@@ -168,6 +168,7 @@ def validateExpenditureEditForm(exp_form,expenditure):
     dpa = exp_form.cleaned_data['Dpa']
     total = gob + dpa + rpa
     print("GoB={} DPA={} RPA={} Total={}".format(gob, dpa, rpa, total))
+    expenditure.Invoice_details = invoice
     budget_allocation = expenditure.Budget_allocation
     invoice = expenditure.Invoice_details
     if budget_allocation.Total>=total:

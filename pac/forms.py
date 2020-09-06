@@ -56,9 +56,10 @@ class Expenditure_details_Forms2(forms.ModelForm):
 
 
 class Expenditure_details_Edit_Forms(forms.ModelForm):
+    dpp_allocation = forms.ModelChoiceField(queryset=Dpp_allocation.objects.all())
     class Meta:
         model=Expenditure_details
-        fields=('Gob','Dpa','Rpa','Budget_allocation' )
+        fields=('Gob','Dpa','Rpa' )
 """    
 class DocumentForm(forms.ModelForm):
     class Meta:
