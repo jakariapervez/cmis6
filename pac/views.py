@@ -811,8 +811,13 @@ def UpdateExpenditure(request, pk):
             expenditure = myexpenditure['expenditure']
             #cumTotal = myexpenditure['cumtotal']
             if myexpenditure['validity']:
-                ivt.delete()
-                expenditure.save()
+                #ivt.delete()
+                ivt.Gob=expenditure.Gob
+                ivt.Dpa=expenditure.Dpa
+                ivt.Rpa=expenditure.Rpa
+                ivt.Budget_allocation=expenditure.Budget_allocation
+                ivt.save()
+                #expenditure.save()
                 cumtotal=getInvoiceTotal2(invoice)
                 print("total before update={} cumtotal={}".format(invoice.Total_amount,cumtotal))
                 invoice.Total_amount=cumtotal
@@ -1027,6 +1032,7 @@ class structure:
         self.start=start
         self.finish=finish
         self.length=length
+
         self.package=package_name
         self.worktype=wtype
 
