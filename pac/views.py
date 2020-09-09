@@ -790,7 +790,7 @@ def UpdateExpenditure2(request,pk):
     return save_invoice_form(request, form, 'pac/includes/invoices/partial_ivt_create.html')
     """
 from .forms import Expenditure_details_Edit_Forms
-from .auxilaryquery import validateExpenditureEditForm,getInvoiceTotal2
+from .auxilaryquery import validateExpenditureEditForm,getInvoiceTotal2,validateExpenditureEditForm2
 @login_required
 def UpdateExpenditure(request, pk):
     ivt = get_object_or_404(Expenditure_details, pk=pk)
@@ -805,13 +805,19 @@ def UpdateExpenditure(request, pk):
         if form.is_valid():
             data = dict()
             #myexpenditure = validateExpenditureEditForm(form,ivt)
-            myexpenditure = validateExpenditure(form, invoice)
+            #myexpenditure = validateExpenditure(form, invoice)
+            myexpenditure=validateExpenditureEditForm2(form,ivt,invoice)
             #print("isvalid={}".format(myexpenditure['isValid'], myexpenditure['cumtotal']))
-            expenditure = myexpenditure['expenditure']
+            #expenditure = myexpenditure['expenditure']
             expenditure = myexpenditure['expenditure']
             #cumTotal = myexpenditure['cumtotal']
-            if myexpenditure['validity']:
-                ivt.delete()
+            if myexpenditure['isValid']:
+                #ivt.delete()
+                #ivt.Gob=expenditure.Gob
+                #ivt.Dpa=expenditure.Dpa
+                #ivt.Rpa=expenditure.Rpa
+                #ivt.Budget_allocation=expenditure.Budget_allocation
+                #ivt.save()
                 expenditure.save()
                 cumtotal=getInvoiceTotal2(invoice)
                 print("total before update={} cumtotal={}".format(invoice.Total_amount,cumtotal))
@@ -1027,6 +1033,7 @@ class structure:
         self.start=start
         self.finish=finish
         self.length=length
+
         self.package=package_name
         self.worktype=wtype
 

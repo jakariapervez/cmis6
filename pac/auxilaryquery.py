@@ -162,6 +162,70 @@ def validateExpenditure(exp_form,invoice):
 
     #return {'expenditure':expenditure,'validity':validity['isValid'],'cumtotal':validity['Total']}
 
+def validateExpenditureEditForm2(exp_form,expenditure,invoice):
+    gob = exp_form.cleaned_data['Gob']
+    rpa = exp_form.cleaned_data['Rpa']
+    dpa = exp_form.cleaned_data['Dpa']
+    total=gob+rpa+dpa
+    del_gob=gob-expenditure.Gob
+    del_rpa=rpa-expenditure.Rpa
+    del_dpa=dpa-expenditure.Dpa
+    del_total=total-expenditure.Total
+    print("change in gob={} rpa={} dpa={} total={}".format(del_gob,del_rpa,del_dpa,del_total))
+    print("GoB={} DPA={} RPA={} Total={}".format(gob, dpa, rpa, total))
+    #expenditure.Invoice_details = invoice
+    dpp_allocation=exp_form.cleaned_data['dpp_allocation']
+    budget_allocation=Budget_allocation.objects.get(Dpp_allocation=dpp_allocation,Financial_year=expenditure.Invoice_details.FinancialYear)
+    #budget_allocation = expenditure.Budget_allocation
+    #invoice = expenditure.Invoice_details
+    if budget_allocation.Total>=total:
+        isValid=True
+    else:
+        isValid=False
+    if budget_allocation.Gob>=expenditure.Gob:
+        isValid=True
+    else:
+        isValid=False
+    if budget_allocation.Rpa>=expenditure.Rpa:
+        isValid=True
+    else:
+        isValid=False
+    if budget_allocation.Dpa>=expenditure.Dpa:
+        isValid=True
+    else:
+        isValid=False
+    myyear = financialYearFromDate(invoice.date)
+    fy=financialYearFromDate(invoice.date)
+    month=monthFromDate(invoice.date)
+
+    economicCode=expenditure.Budget_allocation.Dpp_allocation.Ecode
+    cumulative = getCumulative(fy, economicCode,budget_allocation)
+    cumulative['Gob']=cumulative['Gob']-expenditure.Gob+gob
+    cumulative['Dpa'] = cumulative['Dpa'] - expenditure.Dpa + dpa
+    cumulative['Rpa'] = cumulative['Gob'] - expenditure.Rpa + rpa
+    cumulative['Total']=cumulative['Total']-expenditure.Total+total
+    if  cumulative['Gob']<= budget_allocation.Gob:
+        isValid=True
+    else:
+        isValid=False
+    if  cumulative['Dpa']<=budget_allocation.Dpa:
+        isValid=True
+    else:
+        isValid=False
+    if  cumulative['Rpa']<=budget_allocation.Rpa:
+        isValid=True
+    else:
+        isValid=False
+    if  cumulative['Total']<=budget_allocation.Total:
+        isValid=True
+    else:
+        isValid=False
+    expenditure.Gob = gob
+    expenditure.Dpa = dpa
+    expenditure.Rpa = rpa
+    expenditure.Total = total
+    return{"expenditure":expenditure,'isValid':isValid}
+    #invoice_total=getInvoiceTotal(fy,invoice)
 def validateExpenditureEditForm(exp_form,expenditure):
     gob = exp_form.cleaned_data['Gob']
     rpa = exp_form.cleaned_data['Rpa']
