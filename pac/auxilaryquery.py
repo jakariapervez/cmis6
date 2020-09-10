@@ -831,7 +831,62 @@ def createProgressReport():
 
 
 
+def createMonthlyReportItemsCodewise(budgets,fy,month):
+    myframes=calculateCodeWiseMonthlyExpenditure(fy)
+    monthly_gob=myframes['gob']
+    #displayMonthlyExpenditure(monthly_gob)
+    monthly_rpa = myframes['rpa']
+    monthly_dpa = myframes['dpa']
+    monthly_total = myframes['total']
+    item_codes = Dpp_allocation.objects.all().order_by('pk').values("Ecode", "Shortdescription")
+    report_items=[]
+    #month=6
+    myExpenditureDf=createMonthlyExpenditureDF()
+    #print(monthly_gob)
+    code_list=list(monthly_gob.iloc[:,1])
+    months = [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+    print(monthly_gob)
+    month_index = months.index(month) + 2
+    #print(code_list)
+    for budget in budgets:
+        ri=MonthlyReportItem(budget)
+        """setting current months data"""
+        description = budget.Dpp_allocation.Shortdescription
+        index=code_list.index(description)
+        gob_cm=round(monthly_gob.iloc[index,month_index],2)
+        rpa_cm=round(monthly_rpa.iloc[index,month_index],2)
+        dpa_cm=round(monthly_dpa.iloc[index,month_index],2)
+        total_cm=round(monthly_total.iloc[index,month_index],2)
+        ri.setCurrentMonthExpenditure(gob_cm,rpa_cm,dpa_cm,total_cm)
+        """calculating previous month expenditure"""
+        pmexpenditure=caclculateExpenditureUptoPM(monthly_gob,monthly_rpa,monthly_dpa, monthly_total,index,month_index)
+        pmexpenditure['pm_gob']
+        ri.setPreviousMonthExpenditure( pmexpenditure['pm_gob'], pmexpenditure['pm_rpa'], pmexpenditure['pm_dpa'], pmexpenditure['pm_total'])
+        ri.calCulateTotalUptoMonth()
+        ri.calCulateRemainingBudget()
+        #ri. round2Lakh()
+        #print(pmexpenditure)
 
+        #print("index={} description={}".format(index,description))
+        report_items.append(ri)
+        #disPlayTotalExpenditure(budget,6)
+    print("total expenditure entries={}".format(len(report_items)))
+    #report_items=report_items[::-1] revesing of a list
+    #displayRitems(report_items)
+    allownances=subtotalAllownaces(report_items)
+    services=subtotalSupplyAndServices(report_items)
+    repair_maintain=subtotalRepairAndMaintenance(report_items)
+    capital=subtotalCapital(report_items)
+    revenue=subtotalRevenue(report_items)
+    grandtotal=grandTotal(report_items)
+    report_items.insert(3,allownances)
+    report_items.insert(32,services)
+    report_items.insert(43,repair_maintain)
+    report_items.insert(44,revenue)
+    report_items.insert(71,capital)
+    report_items.append(grandtotal)
+
+    return report_items
 
 
 
