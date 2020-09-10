@@ -887,8 +887,36 @@ def createMonthlyReportItemsCodewise(budgets,fy,month):
     report_items.append(grandtotal)
 
     return report_items
+def createImedDf():
+    names=['Allowances','Travel expences','Office rent for PMO','Misc. taxes','Postage', 'Telephone,Internate,Fax,Telex etc.','Registration Fees (Vehicles)','Water & Elecricity','Gas & Fuel and Petrol & Lubricant','Insurance/Bank Charges (incl.Veh.)','Printing & Binding','Stationary'
+'Books & periodical','Overseas Training','Local Training','Casual labour/Job worker','Consumable Stores','Consultancy','Honorarium/Fees/ Remuneration','Survey','Computer Consumables','Other expenses','Repair & Maintenance of Vehicles, furniture, computers  & other structure',
+'Motor Vehicle', 'Water Transport','Machinary & other equipment','Engineering equipment','Computer & Accessories','Furniture & fixture and Aircooler','Land acquisition','Construction Works']
+    d={'component':names}
+    myframe=pd.DataFrame(data=d)
+    myframe=myframe.assign(allocation=0)
+    myframe = myframe.assign(expenditure=0)
+    return myframe
+
+def transferReportItem2Imed(dppitems,imed_df):
+    dpp_item_list=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,
+                   55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74]
+    dpp_to_imed=[0,0,0,-11,1,2,3,4,5,5,6,7,7,8,8,9,10,11,11,12,13,13,13,14,15,16,17,17,17,18,19,20,-1,21,21,21,21,21,21,21,
+                 21,21,21,-1,-1,22,22,23,24,24,25,25,25,26,26,26,26,27,27,28,29,29,29,29,29,29,29,29,29,29,29,-1,30,31,-1]
+    budget_allocation=[]
+    monthly_expenditure=[]
+    for i,val in enumerate(dppitems):
+        print("i={} total={} ".format(i,val.total_allocation))
 
 
+
+    pass
+
+
+
+def createImedExpenditure(budgets,fy,month):
+    report_items=createMonthlyReportItemsCodewise(budgets,fy,month)
+    imed_df=createImedDf()
+    transferReportItem2Imed(report_items,imed_df)
 
 
 
