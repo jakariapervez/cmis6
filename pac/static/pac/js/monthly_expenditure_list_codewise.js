@@ -363,7 +363,7 @@ doc.autoTable({head:heading,
 body:myDataArr,
 tableLineColor: [189, 195, 199],
 tableLineWidth: 0.03,
-headerStyles:{fillColor:[0,0,0],fontSize:12	},
+headStyles:{fillColor:[0,0,0],fontSize:12	},
 bodyStyles:{fillColor: [216, 216, 216],textColor:50,fontSize:9,},
 columnStyles: {0: {columnWidth:1},1: {columnWidth:2},}
 })

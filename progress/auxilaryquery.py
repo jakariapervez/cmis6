@@ -1021,20 +1021,41 @@ def build_structure_select_options(civts):
  
 """
 class boq_item:
-    def __init__(self,schedule):
+    def __init__(self,schedule,boq_item):
         self.itemcode=schedule.codeNo
         self.shortDescription=schedule.shortDescription
         self.unit=schedule.unit
-        self.TQ=0
+        self.rate=boq_item.rate
+        self.TQ=boq_item.quantity
         self.PQ=0
-        self.RM=0
+        self.RMQ=0
         self.QIC=0
+        self.CV=round(self.TQ*self.rate,2)
+        self.PV=0.0
+        self.RMV=0.0
+        self.VIC=0.0
+    def calculatePaidQuantity(self,ipcs,boq_item):
+        paid_quantity=0
+        paid_value=0.0
+        for ipc in ipcs:
+            ipc_items=IPC_Item.objects.all().filter(ipc=ipc,boq=boq_item)
+            for ipc_item in ipc_items:
+                paid_quantity+=ipc_item.quantity_paid
+                paid_value +=float(ipc_item.quantity_paid)*float(boq_item.rate)
+        self.PQ=paid_quantity
+        self.RMQ=self.TQ-self.PQ
+        self.PV=round(paid_value,2)
+        self.RMV=float(self.CV)-float(self.PV)
+        self.RMV=round(self.RMV,2)
 
-def build_ipc_quantity(boqs_items):
+
+
+def build_ipc_quantity(boqs_items,ipcs):
     ipc_items=[]
     for item in boqs_items:
         schedule=item.schedule_id
-        ipc_quantity=boq_item(schedule)
+        ipc_quantity=boq_item(schedule,item)
+        ipc_quantity.calculatePaidQuantity(ipcs,item)
         ipc_items.append(ipc_quantity)
     return ipc_items
 

@@ -1271,13 +1271,16 @@ def AddIPCQuantity_PcakageSort(request):
     #data['structure_list']=render_to_string('progress/includes/ipc/structure_select.html',context,request=request)
     return JsonResponse(data)
 
-from .models import BoQ
+from .models import BoQ,IPC
 from .auxilaryquery import build_ipc_quantity
 def AddIPCQuantity_LoadBoq(request):
     structure_id = request.GET['structureid']
     structure=get_object_or_404(Contract_Intervention,pk=structure_id)
     boq_objects=BoQ.objects.all().filter(structure_id=structure)
-    ipc_items=build_ipc_quantity(boq_objects)
+    current_contract=structure.contract_id
+    print("contract={}".format(current_contract))
+    ipc_objects=IPC.objects.all().filter(contract=current_contract)
+    ipc_items=build_ipc_quantity(boq_objects,ipc_objects)
     context={"ipcitems": ipc_items}
     data=dict()
     data['ipc_quantity']=render_to_string('progress/includes/ipc/partial_ipc_item_list.html',context,request=request)

@@ -444,8 +444,58 @@ $("#ivt-table tbody").html(data.ipc_quantity);
 });
 }
 
+var checkIpcQuantity= function ()
+{
+console.log("sucessfully trapped IPC check event.....")
+$("#ivt-table tbody tr").each(
+function (rowindex){
+	tq=parseFloat(this.cells[4].textContent)
+	rm=parseFloat(this.cells[6].textContent)
+	rate=parseFloat(this.cells[3].textContent)
+	input_box=this.cells[7].firstChild
+	amount_cell=this.cells[12]
+	billed_value=parseFloat(input_box.value)
+	last_cell=this.cells[8]
+	if (billed_value <= rm)
+	{ 
+		console.log(tq+" "+billed_value +" ok")
+		input_box.disabled=true
+		last_cell.textContent="Ok"
+		amount=billed_value*rate
+		amount_cell.textContent=amount.toFixed(2)
+
+	}
+	else
+	{
+		console.log(tq+" "+billed_value+" Not ok")
+		
+	}
+	
+	
+	
+	
+	
+	
+}
 
 
+)
+	
+	
+}
+var editIPC= function ()
+{
+$("#ivt-table tbody tr").each(
+function (rowindex)
+{
+this.cells[7].firstChild.disabled=false
+	
+}
+
+
+)	
+	
+}
 
 
 /*binding*/
@@ -462,6 +512,7 @@ $("#modal-ivt").on("submit", ".js-progress-update-form", saveUpdateForm);
 $(".js-sort-all").click(sort_by_all);
 //$(".js-report").click(generteReport)
 $(".js-report").click(generateReport2)
-
+$("#js-check-ipc").on("click",checkIpcQuantity)
+$("#js-edit-ipc").on("click",editIPC)
 
 });

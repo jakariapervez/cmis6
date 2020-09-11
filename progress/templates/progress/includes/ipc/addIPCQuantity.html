@@ -118,6 +118,11 @@
 		<th>Quantity Paid</th>
 		<th>Quantity Remaining</th>
 		<th>Quantity IN Current IPC</th>		
+		<th>Status</th>
+		<th>Contract <br> Value</th>
+		<th>Bill <br> Paid</th>
+		<th>Bill <br> Remainig</th>
+		<th>Current <br> IPC</th>
         <!--['Packge','Name',Type','Start','Finish','Length','Vents','Current Status','Progress','VWD','Problem',]   -->  	
       </tr>
     </thead>
@@ -126,6 +131,18 @@
   </tbody>
 
 </table>
+ <button type="button" class="btn btn-primary btn-md js-check-ipc" id="js-check-ipc" data-url="{% url 'add_ipc_quantity-loadboq'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Check IPC 
+					  </button>
+ <button type="button" class="btn btn-primary btn-md js-edit-ipc" id="js-edit-ipc" data-url="{% url 'add_ipc_quantity-loadboq'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Edit IPC 
+					  </button>					  
+ <button type="button" class="btn btn-primary btn-md js-submit-ipc" id="js-submit-ipc" data-url="{% url 'progress_report'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Submit IPC
+					  </button>
 </div>
 
 <!--Report Modal  -->
