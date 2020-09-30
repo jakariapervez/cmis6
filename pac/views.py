@@ -790,12 +790,65 @@ def UpdateExpenditure2(request,pk):
     return save_invoice_form(request, form, 'pac/includes/invoices/partial_ivt_create.html')
     """
 from .forms import Expenditure_details_Edit_Forms
-from .auxilaryquery import validateExpenditureEditForm,getInvoiceTotal2,validateExpenditureEditForm2
+from .auxilaryquery import validateExpenditureEditForm,getInvoiceTotal2,validateExpenditureEditForm3
 @login_required
 def UpdateExpenditure(request, pk):
     ivt = get_object_or_404(Expenditure_details, pk=pk)
     invoices = list(Invoice_details.objects.filter(expenditure_details__pk=pk))
     invoice = invoices[0]
+    dpp_allocation_initial=ivt.Budget_allocation.Dpp_allocation
+    print("DPP_Allocation={}".format(dpp_allocation_initial))
+    print(invoices)
+    print("invoice no={} date={} Total amount={}".format(invoice.Invoice_no,invoice.date,invoice.Total_amount))
+
+    data = dict()
+    if request.method == 'POST':
+        form = Expenditure_details_Edit_Forms(request.POST,instance=ivt)
+        if form.is_valid():
+            data = dict()
+            #myexpenditure = validateExpenditureEditForm(form,ivt)
+            #myexpenditure = validateExpenditure(form, invoice)
+            myexpenditure=validateExpenditureEditForm3(form,ivt,invoice)
+            #print("isvalid={}".format(myexpenditure['isValid'], myexpenditure['cumtotal']))
+            #expenditure = myexpenditure['expenditure']
+            expenditure = myexpenditure['expenditure']
+            edited_exp=myexpenditure['edited_expenditure']
+            #cumTotal = myexpenditure['cumtotal']
+            if myexpenditure['isValid']:
+                #ivt.delete()
+                #ivt.Gob=expenditure.Gob
+                #ivt.Dpa=expenditure.Dpa
+                #ivt.Rpa=expenditure.Rpa
+                #ivt.Budget_allocation=expenditure.Budget_allocation
+                #ivt.save()
+                ivt.delete()
+                edited_exp.save()
+                cumtotal=getInvoiceTotal2(invoice)
+                print("total before update={} cumtotal={}".format(invoice.Total_amount,cumtotal))
+                invoice.Total_amount=cumtotal
+                invoice.save()
+                #invoice.Total_amount = cumTotal
+                #invoice.save()
+
+           #ivt.delete()
+        data['form_is_valid'] = True
+        dppitems = Expenditure_details.objects.all()
+        data['html_ivt_list'] = render_to_string('pac/includes/expenditures/partial_expenditures_list.html', {
+            'invoices': dppitems
+        })
+    else:
+        form = Expenditure_details_Edit_Forms(instance=ivt)
+        context = {'ivt': ivt,'form':form}
+        data['html_form'] = render_to_string('pac/includes/expenditures/partial_ivt_edit.html', context, request=request)
+    return JsonResponse(data)
+"""UpdateExpenditure2 is a backup will be deleted if UpdateExpenditure is sucessfully edited"""
+@login_required
+def UpdateExpenditure2(request, pk):
+    ivt = get_object_or_404(Expenditure_details, pk=pk)
+    invoices = list(Invoice_details.objects.filter(expenditure_details__pk=pk))
+    invoice = invoices[0]
+    dpp_allocation_initial=ivt.Budget_allocation.Dpp_allocation
+    print("DPP_Allocation={}".format(dpp_allocation_initial))
     print(invoices)
     print("invoice no={} date={} Total amount={}".format(invoice.Invoice_no,invoice.date,invoice.Total_amount))
 
@@ -837,6 +890,10 @@ def UpdateExpenditure(request, pk):
         context = {'ivt': ivt,'form':form}
         data['html_form'] = render_to_string('pac/includes/expenditures/partial_ivt_edit.html', context, request=request)
     return JsonResponse(data)
+
+
+
+
 @login_required
 def DeleteExpenditure(request, pk):
     ivt = get_object_or_404(Expenditure_details, pk=pk)
