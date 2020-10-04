@@ -242,6 +242,7 @@ def validateExpenditureEditForm3(exp_form,expenditure,invoice):
     #expenditure.Invoice_details = invoice
     #dpp_allocation=exp_form.cleaned_data['dpp_allocation']
     budget_allocation=Budget_allocation.objects.get(Dpp_allocation=dpp_allocation,Financial_year=expenditure.Invoice_details.FinancialYear)
+    expenditure.Budget_allocation=budget_allocation
     #budget_allocation = expenditure.Budget_allocation
     #invoice = expenditure.Invoice_details
     if budget_allocation.Total>=total:
