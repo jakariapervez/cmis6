@@ -70,7 +70,7 @@ a:focus {
     top: 0;
     left: 0;
     height: 100vh;
-	min-width: 250px;
+	min-width: 100px;
     max-width: 250px;	
 	background: #7386D5;
 	color: #fff;
