@@ -1159,7 +1159,8 @@ def MonthlyExpenditureCodewiseSort(request):
     # print(request)
     # fy = financialYearFromDate(mydate)
     year_id = request.GET['fy']
-    month = int(request.GET['month'])
+    #month = int(request.GET['month'])
+    month = request.GET['month']
     # print(year_id)
     # print(month_value)
     fy = get_object_or_404(FinancialYear, pk=year_id)
