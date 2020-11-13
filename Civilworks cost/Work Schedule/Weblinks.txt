@@ -1,0 +1,3 @@
+1)https://www.geeksforgeeks.org/python-program-for-topological-sorting/                                 topological sort of DAG
+2) https://www.geeksforgeeks.org/print-all-possible-paths-in-a-dag-from-vertex-whose-indegree-is-0/     find all the path in DAG
+3)https://stackoverflow.com/questions/20864641/finding-minimum-completion-time-of-scheduled-tasks-with-topological-sort       minimum completion time with toplogical sort stackoverflow
