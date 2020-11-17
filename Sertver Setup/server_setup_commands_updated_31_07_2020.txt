@@ -126,6 +126,15 @@ psql -U postgres                   login to posgress
 psql 'cmis3_db_new2' postgres
 \d+ progress_haor                      ---know the column of pogress_haor table
 ALTER TABLE progress_haor ALTER COLUMN boundary TYPE geometry(MultiPolygon,4326);
+#######################################Importing Expenditure from file##############################################################
+cd /home/mitch/djangoprojectdir/
+source djangoprojectenv/bin/activate
+python manage.py shell
+from progress import load
+load.updateInvoiceTotal()
+exit()
+deactivate
+sudo shutdown -r now 
 
 
 
