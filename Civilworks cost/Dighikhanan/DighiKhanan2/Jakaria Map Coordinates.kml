@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jakaria Map Coordinates.kml</name>
+	<Schema name="Jakaria Map Coordinates" id="S_Jakaria_Map_Coordinates_SDD">
+		<SimpleField type="string" name="Dighi_No_"><displayName>&lt;b&gt;Dighi No.&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="double" name="Latitude"><displayName>&lt;b&gt;Latitude&lt;/b&gt;</displayName>
+</SimpleField>
+		<SimpleField type="double" name="Longitude"><displayName>&lt;b&gt;Longitude&lt;/b&gt;</displayName>
+</SimpleField>
+	</Schema>
+	<Style id="hlightPointStyle">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>Dighi No.</b></td><td>$[Jakaria Map Coordinates/Dighi_No_]</td></tr>
+  <tr><td><b>Latitude</b></td><td>$[Jakaria Map Coordinates/Latitude]</td></tr>
+  <tr><td><b>Longitude</b></td><td>$[Jakaria Map Coordinates/Longitude]</td></tr>
+</table>
+]]></text>
+		</BalloonStyle>
+	</Style>
+	<StyleMap id="pointStyleMap">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#normPointStyle</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#hlightPointStyle</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="normPointStyle">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+			</Icon>
+		</IconStyle>
+		<BalloonStyle>
+			<text><![CDATA[<table border="0">
+  <tr><td><b>Dighi No.</b></td><td>$[Jakaria Map Coordinates/Dighi_No_]</td></tr>
+  <tr><td><b>Latitude</b></td><td>$[Jakaria Map Coordinates/Latitude]</td></tr>
+  <tr><td><b>Longitude</b></td><td>$[Jakaria Map Coordinates/Longitude]</td></tr>
+</table>
+]]></text>
+		</BalloonStyle>
+	</Style>
+	<Folder id="layer 0">
+		<name>Jakaria Map Coordinates</name>
+		<open>1</open>
+		<Placemark>
+			<name>P-1</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-1</SimpleData>
+					<SimpleData name="Latitude">22.1993</SimpleData>
+					<SimpleData name="Longitude">89.1407</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.140711,22.19926300000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-2</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-2</SimpleData>
+					<SimpleData name="Latitude">22.2491</SimpleData>
+					<SimpleData name="Longitude">89.0624</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.06245,22.24908599999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-3</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-3</SimpleData>
+					<SimpleData name="Latitude">22.22</SimpleData>
+					<SimpleData name="Longitude">89.093</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.09299399999996,22.21996100000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-4</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-4</SimpleData>
+					<SimpleData name="Latitude">22.4</SimpleData>
+					<SimpleData name="Longitude">89.1611</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.161137,22.400034,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-5</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-5</SimpleData>
+					<SimpleData name="Latitude">22.3999</SimpleData>
+					<SimpleData name="Longitude">89.1618</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.16181499999999,22.39991799999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-6</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-6</SimpleData>
+					<SimpleData name="Latitude">22.3114</SimpleData>
+					<SimpleData name="Longitude">89.1723</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.17231200000005,22.31143299999998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-7</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-7</SimpleData>
+					<SimpleData name="Latitude">22.2533</SimpleData>
+					<SimpleData name="Longitude">89.2196</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.21963199999998,22.25329700000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-8</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-8</SimpleData>
+					<SimpleData name="Latitude">22.2732</SimpleData>
+					<SimpleData name="Longitude">89.1974</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.197362,22.273187,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-9</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-9</SimpleData>
+					<SimpleData name="Latitude">22.3492</SimpleData>
+					<SimpleData name="Longitude">89.2027</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.20270600000003,22.34917300000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-10</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-10</SimpleData>
+					<SimpleData name="Latitude">22.3925</SimpleData>
+					<SimpleData name="Longitude">89.0037</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.00370499999997,22.39254600000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-11</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-11</SimpleData>
+					<SimpleData name="Latitude">22.5568</SimpleData>
+					<SimpleData name="Longitude">88.9624</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>88.96243800000002,22.55683599999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-12</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-12</SimpleData>
+					<SimpleData name="Latitude">22.5475</SimpleData>
+					<SimpleData name="Longitude">89.1768</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.17683199999998,22.54749500000002,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-13</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-13</SimpleData>
+					<SimpleData name="Latitude">22.5476</SimpleData>
+					<SimpleData name="Longitude">89.1768</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.17683499999998,22.54762100000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-14</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-14</SimpleData>
+					<SimpleData name="Latitude">22.4043</SimpleData>
+					<SimpleData name="Longitude">89.2092</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.209165,22.40433399999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-15</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-15</SimpleData>
+					<SimpleData name="Latitude">22.8218</SimpleData>
+					<SimpleData name="Longitude">89.2627</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.262657,22.821845,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-16</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-16</SimpleData>
+					<SimpleData name="Latitude">22.6477</SimpleData>
+					<SimpleData name="Longitude">89.4243</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.42425500000002,22.64774999999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-17</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-17</SimpleData>
+					<SimpleData name="Latitude">22.7874</SimpleData>
+					<SimpleData name="Longitude">89.3353</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.33524999999999,22.78735199999999,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-18</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-18</SimpleData>
+					<SimpleData name="Latitude">22.7946</SimpleData>
+					<SimpleData name="Longitude">89.371</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.370974,22.79461599999998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-19</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-19</SimpleData>
+					<SimpleData name="Latitude">22.5809</SimpleData>
+					<SimpleData name="Longitude">89.3857</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.38565900000002,22.58093199999998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-20</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-20</SimpleData>
+					<SimpleData name="Latitude">22.6014</SimpleData>
+					<SimpleData name="Longitude">89.5198</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.51975800000001,22.60138000000001,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>P-21</name>
+			<styleUrl>#pointStyleMap</styleUrl>
+			<Style id="inline">
+				<IconStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+					</Icon>
+				</IconStyle>
+				<LineStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</LineStyle>
+				<PolyStyle>
+					<color>ff0000aa</color>
+					<colorMode>normal</colorMode>
+				</PolyStyle>
+			</Style>
+			<ExtendedData>
+				<SchemaData schemaUrl="#S_Jakaria_Map_Coordinates_SDD">
+					<SimpleData name="Dighi_No_">P-21</SimpleData>
+					<SimpleData name="Latitude">22.7387</SimpleData>
+					<SimpleData name="Longitude">89.5153</SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>89.51527699999995,22.73870999999999,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
