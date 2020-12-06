@@ -1122,7 +1122,7 @@ def contractInterventionList(request):
     return render (request,'progress/structure_list2.html',context)
 
 """Categorical Expenditure"""
-from .auxilaryquery import createMonthlyReportItemsCodewise
+from .auxilaryquery import createMonthlyReportItemsCodewise,createYearlyReportItemsCodewise
 
 def MonthlyExpenditureCodewise(request):
     data = dict()
@@ -1168,10 +1168,16 @@ def MonthlyExpenditureCodewiseSort(request):
     # print("fy={} fy from request={}".format(fy,fy2))
     data['fy'] = str(fy)
     data['month'] = str(month)
-
-    # Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
     buddget_allocation = Budget_allocation.objects.all().filter(Financial_year=fy).order_by('Report_serial')
-    report_items = createMonthlyReportItemsCodewise(buddget_allocation, fy, month)
+    print("fy={} month={}".format(fy,month))
+    if month =="ALL":
+        report_items = createYearlyReportItemsCodewise(buddget_allocation, fy)
+    else:
+        month=int(month)
+        report_items = createMonthlyReportItemsCodewise(buddget_allocation, fy, month)
+    # Invoice_details.objects.all().filter(FinancialYear=fy, Month=month)
+
+
     context = {'ritems': report_items}
     expenditure_list = render_to_string('pac/includes/monthly/partial_monthly_expenditure_codewise.html', context)
     # print(expenditure_list)
