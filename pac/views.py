@@ -1122,7 +1122,7 @@ def contractInterventionList(request):
     return render (request,'progress/structure_list2.html',context)
 
 """Categorical Expenditure"""
-from .auxilaryquery import createMonthlyReportItemsCodewise,createYearlyReportItemsCodewise
+from .auxilaryquery import createMonthlyReportItemsCodewise,createYearlyReportItemsCodewise, createYearlyReportItemsCodewise2
 
 def MonthlyExpenditureCodewise(request):
     data = dict()
@@ -1171,7 +1171,7 @@ def MonthlyExpenditureCodewiseSort(request):
     buddget_allocation = Budget_allocation.objects.all().filter(Financial_year=fy).order_by('Report_serial')
     print("fy={} month={}".format(fy,month))
     if month =="ALL":
-        report_items = createYearlyReportItemsCodewise(buddget_allocation, fy)
+        report_items = createYearlyReportItemsCodewise2(buddget_allocation, fy)
     else:
         month=int(month)
         report_items = createMonthlyReportItemsCodewise(buddget_allocation, fy, month)

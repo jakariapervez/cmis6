@@ -43,6 +43,4 @@ urlpatterns=[
 
     #Civil works related url
 
-
-
 ]
