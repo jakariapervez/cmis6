@@ -1,1 +1,2 @@
-E:\Website_24_11_2020\cmis6\cmis6\djangoenv\Scripts\activate.bat
+E:\Website_24_11_2020\cmis6\cmis6\djangoenv\Scripts\activate.bat  #Home Computer
+F:\website\cmis6\djangoenv\Scripts\activate.bat                   #Office Computer

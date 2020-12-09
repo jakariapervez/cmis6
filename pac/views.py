@@ -822,8 +822,9 @@ def UpdateExpenditure(request, pk):
                 #ivt.Budget_allocation=expenditure.Budget_allocation
                 #ivt.save()
                 #ivt.delete()
-                expenditure.save()
-                #edited_exp.save()
+                expenditure.delete()
+                #expenditure.save(commit=True)
+                edited_exp.save()
                 cumtotal=getInvoiceTotal2(invoice)
                 print("total before update={} cumtotal={}".format(invoice.Total_amount,cumtotal))
                 invoice.Total_amount=cumtotal
