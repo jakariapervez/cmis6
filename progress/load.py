@@ -243,6 +243,27 @@ def inputProgressQuantityFromExcel(verbose=True):
         pitem.save()
 
     #print(myframe)
+def massDeleteExp(verbose=True):
+    script_path = os.path.realpath(__file__)
+    print("script path={}".format(script_path))
+    myfolder=os.path.dirname(script_path)
+    print("folder={}".format(myfolder))
+    input_path=os.path.join(myfolder,"input.txt")
+    myfile=open(input_path,'r')
+    myline=myfile.readline()
+    print(myline)
+    mydata= myline.split(":")[1]
+    myids2=mydata.split(",")
+    myids=[int(x) for x in myids2 ]
+    for x in  myids:
+        expenditures = Expenditure_details.objects.all().filter(Invoice_details=x)
+        for exp in expenditures:
+            print(exp)
+            exp.delete()
+    updateInvoiceTotal()
+
+
+
 
 
 
