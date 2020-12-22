@@ -135,6 +135,15 @@ load.updateInvoiceTotal()
 exit()
 deactivate
 sudo shutdown -r now 
+#######################################Mass Deletete##############################################################
+cd /home/mitch/djangoprojectdir/
+source djangoprojectenv/bin/activate
+python manage.py shell
+from progress import load
+load.massDeleteExp()
+exit()
+deactivate
+sudo shutdown -r now 
 
 
 
