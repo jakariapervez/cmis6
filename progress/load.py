@@ -256,10 +256,7 @@ def massDeleteExp(verbose=True):
     myids2=mydata.split(",")
     myids=[int(x) for x in myids2 ]
     for x in  myids:
-        expenditures = Expenditure_details.objects.all().filter(Invoice_details=x)
-        for exp in expenditures:
-            print(exp)
-            exp.delete()
+        Expenditure_details.objects.all().filter(Invoice_details=x).delete()
     updateInvoiceTotal()
 
 

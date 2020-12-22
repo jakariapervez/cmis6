@@ -133,7 +133,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '801223001_bwdb',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
