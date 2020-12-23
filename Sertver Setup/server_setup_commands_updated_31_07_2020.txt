@@ -140,7 +140,7 @@ cd /home/mitch/djangoprojectdir/
 source djangoprojectenv/bin/activate
 python manage.py shell
 from progress import load
-load.massDeleteExp()
+load.massDeleteByBudgetAllocation()
 exit()
 deactivate
 sudo shutdown -r now 

@@ -258,7 +258,37 @@ def massDeleteExp(verbose=True):
     for x in  myids:
         Expenditure_details.objects.all().filter(Invoice_details=x).delete()
     updateInvoiceTotal()
-
+def massDeleteExp(verbose=True):
+    script_path = os.path.realpath(__file__)
+    print("script path={}".format(script_path))
+    myfolder=os.path.dirname(script_path)
+    print("folder={}".format(myfolder))
+    input_path=os.path.join(myfolder,"input.txt")
+    myfile=open(input_path,'r')
+    myline=myfile.readline()
+    print(myline)
+    mydata= myline.split(":")[1]
+    myids2=mydata.split(",")
+    myids=[int(x) for x in myids2 ]
+    for x in  myids:
+        Expenditure_details.objects.all().filter(Invoice_details=x).delete()
+    updateInvoiceTotal()
+def massDeleteByBudgetAllocation(verbose=True):
+    script_path = os.path.realpath(__file__)
+    print("script path={}".format(script_path))
+    myfolder=os.path.dirname(script_path)
+    print("folder={}".format(myfolder))
+    input_path=os.path.join(myfolder,"input_budget_allocation.txt")
+    myfile=open(input_path,'r')
+    myline=myfile.readline()
+    print(myline)
+    mydata= myline.split(":")[1]
+    myids2=mydata.split(",")
+    myids=[int(x) for x in myids2 ]
+    for x in  myids:
+        myquery=Expenditure_details.objects.all().filter(Budget_allocation=x).delete()
+        print(myquery)
+    updateInvoiceTotal()
 
 
 

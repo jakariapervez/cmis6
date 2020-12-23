@@ -1,4 +1,5 @@
 python manage.py shell
 from progress import load
 load.massDeleteExp()
+load.massDeleteByBudgetAllocation()
 load.updateInvoiceTotal()
