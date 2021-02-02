@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACAD_TUT_01", "ACAD_TUT_01.csproj", "{954658F1-5789-49D8-BD1D-D37424F15F8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{954658F1-5789-49D8-BD1D-D37424F15F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{954658F1-5789-49D8-BD1D-D37424F15F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{954658F1-5789-49D8-BD1D-D37424F15F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{954658F1-5789-49D8-BD1D-D37424F15F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22F9DE6C-C323-477A-911B-452FC9BAF045}
+	EndGlobalSection
+EndGlobal
