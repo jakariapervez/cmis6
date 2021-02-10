@@ -1,0 +1,31 @@
+     {% for dppitem  in dppitems %}
+			<tr>
+			  <td>{{dppitem.Dpp_allocation_id.Ecode}}</td>
+			  <td>{{dppitem.Dpp_allocation_id.Description}}</td>
+			  <td>{{dppitem.Gob}}</td>
+			  <td>{{dppitem.Rpa}}</td>
+			  <td>{{dppitem.Dpa}}</td>
+			  <td>{{dppitem.Total}}</td>  	  
+			  
+			  <td style="width: 150px">
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-ivt"
+												
+							  data-url="{% url 'dpp_allocation_update' dppitem.id %}">
+						<span class="glyphicon glyphicon-pencil"></span> Edit
+					  </button>
+				</td>
+				
+			  
+			  
+			  
+			  
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">Dpp Items</td>
+			</tr>
+    {% endfor %}
+  
+

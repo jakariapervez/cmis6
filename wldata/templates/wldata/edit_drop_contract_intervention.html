@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Progress</li>
+{% endblock %}
+{% block content %}
+{% include 'progress/includes/contract_select2.html' %}
+
+<!-- {% include 'progress/includes/partial_ivt_table_pagination.html' %}  -->
+
+<table class="table table-responsive table-bordered table-striped  table-hover" id="ivt-table">
+    <thead class="thead-dark">
+	  <tr>
+	  <th></th>
+	  <th></th>
+	  <th class="col-sm-2"> {% include 'progress/includes/haor_select.html' %}</th>	  
+	  </tr>
+      <tr>
+		<th>Haor Sub-Project</th>
+		<th>Work_type</th>
+        <th class="col-sm-3">Name</th>
+        <th>Cahinage_Start<Br>(Km)</th>
+        <th>Chainage_End<Br> (Km)</th>
+        <th>Length <Br>(Km)</th>
+		<th>volume <Br>(Cum)</th>
+		<th>Vent_no<Br>Numers</th>
+		<th>Cost_in_DPP<Br>(Tk Lakh)</th>	
+        <th>Edit</th>
+        <th>Delete</th>		
+      </tr>
+    </thead>
+	<tbody>    
+	
+  </tbody>
+
+</table>
+<h3>Structures in Current Contract</h3>
+<table class="table table-responsive table-bordered table-striped  table-hover" id="contract-table">
+    <thead class="thead-dark">
+	  <tr>
+	  <th></th>
+	  <th></th>
+	  
+	  </tr>
+      <tr>
+		<th>Contract</th>
+		<th>Intervention</th>
+		<th>Contract_Component</th>
+		<th>Phyical Weightage</th>
+		<th>Financial Weightage</th> 
+        <th >SO</th>
+        <th>SDE</th>
+        <th>XEN</th>        
+		<th>Const Superviser<Br>Consultant</th>
+		<th>CSE<Br>Consultant</th>		
+        <th>Edit</th>
+        <th>Delete</th>		
+      </tr>
+    </thead>
+	<tbody>    
+	
+  </tbody>
+
+</table>
+
+
+
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
+ {% block localscript %}
+
+<script src="{% static 'progress/js/dpp_intervention3.js'  %}"></script>
+
+	{% endblock %}  

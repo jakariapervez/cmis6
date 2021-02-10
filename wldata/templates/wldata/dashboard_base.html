@@ -38,72 +38,23 @@
     {% include 'includes/progress_dropdown.html' %}
   </div> -->
   <div class="dropdown-divider"></div>
-  <h5>Financial</h5>
+  <h5>Expenditure Entry</h5>
   <div class="dropdown-content">
-  <a class="dropdown-item financiallink" href="{% url 'pac_index' %}"><i class="fas fa-money-bill-alt"></i>Project Accounts</a>
-  <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill-alt"></i>Edit Expentiure</a>
-  <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill-alt"></i>View Monthly Expenditure</a>  
- <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill"></i>View Project Expenditure</a>
-  </div>
-  <div class="dropdown-divider"></div>
-  <h5>Progress</h5>
-  <div class="dropdown-content">
-  <a class="dropdown-item reportlink js-view-report-event" href="#"><i class="fas fa-book"></i>Progress Report</a>
-  <a class="dropdown-item reportlink js-view-report-event" href="{% url 'contract_intervention_list2' %}">
-  <i class="fas fa-book"></i>Structure List  
-  </a>
-    <a class="dropdown-item reportlink js-view-report-event" href="{% url 'blank_map' %}">
-  <i class="fas fa-book"></i>Maps  
-  </a>
-   </a>
-    <a class="dropdown-item reportlink js-view-report-event" href="{% url 'list_contract_intervetion' %}">
-  <i class="fas fa-book"></i>Contract  
-  </a>
+  
   
   </div>
   <div class="dropdown-divider"></div>
-  <h5>Input Progress Data </div>
-  <div class="dropdown-content">
-  <a class="dropdown-item progressinput js-progress-input" href="{% url 'qualitative_progress' %}">
-  <i class="fas fa-book"></i>Progress Input  
-  </a>
-  <div class="dropdown-divider"></div>
-  <div class="dropdown-content">
-  <a class="dropdown-item ipcquantity js-ipc-quanity" href="{% url 'add_ipc_quantity' %}">
-  <i class="fas fa-book"></i>Add Ipc Quantity
-  </a>
-  </div>
-  <div class="dropdown-divider"></div>
-  <h5>User Authentication</h5>
-  <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-money-bill"></i>Logout</a>
-  <!--<h5>Reports</h5> -->
-  <div class="dropdown-divider"></div>
-  <h5>WL Data</h5>
-  <div class="dropdown-content">
-  <a class="dropdown-item " href="{% url 'wl_index' %}">
-  <i class="fas fa-book"></i>View WL
-  </a>
-  </div>
+  <a class="dropdown-item reportlink js-view-report-event" href="{% url 'dashboard' %}"><i class="fas fa-book"></i>Dashboard</a>
   
-  <!-- 
-  <div
-  <div class="dropdown-content">
- <a class="dropdown-item reportlink js-create-report-event" href="#" data-url="{% url 'create_report_event' %}"  ><i class="fas fa-book"></i>Create Report Event</a>
- <a class="dropdown-item reportlink js-view-report-event" href="#PE1" data-url="{% url 'vierw_report_event' %}"  ><i class="fas fa-book"></i>View Report Event</a>
- <a class="dropdown-item reportlink" href="#"><i class="fas fa-ruler-horizontal"></i>Create Measurement</a>
-   </div>
-   -->
-<!--
-  <div class="dropdown-divider"></div>
-  <h5>Progress</h5>  
+
+  
+  
    <div class="dropdown-content">
-
    {% include 'includes/progress_dropdown2.html' %}
-
    </div>
 </div>
 
--->
+
 
 
 
@@ -123,16 +74,52 @@
 
         </div>
     </nav>
+<!-- Expenditure sort -->
+{% include 'pac/includes/expenditures/fy_select.html' %}
+{% include 'pac/includes/expenditures/month_select.html' %}
+{% include 'pac/includes/expenditures/code_select.html' %}
+<!-- Expenditure Navigation Buttons -->
+ <button type="button" class="btn btn-primary btn-md js-sort-all" data-url="{% url 'expenditure_sort'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Sort
+					  </button>
+ <button type="button" class="btn btn-primary btn-md js-report" id="js-report" data-url="{% url 'progress_report'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Print
+					  </button>
+<button type="button" class="btn btn-primary btn-md js-addExpenditure" id="js-addExpenditure" data-url="{% url 'invoice_index' %}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Create Expenditure
+					  </button>	
+ <a class="btn btn-primary" href="{% url 'invoice_index' %}"><i class="fas fa-money-bill-alt"></i>Create Expenditure</a>					  
+<!-- Expenditure Table -->
+<div id="customers">				  				  
+<table class="table table-bordered table-striped  table-hover" id="ivt-table">
+    <thead class="thead-dark">
+	 
+      <tr>
+		<th>Date</th>
+		<th>Batch No</th>
+        <th>Item Code</th> 
+        <th>Description</th>		
+		<th>GoB</th>
+		<th>RPA</th>
+        <th>DPA</th>
+		<th>Total</th>
+		<th>Edit</th>
+		<th>Delete</th>
+		
+        	
+      </tr>
+    </thead>
+	<tbody>    
+	{% include 'pac/includes/expenditures/partial_expenditures_list.html' %}
+  </tbody>
 
+</table>
+</div>
 
-
-
-{% include 'includes/progress_cards.html' %} 
-{% include 'includes/progress_event_cards.html' %}
-
-
-
-
+<!--Report Modal  -->
 <div class="modal fade" id="reprotmodal">
 <div class="modal-dialog">
 <div class="modal-content">
@@ -141,7 +128,13 @@
 </div>
 </div>
 <!-- End of Report Modal -->
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
+      </div>
+    </div>
+  </div>
 
 </div>
 </div>
@@ -174,12 +167,13 @@
 <script src="{% static 'js/sidebar.js' %}" ></script>
  <!--{{ progress|json_script:"pdata" }} -->
 <script src="{% static 'js/dashboard.js' %}" ></script>
- 
- 
+<!-- Expenditure list Java Script -->
+<!-- <script src="{% static 'pac/js/expenditure_list.js'  %}"></script> -->
+<script src="{% static 'pac/js/expenditure_Create_2.js'  %}"></script>
   
 {% endblock %}
 {% block localscript %}
 {% endblock %}
 </body>
 
-</html>
+</html> 

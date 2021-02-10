@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     'progress.apps.ProgressConfig',
     'pandas',
     'pac.apps.PacConfig',
+    'wldata.apps.WldataConfig',
     'django.contrib.gis',
     'geopandas',
 

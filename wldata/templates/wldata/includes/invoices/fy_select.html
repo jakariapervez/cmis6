@@ -1,0 +1,5 @@
+<select class="custom-select js-fy-select" id="fy-select">
+ {% for fy  in fyears %}
+<option value="{{fy.id}}" data-url="{% url 'invoice_yearwise' fy.id  %}">{{fy}}</option>
+{% endfor %}
+</select>

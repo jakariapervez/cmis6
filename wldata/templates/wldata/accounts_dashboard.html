@@ -25,7 +25,7 @@
 <!-- sidebar -->
 <nav id="sidebar">
 <div class="sidebar-header">
-            <h3>HFMLIP/PD</h3>
+            <h5>SE/SURFACE WATER HYDROLOGY</h5>
 </div>
 <div class="dropdown">
  <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,72 +38,46 @@
     {% include 'includes/progress_dropdown.html' %}
   </div> -->
   <div class="dropdown-divider"></div>
-  <h5>Financial</h5>
-  <div class="dropdown-content">
-  <a class="dropdown-item financiallink" href="{% url 'pac_index' %}"><i class="fas fa-money-bill-alt"></i>Project Accounts</a>
-  <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill-alt"></i>Edit Expentiure</a>
-  <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill-alt"></i>View Monthly Expenditure</a>  
- <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill"></i>View Project Expenditure</a>
-  </div>
-  <div class="dropdown-divider"></div>
-  <h5>Progress</h5>
-  <div class="dropdown-content">
-  <a class="dropdown-item reportlink js-view-report-event" href="#"><i class="fas fa-book"></i>Progress Report</a>
-  <a class="dropdown-item reportlink js-view-report-event" href="{% url 'contract_intervention_list2' %}">
-  <i class="fas fa-book"></i>Structure List  
-  </a>
-    <a class="dropdown-item reportlink js-view-report-event" href="{% url 'blank_map' %}">
-  <i class="fas fa-book"></i>Maps  
-  </a>
-   </a>
-    <a class="dropdown-item reportlink js-view-report-event" href="{% url 'list_contract_intervetion' %}">
-  <i class="fas fa-book"></i>Contract  
-  </a>
+  <h5>WL Data Collection</h5>
+   <a class="dropdown-item financiallink" href={% url 'wl_data_collect' %}><i class="fas fa-money-bill-alt"></i>Collect SMS</a>
   
-  </div>
-  <div class="dropdown-divider"></div>
-  <h5>Input Progress Data </div>
   <div class="dropdown-content">
-  <a class="dropdown-item progressinput js-progress-input" href="{% url 'qualitative_progress' %}">
-  <i class="fas fa-book"></i>Progress Input  
-  </a>
-  <div class="dropdown-divider"></div>
-  <div class="dropdown-content">
-  <a class="dropdown-item ipcquantity js-ipc-quanity" href="{% url 'add_ipc_quantity' %}">
-  <i class="fas fa-book"></i>Add Ipc Quantity
-  </a>
+<!--
+  <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill-alt"></i>View Total Expenditure</a>
+  <a class="dropdown-item financiallink" href={% url 'monthly_expenditure_codewise' %}><i class="fas fa-money-bill-alt"></i>View Codewise Expenditure</a>
+    <a class="dropdown-item financiallink" href="#"><i class="fas fa-money-bill-alt"></i>IMED Expenditure</a>
+  <a class="dropdown-item financiallink" href={% url 'monthly_expenditure' %}><i class="fas fa-money-bill-alt"></i>View Monthly Expenditure</a>
+  <a class="dropdown-item financiallink" href="{% url 'invoice_index' %}"><i class="fas fa-money-bill-alt"></i>Invoice List</a>
+ <a class="dropdown-item financiallink" href="{% url 'expenditure_index' %}"><i class="fas fa-money-bill-alt"></i>Expenditure List</a>  
   </div>
+     <a class="dropdown-item reportlink js-view-report-event" href="{% url 'dashboard' %}">
+  <i class="fas fa-book"></i>Dashbaord
+  </a>
   <div class="dropdown-divider"></div>
   <h5>User Authentication</h5>
   <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-money-bill"></i>Logout</a>
-  <!--<h5>Reports</h5> -->
-  <div class="dropdown-divider"></div>
-  <h5>WL Data</h5>
-  <div class="dropdown-content">
-  <a class="dropdown-item " href="{% url 'wl_index' %}">
-  <i class="fas fa-book"></i>View WL
-  </a>
-  </div>
+  -->
   
+  
+  <!--<h5>Reports</h5> -->
   <!-- 
-  <div
+  
   <div class="dropdown-content">
  <a class="dropdown-item reportlink js-create-report-event" href="#" data-url="{% url 'create_report_event' %}"  ><i class="fas fa-book"></i>Create Report Event</a>
  <a class="dropdown-item reportlink js-view-report-event" href="#PE1" data-url="{% url 'vierw_report_event' %}"  ><i class="fas fa-book"></i>View Report Event</a>
  <a class="dropdown-item reportlink" href="#"><i class="fas fa-ruler-horizontal"></i>Create Measurement</a>
    </div>
    -->
-<!--
+   <!--
   <div class="dropdown-divider"></div>
   <h5>Progress</h5>  
    <div class="dropdown-content">
-
    {% include 'includes/progress_dropdown2.html' %}
-
    </div>
+  -->
 </div>
 
--->
+
 
 
 
@@ -123,16 +97,10 @@
 
         </div>
     </nav>
-
-
-
-
-{% include 'includes/progress_cards.html' %} 
+<!--{% include 'includes/progress_cards.html' %} 
 {% include 'includes/progress_event_cards.html' %}
-
-
-
-
+-->
+<!--Report Modal  -->
 <div class="modal fade" id="reprotmodal">
 <div class="modal-dialog">
 <div class="modal-content">

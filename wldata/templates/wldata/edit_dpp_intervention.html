@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+   
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Progress</li>
+{% endblock %}
+{% block content %}
+<p>
+    <button type="button" class="btn btn-primary js-create-ivt">
+      <span class="glyphicon glyphicon-plus"></span>
+      New Intervention
+    </button>
+  </p>
+{% if ivts.has_other_pages  %}
+<ul class="pagination">
+	{% if ivts.has_previous %}
+		<li><a href="?page={{ivts.previous_page_number}}">&laquo;</a></li>
+		{% else %}
+		<li class="diabled">&laquo;<span></li>
+	{% endif %}
+	{% for i in ivts.paginator.page_range %}
+		
+		{% if ivts.number == i %}
+		<li class="page-item active"><a class="page-link" href="?page={{i}}"><span>{{i}}<span></a></li>
+		{% else %}
+		 <li class="page-item"><a class="page-link" href="?page={{i}}"><span>{{i}}<span></a></li>
+		 {% endif %}
+	{% endfor %}
+
+	{% if ivts.has_next %}
+		<li><a href="?page={{ivts.next_page_number}}">&raquo;</a></li>
+		{% else %}
+		<li class="diabled">&raquo;<span></li>
+	{% endif %}
+	</ul>
+{% endif %}
+<table class="table table-bordered table-striped "  >
+    <thead class="thead-dark">
+      <tr>
+		<th>Haor/ <Br>Sub-Project</th>
+		<th>Work_type</th>
+        <th>Name</th>
+        <th>Cahinage_Start<Br>(Km)</th>
+        <th>Chainage_End<Br> (Km)</th>
+        <th>Length <Br>(Km)</th>
+		<th>volume <Br>(Cum)</th>
+		<th>Vent_no<Br>Numers</th>
+		<th>Cost_in_DPP<Br>(Tk Lakh)</th>
+		
+      </tr>
+    </thead>
+    <tbody>
+      {% for ivt  in ivts %}
+        <tr>
+          <td>{{ivt.haor_id.name}}</td>
+		  <td>{{ivt.worktype_id.wtype}}</td>
+		  <td>{{ivt.name}}</td>
+		  <td>{{ivt.start_chainage}}</td>
+		  <td>{{ivt.finish_chainage}}</td>
+		  <td>{{ivt.length}}</td>
+		  <td>{{ivt.volume}}</td>
+		  <td>{{ivt.vent_no}}</td>
+		  <td>{{ivt.dpp_cost}}</td>
+		  
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
