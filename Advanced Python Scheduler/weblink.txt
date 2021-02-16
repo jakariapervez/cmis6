@@ -1,0 +1,1 @@
+https://medium.com/@kevin.michael.horan/scheduling-tasks-in-django-with-the-advanced-python-scheduler-663f17e868e6  -- advanced app scheduler
