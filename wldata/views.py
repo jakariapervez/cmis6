@@ -5,7 +5,7 @@ from .models import SMS_info
 # Create your views here.
 def wl_index(request):
     dppitems = SMS_info.objects.all()
-    return render(request, 'wldata/accounts_dashboard.html', {'dppitems': dppitems})
+    return render(request, 'wldata/accounts_dashboard2.html', {'dppitems': dppitems})
 def data_collect_view(request):
     if request.method == 'GET':
         tbody = request.GET['text']
@@ -13,7 +13,9 @@ def data_collect_view(request):
         mysms=SMS_info(smsbody=tbody,mobile_no=cellno)
         mysms.save()
     dppitems = SMS_info.objects.all()
-    return render(request, 'wldata/accounts_dashboard.html', {'dppitems': dppitems})
+    return render(request, 'wldata/accounts_dashboard2.html', {'dppitems': dppitems})
 
     #return redirect('wl_index')
+def displayData(request):
+    return redirect(data_collect_view)
 

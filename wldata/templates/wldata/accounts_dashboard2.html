@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<html>
+<!-- begining of head -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title> {% block title %}WL INDEX{% endblock  %} </title>
+<link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'css/app.css'  %}">
+<!-- custom css for side nav -->
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+<!-- fontaowsome javascript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- fontaowsome javascript -->
+<script  src="{% static 'js/solid.js' %}"></script>
+<script src="{% static 'js/fontawesome.js' %}"></script>
+</head>
+<!-- end of head -->
+<body>
+<div class="wrapper"><!-- beginging of wrapper -->
+<nav id="sidebar"> <!-- beginging of sidebar nav -->
+</nav> <!-- end of sidebar nav -->
+<div  id="content"> <!-- beginging of content -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- beginging of toggler nav -->
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </div>
+</nav> <!-- end of toggler nav -->
+<table class="table table-responsive table-bordered table-striped  table-hover" id="sms_item_table">
+    <thead class="thead-dark">
+	 
+      <tr>		
+		<th>Date</th>
+		<th>SMS Content</th>
+        <th >Mobile No</th>        
+      </tr>
+    </thead>
+	<tbody>    
+	<!--{% include 'includes/progress_event_cards.html' %}-->
+  </tbody>
+
+</table>
+
+<div class="modal fade" id="reprotmodal"> <!--begingin of Report Modal  -->
+<div class="modal-dialog">
+<div class="modal-content">
+
+</div>
+</div>
+</div> <!--endof Report Modal  -->
+<!-- End of Report Modal -
+
+
+
+</div><!-- end of content -->
+
+
+</div><!-- end of wrapper -->
+
+
+
+
+
+
+
+<!-- beging of scripting block -->
+{% block javascript %}
+ <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+ <script src="{% static 'js/highcharts.js'   %}"></script>
+ <script src="{% static 'js/jspdf.min.js' %}"></script>
+ <script src="{% static 'js/jspdf.plugin.autotable.js' %}"></script>
+ <script src="{% static 'js/tableHTMLExport.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script> 
+  <!--<script src="{% static 'js/popper.min.js' %}"></script> -->
+ <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+<!-- <script src="{% static 'js/bootstrap.bundle.js' %}"></script>-->
+ <script src="{% static 'js/jquery.mCustomScrollbar.min.js' %}" ></script>
+
+  
+<script src="{% static 'js/sidebar.js' %}" ></script>
+ <!--{{ progress|json_script:"pdata" }} -->
+<script src="{% static 'js/dashboard.js' %}" ></script>
+ 
+ 
+  
+{% endblock %}
+{% block localscript %}
+{% endblock %}
+
+<!--end  of scripting block -->
+
+
+</body>
+
+
+
+
+</html>
