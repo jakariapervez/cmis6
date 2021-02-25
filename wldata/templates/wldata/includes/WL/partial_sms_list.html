@@ -1,0 +1,19 @@
+     {% for sms_item in sms_items %}
+			<tr>
+		<!--	
+			datetime = models.DateTimeField(auto_now=True)
+    smsbody=models.CharField(max_length=400,null=True,blank=True)
+    mobile_no=models.CharField(max_length=20,null=True,blank=True)
+	-->
+			  <td>{{sms_item.datetime}}</td>
+			  <td>{{sms_item.smsbody}}</td>
+			  <td>{{sms_item.mobile_no}}</td>
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No SMS</td>
+			</tr>
+    {% endfor %}
+  
+
