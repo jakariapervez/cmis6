@@ -1,0 +1,11 @@
+  
+	 
+	
+
+  <select class="custom-select js-gauge-select" id="gauge-select">
+  {% for gauge in gauges %}
+
+<option value="{{gauge.id}}" data-url="">{{gauge.gauge_code}}</option>
+{% endfor %}
+</select>
+

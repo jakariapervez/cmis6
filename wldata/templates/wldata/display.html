@@ -33,7 +33,7 @@
 	
 		 <div class="dropdown-content"><!-- beginging of sidebar nav menu -->
 		 
-		<a class="dropdown-item view_wl" href="{% url 'wl_data_display' %}"><i class="fas fa-chart-line"></i>VIEW WL</a>
+			<a class="dropdown-item view_wl" href="#"><i class="fas fa-chart-line"></i>VIEW WL</a>
 			<a class="dropdown-item view_wl" href="#"><i class="fas fa-envelope-square"></i>SEND EMAIL</a>
 			<a class="dropdown-item view_wl" href="#"><i class="fas fa-sms"></i>VIEW SMS</a>
 			<a class="dropdown-item view_wl" href="#"><i class="fas fa-sign-out-alt"></i></i>LOGOUT</a>
@@ -58,15 +58,15 @@
         
  {% include './includes/WL/partial_gauge_list.html' %}
     
-</body> 
+
 </div>
-<table class="table table-responsive table-bordered table-striped  table-hover" id="sms_item_table">
+<table class="table table-responsive table-bordered table-striped  table-hover" id="wl_table">
     <thead class="thead-dark">
 	 
       <tr>		
-		<th>Date</th>
-		<th>SMS Content</th>
-        <th >Mobile No</th>        
+		<th>Time</th>
+		<th>WL</th>
+               
       </tr>
     </thead>
 	<tbody>    

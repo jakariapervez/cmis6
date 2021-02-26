@@ -1,0 +1,3 @@
+month:01
+year:2021
+gaugeid:SW172.5
