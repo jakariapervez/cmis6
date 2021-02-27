@@ -57,11 +57,11 @@ class GaugeLocation(models.Model):
 
 class GaugeReading(models.Model):
     gauge_name=models.ForeignKey(GaugeLocation,on_delete=models.CASCADE, null=True, blank=True)
-    datetime=models.DateTimeField(auto_now=True)
+    reading_time=models.DateTimeField(null=True,blank=True)
     wlreading=models.DecimalField(max_digits=10,decimal_places=3)
 
     def __str__(self):
-        return str(self.gauge_name)+"_"+str(self.datetime)+"_"+str(self.wlreading)
+        return str(self.gauge_name)+"_"+str(self. reading_time)+"_"+str(self.wlreading)
 
 class ReportedGauge(models.Model):
     gauge_name=models.ForeignKey(GaugeLocation,on_delete=models.CASCADE,null=True,blank=True)

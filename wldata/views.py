@@ -26,7 +26,7 @@ def displayData(request):
         print(g.gauge_code)
 
     return render(request, 'wldata/display.html', {'sms_items': sms_items, 'gauges': gauges})
-    return redirect(data_collect_view)
+
 def sendEmail(request):
     return redirect(data_collect_view)
 def wl_Logiut(request):
