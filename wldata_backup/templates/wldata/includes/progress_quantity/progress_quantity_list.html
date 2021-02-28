@@ -1,0 +1,46 @@
+{% for civt  in civts %}
+			<tr>
+			  <td>{{civt.lastUpdateDate}}</td>
+			  <td>{{civt.item_name}}</td>
+			  <td>{{civt.unit}}</td>
+			  <td class="total-quantity">{{civt.totalquantity}}</td>
+			  <td class="weight">{{civt.weight}}</td>
+			  <td class="cumulative-upto-previous-period">{{civt.currentQuantity }}</td>
+			  <td class="current-reporting-period"></td>
+			  <td class="cumulative-upto-current-period"></td>			  
+			  <td class="itemised-progress"></td>
+			  <td style="width: 150px" class="Add" >
+					  <button type="button"
+							  class="btn btn-primary btn-sm js-input-progress-quantity"
+							   civt-id="{{civt.item_id}}"
+							  data-url="{% url 'input_progress_quantity' civt.item_id %}">
+						<span class="glyphicon glyphicon-pencil"></span>Add Progress Data
+					  </button>
+				</td>
+				<td style="width: 150px">
+					  <button type="button button-lg"
+							  class="btn btn-primary btn-sm js-calcualte-itemised-progress"
+							   civt-id="{{civt.item_id}}"
+							  data-url="{% url 'input_progress_quantity' civt.item_id %}">
+						<span class="glyphicon glyphicon-pencil"></span>Calcualte
+					  </button>
+				</td>				  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Progress Items</td>
+			</tr>
+    {% endfor %}
+    <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td>Total=</td>
+	<td class="total-progress"></td>
+	<td><button type="button " class="btn btn-primary button-sm js-calculate-total-progress" >Sum</button> </td>
+	<td class="js-submit-row"><button type="button " class="btn btn-primary button-sm js-submit-progress" data-url="{% url 'input_progress_quantity_ajax' %}" disabled >Submit</button> </td>
+	</tr>

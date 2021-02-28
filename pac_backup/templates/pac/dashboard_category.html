@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+
+{% endblock %}
+{% block content %}
+<!--
+<p>
+    <button type="button" class="btn btn-primary js-create-ivt" data-url="{% url 'dpp_allocation_create' %}">
+      <i class="fas fa-edit"></i>
+     Add DPP Item
+    </button>
+  </p>
+ --> 
+  
+<!-- {% include 'progress/includes/partial_ivt_table_pagination.html' %}  -->
+<!--
+{% include 'pac/includes/expenditures/fy_select.html' %}
+{% include 'pac/includes/expenditures/month_select.html' %}
+{% include 'pac/includes/expenditures/code_select.html' %}
+
+
+
+ <button type="button" class="btn btn-primary btn-md js-sort-all" data-url="{% url 'expenditure_sort'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Sort
+					  </button>
+ <button type="button" class="btn btn-primary btn-md js-report" id="js-report" data-url="{% url 'progress_report'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>Print
+					  </button>
+					  -->
+<!-- <a href="{% url 'progress_report' %}">Print</a>	-->
+<!--
+<div id="customers">				  				  
+<table class="table table-bordered table-striped  table-hover" id="ivt-table">
+    <thead class="thead-dark">
+	 
+      <tr>
+		<th>Date</th>
+		<th>Batch No</th>
+        <th>Item Code</th> 
+        <th>Description</th>		
+		<th>GoB</th>
+		<th>RPA</th>
+        <th>DPA</th>
+		<th>Total</th>
+		<th>Edit</th>
+		<th>Delete</th>
+		
+        	
+      </tr>
+    </thead>
+	<tbody> 
+	
+	{% include 'pac/includes/expenditures/partial_expenditures_list.html' %}
+  </tbody>
+
+</table>
+</div>
+
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+ -->
+<<<<<<< HEAD
+<<<<<<< HEAD
+<div id="container1" class="row container"  >
+<div id="container2" class="col-md-6"   >
+</div>
+<div id="container3" class="col-md-6"  >
+</div> 
+</div> 
+<div id="container4" class="row container"  >
+<div id="container5" class="col-md-6"   >
+</div>
+<div id="container6" class="col-md-6"  >
+</div> 
+</div>
+<div id="container6" class="row container"  >
+<div id="container7" class="col-md-6"   >
+</div>
+<div id="container8" class="col-md-6"  >
+</div> 
+</div>  
+
+=======
+<div id="container" class="container"  style="width:550px;height:400px;margin:0 auto;" >
+</div> 
+>>>>>>> 65827334fbf1f5d1e3508b179fb305e81b4c3651
+=======
+<div id="container" class="container"  style="width:550px;height:400px;margin:0 auto;" >
+</div> 
+>>>>>>> 65827334fbf1f5d1e3508b179fb305e81b4c3651
+{% endblock %}
+
+
+ {% block localscript %}
+<!-- <script src="{% static 'pac/js/jspdf.min.js'  %}"></script> -->
+<script src="{% static 'pac/js/expenditure_list.js'  %}"></script>
+<script src="{% static 'pac/js/dashboard_category.js' %}"></script>
+	{% endblock %}  

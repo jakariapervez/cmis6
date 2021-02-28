@@ -1,0 +1,3 @@
+ {% for civt  in civts %}
+<option value="{{civt.id}}" data-url="{% url 'get_contract_intervention' civt.id %}" >{{civt.dpp_intervention_id.package_short_name}}</option>
+{% endfor %}

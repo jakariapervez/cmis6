@@ -1,0 +1,20 @@
+{% load widget_tweaks %}
+
+<form method="post" action="{% url 'edit_expenditure' pk=ivt.id %}" class="js-ivt-update-form" >
+ {% csrf_token %}
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">Edit Expenditures</h4>
+  </div>
+  <div class="modal-body">
+  
+  <!-- <p class="lead">Are you sure you want to Edit the Expenditure of  <strong>{{ ivt.Invoice_details.Invoice_no}} Economic code {{ivt.Budget_allocation.Dpp_allocation.Description}} </strong> ?</p> -->
+  {% include 'pac/includes/expenditures/partial_ivt_form.html' %}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </div>
+</form>

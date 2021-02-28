@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+
+{% endblock %}
+{% block content %}
+<!--
+<p>
+    <button type="button" class="btn btn-primary js-create-ivt" data-url="{% url 'dpp_allocation_create' %}">
+      <i class="fas fa-edit"></i>
+     Add DPP Item
+    </button>
+  </p>
+ --> 
+  
+<!-- {% include 'progress/includes/partial_ivt_table_pagination.html' %}  -->
+<!--{% include 'pac/includes/expenditures/fy_select.html' %} -->
+<!--
+
+ <button type="button" class="btn btn-primary btn-lg js-create-ivt" data-url="{% url 'create_invoice' %}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span> Add
+					  </button>
+					  
+-->					  
+<table class="table table-bordered table-striped  table-hover" id="ivt-table">
+    <thead class="thead-dark">
+	 
+      <tr>
+		<th>Date</th>
+		<th>Batch No</th>
+        <th>Item Code</th> 
+        <th>Description</th>		
+		<th>GoB</th>
+		<th>RPA</th>
+        <th>DPA</th>
+		<th>Total</th>
+		<th>Edit</th>
+		<th>Delete</th>
+		
+        	
+      </tr>
+    </thead>
+	<tbody>    
+	{% include 'pac/includes/expenditures/partial_expenditures_list.html' %}
+  </tbody>
+
+</table>
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+ {% block localscript %}
+
+<script src="{% static 'pac/js/expenditure_list.js'  %}"></script>
+
+	{% endblock %}  

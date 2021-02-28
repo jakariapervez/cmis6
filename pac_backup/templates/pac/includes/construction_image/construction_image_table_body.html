@@ -1,0 +1,10 @@
+{% for image in images %}
+  <tr>
+  <td><a href="{{ image.image.url }}">{{ image.image.name }}n></a></td> 
+  <td>{{ image.description }}   </td>  
+  <td>{{ image.acquisition_date}}</td> 
+  <td>{{ image.uploaded_at}}</td>
+  <td>{{image.uploaded_by.get_full_name}}</td>
+  </tr>  
+      
+{% endfor %}

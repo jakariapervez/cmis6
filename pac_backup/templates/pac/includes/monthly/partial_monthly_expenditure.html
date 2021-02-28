@@ -1,0 +1,39 @@
+     {% for ritem in ritems %}
+			<tr>
+			  <td>{{ritem.Ecode}}</td>
+			  <td>{{ritem.description}}</td>
+			  <!-- Writing Budget Allocation --->
+			  <td>{{ritem.gob_allocation}}</td>
+			  <td>{{ritem.rpa_allocation}}</td>
+			  <td>{{ritem.dpa_allocation}}</td>			  
+			  <td>{{ritem.total_allocation}}</td>
+			  <!-- Writing Cumulative Expenditure Upto Previous Month --->
+			  <td>{{ritem.gob_pm}}</td>
+			  <td>{{ritem.rpa_pm}}</td>
+			  <td>{{ritem.dpa_pm}}</td>
+			  <td>{{ritem.total_pm}}</td>
+			  <!-- Writing Expenditure of the Current Month --->
+			  <td>{{ritem.gob_cm}}</td>
+			  <td>{{ritem.rpa_cm}}</td>
+			  <td>{{ritem.dpa_cm}}</td>
+			  <td>{{ritem.total_cm}}</td>
+			  <!-- Total Expenditure upto current month --->
+			  <td>{{ritem.gob_cmt}}</td>
+			  <td>{{ritem.rpa_cmt}}</td>
+			  <td>{{ritem.dpa_cmt}}</td>
+			  <td>{{ritem.total_cmt}}</td>
+			  <!-- remaining budget --->
+			  <td>{{ritem.gob_rm}}</td>
+			  <td>{{ritem.rpa_rm}}</td>
+			  <td>{{ritem.dpa_rm}}</td>
+			  <td>{{ritem.total_rm}}</td>
+			
+			
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Expenditure Item</td>
+			</tr>
+    {% endfor %}
+  
+

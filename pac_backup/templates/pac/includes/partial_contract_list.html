@@ -1,0 +1,42 @@
+     {% for ivt  in ivts %}
+			<tr>
+			  <td>{{ivt.contract_id}}</td>
+			  <td>{{ivt.dpp_intervention_id.name}}</td>
+			  <td>{{ivt.contract_component_id.component_name}}</td>
+			  <td>{{ivt.physical_weight}}</td>
+			  <td>{{ivt.financial_weight }}</td>
+			  <td>{{ ivt.contract_id.so_id.get_full_name }}</td>
+			  <td>{{ ivt.contract_id.sde_id.get_full_name }}</td>
+			  <td>{{ ivt.contract_id.xen_id.get_full_name }}</td>
+			  <td>{{ ivt.contract_id.fse_id.get_full_name }}</td>
+			  <td>{{ ivt.contract_id.cse_id.get_full_name }}</td>
+			  			  <td style="width: 150px">
+					  <button type="button button-lg"
+							  class="btn btn-primary  js-update-contract-ivt"
+							   ivt-id="{{ivt.id}}"
+							  data-url="{% url 'contract_intervention_update' ivt.id %}">
+						<span class="glyphicon glyphicon-pencil"></span>Update
+					  </button>
+				</td>
+						 
+			  <td style="width: 150px">
+					  <button type="button button-lg"
+							  class="btn btn-primary  js-delete-contract-ivt"
+							   ivt-id="{{ivt.id}}"
+							  data-url="{% url 'contract_intervention_delete' pk=ivt.id  %}">
+						<span class="glyphicon glyphicon-pencil"></span>Delete
+					  </button>
+				</td>
+				
+			  
+			  
+			  
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Interventions</td>
+			</tr>
+    {% endfor %}
+  
+

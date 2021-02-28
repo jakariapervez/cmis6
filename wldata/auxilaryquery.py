@@ -107,28 +107,40 @@ def inputMonthlyWL(verbose=True):
     generateWL(year, month, day_in_month, max_val, min_val, mygauge_id)
 
     myfile.close()
-def getTodaysData(verbose=True):
+def getTodaysData(gaugeid):
     mydate=datetime.datetime.now()
     myyear=mydate.year
     myday=mydate.day
     mymonth=mydate.month
     mydata=list(GaugeReading.objects.filter(reading_time__year=myyear,reading_time__month=mymonth,
-                                            reading_time__day=myday,gauge_name=112).order_by('reading_time'))
+                                            reading_time__day=myday,gauge_name=gaugeid).order_by('reading_time'))
     wl=[]
 
     for m in mydata:
         wl.append(float(m.wlreading))
-    print(wl)
-def getFiveDaysData(verbose=True):
+    myvalue={"readings":mydata,"wl":wl}
+    return myvalue
+def getFiveDaysData(gaugeid):
     mydate=datetime.datetime.now()
     myyear=mydate.year
     myday=mydate.day
     mymonth=mydate.month
-    stdate=datetime.datetime(myyear,mymonth,myday-4,6)
+    substract_days=datetime.timedelta(4)
+    stdate=mydate-substract_days
+    stdate=stdate.replace(hour=6)
     fdate=datetime.datetime(myyear,mymonth,myday,18)
     mydata=list(GaugeReading.objects.filter(reading_time__gte=stdate,
-                                            reading_time__lte=fdate,gauge_name=112).order_by('reading_time'))
+                                            reading_time__lte=fdate,gauge_name=gaugeid).order_by('reading_time'))
     wl=[]
+    years=[]
+    months=[]
+    days=[]
+    hours=[]
     for m in mydata:
         wl.append(float(m.wlreading))
-    print(wl)
+        years.append(m.reading_time.year)
+        months.append(m.reading_time.month)
+        days.append(m.reading_time.day)
+        hours.append(m.reading_time.hour)
+    myvalue={"wl":wl,"years":years,"days":days,"hours":hours,"months":months}
+    return myvalue

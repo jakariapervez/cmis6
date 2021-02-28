@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Progress/Progress Report </li>
+{% endblock %}
+{% block content %}
+
+
+<h5>Images</h5>
+{% include 'progress/includes/construction_image/Carousel.html' %}
+
+
+
+
+<h5> Select Structure:<span>{% include 'progress/includes/contract_intervention_select.html' %}</span></h5>
+<!-- {% include 'progress/includes/partial_ivt_table_pagination.html' %}  -->
+<button class="btn btn-primary btn-lg js-create-progress-item" data-url="{% url 'progress_item_create'%}">Create</button>
+<h5>Progress<h5>
+<table class="table table-responsive table-bordered table-striped  table-hover" id="progress_item_table">
+    <thead class="thead-dark">
+	 
+      <tr>		
+		<th>Item_name</th>
+		<th>unit</th>
+        <th >Total<BR>Quantity</th>
+        <th>Weight</th> 
+        <th>Quanity<Br>Previous</Br></th>
+       <th>Quanity<Br>Reorting</Br><BR>Period</BR></th>		
+		<th>Quanity<Br>Current</Br></th>			
+        <th>Itemised<Br>Progress</Br>
+        <th>Update</th>		
+      </tr>
+    </thead>
+	<tbody>    
+	
+  </tbody>
+
+</table>
+
+
+
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
+ {% block localscript %}
+
+<script src="{% static 'progress/js/dpp_intervention5.js'  %}"></script>
+
+	{% endblock %}  

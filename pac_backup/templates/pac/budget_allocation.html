@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+
+{% endblock %}
+{% block content %}
+<!--
+<p>
+    <button type="button" class="btn btn-primary js-create-ivt" data-url="{% url 'dpp_allocation_create' %}">
+      <i class="fas fa-edit"></i>
+     Add DPP Item
+    </button>
+  </p>
+ --> 
+  
+<!-- {% include 'progress/includes/partial_ivt_table_pagination.html' %}  -->
+{% include 'pac/includes/budget_allocation/fy_select.html' %}
+<table class="table table-bordered table-striped  table-hover" id="ivt-table">
+    <thead class="thead-dark">
+	 
+      <tr>
+		<th>Code</th>		
+        <th class="col-sm-4">Description</th>
+        <th>GoB</th>
+        <th>RPA</th>
+        <th>DPA</th>
+		<th>Total</th>			
+        <th>Edit</th>
+        	
+      </tr>
+    </thead>
+	<tbody>    
+	{% include 'pac/includes/budget_allocation/partial_budget_allocation_list2.html' %}
+  </tbody>
+
+</table>
+ <div class="modal fade" id="modal-ivt">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+ {% block localscript %}
+
+<script src="{% static 'pac/js/budget_allocation.js'  %}"></script>
+
+	{% endblock %}  
