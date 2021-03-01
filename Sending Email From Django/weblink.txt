@@ -1,0 +1,1 @@
+https://data-flair.training/blogs/django-send-email/

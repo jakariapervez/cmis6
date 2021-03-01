@@ -45,6 +45,9 @@ $(function () {
     });
     return false;
   };
+  
+  
+  
   /*Ajax for sorting table by Haor*/
 function updateTable(target_url)
 {
@@ -340,10 +343,8 @@ month=$("#month-select").children("option:selected").val();
 //filename="Report_2019_20_7.pdf"
 var doc = new jsPDF('l','in',[16.5,11.7]);
 
-var heading=[['Code','Description','B_G','B_R','B_D','B_T',
-'PM_G','PM_R','PM_D','PM_T','CM_G','CM_R','CM_D','CM_T',
-'TUC_G','TUC_R','TUC_D','TUC_T',
-'RM_G','RM_R','RM_D','RM_T']]
+//var heading=[["Gauge","Time","WL","EDIT","DELETE" ]]
+var heading=[["Gauge","Time","WL" ]]
 /*creating rows and column of Pdf */
 var rows=$("#ivt-table tr");
 var myDataArr=[[]];
@@ -444,10 +445,11 @@ $.ajax({
 		  
 		  for (var i=0;i<=wl.length;i++)
 		  {
-			var d = new Date(years[i], months[i], days[i], hours[i]);  
-			console.log(d);
+			var d = new Date(years[i], months[i]-1, days[i], hours[i]);
+			
+			console.log(d.toString());
 			times.push(d);
-			var dataItem=[d,wl[i]];
+			var dataItem=[d.toString(),wl[i]];
 			mydata.push(dataItem);
 			  
 		  }
@@ -462,7 +464,7 @@ $.ajax({
 		  //$("#month-select").val(month)
           //$("#modal-ivt").modal("hide");
 		  
-        
+        return false;
         
       }
     })
@@ -503,7 +505,53 @@ var drawFiveDayWL= function (wl_data){
 }
 
 /* #########################################################################################################*/
-
+  var saveWLEditForm = function () {
+	
+    var form = $(this);
+    $.ajax({
+      url: form.attr("action"),
+      data: form.serialize(),
+      type: form.attr("method"),
+      dataType: 'json',
+      success: function (data) {
+        if (data.form_is_valid) {
+		  console.log("WL is Valid")          
+          $("#modal-ivt").modal("hide");
+		  wl=data.wl;
+		  years=data.years;
+		  months=data.months;
+		  days=data.days;
+		  hours=data.hours;
+		  var times=[];
+		  var mydata=[];
+		for (var i=0;i<=wl.length;i++)
+		  {
+			var d = new Date(years[i], months[i]-1, days[i], hours[i]);
+			
+			console.log(d.toString());
+			times.push(d);
+			var dataItem=[d.toString(),wl[i]];
+			mydata.push(dataItem);
+			  
+		  }
+		  
+		 console.log(wl);
+		 drawFiveDayWL(mydata);
+		 $("#ivt-table tbody").html(data.gauge_readings);
+		  
+		  
+		  
+		  
+		  
+        }
+        else {
+		  console.log("Intervention data is InValid")
+          $("#modal-ivt .modal-content").html(data.html_form);
+        }
+      }
+    });
+    return false;
+  };
 
 
 
@@ -515,6 +563,14 @@ var drawFiveDayWL= function (wl_data){
 //$(".js-code-select").change(sort_by_haor)
 //$(".js-sort-all").click(sort_by_all);
 //$(".js-report").click(generteReport)
+/****WL EDIT ***/
+$("#ivt-table").on("click", ".js-wl-edit-button", loadForm);
+$("#modal-ivt").on("submit",".js-wl-update-form",saveWLEditForm)
+/****WL DELETE ***/
+$("#ivt-table").on("click", ".js-wl-delete-button", loadForm);
+$("#modal-ivt").on("submit",".js-wl-delete-form",saveWLEditForm)
+$(".js-wl-edit").on("click",loadForm)
+
 $(".js-sort-all").click(gaugeDataSelect)
 $(".js-report").click(generateReport3)
 });

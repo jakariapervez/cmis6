@@ -1,12 +1,13 @@
      {% for gr in greadings %}
 			<tr>
+			<td>{{gr.gauge_name.gauge_code}}
 			 <td>{{gr.reading_time}}</td>
 			 <td>{{gr.wlreading}}</td>
-			<td><button type="button" class="btn btn-primary btn-md js-wl-edit"  >				
+			<td><button type="button" class="btn btn-primary btn-md js-wl-edit-button"  data-url="{% url 'gauge_data_edit' pk=gr.id %}" >				
 							 
 						<span class="glyphicon glyphicon-pencil"></span>EDIT
 					  </button></td>
-			<td><button type="button" class="btn btn-primary btn-md js-wl-delete"  >				
+			<td><button type="button" class="btn btn-primary btn-md js-wl-delete-button" data-url="{% url 'gauge_data_delete' pk=gr.id %}"  >				
 							 
 						<span class="glyphicon glyphicon-pencil"></span>DELETE
 					  </button></td>

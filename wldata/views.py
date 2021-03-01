@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import redirect,get_object_or_404
 from django.http import HttpResponse,JsonResponse
 from .models import SMS_info,GaugeLocation
 from django.template.loader import render_to_string
@@ -54,8 +54,63 @@ def gaugeData(request):
     print(myFiveDayData)
 
     return JsonResponse(data)
+from .forms import WL_Edit_Form
+from .models import GaugeReading
+def gaugeDataEdit(request,pk):
+    data=dict()
+    gaugereading = get_object_or_404(GaugeReading, pk=pk)
+    form = WL_Edit_Form(instance=gaugereading)
+    if request.method=='POST':
+        form=WL_Edit_Form(request.POST, instance=gaugereading)
+        if form.is_valid:
+            form.save()
+            data['form_is_valid'] = True
+            gid = gaugereading.gauge_name.id
+            print("gauge id=".format(id))
+            mydata = getTodaysData(gid)
+            myFiveDayData = getFiveDaysData(gid)
+            greadings = mydata["readings"]
+            context = {"greadings": greadings}
+            mytable = render_to_string('wldata/includes/gauges/partial_gauge_wl.html', context)
+            data['gauge_readings'] = mytable
+            data['years'] = myFiveDayData["years"]
+            data["months"] = myFiveDayData["months"]
+            data["days"] = myFiveDayData["days"]
+            data["hours"] = myFiveDayData["hours"]
+            data["wl"] = myFiveDayData["wl"]
 
-
+        else:
+            data['form_is_valid']=False
+    else:
+        context={'form':form,}
+        data=dict()
+        data['html_form']=render_to_string('wldata/includes/gauges/wl_edit_form.html',context,request=request)
+    return JsonResponse(data)
+def gaugeDataDelete(request,pk):
+    data=dict()
+    gaugereading = get_object_or_404(GaugeReading, pk=pk)
+    form = WL_Edit_Form(instance=gaugereading)
+    if request.method=='POST':
+        gaugereading.delete()
+        data['form_is_valid'] = True
+        gid = gaugereading.gauge_name.id
+        print("gauge id=".format(id))
+        mydata = getTodaysData(gid)
+        myFiveDayData = getFiveDaysData(gid)
+        greadings = mydata["readings"]
+        context = {"greadings": greadings}
+        mytable = render_to_string('wldata/includes/gauges/partial_gauge_wl.html', context)
+        data['gauge_readings'] = mytable
+        data['years'] = myFiveDayData["years"]
+        data["months"] = myFiveDayData["months"]
+        data["days"] = myFiveDayData["days"]
+        data["hours"] = myFiveDayData["hours"]
+        data["wl"] = myFiveDayData["wl"]
+    else:
+        context={'form':form,}
+        data=dict()
+        data['html_form']=render_to_string('wldata/includes/gauges/wl_delete_form.html',context,request=request)
+    return JsonResponse(data)
 
 
 

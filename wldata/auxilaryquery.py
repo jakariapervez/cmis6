@@ -125,7 +125,7 @@ def getFiveDaysData(gaugeid):
     myyear=mydate.year
     myday=mydate.day
     mymonth=mydate.month
-    substract_days=datetime.timedelta(4)
+    substract_days=datetime.timedelta(days=4)
     stdate=mydate-substract_days
     stdate=stdate.replace(hour=6)
     fdate=datetime.datetime(myyear,mymonth,myday,18)
