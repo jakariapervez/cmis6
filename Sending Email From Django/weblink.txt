@@ -1,1 +1,2 @@
-https://data-flair.training/blogs/django-send-email/
+https://data-flair.training/blogs/django-send-email/     #settingup environment
+https://stackoverflow.com/questions/46567889/django-attach-pdf-generated-by-a-view-to-an-email    #attaching pdf file
