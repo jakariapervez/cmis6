@@ -112,11 +112,20 @@ def gaugeDataDelete(request,pk):
         data['html_form']=render_to_string('wldata/includes/gauges/wl_delete_form.html',context,request=request)
     return JsonResponse(data)
 
-
+def selectWLatParticularTime(request):
+    data=dict()
+    gid = request.GET['hour']
+    print("fuck")
+    return JsonResponse(data)
 
 
 def sendEmail(request):
-    return redirect(data_collect_view)
+    sms_items = SMS_info.objects.all()
+    gauges = GaugeLocation.objects.all()
+    for g in gauges:
+        print(g.gauge_code)
+    return render(request, 'wldata/send_email.html', {'sms_items': sms_items, 'gauges': gauges})
+
 def wl_Logiut(request):
     return redirect(data_collect_view)
 

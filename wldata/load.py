@@ -131,3 +131,8 @@ def getFiveDaysData(verbose=True):
     for m in mydata:
         wl.append(float(m.wlreading))
     print(wl)
+from django.contrib.auth.models import User
+def retrieveUserID(verbose=True):
+    myusers=list(User.objects.all())
+    for cuser in myusers:
+        print("username={} id={}".format(cuser.username,cuser.pk))

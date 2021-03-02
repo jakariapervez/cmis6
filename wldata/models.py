@@ -4,6 +4,7 @@ from django.db import models
 from django.db import models
 from django.utils import timezone
 from datetime import datetime
+from django.conf import settings
 # Create your models here.
 
 class SMS_info(models.Model):
@@ -25,6 +26,7 @@ class GaugeAccessibility(models.Model):
 class DivisionNames(models.Model):
     division_name=models.CharField(max_length=300,null=True,blank=True)
     division_short_code=models.CharField(max_length=40,null=True,blank=True)
+    division_user_id=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,null=True,blank=True)
     def __str__(self):
         return str(self.division_short_code)
 class River(models.Model):
@@ -48,6 +50,7 @@ class GaugeLocation(models.Model):
     danger_level=models.DecimalField(max_digits=6, decimal_places=2)
     river_name=models.ForeignKey(River,on_delete=models.CASCADE, null=True, blank=True)
     division_name=models.ForeignKey(DivisionNames,on_delete=models.CASCADE, null=True, blank=True)
+
     def __str__(self):
         return str(self.gauge_code)+"_"+str(self.river_name)+"_"+str(self.gauge_station_name)
 

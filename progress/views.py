@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 #from django.contrib.auth.models import
 # Create your views here.
 from .models import Contract
-
+from wldata import views as wl_imported_view
 @login_required
 def siteHome(request):
     user=request.user
@@ -23,6 +23,10 @@ def siteHome(request):
     elif (user.profile.role.role_name == "CSE_CONSL"):
         contracts = Contract.objects.filter(cse_id=user.id)
         return render(request, 'index/Cse_index.html',{'contracts': contracts})
+    elif(user.profile.role.role_name == "HYDROLOGY"):
+        return redirect(wl_imported_view.wl_index)
+        wl_imported_view
+        pass
     else:
         return HttpResponse("This Page is under Construction")
 def progressHome(request):
