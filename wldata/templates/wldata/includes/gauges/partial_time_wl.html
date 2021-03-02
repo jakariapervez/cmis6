@@ -1,0 +1,15 @@
+     {% for gr in greadings %}
+			<tr>
+				<td>{{gr.gauge_name.gauge_code}}</td>
+				<td>{{gr.gauge_name.river_name.river_name}}</td>
+				<td>{{gr.gauge_name.gauge_station_name}}</td>			 
+				<td>{{gr.wlreading}}</td>
+			
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Gauge Reading</td>
+			</tr>
+    {% endfor %}
+  
+

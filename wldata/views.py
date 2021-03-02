@@ -111,11 +111,18 @@ def gaugeDataDelete(request,pk):
         data=dict()
         data['html_form']=render_to_string('wldata/includes/gauges/wl_delete_form.html',context,request=request)
     return JsonResponse(data)
-
+from .auxilaryquery import getTimeSlotReading
 def selectWLatParticularTime(request):
     data=dict()
-    gid = request.GET['hour']
-    print("fuck")
+    hour = request.GET['hour']
+    user = request.user
+    uid=user.pk
+    print("hour={} user={}".format(hour, user))
+    mydata=getTimeSlotReading(hour,uid)
+    print(mydata)
+    context = {"greadings": mydata}
+    mytable = render_to_string('wldata/includes/gauges/partial_time_wl.html', context)
+    data['gauge_readings'] = mytable
     return JsonResponse(data)
 
 

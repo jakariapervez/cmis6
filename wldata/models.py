@@ -50,6 +50,7 @@ class GaugeLocation(models.Model):
     danger_level=models.DecimalField(max_digits=6, decimal_places=2)
     river_name=models.ForeignKey(River,on_delete=models.CASCADE, null=True, blank=True)
     division_name=models.ForeignKey(DivisionNames,on_delete=models.CASCADE, null=True, blank=True)
+    reported_gauge=models.BooleanField(null=True,blank=True,default=True)
 
     def __str__(self):
         return str(self.gauge_code)+"_"+str(self.river_name)+"_"+str(self.gauge_station_name)

@@ -344,7 +344,8 @@ month=$("#month-select").children("option:selected").val();
 var doc = new jsPDF('l','in',[16.5,11.7]);
 
 //var heading=[["Gauge","Time","WL","EDIT","DELETE" ]]
-var heading=[["Gauge","Time","WL" ]]
+var heading=[["GAUGE", 	"RIVER NAME" ,	"LOCATION","WL"]]
+//var heading=[["Gauge","Time","WL" ]]
 /*creating rows and column of Pdf */
 var rows=$("#ivt-table tr");
 var myDataArr=[[]];
@@ -573,7 +574,7 @@ $.ajax({
       success: function (data) {
 		  console.log("sucessfully returned from ajax request for gauge data........");
 		  
-         //$("#ivt-table tbody").html(data.gauge_readings);
+         $("#ivt-table tbody").html(data.gauge_readings);
 
 		  
         return false;

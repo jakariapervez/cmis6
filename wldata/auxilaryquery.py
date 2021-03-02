@@ -144,3 +144,80 @@ def getFiveDaysData(gaugeid):
         hours.append(m.reading_time.hour)
     myvalue={"wl":wl,"years":years,"days":days,"hours":hours,"months":months}
     return myvalue
+from .models import GaugeReading,DivisionNames
+from django.shortcuts import get_object_or_404
+def getTimeSlotReading2(hour,user_id):
+    mydivision=get_object_or_404(DivisionNames,division_user_id=user_id)
+    mydate=datetime.datetime.now()
+    myyear=mydate.year
+    mymonth = mydate.month
+    myday=mydate.day
+    myquery_date=datetime.datetime(myyear,mymonth,myday)
+    print(myquery_date)
+    if hour ==6:
+        stdate=myquery_date.copy(deep=True)
+        fdate=myquery_date.copy(deep=True)
+        fdate=fdate.replace(hour=6)
+    elif hour==9:
+        stdate = datetime.datetime(year=myyear, month=mymonth, day=myday,hour=9)
+        fdate = datetime.datetime(myyear, mymonth, myday, 11)
+    elif hour==12:
+        stdate = datetime.datetime(myyear, mymonth, myday, 12)
+        fdate = datetime.datetime(myyear, mymonth, myday, 14)
+    elif hour==15:
+        stdate = datetime.datetime(myyear, mymonth, myday, 15)
+        fdate = datetime.datetime(myyear, mymonth, myday, 17)
+    else:
+        stdate = datetime.datetime(myyear, mymonth, myday, 18)
+        fdate = datetime.datetime(myyear, mymonth, myday, 22)
+    """    
+    mydata = list(GaugeReading.objects.filter(reading_time__gte=stdate,
+                                              reading_time__lte=fdate,
+                                              gauge_name__division_name= mydivision,gauge_name__reported_gauge=True))
+    """
+    print(stdate)
+    print(fdate)
+    mydata = list(GaugeReading.objects.filter(reading_time__gte=stdate,reading_time__lte=fdate,))
+    return mydata
+def getTimeSlotReading(reading_hour,user_id):
+    reading_hour=int(reading_hour)
+    mydate = datetime.datetime.now()
+    myyear = mydate.year
+    myday = mydate.day
+    mymonth = mydate.month
+    if reading_hour ==6:
+        h1=6
+        h2=8
+    elif reading_hour ==9:
+        h1 = 9
+        h2 = 11
+    elif reading_hour ==12:
+        h1 = 12
+        h2 = 14
+    elif reading_hour ==15:
+        h1 = 15
+        h2 = 17
+    elif reading_hour ==18:
+        h1 = 18
+        h2 = 20
+    print("h1={} h2={}".format(h1,h2))
+    mydata = list(GaugeReading.objects.filter(reading_time__year=myyear, reading_time__month=mymonth,
+                                              reading_time__day=myday,).order_by('reading_time'))
+    filtered_reading = []
+    for d in mydata:
+        gauge_user_id=d.gauge_name.division_name.division_user_id.pk
+        print("gauge_user_id={}".format(gauge_user_id))
+        if h1 <= d.reading_time.hour <= h2:
+            print("found")
+            if gauge_user_id==user_id:
+                filtered_reading.append(d)
+
+
+
+    #myvalue = {"readings": mydata, "wl": wl}
+    return filtered_reading
+
+
+
+
+
