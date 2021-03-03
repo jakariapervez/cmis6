@@ -218,6 +218,77 @@ def getTimeSlotReading(reading_hour,user_id):
     return filtered_reading
 
 
+from reportlab.lib.units import cm
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from django.core.files.storage import FileSystemStorage
+from reportlab.lib.styles import getSampleStyleSheet
+from io import BytesIO
+from reportlab.lib.pagesizes import A4, landscape
+from reportlab.lib import colors
+def getDivisionName(uid):
+    mydivision=get_object_or_404(DivisionNames,division_user_id=uid)
+    return mydivision.division_name
+
+
+
+
+def createWLReport(hour,uid):
+    wl_data=getTimeSlotReading(hour,uid)
+    """ Basic Setup for Report Lab   """
+    pdf_buffer = BytesIO()
+    doc = SimpleDocTemplate(pdf_buffer)
+    doc.pagesize = landscape(A4)
+    flowables = []  # overall flowables
+    structural_summary = []  # for structural summary
+    contract_summary = []
+    sample_style_sheet = getSampleStyleSheet()
+    # sample_style_sheet.list()
+    """Creating Style for Paragraph  """
+    custom_body_style = sample_style_sheet['Heading5']
+    # custom_body_style.listAttrs()
+    custom_body_style.spaceAfter = 0
+    custom_body_style.spaceBefore = 0
+    """Creating Header for WL Reporting"""
+    division_name=getDivisionName(uid)
+    h1=Paragraph(division_name)
+    flowables.append(h1)
+    #flowables.append(Spacer(1,0.2*inch))
+
+    """Creating Table widths"""
+    col_widths=[60*cm,60*cm,60*cm,60*cm]
+    tableHeading = [["GAUGE","RIVER","LOCATION","WL(m-pwd)"],]
+    for wl in wl_data:
+        gauge=wl.gauge_name.gauge_code
+        river=wl.gauge_name.river_name.river_name
+        location=wl.gauge_name.gauge_station_name
+        readings=wl.wlreading
+        mycuurent_data=[gauge,river,location,readings]
+        tableHeading.append(mycuurent_data)
+
+        pass
+    mydate=wl_data[0].reading_time
+    mydate=mydate.replace(hour=6)
+    reporting_time=mydate.strftime('%x')
+    reporting_time=reporting_time+" at "+str(hour)+":00 hours"
+    h2=Paragraph(reporting_time)
+    flowables.append(h2)
+    #t=Table(data=tableHeading,colWidths=col_widths,repeatRows=1)
+
+    t=Table(tableHeading,4*[2*inch],style=[('GRID', (0, 0), (-1, -1), 1, colors.green),('ALIGN', (0, 0), (-1, -1), "CENTER")])
+    t.hAlign = 'LEFT'
+    flowables.append(t)
+
+
+    doc.build(flowables)
+
+    pdf_value = pdf_buffer.getvalue()
+    pdf_buffer.close()
+    myvalue={'report':pdf_value,'time':reporting_time}
+    return myvalue
+
+
 
 
 

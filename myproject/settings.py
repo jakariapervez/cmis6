@@ -180,10 +180,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR, 'staticfiles'),]
 LOGOUT_REDIRECT_URL='login'
 LOGIN_REDIRECT_URL = 'sitehome'
-EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 LOGIN_URL = 'login'
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+"""Email Related Setup"""
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
+EMAIL_PORT=587
+EMAIL_HOST_USER='xen.pmu.ceip1@gmail.com'
+EMAIL_HOST_PASSWORD='Pdpmuceip1234'

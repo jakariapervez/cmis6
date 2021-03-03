@@ -583,7 +583,37 @@ $.ajax({
     })
 
 }
+/*Email Sending Function*/
+var sendEmail =function ()
+{
+console.log("Successfully Triggered Email Sending Event.......");	
+var target_url=$(this).attr("data-url")	;
+console.log(target_url)
+var hour=$("#time-select").find('option:selected').val()
+console.log(hour)
+$.ajax({
+      url: target_url,      
+      type: 'get',
+      dataType: 'json',
+	  data:{'hour':hour},
+	  beforeSend: function () {
+		console.log("Sending Ajax request for data disemmination by email.."+hour);
+		//console.log(data)
+		//$("#ivt-table tbody").html("");
+        
+      },
+      success: function (data) {
+		  console.log("sucessfully returned from ajax after sending email........");
+		  
+         //$("#ivt-table tbody").html(data.gauge_readings);
 
+		  
+        return false;
+        
+      }
+    })
+
+}
 
 
 /*binding*/
@@ -603,4 +633,6 @@ $(".js-wl-edit").on("click",loadForm)
 
 $(".js-sort-all").click(gaugeTimeSelect)
 $(".js-report").click(generateReport3)
+$(".js-send-email").click(sendEmail)
+
 });

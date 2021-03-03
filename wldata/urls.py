@@ -12,6 +12,7 @@ urlpatterns=[
     path('gauge_data_edit/<int:pk>/',views.gaugeDataEdit,name='gauge_data_edit'),
     path('gauge_data_delete/<int:pk>/',views.gaugeDataDelete,name='gauge_data_delete'),
     path('gauge_data_at_time/',views.selectWLatParticularTime,name='gauge_data_at_time'),
+    path('send_wl_by_email/',views.sendWLByEmail,name='send_wl_by_email'),
 
 
 
