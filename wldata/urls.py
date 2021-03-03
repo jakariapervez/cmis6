@@ -13,6 +13,10 @@ urlpatterns=[
     path('gauge_data_delete/<int:pk>/',views.gaugeDataDelete,name='gauge_data_delete'),
     path('gauge_data_at_time/',views.selectWLatParticularTime,name='gauge_data_at_time'),
     path('send_wl_by_email/',views.sendWLByEmail,name='send_wl_by_email'),
+    path('communication_list/',views.communicationListIndex,name='communication_list'),
+    path('communication_list/add/',views.communicationListAddContact,name='communication_list_add_contact'),
+    path('communication_list/update/<int:pk>/',views.communicationListEditContact,name='communication_list_edit_contact'),
+    path('communication_list/delete/<int:pk>/',views.communicationListDeleteContact,name='communication_list_delete_contact'),
 
 
 

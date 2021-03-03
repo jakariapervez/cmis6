@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title> {% block title %}WL EDIT {% endblock  %} </title>
+<title> {% block title %}Contact List{% endblock  %} </title>
 <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
 <link rel="stylesheet" href="{% static 'css/app.css'  %}">
@@ -41,9 +41,10 @@
   <h5>WL</h5>
   <div class="dropdown-content">
   <a class="dropdown-item financiallink" href="{% url 'wl_index' %}"><i class="fas fa-home"></i>INDEX</a>
+  <a class="dropdown-item financiallink" href="{% url 'wl_data_display' %}"><i class="fas fa-chart-line"></i>VIEW WL</a>
   <a class="dropdown-item reportlink js-view-report-event" href="{% url 'send_email' %}"><i class="fas fa-envelope-open-text"></i>SEND EMAIL</a>
   
-  <a class="dropdown-item reportlink js-view-report-event" href="{% url 'communication_list'  %}"><i class="fas fa-id-card"></i>Contacts</a>
+ 
   <!--
   <a class="dropdown-item reportlink js-view-report-event" href="{% url 'pac_index' %}"><i class="fas fa-book"></i>Project Accounting</a>
   -->
@@ -81,21 +82,27 @@
         </div>
     </nav>
 <!-- Expenditure sort -->
-{% include 'wldata/includes/gauges/gauge_select.html' %}
+<!--{% include 'wldata/includes/gauges/time_select.html' %}-->
 <!--{% include 'pac/includes/expenditures/month_select.html' %} -->
 <!--{% include 'pac/includes/expenditures/code_select.html' %} -->
 <!-- Expenditure Navigation Buttons -->
- <button type="button" class="btn btn-primary btn-md js-sort-all" data-url="{% url 'gauge_data'         %}" >				
+ <button type="button" class="btn btn-primary btn-md js-add-contact" data-url="{% url 'communication_list_add_contact'         %}" >				
 							 
-						<span class="glyphicon glyphicon-pencil"></span>Sort
+						<span class="glyphicon glyphicon-pencil"></span>Add Contact
 					  </button>
+<!--
  <button type="button" class="btn btn-primary btn-md js-report" id="js-report" data-url="{% url 'progress_report'%}">				
 							 
 						<span class="glyphicon glyphicon-pencil"></span>Report
 					  </button>
+ <button type="button" class="btn btn-primary btn-md js-send-email" id="js-send-email" data-url="{% url 'send_wl_by_email'%}">				
+							 
+						<span class="glyphicon glyphicon-pencil"></span>SEND EMAIL
+					  </button>
+		-->
 <!-- Highchart Table-->
 
- <div id = "container" style = "width:1500px; height: 700px; margin: 0 auto"></div>				  
+ <!--<div id = "container" style = "width:1500px; height: 7000px; margin: 0 auto"></div> -->				  
 <!-- WL Table -->
 
 <div id="customers">				  				  
@@ -103,16 +110,17 @@
     <thead class="thead-dark">
 	 
       <tr>
-		<th>GAUGE</th>
-		<th>Time</th>
-		<th>WL</th>
-		<th>EDIT</th>
-        <th>DELETE</th>      
+		<th>Designation</th>
+		<th>Email</th>
+		<th>Cell Phone</th>
+		<th>Edit</th>
+		<th>Delete</th>
+
       </tr>
     </thead>
-	<tbody>    
-	{% include 'wldata/includes/gauges/partial_gauge_wl.html' %}
-  </tbody>
+	    
+	{% include 'wldata/includes/gauges/partial_contact_list.html' %}
+ 
 
 </table>
 </div>
@@ -167,7 +175,7 @@
 <script src="{% static 'js/dashboard.js' %}" ></script>
 <!-- Expenditure list Java Script -->
 <!-- <script src="{% static 'pac/js/expenditure_list.js'  %}"></script> -->
-<script src="{% static 'wldata/js/gauge_data_view.js'  %}"></script>
+<script src="{% static 'wldata/js/view_edit_contacts.js'  %}"></script>
   
 {% endblock %}
 {% block localscript %}

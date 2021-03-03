@@ -157,31 +157,98 @@ def sendEmail(request):
 """Import related to sending email """
 from django.conf import settings as mysettings
 
-from django.core.mail import send_mail,EmailMessage
+from django.core.mail import send_mail, EmailMessage
 
-from .auxilaryquery import createWLReport,getDivisionName
+from .auxilaryquery import createWLReport, getDivisionName
+
 
 def sendWLByEmail(request):
     data = dict()
     hour = request.GET['hour']
     user = request.user
     uid = user.pk
-    myvalue=createWLReport(hour,uid)
-    myreport=myvalue['report']
-    reporting_time=myvalue['time']
-    #print(myreport)
-    #print("Send Email has hit server....")
-    #print("Email will send from={}".format(mysettings.EMAIL_HOST_USER))
-    sub="WL at different gauge stations of "+getDivisionName(uid)+" on "+reporting_time
-    message="Attached herewith "
-    sender=mysettings.EMAIL_HOST_USER
+    myvalue = createWLReport(hour, uid)
+    myreport = myvalue['report']
+    reporting_time = myvalue['time']
+    # print(myreport)
+    # print("Send Email has hit server....")
+    # print("Email will send from={}".format(mysettings.EMAIL_HOST_USER))
+    sub = "WL at different gauge stations of " + getDivisionName(uid) + " on " + reporting_time
+    message = "Attached herewith "
+    sender = mysettings.EMAIL_HOST_USER
 
-    reciepients=["jakariapervez@gmail.com","sarfarazbanda48@yahoo.com","skkader404@gmail.com"]
-    #send_mail(subject=sub,message=message,from_email=mysettings.EMAIL_HOST_USER,recipient_list=reciepients,fail_silently=False)
-    draft_email=EmailMessage(sub,message,sender,reciepients)
-    draft_email.attach("wl.pdf",myreport)
+    reciepients = ["jakariapervez@gmail.com", "sarfarazbanda48@yahoo.com", "skkader404@gmail.com"]
+    # send_mail(subject=sub,message=message,from_email=mysettings.EMAIL_HOST_USER,recipient_list=reciepients,fail_silently=False)
+    draft_email = EmailMessage(sub, message, sender, reciepients)
+    draft_email.attach("wl.pdf", myreport)
     draft_email.send()
     return JsonResponse(data)
+
+
+from .models import communicationList
+
+
+def communicationListIndex(request):
+    user = request.user
+    uid = user.pk
+    sms_items = SMS_info.objects.all()
+    gauges = GaugeLocation.objects.all()
+    contacts = communicationList.objects.filter(added_by=uid)
+    context = {'contacts': contacts}
+
+    return render(request, 'wldata/view_edit_contacts.html', context)
+
+
+from .forms import contactAddForm
+from .auxilaryquery import addContactFormSave
+
+
+def communicationListAddContact(request):
+    data = dict()
+    print("sucessfully hitted server for adding contact....")
+    form = contactAddForm()
+
+    if request.method == "POST":
+        print("I am in post request .................")
+        form = contactAddForm(request.POST)
+
+        if form.is_valid:
+            user = request.user
+            uid = user.pk
+            print("this is a vaild form.....................")
+            cname = request.POST['person_designation']
+
+            cemail = request.POST['person_email']
+            cmobile = request.POST['person_mobile']
+            mycontact = communicationList(person_designation=cname, person_email=cemail, person_mobile=cmobile,
+                                          added_by=user)
+            mycontact.save()
+            #addContactFormSave(form, uid)
+            contacts = communicationList.objects.filter(added_by=uid)
+            context = {'contacts': contacts}
+            mytable = render_to_string('wldata/includes/gauges/partial_contact_list.html', context)
+            data['form_is_valid'] = True
+            data['contact_list'] = mytable
+        else:
+            data['html_form'] = form
+            data['form_is_valid'] = False
+
+
+    else:
+        print("I am in get request .................")
+        context = {'form': form, }
+        data = dict()
+        data['html_form'] = render_to_string('wldata/includes/gauges/contact_add_form.html', context, request=request)
+
+    return JsonResponse(data)
+
+
+def communicationListEditContact(request, pk):
+    pass
+
+
+def communicationListDeleteContact(request, pk):
+    pass
 
 
 def wl_Logiut(request):

@@ -1,0 +1,35 @@
+     <tbody>
+	 {% for cont in contacts %}
+    
+			<tr>
+			  <td>{{cont.person_designation}}</td>
+			  <td>{{cont.person_email}}</td>
+			  <td>{{cont.person_mobile}}</td>
+			  <td>
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-update-contact"
+							data-url="{% url 'communication_list_edit_contact' pk=cont.id %}">				
+							 
+						 Edit
+					  </button>
+				</td>
+				<td >
+					  <button type="button"
+							  class="btn btn-warning btn-sm js-delete-contact"
+							data-url="{% url 'communication_list_delete_contact' pk=cont.id %}">			
+							 
+						Delete
+					  </button>
+				</td>
+
+
+
+			  
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="7" class="text-center bg-warning">No Expenditure Item</td>
+			</tr>
+    {% endfor %}
+  <tbody>
+
