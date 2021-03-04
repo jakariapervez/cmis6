@@ -305,3 +305,9 @@ def addContactFormSave(form, uid):
     mycontact=communicationList(person_designation=cname,person_email=cemail,person_mobile=cmobile,added_by=uid)
     mycontact.save()
 
+def getRecipients(uid):
+    mycontacts=communicationList.objects.filter(added_by=uid)
+    mymails=[]
+    for c in mycontacts:
+        mymails.append(c.person_email)
+    return mymails

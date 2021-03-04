@@ -161,7 +161,7 @@ from django.core.mail import send_mail, EmailMessage
 
 from .auxilaryquery import createWLReport, getDivisionName
 
-
+from .auxilaryquery import getRecipients
 def sendWLByEmail(request):
     data = dict()
     hour = request.GET['hour']
@@ -176,8 +176,9 @@ def sendWLByEmail(request):
     sub = "WL at different gauge stations of " + getDivisionName(uid) + " on " + reporting_time
     message = "Attached herewith "
     sender = mysettings.EMAIL_HOST_USER
+    reciepients=getRecipients(uid)
 
-    reciepients = ["jakariapervez@gmail.com", "sarfarazbanda48@yahoo.com", "skkader404@gmail.com"]
+    #reciepients = ["jakariapervez@gmail.com", "sarfarazbanda48@yahoo.com", "skkader404@gmail.com"]
     # send_mail(subject=sub,message=message,from_email=mysettings.EMAIL_HOST_USER,recipient_list=reciepients,fail_silently=False)
     draft_email = EmailMessage(sub, message, sender, reciepients)
     draft_email.attach("wl.pdf", myreport)
