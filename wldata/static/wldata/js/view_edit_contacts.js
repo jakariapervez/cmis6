@@ -12,7 +12,8 @@ $(function () {
       beforeSend: function () {
 		console.log(btn.attr("data-url"));
 		
-        $("#modal-ivt .modal-content").html("");
+		$("#modal-ivt .modal-content").html("");
+       // $("#ivt-table tbody").html("");
         $("#modal-ivt").modal("show");
       },
       success: function (data) {
@@ -22,7 +23,7 @@ $(function () {
   };
 
   var saveForm = function () {
-	  var value=$("#haor-sort").children(":selected").attr("data-url");
+	  
     var form = $(this);
     $.ajax({
       url: form.attr("action"),
@@ -616,10 +617,10 @@ $.ajax({
 
 }
 /***Contact CRUD operations fuction ***/
-var saveContactAddForm =function ()
-{
-console.log("Sucessfuuly Triggered Contact Saviags.....")
-var form = $(this);	
+
+var saveContactAddForm = function () {
+	  
+    var form = $(this);
     $.ajax({
       url: form.attr("action"),
       data: form.serialize(),
@@ -627,25 +628,22 @@ var form = $(this);
       dataType: 'json',
       success: function (data) {
         if (data.form_is_valid) {
-		  console.log("Contact is Valid");          
-          $("#modal-ivt").modal("hide");		  
-		 
-		 
-		  
-		  
-		  
+		  console.log("Intervention data is Valid")
+          $("#ivt-table tbody").html(data.html_ivt_list);
+          $("#modal-ivt").modal("hide");
+		  console.log("restoring previous view of the table")
+		  /*updateTable(value);*/
 		  
         }
         else {
-		  console.log("Contact data is InValid")
+		  console.log("Intervention data is InValid")
           $("#modal-ivt .modal-content").html(data.html_form);
         }
       }
     });
-	
-	
-}
-
+    return false;
+  };
+  
 /*binding*/
 /*$(".js-haor-sort").change(function(){alert( $(this).find(":selected").val() );})*/
 //$(".js-fy-select").change(sort_by_haor)
@@ -665,6 +663,15 @@ $(".js-sort-all").click(gaugeTimeSelect)
 $(".js-report").click(generateReport3)
 $(".js-send-email").click(sendEmail)
 /**Contact CRUD opearatios Fuction Binding**/
+/*ADD Contact */
 $(".js-add-contact").click(loadForm)
 $("#modal-ivt").on("submit",".js-contact-add-form",saveContactAddForm)
+/*Update Contact*/
+$("#ivt-table").on("click", ".js-contact-update-button", loadForm);
+$("#modal-ivt").on("submit",".js-contact-update-form",saveContactAddForm)
+/*Delete Contact */
+$("#ivt-table").on("click", ".js-contact-delete-button", loadForm);
+$("#modal-ivt").on("submit",".js-contact-delete-form",saveContactAddForm)
+//js-update-contact
+//js-contact-update-form
 });

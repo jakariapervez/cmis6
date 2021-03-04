@@ -200,7 +200,7 @@ def communicationListIndex(request):
 
 
 from .forms import contactAddForm
-from .auxilaryquery import addContactFormSave
+
 
 
 def communicationListAddContact(request):
@@ -211,7 +211,7 @@ def communicationListAddContact(request):
     if request.method == "POST":
         print("I am in post request .................")
         form = contactAddForm(request.POST)
-
+        ##data['html_form'] = form
         if form.is_valid:
             user = request.user
             uid = user.pk
@@ -228,27 +228,72 @@ def communicationListAddContact(request):
             context = {'contacts': contacts}
             mytable = render_to_string('wldata/includes/gauges/partial_contact_list.html', context)
             data['form_is_valid'] = True
-            data['contact_list'] = mytable
+            data['html_ivt_list'] = mytable
         else:
-            data['html_form'] = form
+
             data['form_is_valid'] = False
 
 
     else:
         print("I am in get request .................")
-        context = {'form': form, }
-        data = dict()
+        context = {'form': form, }         
         data['html_form'] = render_to_string('wldata/includes/gauges/contact_add_form.html', context, request=request)
+        print(data['html_form'])
 
     return JsonResponse(data)
 
 
+
 def communicationListEditContact(request, pk):
-    pass
+    data = dict()
+    user = request.user
+    uid = user.pk
+    mycontact = get_object_or_404(communicationList, pk=pk)
+    form=contactAddForm(instance=mycontact)
+    if request.method=='POST':
+        form = contactAddForm(request.POST)
+        if form.is_valid:
+            cname = request.POST['person_designation']
+            cemail = request.POST['person_email']
+            cmobile = request.POST['person_mobile']
+            mycontact.person_designation=cname
+            mycontact.person_email=cemail
+            mycontact.person_mobile=cmobile
+            mycontact.save()
+            contacts = communicationList.objects.filter(added_by=uid)
+            context = {'contacts': contacts}
+            mytable = render_to_string('wldata/includes/gauges/partial_contact_list.html', context)
+            data['form_is_valid'] = True
+            data['html_ivt_list'] = mytable
+        else:
+            data['form_is_valid'] = False
+
+    else:
+        print("I am in get request of edit contact......")
+        context={'form':form,}
+        data['html_form']=render_to_string('wldata/includes/gauges/contact_update_form.html', context, request=request)
+    return JsonResponse(data)
 
 
 def communicationListDeleteContact(request, pk):
-    pass
+    data = dict()
+    user = request.user
+    uid = user.pk
+    mycontact= get_object_or_404(communicationList, pk=pk)
+    form = contactAddForm(instance=mycontact)
+    if request.method == 'POST':
+        mycontact.delete()
+        data['form_is_valid'] = True
+        contacts = communicationList.objects.filter(added_by=uid)
+        context = {'contacts': contacts}
+        mytable = render_to_string('wldata/includes/gauges/partial_contact_list.html', context)
+        data['form_is_valid'] = True
+        data['html_ivt_list'] = mytable
+    else:
+        context = {'form': form, }
+        data['html_form'] = render_to_string('wldata/includes/gauges/contact_delete_form.html', context, request=request)
+    return JsonResponse(data)
+
 
 
 def wl_Logiut(request):

@@ -1,4 +1,4 @@
-     <tbody>
+     
 	 {% for cont in contacts %}
     
 			<tr>
@@ -7,7 +7,7 @@
 			  <td>{{cont.person_mobile}}</td>
 			  <td>
 					  <button type="button"
-							  class="btn btn-warning btn-sm js-update-contact"
+							  class="btn btn-warning btn-sm js-contact-update-button"
 							data-url="{% url 'communication_list_edit_contact' pk=cont.id %}">				
 							 
 						 Edit
@@ -15,7 +15,7 @@
 				</td>
 				<td >
 					  <button type="button"
-							  class="btn btn-warning btn-sm js-delete-contact"
+							  class="btn btn-warning btn-sm js-contact-delete-button"
 							data-url="{% url 'communication_list_delete_contact' pk=cont.id %}">			
 							 
 						Delete
@@ -31,5 +31,5 @@
 				<td colspan="7" class="text-center bg-warning">No Expenditure Item</td>
 			</tr>
     {% endfor %}
-  <tbody>
+  
 
