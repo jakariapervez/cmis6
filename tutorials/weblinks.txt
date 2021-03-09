@@ -1,1 +1,2 @@
 https://www.geeksforgeeks.org/how-to-use-bootstrap-select-for-dropdown/       #weblink for html select
+https://stackoverflow.com/questions/3584145/how-to-change-the-text-of-a-label  #changing label in jquery

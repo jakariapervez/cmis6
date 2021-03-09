@@ -3,8 +3,8 @@ from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from .models import SMS_info, GaugeLocation
 from django.template.loader import render_to_string
-
-
+import logging
+logger=logging.getLogger('django')
 # Create your views here.
 def wl_index(request):
     sms_items = SMS_info.objects.all()
@@ -25,10 +25,17 @@ def data_collect_view(request):
 
     # return redirect('wl_index')
 
-
+from .models import DivisionNames
 def displayData(request):
-    sms_items = SMS_info.objects.all()
-    gauges = GaugeLocation.objects.all()
+    logger.info("I am in Display Message")
+    user = request.user
+    uid = user.pk
+    mydivision=get_object_or_404(DivisionNames,division_user_id =uid)
+
+    sms_items = SMS_info.objects.filter()
+    #gauges = GaugeLocation.objects.all()
+    gauges = GaugeLocation.objects.filter(division_name=mydivision)
+
     for g in gauges:
         print(g.gauge_code)
 
@@ -177,12 +184,14 @@ def sendWLByEmail(request):
     message = "Attached herewith "
     sender = mysettings.EMAIL_HOST_USER
     reciepients=getRecipients(uid)
+    no_of_recipients=len(reciepients)
 
     #reciepients = ["jakariapervez@gmail.com", "sarfarazbanda48@yahoo.com", "skkader404@gmail.com"]
     # send_mail(subject=sub,message=message,from_email=mysettings.EMAIL_HOST_USER,recipient_list=reciepients,fail_silently=False)
     draft_email = EmailMessage(sub, message, sender, reciepients)
     draft_email.attach("wl.pdf", myreport)
     draft_email.send()
+    data['no_of_recipients']= no_of_recipients
     return JsonResponse(data)
 
 

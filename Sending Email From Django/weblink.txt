@@ -1,3 +1,11 @@
 https://data-flair.training/blogs/django-send-email/     #settingup environment
 https://stackoverflow.com/questions/46567889/django-attach-pdf-generated-by-a-view-to-an-email    #attaching pdf file
 https://stackoverflow.com/questions/15044778/how-to-get-user-id-from-auth-user-table-in-django   #retrieving user.pk
+https://vitorfs.com/                                             #Vitor Freitas simple is better than complex
+https://codingwithmitch.com/courses/building-a-website-django-python/        #coding with mitch django tutorial
+Django Password Reset Tutorial                                               #django password reset
+https://stackoverflow.com/questions/3584145/how-to-change-the-text-of-a-label  #changing label in jquery
+https://www.youtube.com/watch?v=ziegOuE7M4A                                    #django logging tutorial
+https://www.youtube.com/watch?v=-vVml7cpWzY                                    #django logging tutorial
+https://data-flair.training/blogs/django-logging/                              #django logging tutorial 
+https://devtutorial.io/how-to-manage-file-permissions-on-ubuntu-server-20-04.html #how to  give write permission in linux

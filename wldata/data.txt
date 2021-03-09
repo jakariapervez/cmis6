@@ -1,5 +1,5 @@
 year:2021
 month:03
-gaugeid:SW172.5
-max_val:6.7
-min_val:2.5
+gaugeid:SW251
+max_val:11.6
+min_val:9.7

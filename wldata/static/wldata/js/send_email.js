@@ -598,13 +598,15 @@ $.ajax({
 	  data:{'hour':hour},
 	  beforeSend: function () {
 		console.log("Sending Ajax request for data disemmination by email.."+hour);
+		//$(".js-no-emails").html("")
+		$(".js-no-emails").text("")
 		//console.log(data)
 		//$("#ivt-table tbody").html("");
         
       },
       success: function (data) {
 		  console.log("sucessfully returned from ajax after sending email........");
-		  
+		  $(".js-no-emails").text(data.no_of_recipients)
          //$("#ivt-table tbody").html(data.gauge_readings);
 
 		  

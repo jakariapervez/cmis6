@@ -26,7 +26,7 @@ def siteHome(request):
     elif(user.profile.role.role_name == "HYDROLOGY"):
         return redirect(wl_imported_view.wl_index)
         wl_imported_view
-        pass
+
     else:
         return HttpResponse("This Page is under Construction")
 def progressHome(request):

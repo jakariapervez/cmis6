@@ -4,3 +4,5 @@ load.inputMonthlyWL()
 load.getTodaysData()
 load.getFiveDaysData()
 load.retrieveUserID()
+exit()
+python manage.py runserver

@@ -10,5 +10,13 @@ email:xen.pmu.ceip1@gmail.com
 uid:sexen
 pwd:bwdb_haor_1234
 email:xen.pmu.ceip1@gmail.com
+################################Sylhet Exen##################################################
+uid:xen_syl
+pwd:abcd_1234
+email:shohid3003@gmail.com
+################################XEN SWPB##################################################
+uid:xen_swpb
+pwd:abcd_1234
+email:swpb.bwdb@gmail.com
 
 
