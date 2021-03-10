@@ -1,0 +1,8 @@
+python manage.py shell
+from pac import load
+load.createLivelihoodExpenditure()
+load.getTodaysData()
+load.getFiveDaysData()
+load.retrieveUserID()
+exit()
+python manage.py runserver
