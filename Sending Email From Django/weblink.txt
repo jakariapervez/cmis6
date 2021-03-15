@@ -9,3 +9,4 @@ https://www.youtube.com/watch?v=ziegOuE7M4A                                    #
 https://www.youtube.com/watch?v=-vVml7cpWzY                                    #django logging tutorial
 https://data-flair.training/blogs/django-logging/                              #django logging tutorial 
 https://devtutorial.io/how-to-manage-file-permissions-on-ubuntu-server-20-04.html #how to  give write permission in linux
+https://stackoverflow.com/questions/9304908/how-can-i-filter-a-django-query-with-a-list-of-values #how to filter using list in django

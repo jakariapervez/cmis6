@@ -1,157 +1,353 @@
 sl,Training Detail,InvoiceNo,Batch Date,GOB,RPA,Catagory
-2,"Kishoreganj-1, Habiganj-1, Netrokona-1 (Batch 1-3)",LIVEHOOD-2,2016-09-26,25834,173696,LT
-3,"Kishoreganj-4,5",LIVEHOOD-3,2016-10-03,26980,199624,APSS
-4,"Kishoreganj-6,7",LIVEHOOD-4,2016-10-06,29548,197033,APSS
-5,"Kishoreganj-8,9",LIVEHOOD-5,2016-10-13,25246,199322,APSS
-6,"Kishoreganj-10,11",LIVEHOOD-6,2016-10-17,24933,199589,APSS
-7,"Kishoreganj-12,13",LIVEHOOD-7,2016-10-20,25670,199590,APSS
-8,"Kishoreganj-14,15",LIVEHOOD-8,2016-10-24,21778,199469,APSS
-9,"Kishoreganj-16,17",LIVEHOOD-9,2016-10-25,25835,199990,APSS
-10,"Kishoreganj-18,19",LIVEHOOD-10,2016-10-31,25933,199861,APSS
-11,"Kishoreganj-20,21",LIVEHOOD-11,2016-11-02,25726,199263,APSS
-12,Kishoreganj_Demo_Vegetable_01,LIVEHOOD-12,2016-11-06,38953,199760,SIGS
-13,"Kishoreganj-22,23",LIVEHOOD-13,2016-11-09,25966,199654,APSS
-14,"Kishoreganj-24,25",LIVEHOOD-14,2016-11-10,25831,199266,APSS
-15,Kishoreganj_Demo_Major Crop_01,LIVEHOOD-15,2016-11-13,39000,200000,APSS
-16,"Kishoreganj-26,27",LIVEHOOD-16,2016-11-14,25348,199165,APSS
-17,"Kishoreganj-28,29",LIVEHOOD-17,2016-11-16,25003,196165,APSS
-18,Kishoreganj_Demo_Major Crop_02,LIVEHOOD-18,2016-11-17,39000,200000,APSS
-19,"Kishoreganj-30,31",LIVEHOOD-19,2016-11-22,25154,197046,APSS
-20,"Kishoreganj-32,33",LIVEHOOD-20,2016-11-24,25154,197046,APSS
-21,Kishoreganj_Demo_Major Crop_03,LIVEHOOD-21,2016-11-27,39000,200000,APSS
-22,"Kishoreganj-34,35",LIVEHOOD-22,2016-11-29,25154,194246,APSS
-23,Kishoreganj_Demo_Major Crop_04,LIVEHOOD-23,2016-11-30,39000,200000,APSS
-24,"Kishoreganj-36,37",LIVEHOOD-24,2016-12-01,25154,196346,APSS
-25,"Kishoreganj-38,39",LIVEHOOD-25,2016-06-12,25270,198606,APSS
-26,"Kishoreganj-40,41",LIVEHOOD-26,2016-08-12,25665,197206,APSS
-27,Ducks and its feed supply-01,LIVEHOOD-27,2016-11-12,38991,199950,SIGS
-28,Croup Cultivation Batch-02,LIVEHOOD-28,2016-12-14,28981,198520,APSS
-29,"Kishoreganj-42,43",LIVEHOOD-29,2016-12-15,25651,199226,APSS
-30,Peramedical/Betenary-01,LIVEHOOD-30,2016-12-18,27939,197295,APSS
-31,Ducks and its feed supply-02,LIVEHOOD-31,2016-12-19,38991,199950,SIGS
-32,"Kishoreganj-44,45",LIVEHOOD-32,2016-12-20,25317,199984,APSS
-33,Nursery & Seed-01,LIVEHOOD-33,2016-12-21,27770,195667,APSS
-34,"Kishoreganj-46,47",LIVEHOOD-34,2016-12-22,25316,199985,APSS
-35,Sewing Machine & other-01,LIVEHOOD-35,2016-12-26,29439,195419,SIGS
-36,Ducks and its feed supply-03,LIVEHOOD-36,2016-12-27,39000,200000,SIGS
-37,Sewing Mahine & others-02,LIVEHOOD-37,2016-12-28,28439,191459,SIGS
-38,"Kishoreganj-48,49",LIVEHOOD-38,2016-12-29,25414,198405,APSS
-39,Sewing Mahine & others-03,LIVEHOOD-39,2017-01-01,28709,191190,SIGS
-40,Ducks and its feed supply-04,LIVEHOOD-40,2017-01-02,39000,200000,SIGS
-41,"Kishoreganj-50,51",LIVEHOOD-41,2017-01-03,25627,198640,APSS
-42,Fertilizer-05,LIVEHOOD-42,2017-01-04,19343,199928,APSS
-43,"Kishoreganj-52,53",LIVEHOOD-43,2017-01-05,25558,198639,APSS
-44,Duck and its feed supply-5,LIVEHOOD-44,2017-01-08,19350,200000,SIGS
-45,Duck and its feed supply-6,LIVEHOOD-45,2017-01-09,19150,200000,SIGS
-46,"Kishoreganj-54,55",LIVEHOOD-46,2017-01-10,25398,196500,APSS
-47,Duck & feeds Supply-7,LIVEHOOD-47,2017-01-11,19150,200000,SIGS
-48,"Kishoreganj-56,57",LIVEHOOD-48,2017-01-12,25558,198639,APSS
-49,Duck & feeds Supply-8,LIVEHOOD-49,2017-01-15,19141,199899,SIGS
-50,Goat (Black Bengal) Supply-1 ,LIVEHOOD-50,2017-01-16,19200,200000,SIGS
-51,Fertilizer-06,LIVEHOOD-51,2017-01-17,19149,199983,APSS
-52,"Kishoreganj-58,59",LIVEHOOD-52,2017-01-18,25627,197939,APSS
-53,"Kishoreganj-60,61",LIVEHOOD-53,2017-01-19,25627,197939,APSS
-54,Improvement Cooking -01,LIVEHOOD-54,2017-01-22,18998,199980,SIGS
-55,Goat (Black Bengal) Supply-2,LIVEHOOD-55,2017-01-23,19200,200000,SIGS
-56,Goat (Black Bengal) Supply-3,LIVEHOOD-56,2017-01-24,19200,200000,SIGS
-57,"Kishoreganj-62,63",LIVEHOOD-57,2017-01-25,25627,197939,APSS
-58,"Kishoreganj-64,65",LIVEHOOD-58,2017-01-26,25627,198639,APSS
-59,Goat (Black Bengal) Supply-4,LIVEHOOD-59,2017-01-29,19200,200000,SIGS
-60,Improvement Cooking -02,LIVEHOOD-60,2017-01-30,19000,200000,SIGS
-61,"Kishoreganj-66,67",LIVEHOOD-61,2017-01-31,25627,198639,APSS
-62,Supply of Solar -01,LIVEHOOD-62,2017-02-01,18941,199380,SIGS
-63,"Kishoreganj-68,69",LIVEHOOD-63,2017-02-01,25618,199990,APSS
-64,Goat (Black Bengal) Supply-5,LIVEHOOD-64,2017-02-02,19200,200000,SIGS
-65,Supply of Solar -02,LIVEHOOD-65,2017-02-06,18941,199380,SIGS
-66,"Kishoreganj-70,71",LIVEHOOD-66,2017-02-07,25620,199299,APSS
-67,Goat (Black Bengal) Supply-6,LIVEHOOD-67,2017-02-08,19200,200000,SIGS
-68,"Kishoreganj-72,73",LIVEHOOD-68,2017-02-09,25620,199300,APSS
-69,Sewing Mahine & others-04,LIVEHOOD-69,2017-02-12,32671,198199,SIGS
-70,"Habiganj-1, Paramadical Vatena-2",LIVEHOOD-70,2017-02-12,18003,144049,APSS
-71,Sewing Mahine & others-04,LIVEHOOD-71,2017-02-14,38507,197469,SIGS
-72,Kishoreganj-74-75,LIVEHOOD-72,2017-02-15,25627,199340,APSS
-73,Kishoreganj-76-77,LIVEHOOD-73,2017-02-16,25620,200000,APSS
-74,Goat (Black Bengal) Supply-7,LIVEHOOD-74,2017-02-19,19200,200000,SIGS
-75,Supply of Solar -03,LIVEHOOD-75,2017-02-20,38356,196700,SIGS
-76,Seeds & Fertilizer,LIVEHOOD-76,2017-02-22,38903,199500,APSS
-77,Kishoreganj 78-79,LIVEHOOD-77,2017-02-23,25620,199999,APSS
-78,Supply of Solar -04,LIVEHOOD-78,2017-02-26,38357,196699,SIGS
-79,Supply of Solar -05,LIVEHOOD-79,2017-02-27,38357,196700,SIGS
-80,Kishoreganj 80-81,LIVEHOOD-80,2017-02-28,25620,199300,APSS
-81,Supply of Solar -06,LIVEHOOD-81,2017-03-01,38357,196699,SIGS
-82,Kishoreganj 82-83,LIVEHOOD-82,2017-03-02,25620,199299,APSS
-83,"Swing Mechin, Batch-2©",LIVEHOOD-83,2017-03-05,26794,197969,SIGS
-84,Supply of Solar -07,LIVEHOOD-84,2017-03-06,38357,196699,SIGS
-85,Kishoreganj-84-85,LIVEHOOD-85,2017-03-07,25620,199999,APSS
-86,"Swing Mechin, Batch-2©, BRRI",LIVEHOOD-86,2017-03-08,17694,179279,SIGS
-87,Supply of Goat,LIVEHOOD-87,2017-03-08,19200,200000,SIGS
-88,Kishoreganj86-87,LIVEHOOD-88,2017-03-09,25620,199299,APSS
-89,BIRD/Smmar Seeds & Duck Feed,LIVEHOOD-89,2017-03-13,31256,195769,APSS
-90,Kishoreganj 88-89,LIVEHOOD-90,2017-03-14,25620,199299,APSS
-91,"Supply of Goat, Batch-9",LIVEHOOD-91,2017-03-15,19200,200000,SIGS
-92,Kishoreganj 90-91,LIVEHOOD-92,2017-03-16,25620,199299,APSS
-93,Fruits & Sepling,LIVEHOOD-93,2017-03-16,35980,199884,SIGS
-94,(T Amon) BRRI,LIVEHOOD-94,2017-03-17,38979,199889,APSS
-95,Kishoreganj 92-93,LIVEHOOD-95,2017-03-17,25580,198939,APSS
-96,"Supply of Goat, Batch-10",LIVEHOOD-96,2017-03-22,19200,200000,SIGS
-97,Kishoreganj 94-95,LIVEHOOD-97,2017-03-23,25580,198939,APSS
-98,"Swing Mechin, Batch-3",LIVEHOOD-98,2017-03-27,31210,196379,SIGS
-99,Kirshoreganj Farmers 96-97,LIVEHOOD-99,2017-03-28,25580,199639,APSS
-100,"Supply of Goat, Batch-11",LIVEHOOD-100,2017-03-29,19200,200000,SIGS
-101,Kirshoreganj Farmers 98-99,LIVEHOOD-101,2017-03-30,25580,199639,APSS
-102,"Supply of Goat, Batch-12",LIVEHOOD-102,2017-04-02,19200,200000,SIGS
-103,"Supply of Solar, Batch-8",LIVEHOOD-103,2017-04-03,38357,196699,SIGS
-104,Kirshoreganj Farmers 100-101,LIVEHOOD-104,2017-04-04,25540,199279,APSS
-105,"Swing Mechin & Insecticides, B-3",LIVEHOOD-105,2017-04-05,27546,191185,SIGS
-106,Kirshoreganj Farmers 102-103,LIVEHOOD-106,2017-04-06,25540,199279,APSS
-107,"Swing Mechin, Batch-3",LIVEHOOD-107,2017-04-09,31389,196859,SIGS
-108,"Supply of Duck, Batch-9",LIVEHOOD-108,2017-04-10,19350,200000,SIGS
-109,Kirshoreganj Farmers 104-105,LIVEHOOD-109,2017-04-11,25540,198579,APSS
-110,"Swing Mechin, Batch-3",LIVEHOOD-110,2017-04-12,27263,191405,SIGS
-111,Kirshoreganj Farmers 106-107,LIVEHOOD-111,2017-04-13,25540,198579,APSS
-112,T-Aman +Fertilizer,LIVEHOOD-112,2017-04-16,38987,199929,APSS
-113,"Supply of Goat, Batch-13",LIVEHOOD-113,2017-04-17,19200,200000,SIGS
-114,Kirshoreganj Farmers 108-109,LIVEHOOD-114,2017-04-18,25540,198580,APSS
-115,WMG Members Training,LIVEHOOD-115,2017-04-19,22219,197720,SIGS
-116,Farmers Training 110-111,LIVEHOOD-116,2017-04-20,25540,199280,APSS
-117,T-Aman +Fertilizer,LIVEHOOD-117,2017-04-23,38991,199955,APSS
-118,T-Aman +Fertilizer,LIVEHOOD-118,2017-04-24,38991,199955,APSS
-119,Farmers Training 113-114,LIVEHOOD-119,2017-04-25,25540,199280,APSS
-120,WMG Members Training 17-18,LIVEHOOD-120,2017-04-26,25109,197040,LT
-121,Farmers Training 115-116,LIVEHOOD-121,2017-04-27,25540,199280,APSS
-122,"Swing Mechin, Batch-4",LIVEHOOD-122,2017-04-30,32502,200000,SIGS
-123,"Swing Mechin, Batch-5, TOT(IFM+FFS)",LIVEHOOD-123,2017-05-02,30298,193549,APSS
-124,WMG Training (Batch 121),LIVEHOOD-124,2017-05-04,12555,98519,LT
-125,Farmers Training (Batch 119-120),LIVEHOOD-125,2017-05-04,25540,199280,APSS
-126,TOT for IFM(FFS)-1st Bill,LIVEHOOD-126,2017-05-07,23240,186459,APSS
-127,Farmers Training (Batch 123-124),LIVEHOOD-127,2017-05-09,25540,199279,APSS
-128,TOT for IFM(FFS) -2nd Bill,LIVEHOOD-128,2017-05-09,24834,194740,APSS
-129,Farmers Training (Batch 125-126),LIVEHOOD-129,2017-05-11,25540,199280,APSS
-130,WMG Training (Batch 127-128),LIVEHOOD-130,2017-05-11,25109,197040,LT
-131,TOT for IFM(FFS) -3rd Bill,LIVEHOOD-131,2017-05-14,21164,198689,APSS
-132,TOT for IFM(FFS) -4th Bill,LIVEHOOD-132,2017-05-14,25692,199709,APSS
-133,Farmers Training (Batch 129-130),LIVEHOOD-133,2017-05-16,25540,199280,APSS
-134,TOT for IFM(FFS) -5th Bill,LIVEHOOD-134,2017-05-17,20962,197839,APSS
-135,Farmers Training (Batch 131-132),LIVEHOOD-135,2017-05-18,25540,199280,APSS
-136,TOT for IFM(FFS) -6th Bill,LIVEHOOD-136,2017-05-21,21219,198690,APSS
-137,TOT for IFM(FFS) -7th Bill,LIVEHOOD-137,2017-05-23,20246,193689,APSS
-138,Farmers Training (Batch 133-134),LIVEHOOD-138,2017-05-23,25540,199279,APSS
-139,TOT for IFM(FFS) -8th Bill,LIVEHOOD-139,2017-05-25,23563,195060,APSS
-140,Farmers Training (Batch 135-136),LIVEHOOD-140,2017-05-25,25540,199280,APSS
-141,"Swing Mechin, Batch-6,",LIVEHOOD-141,2017-05-28,32502,200000,SIGS
-142,"Swing Machine , BORO Seed",LIVEHOOD-142,2017-05-29,31281,198589,SIGS
-143,Farmers Batch 137-138,LIVEHOOD-143,2017-05-30,25500,198920,APSS
-144,Farmers Training 139-140,LIVEHOOD-144,2017-06-01,25500,198920,APSS
-145,WMG + BORO Seed- 141,LIVEHOOD-145,2017-06-01,31945,197960,LT
-146,Farmers Training 142-143,LIVEHOOD-146,2017-06-06,25500,198920,APSS
-147,Farmers Training 144-145,LIVEHOOD-147,2017-06-08,25500,198920,APSS
-148,WMG Training 146-147,LIVEHOOD-148,2017-06-08,25109,197040,LT
-149,Farmers Training 148-149,LIVEHOOD-149,2017-06-13,25500,198920,APSS
-150,Farmers Training 150-151,LIVEHOOD-150,2017-06-15,25500,198920,APSS
-151,WMG Training 152-153,LIVEHOOD-151,2017-06-15,25109,197040,LT
-152,Farmers Training 154-155,LIVEHOOD-152,2017-06-18,25500,198920,APSS
-153,Farmers Training 156-157,LIVEHOOD-153,2017-06-20,25500,198920,APSS
-154,WMG training 158-159,LIVEHOOD-154,2017-06-20,25109,197040,LT
-155,Bags LT,LIVEHOOD-154,2017-06-20,133103,1530625,LT
-156,Bags APSS,LIVEHOOD-154,2017-06-20,81786,940504,APSS
-157,Bags SIGS,LIVEHOOD-154,2017-06-20,197268,2268500,SIGS
+1,"Advance (2,00,000.00)",LIVELIHOOD-1,2017-08-27,0,0,APSS
+2,Fartilizer (T. Amon - 01),LIVELIHOOD-2,2017-08-28,19260,199580,APSS
+3,Farmers Training Programe specially for agricultural promotion (01-02),LIVELIHOOD-3,2017-08-29,25547,199319,APSS
+4,Fartilizer (T. Amon - 02),LIVELIHOOD-4,2017-08-30,19296,199949,APSS
+5,Farmers Training Programe specially for agricultural promotion (03-04),LIVELIHOOD-5,2017-08-31,25547,199320,APSS
+6,Farmers Training Programe specially for agricultural promotion (05-06),LIVELIHOOD-6,2017-09-07,25547,199320,APSS
+7,Fruits Supling (Batch-1),LIVELIHOOD-7,2017-09-11,29989,199925,APSS
+8,Farmers Training Programe specially for agricultural promotion (07-08),LIVELIHOOD-8,2017-09-12,25547,199320,APSS
+9,Farmers Training Programe specially for agricultural promotion (09-10),LIVELIHOOD-9,2017-09-14,25547,198720,APSS
+10,Farmers Training Programe specially for agricultural promotion (11-12),LIVELIHOOD-10,2017-09-19,25487,198780,APSS
+11,Farmers Training Programe specially for agricultural promotion (13-14),LIVELIHOOD-11,2017-09-21,25487,198780,APSS
+12,"Swing Machine, Training & Support service scheme Batch-01 (Part A) ",LIVELIHOOD-12,2017-09-21,29607,197890,SIGS
+13,"Swing Machine, Training & Support service scheme Batch-01 (Part B)",LIVELIHOOD-13,2017-09-24,29607,197890,SIGS
+14,"Swing Machine, Training & Support service scheme Batch-01 (Part C)",LIVELIHOOD-14,2017-09-25,29048,189620,SIGS
+15,Farmers Training Programe specially for agricultural promotion (15-16),LIVELIHOOD-15,2017-09-26,22793,198780,APSS
+16,Goat Rearing (Black Bengal),LIVELIHOOD-16,2017-09-27,19200,200000,SIGS
+17,WMG member training for strenthening of WMG (Batch-1-2),LIVELIHOOD-17,2017-09-28,21077,199912,LT
+18,Farmers Training Programe specially for agricultural promotion (17-18),LIVELIHOOD-18,2017-09-28,22793,198780,APSS
+19,Livestock Batch-01 & Ducks Batch-01,LIVELIHOOD-19,2017-10-02,31438,196870,SIGS
+20,Farmers Training Programe specially for agricultural promotion (19-20),LIVELIHOOD-20,2017-10-03,23095,198960,APSS
+21,"Swing Machine, Training & Support service scheme Batch-2, Part-A",LIVELIHOOD-21,2017-10-03,17834,199469,SIGS
+22,"Swing Machine, Training & Support service scheme Batch-2, Part-B",LIVELIHOOD-22,2017-10-04,18479,140895,SIGS
+23,Goat Rearing (Black Bengal) Batch-2,LIVELIHOOD-23,2017-10-04,19200,200000,SIGS
+24,Farmers Training Programe specially for agricultural promotion (21-22),LIVELIHOOD-24,2017-10-05,22895,199100,APSS
+25,Duck Rearing (Batch-02),LIVELIHOOD-25,2017-10-08,38805,199000,SIGS
+26,Fruits Suplings (Batch-2),LIVELIHOOD-26,2017-10-09,29989,199925,SIGS
+27,Farmers Training Programe specially for agricultural promotion (23-24),LIVELIHOOD-27,2017-10-10,23095,198660,APSS
+28,Duck Rearing (Batch-03),LIVELIHOOD-28,2017-10-11,38805,199000,SIGS
+29,Fruits Suplings (Batch-3),LIVELIHOOD-29,2017-10-11,29989,199925,SIGS
+30,Farmers Training Programe specially for agricultural promotion (25-26),LIVELIHOOD-30,2017-10-12,23095,198960,APSS
+31,WMG member training for strenthening of WMG (Batch-3-4),LIVELIHOOD-31,2017-10-12,21077,198912,LT
+32,Small Scale Vegetable (Batch-1),LIVELIHOOD-32,2017-10-15,38815,199050,SIGS
+33,Home-Stead vegetable (Batch-1),LIVELIHOOD-33,2017-10-15,38906,199520,SIGS
+34,Goat Rearing (Black Bengal) Batch-3,LIVELIHOOD-34,2017-10-16,19200,200000,SIGS
+35,Farmers Training Programe specially for agricultural promotion (27-28),LIVELIHOOD-35,2017-10-17,23095,198260,APSS
+36,Duck Rearing (Batch-04),LIVELIHOOD-36,2017-10-18,38805,199000,SIGS
+37,Farmers Training Programe specially for agricultural promotion (29-30),LIVELIHOOD-37,2017-10-19,23115,199140,APSS
+38,WMG member training for strenthening of WMG (Batch 5-6),LIVELIHOOD-38,2017-10-19,19801,196352,LT
+39,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School) 01 ,LIVELIHOOD-39,2017-10-22,12622,199780,APSS
+40,IFM-FFS - Bill noTOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School,LIVELIHOOD-40,2017-10-23,24796,199800,APSS
+41,Duck Rearing  (Batch-05),LIVELIHOOD-41,2017-10-23,38805,199000,SIGS
+42,Goats Rearing Bill no-04,LIVELIHOOD-42,2017-10-24,19200,200000,SIGS
+43,Farmers Training Programe specially for agricultural promotion (31-32),LIVELIHOOD-43,2017-10-24,23095,198960,APSS
+44,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-03 ,LIVELIHOOD-44,2017-10-25,18318,197900,APSS
+45,Farmers Training Programe specially for agricultural promotion (33-34),LIVELIHOOD-45,2017-10-26,23095,198960,APSS
+46,WMG member training for strenthening of WMG(Batch 7-8),LIVELIHOOD-46,2017-10-26,20905,198912,LT
+47,Goats Rearing Bill no-05,LIVELIHOOD-47,2017-10-29,19200,200000,SIGS
+48,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-04,LIVELIHOOD-48,2017-10-29,17519,194540,APSS
+49,Duck Rearing (Batch-06),LIVELIHOOD-49,2017-10-30,38805,199000,SIGS
+50,Small Scale Vegetable (Batch-2,LIVELIHOOD-50,2017-10-30,38903,199500,SIGS
+51,Farmers Training Programe specially for agricultural promotion (35-36),LIVELIHOOD-51,2017-10-31,23095,198960,APSS
+52,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-05,LIVELIHOOD-52,2017-11-01,29180,198500,APSS
+53,Farmers Training Programe specially for agricultural promotion (37-38),LIVELIHOOD-53,2017-11-02,23095,198960,APSS
+54,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-06,LIVELIHOOD-54,2017-11-05,23822,192760,APSS
+55,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-07,LIVELIHOOD-55,2017-05-11,22249,195060,APSS
+56,"Seed (Potato, Maise, Mustered) Batch-1",LIVELIHOOD-56,2017-11-06,16000,199996,APSS
+57,Farmers Training Programe specially for agricultural promotion (39-40),LIVELIHOOD-57,2017-11-07,23115,199140,APSS
+58,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-08),LIVELIHOOD-58,2017-11-08,23171,196920,APSS
+59,"Seed (Potato, Maise, Mustered) Batch-2",LIVELIHOOD-59,2017-11-08,35990,199944,APSS
+60,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-09,LIVELIHOOD-60,2017-11-09,23818,158640,APSS
+61,Farmers Training Programe specially for agricultural promotion (41-42),LIVELIHOOD-61,2017-11-09,23115,199140,APSS
+62,Poultry and Livestock Rearing -  Batch 02-03,LIVELIHOOD-62,2017-11-09,25581,197120,APSS
+63,"Swing Machine, Training & Support service scheme Batch-3 Part- A",LIVELIHOOD-63,2017-11-12,25852,195960,SIGS
+64,"Swing Machine, Training & Support service scheme Batch-3 Part- B",LIVELIHOOD-64,2017-11-13,15893,180929,SIGS
+65,"Swing Machine, Training & Support service scheme Batch-3 Part- C",LIVELIHOOD-65,2017-11-13,15863,197060,SIGS
+66,Fertilizer for Non Rice(Potato) Batch-1,LIVELIHOOD-66,2017-11-14,19111,199588,APSS
+67,Farmers Training Programe specially for agricultural promotion (43-44),LIVELIHOOD-67,2017-11-14,23095,198960,APSS
+68,Farmers Training Programe specially for agricultural promotion (45-46),LIVELIHOOD-68,2017-11-16,23095,198960,APSS
+69,"Homestate Vegetable Cultivision 
+Batch-01",LIVELIHOOD-69,2017-11-19,22895,197160,SIGS
+70,"Swing Machine, Training & Support service scheme ,Batch-4,Part-A",LIVELIHOOD-70,2017-11-21,23595,197989,SIGS
+71,"Fertilizer for Non Rice(Potato,Maize) Batch-2",LIVELIHOOD-71,2017-11-21,19177,199760,APSS
+72,"Swing Machine, Training & Support service scheme ,Batch-4,Part-B",LIVELIHOOD-72,2017-11-22,11990,189020,SIGS
+73,"Swing Machine, Training & Support service scheme ,Batch-4,Part-C",LIVELIHOOD-73,2017-11-23,18416,192369,SIGS
+74,"Farmer Field School(FFS) establishment, Batch-1",LIVELIHOOD-74,2017-11-26,17182,196649,APSS
+75,"Farmer Field School(FFS) establishment,, Batch-2",LIVELIHOOD-75,2017-11-26,17182,196649,APSS
+76,"Farmer Field School(FFS) establishment, Batch-3",LIVELIHOOD-76,2017-11-28,17182,196649,APSS
+77,"Farmer Field School(FFS) establishment,, Batch-4",LIVELIHOOD-77,2017-11-28,17182,196649,APSS
+78,"Farmer Field School(FFS) establishment, Batch-5",LIVELIHOOD-78,2017-11-28,17182,196649,APSS
+79,"Fertilizer & Seed for Non Rice(Potato,Maize) Batch-3",LIVELIHOOD-79,2017-11-30,35996,199980,APSS
+80,Goats Rearing Bill no-06,LIVELIHOOD-80,2017-12-03,19200,200000,SIGS
+81,Farmers Training Programe specially for agricultural promotion (47-48),LIVELIHOOD-81,2017-12-06,23095,198260,APSS
+82,"Farmer Field School(FFS) establishment, Batch-6",LIVELIHOOD-82,2017-12-06,10207,196850,APSS
+83,Farmers Training Programe specially for agricultural promotion (49-50),LIVELIHOOD-83,2017-12-10,23095,198960,APSS
+84,"Farmer Field School(FFS) establishment, Batch-7",LIVELIHOOD-84,2017-12-10,7540,196749,APSS
+85,"Boro Fertilizer, Batch-01",LIVELIHOOD-85,2017-12-11,19175,199729,APSS
+86,Farmers Training Programe specially for agricultural promotion (51-52),LIVELIHOOD-86,2017-12-12,23095,197560,APSS
+87,Farmers Training Programe specially for agricultural promotion (53-54),LIVELIHOOD-87,2017-12-14,23095,198260,APSS
+86,"Boro Ferilizer ,Batch- 02",LIVELIHOOD-86,2017-12-17,19175,199729,APSS
+87,"Boro Ferilizer ,Batch- 03",LIVELIHOOD-87,2017-12-18,19175,199729,APSS
+88,"Boro Ferilizer ,Batch- 04",LIVELIHOOD-88,2017-12-19,19175,199729,APSS
+89,"Farmer Field School(FFS) establishment, Batch-8",LIVELIHOOD-89,2017-12-20,14102,196500,APSS
+89,"Boro Ferilizer ,Batch- 05",LIVELIHOOD-89,2017-12-21,19175,199729,APSS
+90,"Farmer Field School(FFS) establishment, Batch-9",LIVELIHOOD-90,2017-12-24,14102,196500,APSS
+91,"Boro Ferilizer ,Batch- 06",LIVELIHOOD-91,2017-12-26,19175,199729,APSS
+92,Farmers Training Programe specially for agricultural promotion (55-56),LIVELIHOOD-92,2017-12-27,23095,198260,APSS
+93,Duck Rearing (Batch-07),LIVELIHOOD-93,2017-12-27,16935,199000,SIGS
+94,Farmers Training Programe specially for agricultural promotion (57-58),LIVELIHOOD-94,2017-12-31,23095,198960,APSS
+95,"Boro Rearing Ferilizer ,Batch- 07",LIVELIHOOD-95,2018-01-01,19175,199729,APSS
+96,"Boro Ferilizer ,Batch- 08",LIVELIHOOD-96,2018-01-01,19175,199729,APSS
+97,Farmers Training Programe specially for agricultural promotion (59-60),LIVELIHOOD-97,2018-01-02,23519,198960,APSS
+98,"Boro Ferilizer ,Batch- 09",LIVELIHOOD-98,2018-01-02,19175,199729,APSS
+99,Goat Rearing (Batch-7),LIVELIHOOD-99,2018-01-03,19200,200000,SIGS
+100,Farmers Training Programe specially for agricultural promotion (61-62),LIVELIHOOD-100,2018-01-04,23519,198960,APSS
+101,"Farmer Field School(FFS) establishment, Batch-10",LIVELIHOOD-101,2018-01-04,13330,196749,APSS
+102,"Farmer Field School(FFS) establishment, Batch-11",LIVELIHOOD-102,2018-01-04,14102,196500,APSS
+103,"Farmer Field School(FFS) establishment, Batch-12",LIVELIHOOD-103,2018-01-07,13682,192720,APSS
+104,"Farmer Field School(FFS) establishment, Batch-13",LIVELIHOOD-104,2018-01-07,13982,195420,APSS
+105,"Boro seed, Batch-10(Sign Board)",LIVELIHOOD-105,2018-01-08,19084,198250,APSS
+106,Farmers Training Programe specially for agricultural promotion (63-64),LIVELIHOOD-106,2018-01-09,26039,199320,APSS
+106,"Farmer Field School(FFS) establishment, Batch-14",LIVELIHOOD-106,2018-01-10,11690,198097,APSS
+107,Farmers Training Programe specially for agricultural promotion (65-66),LIVELIHOOD-107,2018-01-11,26039,199320,APSS
+108,WMG member training for strenthening of WMG (9-10),LIVELIHOOD-108,2017-01-11,25422,195440,LT
+109,Boro Ferilizer,LIVELIHOOD-109,2018-01-15,16256,199599,APSS
+110,Farmers Training Programe specially for agricultural promotion (67-68),LIVELIHOOD-110,2018-01-16,26039,199320,APSS
+111,"Swing Machine, Training & Support service scheme ,Batch-5,Part-A",LIVELIHOOD-111,2018-01-16,24033,198230,SIGS
+112,"Farmer Field School(FFS) establishment, Batch-15",LIVELIHOOD-112,2018-01-17,15044,195529,APSS
+113,"Farmer Field School(FFS) establishment, Batch-16",LIVELIHOOD-113,2018-01-17,12978,198369,APSS
+114,"Swing Machine, Training & Support service scheme ,Batch-5,Part-B",LIVELIHOOD-114,2018-01-18,17991,195940,SIGS
+115,Farmers Training Programe specially for agricultural promotion (69-70),LIVELIHOOD-115,2018-01-18,26039,199320,APSS
+116,Goat Rearing (Batch-8),LIVELIHOOD-116,2018-01-18,19200,200000,SIGS
+117,"Swing Machine, Training & Support service scheme ,Batch-5,Part-C",LIVELIHOOD-117,2018-01-21,11208,185210,SIGS
+118,WMG member training for strenthening of WMG (11-12),LIVELIHOOD-118,2018-01-21,21743,196840,LT
+119,Goat Rearing (Batch-9),LIVELIHOOD-119,2018-01-22,19200,200000,SIGS
+120,Farmers Training Programe specially for agricultural promotion (71-72),LIVELIHOOD-120,2018-01-23,26106,199966,APSS
+121,Fruits seeding/sapling(Batch-4),LIVELIHOOD-121,2018-01-23,11400,199000,SIGS
+122,Goat Rearing (Batch-10),LIVELIHOOD-122,2018-01-24,19200,200000,SIGS
+123,Farmers Training Programe specially for agricultural promotion (73-74),LIVELIHOOD-123,2018-01-25,26106,199966,APSS
+124,Goat rearing (Batch-11),LIVELIHOOD-124,2018-01-25,19200,200000,SIGS
+125,WMG member training for strenthening of WMG (Batch 13-14),LIVELIHOOD-125,2018-01-25,22175,196840,LT
+126,"Farmer Field School(FFS) establishment,-17",LIVELIHOOD-126,2018-01-28,14724,199949,APSS
+127,"Farmer Field School(FFS) establishment,-18",LIVELIHOOD-127,2018-01-28,14702,199420,APSS
+128,"Farmer Field School(FFS) establishment,-19",LIVELIHOOD-128,2018-01-29,13930,199669,APSS
+129,Farmers Training Programe specially for agricultural promotion (75-76),LIVELIHOOD-129,2018-01-30,25999,198960,APSS
+130,"Swing Machine, Training & Support service scheme, Batch-6, Part-A",LIVELIHOOD-130,2018-01-31,24033,198230,SIGS
+131,"Swing Machine, Training & Support service scheme, Batch-6, Part-B",LIVELIHOOD-131,2018-01-31,17991,195940,SIGS
+132,Farmers Training Programe specially for agricultural promotion (77-78),LIVELIHOOD-132,2018-02-01,22199,198960,APSS
+133,WMG member training for strenthening of WMG-15-16,LIVELIHOOD-133,2018-02-01,22034,196708,LT
+134,Goat rearing (Batch-12),LIVELIHOOD-134,2018-02-01,19200,200000,SIGS
+135,"Farmer Field School(FFS) establishment,-20",LIVELIHOOD-135,2018-02-04,15242,199415,APSS
+136,"Farmer Field School(FFS) establishment,-21",LIVELIHOOD-136,2018-02-04,16368,200000,APSS
+137,"Swing Machine, Training & Support service scheme, Batch-6, Part-c",LIVELIHOOD-137,2018-02-04,9570,185209,SIGS
+138,"Farmer Field School(FFS) establishment,-22",LIVELIHOOD-138,2018-02-05,16584,199960,APSS
+139,Goat rearing (Batch-13),LIVELIHOOD-139,2018-02-05,19200,200000,SIGS
+140,Farmers Training Programe specially for agricultural promotion (79-80),LIVELIHOOD-140,2018-02-06,22199,198960,APSS
+141,Goat Rearing (Batch-14),LIVELIHOOD-141,2018-02-07,19200,200000,SIGS
+142,WMG member training for strenthening of WMG (Batch 17-18),LIVELIHOOD-142,2018-02-08,21743,196840,LT
+143,Farmers Training Programe specially for agricultural promotion (81-82),LIVELIHOOD-143,2018-02-08,22199,198960,APSS
+144,"Farmer Field School(FFS) establishment,-23",LIVELIHOOD-144,2018-02-12,16368,200000,APSS
+145,Farmers Training Programe specially for agricultural promotion (83-84),LIVELIHOOD-145,2018-02-13,22199,198960,APSS
+146,Boro Ferilizer-12,LIVELIHOOD-146,2018-02-14,16265,199725,APSS
+147,Farmers Training Programe specially for agricultural promotion (85-86),LIVELIHOOD-147,2018-02-15,22199,198960,APSS
+148,WMG member training for strenthening of WMG (Batch 19-20),LIVELIHOOD-148,2018-02-15,21743,196840,LT
+149,Farmers Training Programe specially for agricultural promotion (87-88) (CPT),LIVELIHOOD-149,2018-02-18,22199,198960,APSS
+150,Farmers Training Programe specially for agricultural promotion (89-90) (CPT),LIVELIHOOD-150,2018-02-19,22199,198960,APSS
+151,WMG member training for strenthening of WMG (Batch 21-22),LIVELIHOOD-151,2018-02-19,22170,195920,LT
+152,Black Goat (Batch-15),LIVELIHOOD-152,2018-02-20,19200,200000,SIGS
+153,"Farmer Field School(FFS) establishment,-24",LIVELIHOOD-153,2018-02-26,14642,199500,APSS
+154,"Farmer Field School(FFS) establishment,-25",LIVELIHOOD-154,2018-02-26,14642,199500,APSS
+155,Goat rearing (Batch-16),LIVELIHOOD-155,2018-02-27,19200,200000,SIGS
+156,Farmers Training Programe specially for agricultural promotion (91-92) (CPT),LIVELIHOOD-156,2018-02-27,22199,198960,APSS
+157,"Farmer Field School(FFS) establishment,-26",LIVELIHOOD-157,2018-02-28,13906,199949,APSS
+158,"Farmer Field School(FFS) establishment,-27",LIVELIHOOD-158,2018-02-28,15524,199849,APSS
+159,Goat rearing (Batch-17),LIVELIHOOD-159,2018-02-28,19200,200000,SIGS
+160,Farmers Training Programe specially for agricultural promotion (93-94) (CPT),LIVELIHOOD-160,2018-03-01,22199,198960,APSS
+161,WMG member training for strenthening of WMG (Batch 23-24),LIVELIHOOD-161,2018-03-01,21957,196380,LT
+162,"Livestock Batch-04, 05 (Paramedical & Vatinary)",LIVELIHOOD-162,2018-03-01,22035,197360,APSS
+163,Goat Rearing (Batch-18),LIVELIHOOD-163,2018-03-04,19200,200000,SIGS
+164,"Farmer Field School(FFS) establishment,-28",LIVELIHOOD-164,2018-03-04,16740,200000,APSS
+165,Goat Rearing (Batch-19),LIVELIHOOD-165,2018-03-05,19200,200000,SIGS
+166,Goat Rearing (Batch-20),LIVELIHOOD-166,2018-03-06,19200,200000,SIGS
+167,Farmers Training Programe specially for agricultural promotion (95-96) (CPT),LIVELIHOOD-167,2018-03-08,22394,199960,APSS
+168,Farmers Training Programe specially for agricultural promotion (97-98) (CPT),LIVELIHOOD-168,2018-03-08,22394,199960,APSS
+169,Goat rearing (Batch-21),LIVELIHOOD-169,2018-03-11,19200,200000,SIGS
+170,WMG member training for strenthening of WMG (Batch-25) and Livestock-06,LIVELIHOOD-170,2018-03-11,21859,197100,LT
+171,Goat rearing (Batch-22),LIVELIHOOD-171,2018-03-12,19200,200000,SIGS
+172,Farmers Training Programe specially for agricultural promotion (99-100) (CPT),LIVELIHOOD-172,2018-03-13,22297,199460,APSS
+173,Goat rearing (Batch-23),LIVELIHOOD-173,2018-03-14,19200,200000,SIGS
+172,Farmers Training Programe specially for agricultural promotion (101-102) (CPT),LIVELIHOOD-172,2018-03-15,22297,199459,APSS
+173,WMG member training for strenthening of WMG (Batch-26-27) ,LIVELIHOOD-173,2018-03-15,22477,198475,LT
+174,ICS (Improved Cooking Stoves)(Batch-1),LIVELIHOOD-174,2018-03-18,18682,196650,SIGS
+175,Training on Poultry and livestock rearing (Batch 7-8),LIVELIHOOD-175,2018-03-18,22035,197360,APSS
+176,Small Scale Vegetable (Batch-1)/ Fertilizer,LIVELIHOOD-176,2018-03-19,19275,199740,SIGS
+177,Farmers Training Programe specially for agricultural promotion (103-104) (CPT),LIVELIHOOD-177,2018-03-20,22394,199960,APSS
+178,Goat rearing (Batch-24),LIVELIHOOD-178,2018-03-21,19200,200000,SIGS
+179,Farmers Training Programe specially for agricultural promotion (105-106) (CPT),LIVELIHOOD-179,2018-03-22,22394,199960,APSS
+180,Training on Poultry and livestock rearing (Batch 9-10),LIVELIHOOD-180,2018-03-22,22035,197360,APSS
+181,WMG member training for strenthening of WMG (Batch-28-29) ,LIVELIHOOD-181,2018-03-25,22477,198476,LT
+182,Farmers Training Programe specially for agricultural promotion (107-108) (CPT),LIVELIHOOD-182,2018-03-28,22199,198960,APSS
+183,Hijol Shapling(01),LIVELIHOOD-183,2018-03-28,15000,199995,APSS
+184,"Swing Machine, Training & Support service scheme, Batch-7, Part-A",LIVELIHOOD-184,2018-03-29,24033,198229,SIGS
+185,Paramedical Vetinary-01 (Vegitable Cultivation-03),LIVELIHOOD-185,2018-03-29,22043,197740,APSS
+186,WMG member training for strenthening of WMG (Batch-30-31) ,LIVELIHOOD-186,2018-04-01,22477,197776,LT
+187,Farmers Training Programe specially for agricultural promotion (109-110) (CPT),LIVELIHOOD-187,2018-04-01,22199,198960,APSS
+188,BARD (Local Training),LIVELIHOOD-188,2018-04-01,16363,139999,APSS
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ,Hijol Shapling(02),LIVELIHOOD-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ,2018-04-02,21083,199966,APSS
+190,Goat Rearing (Bill-25),LIVELIHOOD-190,2018-04-03,19200,200000,SIGS
+191,"Farmer Field School(FFS) establishment,-29",LIVELIHOOD-191,2018-04-04,15896,199849,APSS
+192,"Farmer Field School(FFS) establishment,-30",LIVELIHOOD-192,2018-04-04,14242,199749,APSS
+193,Farmers Training Programe specially for agricultural promotion (111-112) (CPT),LIVELIHOOD-193,2018-04-04,22199,198960,APSS
+194,TOT (Training for Trainers) for- IFM(Integrated Firm Management) for FFS(Farmer Field School-02/(Batch 3 & 4)Bill-1,LIVELIHOOD-194,2018-04-05,35920,199549,APSS
+195,WMG member training for strenthening of WMG (Batch-32-33) ,LIVELIHOOD-195,2018-04-05,21743,196140,LT
+196,Hijol Shapling(03),LIVELIHOOD-196,2018-04-05,14997,199966,APSS
+197,Farmers Training Programe specially for agricultural promotion (113-114) (CPT),LIVELIHOOD-197,2018-04-05,22199,198960,APSS
+198,ICS (Improved Cooking Stoves)(Bill-2),LIVELIHOOD-198,2018-04-08,18682,196650,SIGS
+199,Hijol Shapling(0),LIVELIHOOD-199,2018-04-08,14997,199966,APSS
+200,"Farmer Field School(FFS) establishment,-31",LIVELIHOOD-200,2018-04-09,17914,199500,APSS
+201,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4) Bill-2,LIVELIHOOD-201,2018-04-09,32742,197000,APSS
+202,Farmers Training Programe specially for agricultural promotion (115-116) (CPT),LIVELIHOOD-202,2018-04-10,22989,199970,APSS
+203,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4-32 (Bill-3),LIVELIHOOD-203,2018-04-11,14861,199780,APSS
+204,Goat Rearing (Bill-26),LIVELIHOOD-204,2018-04-11,19200,200000,SIGS
+205,Farmers Training Programe specially for agricultural promotion (117-118) (CPT),LIVELIHOOD-205,2018-04-12,22195,198940,APSS
+206,Home-Stead vegetable (Batch-5 & 6)(Bill-4),LIVELIHOOD-206,2018-04-12,22893,197140,APSS
+207,Hijol Shapling(05),LIVELIHOOD-207,2018-04-12,15000,199997,APSS
+208,WMG member training for strenthening of WMG (Batch-34) ,LIVELIHOOD-208,2018-04-15,22403,198269,LT
+209,"Swing Machine, Training & Support service scheme, ",LIVELIHOOD-209,2018-04-15,17991,195940,SIGS
+210,"Swing Machine, Training & Support service scheme, ",LIVELIHOOD-210,2018-04-15,11208,185210,SIGS
+211,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4) Bill-4,LIVELIHOOD-211,2018-04-16,20015,199619,APSS
+212,Farmers Training Programe specially for agricultural promotion (119-120) (CPT),LIVELIHOOD-212,2018-04-17,22195,198940,APSS
+213,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4) Bill-5,LIVELIHOOD-213,2018-04-17,19742,199760,APSS
+214,WMG member training for strenthening of WMG (Batch-35 & 36) ,LIVELIHOOD-214,2018-04-18,22457,199375,LT
+215,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4) Bill-6,LIVELIHOOD-215,2018-04-19,23373,199270,APSS
+216,"Home-Stead vegetable(Batch-7,8)(Bill-5)",LIVELIHOOD-216,2018-04-19,21995,197140,APSS
+217,Farmers Training Programe specially for agricultural promotion (121-122) (CPT),LIVELIHOOD-217,2018-04-19,22195,198940,APSS
+218,Hijol Shapling(0),LIVELIHOOD-218,2018-04-22,14999,199983,APSS
+219,WMG member training for strenthening of WMG (Batch-37 & 38) ,LIVELIHOOD-219,2018-04-22,22457,198675,LT
+220,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4) Bill-7,LIVELIHOOD-220,2018-04-23,18647,199800,APSS
+221,Farmer Field School(FFS) establishment(Bill-32),LIVELIHOOD-221,2018-04-23,14073,199850,APSS
+222,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4) Bill-8,LIVELIHOOD-222,2018-04-24,24248,199799,APSS
+223,Hijol Shapling(Bill-7),LIVELIHOOD-223,2018-04-24,12275,200000,APSS
+224,Farmers Training Programe specially for agricultural promotion (123-124) (CPT),LIVELIHOOD-224,2018-04-24,22195,198240,APSS
+225,Goat Rearing (Bill-27),LIVELIHOOD-225,2018-04-25,19200,200000,SIGS
+226,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 3 & 4) Bill-9,LIVELIHOOD-226,2018-04-26,23355,199169,APSS
+227,"Homestate Vegetable Cultivision 
+Batch-9&10 (Bill-6)",LIVELIHOOD-227,2018-04-26,22190,198140,SIGS
+228,Training on Poultry and livestock rearing (Batch 13-14),LIVELIHOOD-228,2018-04-26,22035,197360,APSS
+229,Training on Poultry and livestock rearing (Batch 11-12),LIVELIHOOD-229,2018-04-26,22035,197360,APSS
+230,Goat Rearing (Bill-28),LIVELIHOOD-230,2018-04-30,19200,200000,SIGS
+231,"Homestate Vegetable Cultivision 
+Batch-11&12 (Bill-7)",LIVELIHOOD-231,2018-04-30,21995,197140,SIGS
+232,Farmers Training Programe specially for agricultural promotion (125-126) (CPT),LIVELIHOOD-232,2018-04-30,22195,198940,APSS
+233,"Farmer Field School(FFS) establishment,-33",LIVELIHOOD-233,2018-05-03,19856,199960,APSS
+234,Farmers Training Programe specially for agricultural promotion (127-128) (CPT),LIVELIHOOD-234,2018-05-03,22195,198940,APSS
+235,Farmers Training Programe specially for agricultural promotion (129-130) (CPT),LIVELIHOOD-235,2018-05-03,22195,198940,APSS
+236,Goat Rearing (Bill-29),LIVELIHOOD-236,2018-05-03,19200,200000,SIGS
+237,"Farmer Field School(FFS) establishment,-35",LIVELIHOOD-237,2018-05-06,16488,199840,APSS
+238,"Farmer Field School(FFS) establishment,-34",LIVELIHOOD-238,2018-05-06,15524,199849,APSS
+239,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-1,LIVELIHOOD-239,2018-05-06,35920,199549,APSS
+240,WMG member training for strenthening of WMG (Batch-41 & 42) ,LIVELIHOOD-240,2018-05-06,22456,197276,LT
+241,WMG member training for strenthening of WMG (Batch-39 & 40) ,LIVELIHOOD-241,2018-05-06,22457,198675,LT
+242,Goat Rearing (Bill-30),LIVELIHOOD-242,2018-05-07,19200,200000,SIGS
+243,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-2,LIVELIHOOD-243,2018-05-07,33568,200000,APSS
+244,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-3,LIVELIHOOD-244,2018-05-08,17657,199760,APSS
+245,Farmers Training Programe specially for agricultural promotion (131-132) (CPT),LIVELIHOOD-245,2018-05-08,22195,198940,APSS
+246,WMG member training for strenthening of WMG (Batch-43 & 44) ,LIVELIHOOD-246,2018-05-09,22457,199375,LT
+247,WMG member training for strenthening of WMG (Batch-45 & 46) ,LIVELIHOOD-247,2018-05-10,22457,197975,LT
+248,Farmers Training Programe specially for agricultural promotion (133-134) (CPT),LIVELIHOOD-248,2018-05-10,22195,198940,APSS
+249,"Homestate Vegetable Cultivision 
+Batch-13&14 (Bill-8)",LIVELIHOOD-249,2018-05-10,22190,198140,SIGS
+250,"Training on Poultry and livestock rearing (Batch 15, 19)",LIVELIHOOD-250,2018-05-10,22035,197360,APSS
+251,Training on Poultry and livestock rearing (Batch 16) & paramedical vetanary (Batch 2),LIVELIHOOD-251,2018-05-10,22064,197849,APSS
+252,"Homestate Vegetable Cultivision 
+Batch-15&16 (Bill-9)",LIVELIHOOD-252,2018-05-13,22190,198140,SIGS
+253,Training on Poultry and livestock rearing (Batch 21-22),LIVELIHOOD-253,2018-05-13,22035,197360,APSS
+254,Training on Poultry and livestock rearing (Batch 17-18),LIVELIHOOD-254,2018-05-13,22035,197360,APSS
+255,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-4,LIVELIHOOD-255,2018-05-13,21608,199820,APSS
+256,Goat Rearing (Bill-31),LIVELIHOOD-256,2018-05-14,19200,200000,SIGS
+257,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-5,LIVELIHOOD-257,2018-05-14,22154,199879,APSS
+258,"Training on Poultry and livestock rearing (Batch 22, 23)",LIVELIHOOD-258,2018-05-15,22035,197360,APSS
+259,"Homestate Vegetable Cultivision 
+Batch-17 & 21 ",LIVELIHOOD-259,2018-05-15,22190,198140,SIGS
+260,Farmers Training Programe specially for agricultural promotion (135-136) (CPT),LIVELIHOOD-260,2018-05-15,22195,198940,APSS
+261,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-6,LIVELIHOOD-261,2018-05-16,20622,199820,APSS
+262,Goat Rearing (Bill-32),LIVELIHOOD-262,2018-05-16,19200,200000,SIGS
+263,"Training on Poultry and livestock rearing (Batch 24, 25)",LIVELIHOOD-263,2018-05-16,22035,197360,APSS
+264,"Homestate Vegetable Cultivision 
+Batch-19 & 20",LIVELIHOOD-264,2018-05-17,22190,198140,SIGS
+265,"Homestate Vegetable Cultivision 
+Batch-18 & 22",LIVELIHOOD-265,2018-05-17,21995,197140,SIGS
+265,"Training on Poultry and livestock rearing (Batch 26, 27)",LIVELIHOOD-265,2018-05-17,22035,197360,APSS
+266,"Training on Poultry and livestock rearing (Batch 28, 29)",LIVELIHOOD-266,2018-05-17,22035,197360,APSS
+267,Farmers Training Programe specially for agricultural promotion (137-138) (CPT),LIVELIHOOD-267,2018-05-17,22195,198940,APSS
+268,WMG member training for strenthening of WMG (Batch-47 & 48) ,LIVELIHOOD-268,2018-05-20,22457,198675,LT
+269,WMG member training for strenthening of WMG (Batch-49 & 450) ,LIVELIHOOD-269,2018-05-20,22457,195875,LT
+270,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-7,LIVELIHOOD-270,2018-05-20,18985,199970,APSS
+271,Nursery Management (01-02),LIVELIHOOD-271,2018-05-20,24943,195769,APSS
+272,"Homestate Vegetable Cultivision 
+Batch-23 & 24",LIVELIHOOD-272,2018-05-20,22190,198140,SIGS
+273,Goat Rearing (Bill-33),LIVELIHOOD-273,2018-05-20,19200,200000,SIGS
+274,Goat Rearing (Bill-34),LIVELIHOOD-274,2018-05-21,19200,200000,SIGS
+275,"Training on Poultry and livestock rearing (Batch 30, 32)",LIVELIHOOD-275,2018-05-22,22035,197360,APSS
+276,ToT (Training of Trainers) for  -IFM(Integrated Farm Management) for FFS( Farmer Field School).(Batch 5 & 6) Bill-8,LIVELIHOOD-276,2018-05-22,20168,199919,APSS
+277,Farmers Training Programe specially for agricultural promotion (139-140) (CPT),LIVELIHOOD-277,2018-05-22,22195,198940,APSS
+278,Goat Rearing (Bill-35),LIVELIHOOD-278,2018-05-23,19200,200000,SIGS
+279,WMG 51-52,LIVELIHOOD-279,2018-05-22,22457,199375,LT
+280,Homestead (25-26),LIVELIHOOD-280,2018-05-24,22093,197640,APSS
+281,ToT for IFM(FFS)-09,LIVELIHOOD-281,2018-05-24,23666,199929,APSS
+282,Farmers Training Programe specially for agricultural promotion (141-142) (CPT),LIVELIHOOD-282,2018-05-24,22195,198940,APSS
+283,Livestock Batch-31-33 (Paramedical & Vatinary),LIVELIHOOD-283,2018-05-24,22035,197360,APSS
+284,Goat Rearing (Bill-36),LIVELIHOOD-284,2018-05-27,19200,200000,SIGS
+285,WMG member training for strenthening of WMG (Batch-53 & 54) ,LIVELIHOOD-285,2018-05-27,22457,197275,LT
+286,WMG member training for strenthening of WMG (Batch-55 & 56) ,LIVELIHOOD-286,2018-05-27,22457,195875,LT
+287,Homestead (27-28),LIVELIHOOD-287,2018-05-27,22093,197640,APSS
+288,Goat Rearing (Bill-37),LIVELIHOOD-288,2018-05-28,19200,200000,SIGS
+289,Farmers Training Programe specially for agricultural promotion (143-144) (CPT),LIVELIHOOD-289,2018-05-29,22195,198940,APSS
+290,WMG member training for strenthening of WMG (Batch-57 & 58) ,LIVELIHOOD-290,2018-05-29,22457,197275,LT
+291,"Basic Tailoring (Bill-8, Part-B)",LIVELIHOOD-291,2018-05-30,17991,195940,SIGS
+292,"Basic Tailoring (Bill-8, Part-A)",LIVELIHOOD-292,2018-05-30,24033,198230,SIGS
+293,"Basic Tailoring (Bill-8, Part-C)",LIVELIHOOD-293,2018-05-30,9131,182960,SIGS
+294,Farmers Training Programe specially for agricultural promotion (145-146) (CPT),LIVELIHOOD-294,2018-05-31,22195,198940,APSS
+295,Livestock Batch-37-38 (Paramedical & Veterinary),LIVELIHOOD-295,2018-05-31,22035,197360,APSS
+296,Livestock Batch-35-36 (Paramedical & Veterinary),LIVELIHOOD-296,2018-05-31,22035,197360,APSS
+297,Homestead (29-30),LIVELIHOOD-297,2018-06-03,21995,197140,APSS
+298,WMG member training for strenthening of WMG (Batch-61 & 62) ,LIVELIHOOD-298,2018-06-03,22457,195175,APSS
+299,WMG member training for strenthening of WMG (Batch-59 & 60) ,LIVELIHOOD-299,2018-06-03,22457,199375,APSS
+300,Livestock Batch-35 (Paramedical & Vet-03),LIVELIHOOD-300,2018-06-03,22035,197360,APSS
+301,Goat Rearing (Bill-38),LIVELIHOOD-301,2018-06-04,19200,200000,SIGS
+302,WMG member training for strenthening of WMG (Batch-63 & 64) ,LIVELIHOOD-302,2018-06-05,22457,198675,LT
+303,Farmers Training Programe specially for agricultural promotion (147-148) (CPT),LIVELIHOOD-303,2018-06-05,22195,198940,APSS
+304,Goat Rearing (Bill-39),LIVELIHOOD-304,2018-06-06,19200,200000,SIGS
+305,"Basic Tailoring (Bill-9, Part-C)",LIVELIHOOD-305,2018-06-07,9131,182959,SIGS
+306,"Basic Tailoring (Bill-9, Part-B)",LIVELIHOOD-306,2018-06-07,17991,195940,SIGS
+307,"Basic Tailoring (Bill-9, Part-A)",LIVELIHOOD-307,2018-06-07,24033,198230,SIGS
+308,Farmers Training Programe specially for agricultural promotion (149-150) (CPT),LIVELIHOOD-308,2018-06-07,22195,198940,APSS
+309,WMG member training for strenthening of WMG (Batch-65 & 66) ,LIVELIHOOD-309,2018-06-10,22457,195875,LT
+310,WMG member training for strenthening of WMG (Batch-67 & 68) ,LIVELIHOOD-310,2018-06-10,22457,197275,LT
+311,WMG member training for strenthening of WMG (Batch-69 & 70) ,LIVELIHOOD-311,2018-06-10,22457,198675,LT
+312,Farmers Training Programe specially for agricultural promotion (151-152) (CPT),LIVELIHOOD-312,2018-06-10,22195,198940,APSS
+313,Farmers Training Programe specially for agricultural promotion (153-154) (CPT),LIVELIHOOD-313,2018-06-10,22195,198940,APSS
+314,"Farmers Training Programe specially for agricultural promotion (155, Speed-1) (CPT)",LIVELIHOOD-314,2018-06-12,15994,160670,APSS
+315,Field Staff Training Coordinator and XO,LIVELIHOOD-315,2018-06-24,22911,195946,APSS
+316,Adaptive Trial + Straining Coordinator & XO,LIVELIHOOD-316,2018-06-24,21052,191460,APSS
+317,Resource extension farmer dialog (BRRI),LIVELIHOOD-317,2018-06-26,7558,74530,APSS
+318,Farmer Field Visit Program (BARD),LIVELIHOOD-318,2018-06-26,21859,183435,APSS
+319,Hijol Tree & BRRI,LIVELIHOOD-319,2018-06-27,15008,184530,APSS
+320,BARD Visit-2,LIVELIHOOD-320,2018-06-28,19914,162586,APSS
+321,South-West Project Visit-1,LIVELIHOOD-321,2018-06-28,21975,198485,APSS
+322,South-West Project Visit-2,LIVELIHOOD-322,2018-06-28,21975,198485,APSS
+323,"Farmer Field Visit (BRRI, Gazipur)",LIVELIHOOD-323,2018-06-28,16700,173960,APSS
+324,Farmers Training Programe specially for agricultural promotion (156-157) (CPT),LIVELIHOOD-324,2018-06-28,19155,160940,APSS
+325,Aman-01,LIVELIHOOD-325,2018-06-28,19353,199499,APSS
+326,Farmers Training Programe specially for agricultural promotion (158-159) (CPT),LIVELIHOOD-326,2018-06-28,25695,195140,APSS
+327,BRRI (05-06),LIVELIHOOD-327,2018-06-28,16740,174320,APSS
+328,Aman-02,LIVELIHOOD-328,2018-06-28,19316,199850,APSS
+329,Aman-04,LIVELIHOOD-329,2018-06-30,9500,100000,APSS
+330,Farmers Training Programe specially for agricultural promotion (160-161) (CPT),LIVELIHOOD-330,2018-06-30,19155,160940,APSS
+331,Farmers Training Programe specially for agricultural promotion (161-162) (CPT),LIVELIHOOD-331,2018-06-30,19155,160940,APSS
+332,Farmers Training Programe specially for agricultural promotion (164-165) (CPT),LIVELIHOOD-332,2018-06-30,19155,160940,APSS
+333,Aman-03 (Adjust Bill),LIVELIHOOD-333,2018-06-30,19959,200000,APSS
+334,Bag-LT,LIVELIHOOD-334,2018-06-30,-74594,1256667,LT
+335,Bag-APSS,LIVELIHOOD-335,2018-06-30,-2006742,7939479,APSS
+336,Bag-Sigs,LIVELIHOOD-336,2018-06-30,-482416,3246402,SIGS

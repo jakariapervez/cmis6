@@ -136,7 +136,7 @@ def gaugeDataDelete(request, pk):
     return JsonResponse(data)
 
 
-from .auxilaryquery import getTimeSlotReading
+from .auxilaryquery import getTimeSlotReading,getTimeSlotReadingCumulative
 
 
 def selectWLatParticularTime(request):
@@ -145,10 +145,14 @@ def selectWLatParticularTime(request):
     user = request.user
     uid = user.pk
     print("hour={} user={}".format(hour, user))
-    mydata = getTimeSlotReading(hour, uid)
+    #mydata = getTimeSlotReading(hour, uid)
+    mydata=getTimeSlotReadingCumulative(hour,uid)
     print(mydata)
-    context = {"greadings": mydata}
+
+    mylist=zip(mydata["gn"],mydata["rivers"],mydata["locs"], mydata["yd"],mydata[ "td_6"],mydata["td_9"],mydata["td_12"],mydata["td_15"],mydata["td_18"])
+    context = {"greadings": mylist}
     mytable = render_to_string('wldata/includes/gauges/partial_time_wl.html', context)
+    #print(mytable)
     data['gauge_readings'] = mytable
     return JsonResponse(data)
 
@@ -166,7 +170,7 @@ from django.conf import settings as mysettings
 
 from django.core.mail import send_mail, EmailMessage
 
-from .auxilaryquery import createWLReport, getDivisionName
+from .auxilaryquery import createWLReport, getDivisionName,createWLReport2
 
 from .auxilaryquery import getRecipients
 def sendWLByEmail(request):
@@ -174,7 +178,7 @@ def sendWLByEmail(request):
     hour = request.GET['hour']
     user = request.user
     uid = user.pk
-    myvalue = createWLReport(hour, uid)
+    myvalue = createWLReport2(hour, uid)
     myreport = myvalue['report']
     reporting_time = myvalue['time']
     # print(myreport)

@@ -148,3 +148,828 @@ INFO"GET /admin/pac/invoice_details/10119/delete/ HTTP/1.1" 200 18961
 INFO"POST /admin/pac/invoice_details/10119/delete/ HTTP/1.1" 302 0
 INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42313
 INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFOWatching for file changes with StatReloader
+INFO"GET / HTTP/1.1" 302 0
+INFO"GET /progress/dashboard/ HTTP/1.1" 200 61740
+INFO"GET /static/css/dashboard.css HTTP/1.1" 200 4521
+INFO"GET /static/css/jquery.mCustomScrollbar.min.css HTTP/1.1" 200 42839
+INFO"GET /progress/dashboard/graph/22/ HTTP/1.1" 200 632
+INFO"GET /progress/dashboard/graph/21/ HTTP/1.1" 200 651
+INFO"GET /progress/dashboard/graph/33/ HTTP/1.1" 200 1577
+INFO"GET /progress/dashboard/graph/24/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/32/ HTTP/1.1" 200 2036
+INFO"GET /progress/dashboard/graph/3/ HTTP/1.1" 200 921
+INFO"GET /progress/dashboard/graph/1/ HTTP/1.1" 200 1204
+INFO"GET /progress/dashboard/graph/4/ HTTP/1.1" 200 954
+INFO"GET /progress/dashboard/graph/2/ HTTP/1.1" 200 960
+INFO"GET /progress/dashboard/graph/47/ HTTP/1.1" 200 887
+INFO"GET /progress/dashboard/graph/23/ HTTP/1.1" 200 1110
+INFO"GET /progress/dashboard/graph/5/ HTTP/1.1" 200 1141
+INFO"GET /progress/dashboard/graph/12/ HTTP/1.1" 200 941
+INFO"GET /progress/dashboard/graph/11/ HTTP/1.1" 200 1207
+INFO"GET /progress/dashboard/graph/7/ HTTP/1.1" 200 919
+INFO"GET /progress/dashboard/graph/8/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/10/ HTTP/1.1" 200 896
+INFO"GET /progress/dashboard/graph/9/ HTTP/1.1" 200 916
+INFO"GET /progress/dashboard/graph/16/ HTTP/1.1" 200 878
+INFO"GET /progress/dashboard/graph/13/ HTTP/1.1" 200 920
+INFO"GET /progress/dashboard/graph/6/ HTTP/1.1" 200 1226
+INFO"GET /progress/dashboard/graph/18/ HTTP/1.1" 200 600
+INFO"GET /progress/dashboard/graph/48/ HTTP/1.1" 200 931
+INFO"GET /progress/dashboard/graph/15/ HTTP/1.1" 200 641
+INFO"GET /progress/dashboard/graph/17/ HTTP/1.1" 200 881
+INFO"GET /progress/dashboard/graph/19/ HTTP/1.1" 200 1139
+INFO"GET /progress/dashboard/graph/31/ HTTP/1.1" 200 1736
+INFO"GET /progress/dashboard/graph/26/ HTTP/1.1" 200 1315
+INFO"GET /progress/dashboard/graph/35/ HTTP/1.1" 200 940
+INFO"GET /progress/dashboard/graph/34/ HTTP/1.1" 200 1255
+INFO"GET /progress/dashboard/graph/30/ HTTP/1.1" 200 1747
+INFO"GET /progress/dashboard/graph/27/ HTTP/1.1" 200 587
+INFO"GET /progress/dashboard/graph/36/ HTTP/1.1" 200 1662
+INFO"GET /progress/dashboard/graph/29/ HTTP/1.1" 200 2041
+INFO"GET /progress/dashboard/graph/14/ HTTP/1.1" 200 1478
+INFO"GET /progress/dashboard/graph/40/ HTTP/1.1" 200 648
+INFO"GET /progress/dashboard/graph/51/ HTTP/1.1" 200 1104
+INFO"GET /progress/dashboard/graph/39/ HTTP/1.1" 200 884
+INFO"GET /progress/dashboard/graph/53/ HTTP/1.1" 200 905
+INFO"GET /progress/dashboard/graph/20/ HTTP/1.1" 200 1199
+INFO"GET /progress/dashboard/graph/25/ HTTP/1.1" 200 659
+INFO"GET /progress/dashboard/graph/37/ HTTP/1.1" 200 1526
+INFO"GET /progress/dashboard/graph/49/ HTTP/1.1" 200 1150
+INFO"GET /progress/dashboard/graph/28/ HTTP/1.1" 200 613
+INFO"GET /progress/dashboard/graph/41/ HTTP/1.1" 200 1406
+ERRORInternal Server Error: /progress/dashboard/graph/38/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\views.py", line 884, in dashBoard_Graph
+    mydata=calculatePackageProgressData2(civts,user)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\auxilaryquery.py", line 688, in calculatePackageProgressData2
+    length=float(dpp_item.length)
+TypeError: float() argument must be a string or a number, not 'NoneType'
+INFO"GET /admin/ HTTP/1.1" 200 26741
+INFO"GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO"GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42172
+INFO"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO"GET /static/admin/css/changelists.css HTTP/1.1" 200 6284
+INFO"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO"GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO"GET /admin/pac/invoice_details/10122/change/ HTTP/1.1" 200 27820
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /static/admin/css/widgets.css HTTP/1.1" 200 10592
+INFO"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO"GET /admin/pac/invoice_details/10122/delete/ HTTP/1.1" 200 18961
+INFO"POST /admin/pac/invoice_details/10122/delete/ HTTP/1.1" 302 0
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42331
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO"GET /admin/pac/invoice_details/10121/change/ HTTP/1.1" 200 27820
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/10121/delete/ HTTP/1.1" 200 18961
+INFO"POST /admin/pac/invoice_details/10121/delete/ HTTP/1.1" 302 0
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42322
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/10120/change/ HTTP/1.1" 200 27820
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/10120/delete/ HTTP/1.1" 200 18961
+INFO"POST /admin/pac/invoice_details/10120/delete/ HTTP/1.1" 302 0
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42313
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42145
+INFO"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42181
+INFO"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO"GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/10126/change/ HTTP/1.1" 200 27820
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42181
+INFO"GET /admin/pac/invoice_details/export/? HTTP/1.1" 200 18558
+INFO"POST /admin/pac/invoice_details/export/? HTTP/1.1" 200 98077
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/3770/change/ HTTP/1.1" 200 122057
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/3770/delete/ HTTP/1.1" 200 19060
+INFO"POST /admin/pac/expenditure_details/3770/delete/ HTTP/1.1" 302 0
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45714
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/3769/change/ HTTP/1.1" 200 122057
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/3769/delete/ HTTP/1.1" 200 19060
+INFO"POST /admin/pac/expenditure_details/3769/delete/ HTTP/1.1" 302 0
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45714
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/3768/change/ HTTP/1.1" 200 122064
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFO"GET /admin/pac/expenditure_details/3767/change/ HTTP/1.1" 200 122063
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFO"GET /admin/pac/invoiceimage/ HTTP/1.1" 200 31280
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42181
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"POST /admin/pac/invoice_details/ HTTP/1.1" 200 19575
+INFO"POST /admin/pac/invoice_details/ HTTP/1.1" 302 0
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42291
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42154
+INFO"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/10127/change/ HTTP/1.1" 200 27820
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42154
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/3771/change/ HTTP/1.1" 200 121922
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFO"GET /admin/pac/expenditure_details/3768/change/ HTTP/1.1" 200 121929
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFO"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 42145
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/ HTTP/1.1" 200 45519
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/expenditure_details/3768/change/ HTTP/1.1" 200 121884
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/pac/expenditure_details/3768/change/ HTTP/1.1" 200 129110
+INFO"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+INFO"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+INFO"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 43129
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET / HTTP/1.1" 302 0
+INFO"GET /progress/dashboard/ HTTP/1.1" 200 61740
+INFO"GET /progress/dashboard/graph/21/ HTTP/1.1" 200 651
+INFO"GET /progress/dashboard/graph/32/ HTTP/1.1" 200 2036
+INFO"GET /progress/dashboard/graph/33/ HTTP/1.1" 200 1577
+INFO"GET /progress/dashboard/graph/10/ HTTP/1.1" 200 896
+INFO"GET /progress/dashboard/graph/6/ HTTP/1.1" 200 1226
+INFO"GET /progress/dashboard/graph/22/ HTTP/1.1" 200 632
+INFO"GET /progress/dashboard/graph/11/ HTTP/1.1" 200 1207
+INFO"GET /progress/dashboard/graph/12/ HTTP/1.1" 200 941
+INFO"GET /progress/dashboard/graph/7/ HTTP/1.1" 200 919
+INFO"GET /progress/dashboard/graph/8/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/16/ HTTP/1.1" 200 878
+INFO"GET /progress/dashboard/graph/9/ HTTP/1.1" 200 916
+INFO"GET /progress/dashboard/graph/47/ HTTP/1.1" 200 887
+INFO"GET /progress/dashboard/graph/23/ HTTP/1.1" 200 1110
+INFO"GET /progress/dashboard/graph/2/ HTTP/1.1" 200 960
+INFO"GET /progress/dashboard/graph/24/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/4/ HTTP/1.1" 200 954
+INFO"GET /progress/dashboard/graph/13/ HTTP/1.1" 200 920
+INFO"GET /progress/dashboard/graph/1/ HTTP/1.1" 200 1204
+INFO"GET /progress/dashboard/graph/3/ HTTP/1.1" 200 921
+INFO"GET /progress/dashboard/graph/5/ HTTP/1.1" 200 1141
+INFO"GET /progress/dashboard/graph/18/ HTTP/1.1" 200 600
+INFO"GET /progress/dashboard/graph/20/ HTTP/1.1" 200 1199
+INFO"GET /progress/dashboard/graph/48/ HTTP/1.1" 200 931
+INFO"GET /progress/dashboard/graph/15/ HTTP/1.1" 200 641
+INFO"GET /progress/dashboard/graph/19/ HTTP/1.1" 200 1139
+INFO"GET /progress/dashboard/graph/17/ HTTP/1.1" 200 881
+INFO"GET /progress/dashboard/graph/31/ HTTP/1.1" 200 1736
+INFO"GET /progress/dashboard/graph/25/ HTTP/1.1" 200 659
+INFO"GET /progress/dashboard/graph/49/ HTTP/1.1" 200 1150
+INFO"GET /progress/dashboard/graph/26/ HTTP/1.1" 200 1315
+INFO"GET /progress/dashboard/graph/30/ HTTP/1.1" 200 1747
+INFO"GET /progress/dashboard/graph/28/ HTTP/1.1" 200 613
+INFO"GET /progress/dashboard/graph/34/ HTTP/1.1" 200 1255
+INFO"GET /progress/dashboard/graph/14/ HTTP/1.1" 200 1478
+INFO"GET /progress/dashboard/graph/35/ HTTP/1.1" 200 940
+INFO"GET /progress/dashboard/graph/29/ HTTP/1.1" 200 2041
+INFO"GET /progress/dashboard/graph/27/ HTTP/1.1" 200 587
+INFO"GET /progress/dashboard/graph/36/ HTTP/1.1" 200 1662
+ERRORInternal Server Error: /progress/dashboard/graph/38/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\views.py", line 884, in dashBoard_Graph
+    mydata=calculatePackageProgressData2(civts,user)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\auxilaryquery.py", line 688, in calculatePackageProgressData2
+    length=float(dpp_item.length)
+TypeError: float() argument must be a string or a number, not 'NoneType'
+INFO"GET /progress/dashboard/graph/40/ HTTP/1.1" 200 648
+ERROR"GET /progress/dashboard/graph/38/ HTTP/1.1" 500 81440
+INFO"GET /progress/dashboard/graph/51/ HTTP/1.1" 200 1104
+INFO"GET /progress/dashboard/graph/39/ HTTP/1.1" 200 884
+INFO"GET /progress/dashboard/graph/53/ HTTP/1.1" 200 905
+INFO"GET /progress/dashboard/graph/37/ HTTP/1.1" 200 1526
+INFO"GET /progress/dashboard/graph/41/ HTTP/1.1" 200 1406
+INFO"GET /pac/ HTTP/1.1" 200 5441
+INFO"GET /pac/report/expenditure/monthly/codewise/ HTTP/1.1" 200 38862
+INFO"GET /static/pac/js/monthly_expenditure_list_codewise.js HTTP/1.1" 200 11482
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=2&month=ALL HTTP/1.1" 200 32291
+INFOWatching for file changes with StatReloader
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=2&month=ALL HTTP/1.1" 200 32213
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/ HTTP/1.1" 200 26240
+INFO"GET /admin/pac/invoice_details/ HTTP/1.1" 200 43129
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/invoice_details/export/? HTTP/1.1" 200 18558
+INFO"POST /admin/pac/invoice_details/export/? HTTP/1.1" 200 105909
+INFOWatching for file changes with StatReloader
+INFO"GET / HTTP/1.1" 302 0
+INFO"GET /progress/dashboard/ HTTP/1.1" 200 61740
+INFO"GET /progress/dashboard/graph/21/ HTTP/1.1" 200 651
+INFO"GET /progress/dashboard/graph/32/ HTTP/1.1" 200 2036
+INFO"GET /progress/dashboard/graph/33/ HTTP/1.1" 200 1577
+INFO"GET /progress/dashboard/graph/22/ HTTP/1.1" 200 632
+INFO"GET /progress/dashboard/graph/24/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/2/ HTTP/1.1" 200 960
+INFO"GET /progress/dashboard/graph/47/ HTTP/1.1" 200 887
+INFO"GET /progress/dashboard/graph/1/ HTTP/1.1" 200 1204
+INFO"GET /progress/dashboard/graph/3/ HTTP/1.1" 200 921
+INFO"GET /progress/dashboard/graph/4/ HTTP/1.1" 200 954
+INFO"GET /progress/dashboard/graph/12/ HTTP/1.1" 200 941
+INFO"GET /progress/dashboard/graph/11/ HTTP/1.1" 200 1207
+INFO"GET /progress/dashboard/graph/6/ HTTP/1.1" 200 1226
+INFO"GET /progress/dashboard/graph/10/ HTTP/1.1" 200 896
+INFO"GET /progress/dashboard/graph/5/ HTTP/1.1" 200 1141
+INFO"GET /progress/dashboard/graph/23/ HTTP/1.1" 200 1110
+INFO"GET /progress/dashboard/graph/8/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/16/ HTTP/1.1" 200 878
+INFO"GET /progress/dashboard/graph/9/ HTTP/1.1" 200 916
+INFO"GET /progress/dashboard/graph/7/ HTTP/1.1" 200 919
+INFO"GET /progress/dashboard/graph/13/ HTTP/1.1" 200 920
+INFO"GET /progress/dashboard/graph/18/ HTTP/1.1" 200 600
+INFO"GET /progress/dashboard/graph/48/ HTTP/1.1" 200 931
+INFO"GET /progress/dashboard/graph/15/ HTTP/1.1" 200 641
+INFO"GET /progress/dashboard/graph/19/ HTTP/1.1" 200 1139
+INFO"GET /progress/dashboard/graph/17/ HTTP/1.1" 200 881
+INFO"GET /progress/dashboard/graph/31/ HTTP/1.1" 200 1736
+INFO"GET /progress/dashboard/graph/20/ HTTP/1.1" 200 1199
+INFO"GET /progress/dashboard/graph/25/ HTTP/1.1" 200 659
+INFO"GET /progress/dashboard/graph/49/ HTTP/1.1" 200 1150
+INFO"GET /progress/dashboard/graph/30/ HTTP/1.1" 200 1747
+INFO"GET /progress/dashboard/graph/26/ HTTP/1.1" 200 1315
+INFO"GET /progress/dashboard/graph/28/ HTTP/1.1" 200 613
+INFO"GET /progress/dashboard/graph/29/ HTTP/1.1" 200 2041
+INFO"GET /progress/dashboard/graph/35/ HTTP/1.1" 200 940
+INFO"GET /progress/dashboard/graph/27/ HTTP/1.1" 200 587
+INFO"GET /progress/dashboard/graph/34/ HTTP/1.1" 200 1255
+INFO"GET /progress/dashboard/graph/14/ HTTP/1.1" 200 1478
+INFO"GET /progress/dashboard/graph/40/ HTTP/1.1" 200 648
+INFO"GET /progress/dashboard/graph/36/ HTTP/1.1" 200 1662
+INFO"GET /progress/dashboard/graph/39/ HTTP/1.1" 200 884
+INFO"GET /progress/dashboard/graph/53/ HTTP/1.1" 200 905
+INFO"GET /progress/dashboard/graph/51/ HTTP/1.1" 200 1104
+INFO"GET /progress/dashboard/graph/37/ HTTP/1.1" 200 1526
+INFO"GET /progress/dashboard/graph/41/ HTTP/1.1" 200 1406
+ERRORInternal Server Error: /progress/dashboard/graph/38/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\views.py", line 884, in dashBoard_Graph
+    mydata=calculatePackageProgressData2(civts,user)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\auxilaryquery.py", line 688, in calculatePackageProgressData2
+    length=float(dpp_item.length)
+TypeError: float() argument must be a string or a number, not 'NoneType'
+ERROR"GET /progress/dashboard/graph/38/ HTTP/1.1" 500 81440
+INFO"GET /pac/ HTTP/1.1" 200 5441
+INFO"GET /favicon.ico HTTP/1.1" 302 0
+INFO"GET /pac/report/expenditure/monthly/codewise/ HTTP/1.1" 200 38862
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=2&month=ALL HTTP/1.1" 200 32213
+INFOWatching for file changes with StatReloader
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=2&month=ALL HTTP/1.1" 200 32291
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=2&month=ALL HTTP/1.1" 200 32291
+INFOWatching for file changes with StatReloader
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=2&month=ALL HTTP/1.1" 200 32291
+INFOWatching for file changes with StatReloader
+INFO"GET /admin/ HTTP/1.1" 200 26240
+INFO"GET /admin/pac/budget_allocation/ HTTP/1.1" 200 45542
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/budget_allocation/export/? HTTP/1.1" 200 18564
+INFO"GET /admin/pac/budget_allocation/ HTTP/1.1" 200 45542
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/budget_allocation/export/? HTTP/1.1" 200 18564
+INFO"POST /admin/pac/budget_allocation/export/? HTTP/1.1" 200 16370
+INFO"GET /admin/pac/financialyear/ HTTP/1.1" 200 21544
+INFO"GET /admin/jsi18n/ HTTP/1.1" 200 3187
+INFO"GET /admin/pac/financialyear/export/? HTTP/1.1" 200 18553
+INFO"POST /admin/pac/financialyear/export/? HTTP/1.1" 200 5057
+INFOWatching for file changes with StatReloader
+INFO"GET / HTTP/1.1" 302 0
+INFO"GET /progress/dashboard/ HTTP/1.1" 200 61740
+INFO"GET /progress/dashboard/graph/32/ HTTP/1.1" 200 2036
+INFO"GET /progress/dashboard/graph/21/ HTTP/1.1" 200 651
+INFO"GET /progress/dashboard/graph/5/ HTTP/1.1" 200 1141
+INFO"GET /progress/dashboard/graph/33/ HTTP/1.1" 200 1577
+INFO"GET /progress/dashboard/graph/22/ HTTP/1.1" 200 632
+INFO"GET /progress/dashboard/graph/6/ HTTP/1.1" 200 1226
+INFO"GET /progress/dashboard/graph/10/ HTTP/1.1" 200 896
+INFO"GET /progress/dashboard/graph/11/ HTTP/1.1" 200 1207
+INFO"GET /progress/dashboard/graph/24/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/12/ HTTP/1.1" 200 941
+INFO"GET /progress/dashboard/graph/47/ HTTP/1.1" 200 887
+INFO"GET /progress/dashboard/graph/16/ HTTP/1.1" 200 878
+INFO"GET /progress/dashboard/graph/7/ HTTP/1.1" 200 919
+INFO"GET /progress/dashboard/graph/8/ HTTP/1.1" 200 924
+INFO"GET /progress/dashboard/graph/2/ HTTP/1.1" 200 960
+INFO"GET /progress/dashboard/graph/23/ HTTP/1.1" 200 1110
+INFO"GET /progress/dashboard/graph/1/ HTTP/1.1" 200 1204
+INFO"GET /progress/dashboard/graph/3/ HTTP/1.1" 200 921
+INFO"GET /progress/dashboard/graph/4/ HTTP/1.1" 200 954
+INFO"GET /progress/dashboard/graph/9/ HTTP/1.1" 200 916
+INFO"GET /progress/dashboard/graph/13/ HTTP/1.1" 200 920
+INFO"GET /progress/dashboard/graph/18/ HTTP/1.1" 200 600
+INFO"GET /progress/dashboard/graph/48/ HTTP/1.1" 200 931
+INFO"GET /progress/dashboard/graph/19/ HTTP/1.1" 200 1139
+INFO"GET /progress/dashboard/graph/17/ HTTP/1.1" 200 881
+INFO"GET /progress/dashboard/graph/35/ HTTP/1.1" 200 940
+INFO"GET /progress/dashboard/graph/31/ HTTP/1.1" 200 1736
+INFO"GET /progress/dashboard/graph/15/ HTTP/1.1" 200 641
+INFO"GET /progress/dashboard/graph/30/ HTTP/1.1" 200 1747
+INFO"GET /progress/dashboard/graph/27/ HTTP/1.1" 200 587
+INFO"GET /progress/dashboard/graph/51/ HTTP/1.1" 200 1104
+INFO"GET /progress/dashboard/graph/14/ HTTP/1.1" 200 1478
+INFO"GET /progress/dashboard/graph/36/ HTTP/1.1" 200 1662
+INFO"GET /progress/dashboard/graph/39/ HTTP/1.1" 200 884
+INFO"GET /progress/dashboard/graph/40/ HTTP/1.1" 200 648
+INFO"GET /progress/dashboard/graph/20/ HTTP/1.1" 200 1199
+INFO"GET /progress/dashboard/graph/37/ HTTP/1.1" 200 1526
+INFO"GET /progress/dashboard/graph/25/ HTTP/1.1" 200 659
+INFO"GET /progress/dashboard/graph/29/ HTTP/1.1" 200 2041
+INFO"GET /progress/dashboard/graph/49/ HTTP/1.1" 200 1150
+INFO"GET /progress/dashboard/graph/28/ HTTP/1.1" 200 613
+INFO"GET /progress/dashboard/graph/26/ HTTP/1.1" 200 1315
+INFO"GET /progress/dashboard/graph/34/ HTTP/1.1" 200 1255
+INFO"GET /progress/dashboard/graph/53/ HTTP/1.1" 200 905
+INFO"GET /pac/ HTTP/1.1" 200 5441
+ERRORInternal Server Error: /progress/dashboard/graph/38/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\views.py", line 884, in dashBoard_Graph
+    mydata=calculatePackageProgressData2(civts,user)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\auxilaryquery.py", line 688, in calculatePackageProgressData2
+    length=float(dpp_item.length)
+TypeError: float() argument must be a string or a number, not 'NoneType'
+INFO"GET /pac/report/expenditure/monthly/codewise/ HTTP/1.1" 200 38862
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=3&month=ALL HTTP/1.1" 200 32571
+INFOWatching for file changes with StatReloader
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=3&month=ALL HTTP/1.1" 200 32651
+INFOWatching for file changes with StatReloader
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=3&month=ALL HTTP/1.1" 200 32571
+INFOWatching for file changes with StatReloader
+INFO"GET /pac/report/expenditure/monthly/codewise/sort/?fy=3&month=ALL HTTP/1.1" 200 32668
+INFOWatching for file changes with StatReloader
+INFO"GET / HTTP/1.1" 302 0
+INFO"GET /login/?next=/ HTTP/1.1" 200 3159
+INFO"GET /static/css/app.css HTTP/1.1" 200 56
+INFO"GET /static/css/accounts.css HTTP/1.1" 200 304
+INFO"GET /static/css/bootstrap.min.css HTTP/1.1" 200 124968
+INFO"GET /static/js/jspdf.plugin.autotable.js HTTP/1.1" 200 72334
+INFO"GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86663
+INFO"GET /static/js/popper.min.js HTTP/1.1" 200 21009
+INFO"GET /static/js/tableHTMLExport.js HTTP/1.1" 200 7293
+INFO"GET /static/js/highcharts.js HTTP/1.1" 200 233828
+INFO"GET /static/js/jspdf.min.js HTTP/1.1" 200 307243
+INFO"GET /static/js/bootstrap.min.js HTTP/1.1" 200 60016
+INFO"GET /favicon.ico HTTP/1.1" 302 0
+WARNING"GET /static/images/cmis.Icon HTTP/1.1" 404 1775
+INFO"POST /login/?next=/ HTTP/1.1" 200 3368
+INFO"POST /login/?next=/ HTTP/1.1" 302 0
+INFO"GET / HTTP/1.1" 302 0
+INFO"GET /wldata/ HTTP/1.1" 200 5569
+INFO"GET /static/js/sidebar.js HTTP/1.1" 200 9589
+INFO"GET /static/css/jquery.mCustomScrollbar.min.css HTTP/1.1" 200 42839
+INFO"GET /static/js/fontawesome.js HTTP/1.1" 200 80496
+INFO"GET /static/css/dashboard.css HTTP/1.1" 200 4521
+INFO"GET /static/js/jquery.mCustomScrollbar.min.js HTTP/1.1" 200 40181
+INFO"GET /static/js/dashboard.js HTTP/1.1" 200 11603
+INFO"GET /static/js/solid.js HTTP/1.1" 200 584457
+INFO"GET /static/js/popper.min.js.map HTTP/1.1" 200 121866
+INFO"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+INFO"GET /static/js/highcharts.js.map HTTP/1.1" 200 559904
+INFO"GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 194435
+INFO"GET /wldata/send_email/ HTTP/1.1" 200 5556
+INFO"GET /static/wldata/js/send_email.js HTTP/1.1" 200 17476
+INFO"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+INFO"GET /static/js/highcharts.js.map HTTP/1.1" 200 559904
+INFO"GET /static/js/popper.min.js.map HTTP/1.1" 200 121866
+INFO"GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 194435
+INFO"GET /wldata/send_email/ HTTP/1.1" 200 5702
+INFO"GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+INFO"GET /static/js/popper.min.js.map HTTP/1.1" 200 121866
+INFO"GET /static/js/highcharts.js.map HTTP/1.1" 200 559904
+INFO"GET /static/js/bootstrap.min.js.map HTTP/1.1" 200 194435
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 1376
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 1375
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 148
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 148
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 148
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 148
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/send_email/ HTTP/1.1" 200 5702
+INFO"GET /static/css/app.css HTTP/1.1" 200 56
+INFO"GET /static/css/dashboard.css HTTP/1.1" 200 4521
+INFO"GET /static/wldata/js/send_email.js HTTP/1.1" 200 17476
+INFO"GET /static/css/jquery.mCustomScrollbar.min.css HTTP/1.1" 200 42839
+INFO"GET /static/css/bootstrap.min.css HTTP/1.1" 200 124968
+INFO"GET /static/js/solid.js HTTP/1.1" 304 0
+INFO"GET /static/js/fontawesome.js HTTP/1.1" 304 0
+INFO"GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 304 0
+INFO"GET /static/js/highcharts.js HTTP/1.1" 304 0
+INFO"GET /static/js/jspdf.min.js HTTP/1.1" 304 0
+INFO"GET /static/js/jspdf.plugin.autotable.js HTTP/1.1" 304 0
+INFO"GET /static/js/tableHTMLExport.js HTTP/1.1" 304 0
+INFO"GET /static/js/popper.min.js HTTP/1.1" 304 0
+INFO"GET /static/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO"GET /static/js/jquery.mCustomScrollbar.min.js HTTP/1.1" 304 0
+INFO"GET /static/js/sidebar.js HTTP/1.1" 304 0
+INFO"GET /static/js/dashboard.js HTTP/1.1" 304 0
+INFO"GET /favicon.ico HTTP/1.1" 302 0
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 148
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 148
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 148
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=12 HTTP/1.1" 200 148
+INFO"GET /logout/ HTTP/1.1" 302 0
+INFO"GET /login/ HTTP/1.1" 200 3159
+INFO"POST /login/ HTTP/1.1" 302 0
+INFO"GET / HTTP/1.1" 302 0
+INFO"GET /wldata/ HTTP/1.1" 200 5569
+INFOI am in Display Message
+INFO"GET /wldata/view_data HTTP/1.1" 200 5468
+INFO"GET /static/wldata/js/gauge_data_view.js HTTP/1.1" 304 0
+INFOI am in Display Message
+INFO"GET /wldata/send_email/ HTTP/1.1" 200 5702
+INFO"GET /static/wldata/js/send_email.js HTTP/1.1" 200 17476
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 148
+ERRORInternal Server Error: /progress/dashboard/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\progress\views.py", line 843, in dashBoard
+    if user.profile.role.role_name =="XEN":
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\utils\functional.py", line 241, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'AnonymousUser' object has no attribute 'profile'
+ERROR"GET /progress/dashboard/ HTTP/1.1" 500 74067
+INFO"GET /favicon.ico HTTP/1.1" 302 0
+WARNING"GET /static/images/cmis.Icon HTTP/1.1" 404 1775
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 148
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 148
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 148
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 148
+INFO"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 200 148
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 151, in selectWLatParticularTime
+    for r6,r9,r12,r15,r18 in mydata:
+ValueError: not enough values to unpack (expected 5, got 4)
+ERROR"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 500 72709
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 151, in selectWLatParticularTime
+    for r6,r9,r12,r15,r18 in mydata:
+ValueError: not enough values to unpack (expected 5, got 4)
+ERROR"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 500 72709
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 151, in selectWLatParticularTime
+    for r6,r9,r12,r15,r18 in mydata:
+ValueError: not enough values to unpack (expected 5, got 4)
+ERROR"GET /wldata/gauge_data_at_time/?hour=6 HTTP/1.1" 500 71700
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 151, in selectWLatParticularTime
+    for r6,r9,r12,r15,r18 in mydata:
+ValueError: not enough values to unpack (expected 5, got 4)
+ERROR"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 500 71700
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 151, in selectWLatParticularTime
+    for r6,r9,r12,r15,r18 in mydata:
+ValueError: not enough values to unpack (expected 5, got 4)
+ERROR"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 500 73386
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 149, in selectWLatParticularTime
+    mydata=getTimeSlotReadingCumulative(hour,uid)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py", line 251, in getTimeSlotReadingCumulative
+    mygauges=list(GaugeLocation.objects.filter(division_name=mydivision ))
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\query.py", line 269, in __len__
+    self._fetch_all()
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\query.py", line 1303, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 1141, in execute_sql
+    sql, params = self.as_sql()
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 513, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 430, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 430, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\lookups.py", line 300, in as_sql
+    return super().as_sql(compiler, connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\lookups.py", line 179, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\lookups.py", line 282, in process_rhs
+    raise ValueError(
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+ERROR"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 500 131144
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 149, in selectWLatParticularTime
+    mydata=getTimeSlotReadingCumulative(hour,uid)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py", line 251, in getTimeSlotReadingCumulative
+    mygauges=list(GaugeLocation.objects.filter(division_name=mydivision ))
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\query.py", line 269, in __len__
+    self._fetch_all()
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\query.py", line 1303, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 1141, in execute_sql
+    sql, params = self.as_sql()
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 513, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 430, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\sql\compiler.py", line 430, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\fields\related_lookups.py", line 130, in as_sql
+    return super().as_sql(compiler, connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\lookups.py", line 300, in as_sql
+    return super().as_sql(compiler, connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\lookups.py", line 179, in as_sql
+    rhs_sql, rhs_params = self.process_rhs(compiler, connection)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\db\models\lookups.py", line 282, in process_rhs
+    raise ValueError(
+ValueError: The QuerySet value for an exact lookup must be limited to one result using slicing.
+ERROR"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 500 131145
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 149, in selectWLatParticularTime
+    mydata=getTimeSlotReadingCumulative(hour,uid)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py", line 251, in getTimeSlotReadingCumulative
+    print("{}".format(mydivision.division_name))
+AttributeError: 'QuerySet' object has no attribute 'division_name'
+ERROR"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 500 76439
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 149, in selectWLatParticularTime
+    mydata=getTimeSlotReadingCumulative(hour,uid)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py", line 269, in getTimeSlotReadingCumulative
+    td_6.append(d.wlreading)
+NameError: name 'd' is not defined
+ERROR"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 500 79353
+ERRORInternal Server Error: /wldata/gauge_data_at_time/
+Traceback (most recent call last):
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "E:\Website_26_07_2020\cmis6\djangoenv\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\views.py", line 149, in selectWLatParticularTime
+    mydata=getTimeSlotReadingCumulative(hour,uid)
+  File "E:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py", line 269, in getTimeSlotReadingCumulative
+    td_6.append(d.wlreading)
+NameError: name 'd' is not defined
+ERROR"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 500 79352
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2266
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2414
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2414
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2461
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=9 HTTP/1.1" 200 2461
+INFO"GET /wldata/gauge_data_at_time/?hour=12 HTTP/1.1" 200 2461
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=12 HTTP/1.1" 200 2461
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\views.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=12 HTTP/1.1" 200 2991
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
+INFO"GET /wldata/gauge_data_at_time/?hour=12 HTTP/1.1" 200 2508
+INFOE:\Website_24_11_2020\cmis6\cmis6\wldata\auxilaryquery.py changed, reloading.
+INFOWatching for file changes with StatReloader
