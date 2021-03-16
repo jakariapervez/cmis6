@@ -233,13 +233,20 @@ def getTimeSlotFromHour(hour):
     h2 = fisnish_hours[idx]
     myvalue = {"h1": h1, "h2": h2}
     return myvalue
-def getTimeSlotReading(h1,h2):
+
+
+def getTimeSlotReading(h1, h2):
     pass
+
+
 class DailyGaugeReading():
     def __init__(self):
         pass
 
-from .models import GaugeLocation,DivisionNames
+
+from .models import GaugeLocation, DivisionNames
+
+
 def getTimeSlotReadingCumulative(reading_hour, user_id):
     reading_hour = int(reading_hour)
     mydate = datetime.datetime.now()
@@ -247,14 +254,14 @@ def getTimeSlotReadingCumulative(reading_hour, user_id):
     myday = mydate.day
     mymonth = mydate.month
     gtimes = [6, 9, 12, 15, 18]
-    mydivision=DivisionNames.objects.get(division_user_id=user_id)
+    mydivision = DivisionNames.objects.get(division_user_id=user_id)
     print("{}".format(mydivision.division_name))
-    mygauges=list(GaugeLocation.objects.filter(division_name=mydivision ))
-    gnames=[g.gauge_code for g in mygauges]
-    rivers=[g.river_name.river_name for g in mygauges]
-    locs=[g.gauge_station_name  for g in mygauges]
+    mygauges = list(GaugeLocation.objects.filter(division_name=mydivision))
+    gnames = [g.gauge_code for g in mygauges]
+    rivers = [g.river_name.river_name for g in mygauges]
+    locs = [g.gauge_station_name for g in mygauges]
     print("{}".format(mygauges))
-    #print("mydivision={} mygauges={}".format(mydivision.division_name,mygauges))
+    # print("mydivision={} mygauges={}".format(mydivision.division_name,mygauges))
     td_6 = []
     td_9 = []
     td_12 = []
@@ -266,8 +273,9 @@ def getTimeSlotReadingCumulative(reading_hour, user_id):
         h2 = myvalue['h2']
         print("h1={} h2={}".format(h1, h2))
         mydata = list(GaugeReading.objects.filter(reading_time__year=myyear, reading_time__month=mymonth,
-                                                  reading_time__day=myday,reading_time__hour__gte=h1,
-                                                  reading_time__hour__lte=h2,gauge_name__in=mygauges).order_by('-gauge_name__gauge_code'))
+                                                  reading_time__day=myday, reading_time__hour__gte=h1,
+                                                  reading_time__hour__lte=h2, gauge_name__in=mygauges).order_by(
+            '-gauge_name__gauge_code'))
         for d in mydata:
             if hour == 6:
                 td_6.append(d.wlreading)
@@ -288,12 +296,6 @@ def getTimeSlotReadingCumulative(reading_hour, user_id):
 
        """
 
-
-
-
-
-
-
     print(td_6)
     print(td_18)
     """getting yesterday data"""
@@ -302,14 +304,15 @@ def getTimeSlotReadingCumulative(reading_hour, user_id):
     h2 = myvalue['h2']
 
     mydata = list(GaugeReading.objects.filter(reading_time__year=myyear, reading_time__month=mymonth,
-                                              reading_time__day=myday-1, reading_time__hour__gte=h1,
+                                              reading_time__day=myday - 1, reading_time__hour__gte=h1,
                                               reading_time__hour__lte=h2, gauge_name__in=mygauges).order_by(
         '-gauge_name__gauge_code'))
-    td_yt=[]
+    td_yt = []
     for d in mydata:
         td_yt.append(d.wlreading)
 
-    mylist ={"td_6":td_6,"td_9":td_9,"td_12":td_12,"td_15":td_15,"td_18":td_18,"gn":gnames,"rivers":rivers,"locs":locs,"yd":td_yt}
+    mylist = {"td_6": td_6, "td_9": td_9, "td_12": td_12, "td_15": td_15, "td_18": td_18, "gn": gnames,
+              "rivers": rivers, "locs": locs, "yd": td_yt}
 
     return mylist
 
@@ -334,7 +337,6 @@ def getTimeSlotReadingCumulative(reading_hour, user_id):
     # myvalue = {"readings": mydata, "wl": wl}
 
 
-
 from reportlab.lib.units import cm
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, Table, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -342,7 +344,7 @@ from reportlab.lib.units import inch
 from django.core.files.storage import FileSystemStorage
 from reportlab.lib.styles import getSampleStyleSheet
 from io import BytesIO
-from reportlab.lib.pagesizes import A4, landscape
+from reportlab.lib.pagesizes import A4, A3, landscape
 from reportlab.lib import colors
 
 
@@ -353,7 +355,7 @@ def getDivisionName(uid):
 
 def createWLReport(hour, uid):
     wl_data = getTimeSlotReading(hour, uid)
-    #wl_data=getTimeSlotReadingCumulative(hour,uid)
+    # wl_data=getTimeSlotReadingCumulative(hour,uid)
     """ Basic Setup for Report Lab   """
     pdf_buffer = BytesIO()
     doc = SimpleDocTemplate(pdf_buffer)
@@ -376,7 +378,7 @@ def createWLReport(hour, uid):
 
     """Creating Table widths"""
     col_widths = [60 * cm, 60 * cm, 60 * cm, 60 * cm]
-    tableHeading = [["GAUGE", "RIVER", "LOCATION", "WL(m-pwd)"], ]
+    tableHeading = [["GAUGE", "RIVER", "LOCATION", "WL(m-pwd)"]]
     for wl in wl_data:
         gauge = wl.gauge_name.gauge_code
         river = wl.gauge_name.river_name.river_name
@@ -405,9 +407,15 @@ def createWLReport(hour, uid):
     pdf_buffer.close()
     myvalue = {'report': pdf_value, 'time': reporting_time}
     return myvalue
+
+
+import sys
+
+
 def createWLReport2(hour, uid):
-    #wl_data = getTimeSlotReading(hour, uid)
-    wl_data=getTimeSlotReadingCumulative(hour,uid)
+    print("successfully initiated data sending operations.........")
+    # wl_data = getTimeSlotReading(hour, uid)
+    wl_data = getTimeSlotReadingCumulative(hour, uid)
 
     """ Basic Setup for Report Lab   """
     pdf_buffer = BytesIO()
@@ -427,38 +435,81 @@ def createWLReport2(hour, uid):
     division_name = getDivisionName(uid)
     h1 = Paragraph(division_name)
     flowables.append(h1)
+    mydate = datetime.datetime.now()
+    mydate = mydate.replace(hour=int(hour))
+    reporting_time = mydate.strftime('%x')
+    reporting_time = reporting_time + " at " + str(hour) + ":00 hours"
+    h2=Paragraph(reporting_time)
+    flowables.append(h2)
     # flowables.append(Spacer(1,0.2*inch))
 
     """Creating Table widths"""
-    col_widths = [60 * cm, 60 * cm, 60 * cm, 60 * cm]
-    tableHeading = [["GAUGE", "RIVER", "LOCATION", "WL(m-pwd)"], ]
-    for wl in wl_data:
-        gauge = wl.gauge_name.gauge_code
-        river = wl.gauge_name.river_name.river_name
-        location = wl.gauge_name.gauge_station_name
-        readings = wl.wlreading
-        mycuurent_data = [gauge, river, location, readings]
-        tableHeading.append(mycuurent_data)
+    col_widths = [2.5 * cm, 2.5 * cm, 2.5 * cm, 2.5 * cm, 2.5 * cm, 2.5 * cm, 2.5 * cm, 2.5 * cm, 2.5 * cm]
+    tableHeading = [["GAUGE", "RIVER", "LOCATION", "18:00hrs \n Yesterday", "6:00hrs \n Today", "9:00hrs \n Today",
+                     "12:00hrs \n Today", "15:00hrs \n Today", "18:00hrs \n Today"], ]
+    mydata = getTimeSlotReadingCumulative(hour, uid)
 
-        pass
-    mydate = wl_data[0].reading_time
-    mydate = mydate.replace(hour=6)
+    mylist = zip(mydata["gn"], mydata["rivers"], mydata["locs"], mydata["yd"], mydata["td_6"], mydata["td_9"],
+                 mydata["td_12"], mydata["td_15"], mydata["td_18"])
+    print("successfully returned from  getCumData function.........")
+    for d1, d2, d3, d4, d5, d6, d7, d8, d9 in zip(mydata["gn"], mydata["rivers"], mydata["locs"], mydata["yd"],
+                                                  mydata["td_6"], mydata["td_9"],
+                                                  mydata["td_12"], mydata["td_15"], mydata["td_18"]):
+        # gauge = wl.gauge_name.gauge_code
+        # river = wl.gauge_name.river_name.river_name
+        # location = wl.gauge_name.gauge_station_name
+        # readings = wl.wlreading
+        mycuurent_data = [d1, d2, d3, d4, d5, d6, d7, d8, d9]
+        # print(mycuurent_data)
+        tableHeading.append(mycuurent_data)
+    print(tableHeading)
+    #t = Table(tableHeading)
+    t = Table(tableHeading,
+              style=[('GRID', (0, 0), (-1, -1), 1.5, colors.green), ('ALIGN', (0, 0), (-1, -1), "CENTER"),
+              ('VALIGN',(0,0),(-1,-1),'MIDDLE')])
+    t.hAlign = 'LEFT'
+    flowables.append(t)
+
+
+
+    """  
+    
+    
+    
+    mydate = datetime.now()
+    mydate = mydate.replace(hour=hour)
     reporting_time = mydate.strftime('%x')
     reporting_time = reporting_time + " at " + str(hour) + ":00 hours"
     h2 = Paragraph(reporting_time)
     flowables.append(h2)
     # t=Table(data=tableHeading,colWidths=col_widths,repeatRows=1)
+      """
 
-    t = Table(tableHeading, 4 * [2 * inch],
-              style=[('GRID', (0, 0), (-1, -1), 1.5, colors.green), ('ALIGN', (0, 0), (-1, -1), "CENTER")])
-    t.hAlign = 'LEFT'
-    flowables.append(t)
+    """    
+    try:
+        t = Table(tableHeading, 9 * [2.5 *cm],
+                style=[('GRID', (0, 0), (-1, -1), 1.5, colors.green), ('ALIGN', (0, 0), (-1, -1), "CENTER")])
+        t.hAlign = 'LEFT'
+        flowables.append(t)
 
+        doc.build(flowables)
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
+    """
+    print("sucessfully build reporting table......")
     doc.build(flowables)
-
+    print("sucessfully build reporting pdf.....")
     pdf_value = pdf_buffer.getvalue()
+    print("sucessfully extract pdf report .....")
     pdf_buffer.close()
+
+    myhour=hour
+
+
+    print("mydate={}".format(mydate))
+
     myvalue = {'report': pdf_value, 'time': reporting_time}
+    print(myvalue)
     return myvalue
 
 

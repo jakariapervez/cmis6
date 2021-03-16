@@ -336,15 +336,17 @@ return filename
 var generateReport3= function () 
 {
 console.log("sucessfully intitiated reporot generations....")
-fy=$("#fy-select").children("option:selected").val();
-month=$("#month-select").children("option:selected").val();
+//fy=$("#fy-select").children("option:selected").val();
+//month=$("#month-select").children("option:selected").val();
 //filename2="Report_"+fy+"_"+month+".pdf"
 //alert(filename2)
 //filename="Report_2019_20_7.pdf"
 var doc = new jsPDF('l','in',[16.5,11.7]);
 
 //var heading=[["Gauge","Time","WL","EDIT","DELETE" ]]
-var heading=[["GAUGE", 	"RIVER NAME" ,	"LOCATION","WL"]]
+ 	 	 	 	
+var heading=[["GAUGE", 	"RIVER NAME" ,	"LOCATION","18.00 Hrs Yestday","6.00Hrs Today",
+"9.00Hrs Today","12.00Hrs Today","15.00Hrs Today", 	"18.00Hrs Today"]]
 //var heading=[["Gauge","Time","WL" ]]
 /*creating rows and column of Pdf */
 var rows=$("#ivt-table tr");
@@ -371,7 +373,8 @@ columnStyles: {0: {columnWidth:1},1: {columnWidth:2},}
 //filename="report_"+fy+"_"+month+".pdf"
 //alert(filename)
 //doc.autoTable({html:"#ivt-table",theme: 'grid',});
-filename= buildName(fy,month)
+//filename= buildName(fy,month)
+filename="WL_Report";
 doc.save(filename);
 	
 }

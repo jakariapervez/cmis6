@@ -3,8 +3,17 @@ from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from .models import SMS_info, GaugeLocation
 from django.template.loader import render_to_string
+
+from django.db import models
+from django.utils import timezone
+from datetime import datetime
+from django.conf import settings
+
+
+
 import logging
 logger=logging.getLogger('django')
+from .models import SMS_info,GaugeReader,GaugeLocation,GaugeReading
 # Create your views here.
 def wl_index(request):
     sms_items = SMS_info.objects.all()
@@ -12,18 +21,41 @@ def wl_index(request):
 
 
 def data_collect_view(request):
-    if request.method == 'GET':
-        tbody = request.GET['text']
-        cellno = request.GET['number']
-        mysms = SMS_info(smsbody=tbody, mobile_no=cellno)
-        mysms.save()
-    sms_items = SMS_info.objects.all()
-    gauges = GaugeLocation.objects.all()
-    for g in gauges:
-        print(g.gauge_code)
-    return render(request, 'wldata/accounts_dashboard.html', {'sms_items': sms_items, 'gauges': gauges})
+    logger.info("intercepted An SMS....")
+    logger.info(request)
+    tbody = request.GET['text']
+    cellno = request.GET['number']
+    cellno2 = cellno.strip()
+    logger.info("cell no={}".format(cellno))
+    mysms = SMS_info(smsbody=tbody, mobile_no=cellno)
+    mysms.save()
+    logger.info("Sucessfully Saved sms")
+    logger.info(type(cellno))
+    logger.info(len(cellno2))
+    gauge_readers = get_object_or_404(GaugeReader, mobile_no=cellno2)
+    gr = gauge_readers
+    # gauge_reader_id=GaugeReader.objects.filter( mobile_no=cellno2)
+    logger.info(gr)
+    logger.info("Gauge Reader name={} mobile={}".format(gr.reader_name, gr.mobile_no))
+    mygauge_name = get_object_or_404(GaugeLocation, reader=gr)
+    # mygauge_name=mygauges[0]
+    logger.info(mygauge_name)
+    my_wl = float(tbody)
+    mytime = datetime.now()
+    mygauge_reading = GaugeReading(gauge_name=mygauge_name, reading_time=mytime, wlreading=my_wl)
+    mygauge_reading.save()
+    data=dict()
 
-    # return redirect('wl_index')
+    logger.info("Sucessfully Saved Water Level")
+    return JsonResponse(data)
+
+
+
+
+
+
+
+
 
 from .models import DivisionNames
 def displayData(request):
@@ -179,6 +211,7 @@ def sendWLByEmail(request):
     user = request.user
     uid = user.pk
     myvalue = createWLReport2(hour, uid)
+    print("sucessfully returned from pdf generation function")
     myreport = myvalue['report']
     reporting_time = myvalue['time']
     # print(myreport)
