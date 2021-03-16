@@ -40,7 +40,14 @@ def data_collect_view(request):
     mygauge_name = get_object_or_404(GaugeLocation, reader=gr)
     # mygauge_name=mygauges[0]
     logger.info(mygauge_name)
-    my_wl = float(tbody)
+    try:
+        my_wl = float(tbody)
+    except:
+        logger.info("Cannot convert {} into wl default value of wl is given={}".format(tbody,-999.99))
+        my_wl=-999.99
+        data = dict()
+        return JsonResponse(data)
+
     mytime = datetime.now()
     mygauge_reading = GaugeReading(gauge_name=mygauge_name, reading_time=mytime, wlreading=my_wl)
     mygauge_reading.save()
