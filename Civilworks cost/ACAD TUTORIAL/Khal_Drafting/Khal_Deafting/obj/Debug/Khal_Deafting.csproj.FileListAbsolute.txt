@@ -1,0 +1,2 @@
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\obj\Debug\Khal_Deafting.csprojAssemblyReference.cache
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\obj\Debug\Khal_Deafting.csproj.CoreCompileInputs.cache
