@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 /*Autocad Related Imports*/
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
+using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.Geometry;
-using Autodesk.AutoCAD.EditorInput;
+
 namespace Khal_Deafting
 {
-    public struct AutocadReference 
-    {
-        Document doc;
-        Database db;
-        Editor ed;
-    }
+
     public class DrawKhal
 
     {
@@ -39,7 +35,8 @@ namespace Khal_Deafting
     }
     public class Driver
     {
-        public static void Main(string [] args) 
+        [CommandMethod ("DRAW_KHAL")]
+        public void DrawMyKhal () 
         {
             DrawKhal mykhal = new DrawKhal();
             Tuple <Document, Database, Editor> myreferences = mykhal.GetDocumentReference();
