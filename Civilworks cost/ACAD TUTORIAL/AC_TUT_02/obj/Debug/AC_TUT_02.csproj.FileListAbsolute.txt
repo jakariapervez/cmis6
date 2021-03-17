@@ -1,6 +1,10 @@
 E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\bin\Debug\AC_TUT_02.dll
 E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\bin\Debug\AC_TUT_02.pdb
-E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\obj\Debug\AC_TUT_02.csprojAssemblyReference.cache
 E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\obj\Debug\AC_TUT_02.csproj.CoreCompileInputs.cache
 E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\obj\Debug\AC_TUT_02.dll
 E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\obj\Debug\AC_TUT_02.pdb
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\bin\Debug\EPPlus.dll
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\bin\Debug\EPPlus.xml
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\AC_TUT_02\obj\Debug\AC_TUT_02.csproj.CopyComplete

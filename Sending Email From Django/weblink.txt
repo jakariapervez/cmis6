@@ -12,3 +12,4 @@ https://devtutorial.io/how-to-manage-file-permissions-on-ubuntu-server-20-04.htm
 https://stackoverflow.com/questions/9304908/how-can-i-filter-a-django-query-with-a-list-of-values #how to filter using list in django
 http://www.dotnet-tutorials.net/Article/read-a-csv-file-in-csharp
 Reportlab Tables – Creating Tables in PDFs with Python               #table generation in reportlab
+https://www.c-sharpcorner.com/UploadFile/9b86d4/how-to-return-multiple-values-from-a-function-in-C-Sharp/  #how to return multiple values from C#
