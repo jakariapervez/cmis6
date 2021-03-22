@@ -16,28 +16,15 @@ using Autodesk.AutoCAD.Windows;
 using Autodesk.AutoCAD.Geometry;
 
 namespace Khal_Deafting
+
 {
-    public class Mytransformation
-    {
-
-        public Point2d Scale(Point2d p,double sx,double sy)
-        {
-            Point2d p2 = new Point2d(p.X * sx, p.Y * sy);
-            return p2;
-        
-        }
-        public Point2d Translate(Point2d p, double dx, double dy)
-        {
-            Point2d p2 = new Point2d(p.X + dx, p.Y + dy);
-            return p2;
-
-        }
+    
 
 
 
 
 
-    }
+
     public class DrawKhal
 
     {
@@ -125,6 +112,8 @@ namespace Khal_Deafting
      
 
         }
+        
+        
         public Polyline DrawProfile( List<double> xvalues, 
             List<double> yvalues,double xog,double yog,double sx,
             double sy,double xod,double yod )
@@ -264,7 +253,15 @@ namespace Khal_Deafting
 
 
             }
-
+            XcelInput myinput = new XcelInput();
+            var myheadings = myinput.getHeadings();
+            TBlock myblock = new TBlock();
+            myblock.setHeadings(myheadings);
+            myblock.TopLeft = new Point2d(400, 400);
+            myblock.DrawTitleBlock2(4500);
+            //myblock.DrawTitleBlock(210, 827);
+           
+                edt.WriteMessage("\n"+myheadings[0].ToString());
         }
     
     
