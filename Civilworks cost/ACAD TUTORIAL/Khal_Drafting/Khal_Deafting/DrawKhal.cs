@@ -156,7 +156,7 @@ namespace Khal_Deafting
     }
     public class Driver
     {
-        [CommandMethod ("DRAW_KHAL")]
+      //  [CommandMethod ("DRAW_KHAL")]
         public void DrawMyKhal () 
         {
             DrawKhal mykhal = new DrawKhal();
@@ -255,15 +255,118 @@ namespace Khal_Deafting
             }
             XcelInput myinput = new XcelInput();
             var myheadings = myinput.getHeadings();
-            TBlock myblock = new TBlock();
+            DrawingSheet myblock = new DrawingSheet();
             myblock.setHeadings(myheadings);
             myblock.TopLeft = new Point2d(400, 400);
-            myblock.DrawTitleBlock2(4500);
+            myblock.setDimension(4719);
+            myblock.DrawTitleBlock3();
             //myblock.DrawTitleBlock(210, 827);
            
                 edt.WriteMessage("\n"+myheadings[0].ToString());
         }
-    
-    
+        [CommandMethod("KHAL_DRAFTING")]
+        public void DrawMyKhal2()
+        {
+            
+            DrawKhal mykhal = new DrawKhal();
+            Tuple<Document, Database, Editor> myreferences = mykhal.GetDocumentReference();
+            Document doc = myreferences.Item1;
+            Database db = myreferences.Item2;
+            Editor edt = myreferences.Item3;
+            try
+            {
+                string excelpath = mykhal.SelectSpredsheet();
+                edt.WriteMessage("youhave selected:" + excelpath);
+                ExcelPackage package = mykhal.GetExcelFile(excelpath);
+                ExcelWorksheet lssheet = package.Workbook.Worksheets["LS"];
+                Tuple<List<double>, List<double>,
+                    List<double>, List<double>, 
+                    List<Double>> mydata = mykhal.getLongSectionData(lssheet, edt);
+                List<double> xvalues = mydata.Item1;
+                List<double> clvalues = mydata.Item2;
+                List<double> lbvalues = mydata.Item3;
+                List<double> rbvalues = mydata.Item4;
+                List<double> dlvalues = mydata.Item5;
+                edt.WriteMessage(mydata.Item1[0].ToString());
+                /*Getting Sheet Information*/
+                XcelInput myinput = new XcelInput();
+                var myheadings = myinput.getHeadings();
+                var sheetInfo = myinput.getSheetInfo(edt);
+                var sheetTitles = sheetInfo.Item1;
+                var drawing_nos = sheetInfo.Item2;
+                var drawing_date = sheetInfo.Item3;
+                List<double> xorigins = sheetInfo.Item4;
+                List<double> yorigins = sheetInfo.Item5;
+                List<double> sheetWidths = sheetInfo.Item6;
+                int sheetNo = sheetWidths.Count;
+                List<DrawingSheet> mydrawingSheets = new List<DrawingSheet>();
+
+                for (int i = 1; i < sheetNo; i++)
+                {
+                    DrawingSheet myblock = new DrawingSheet();
+                    myblock.TopLeft = new Point2d(xorigins[i], yorigins[i]);
+                    myblock.setDimension(sheetWidths[i]);
+                    List<string> myagrs = new List<string>();
+                    myheadings.Add(sheetTitles[i]);
+                    myheadings.Add(drawing_nos[i]);
+                    myheadings.Add(drawing_date[i]);
+                    myblock.setHeadings(myheadings);
+                    myagrs.Add(sheetTitles[i]);
+                    myagrs.Add(drawing_nos[i]);
+                    myagrs.Add(drawing_date[i]);
+                    myblock.setVaiableHeadings(myagrs);
+                    edt.WriteMessage(myblock.drawingNo);
+                    edt.WriteMessage(myblock.DrawingDate);
+                    myblock.DrawTitleBlock3();
+                    myblock.DrawRevisonBlock();
+                    mydrawingSheets.Add(myblock);
+
+                }
+                edt.WriteMessage("Sucessfully completed Title Block");
+                using (Transaction trans=db.TransactionManager.StartTransaction() ) 
+                {
+                    BlockTable bt;
+                    bt = trans.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
+                    BlockTableRecord btr;
+                    btr = trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
+                    //Drawing Long Sections 
+                    DrawingSheet ds = mydrawingSheets[1];
+                    Point2d draftingOrigin = ds.DrawingOriginA();
+                    Polyline cl = mykhal.DrawProfile(xvalues, clvalues, 28410, 0, 1, 100, draftingOrigin.X,
+                        draftingOrigin.Y);
+                    btr.AppendEntity(cl);
+                    trans.AddNewlyCreatedDBObject(cl, true);
+                    trans.Commit();
+                    edt.WriteMessage("Sucessfully completed Profile......");
+
+                }
+                    
+                    //mykhal.DrawProfile(xvalues, clvalues,   28410, 0, 1, 100, 200, 200);
+
+            }
+            catch(System.Exception ex)
+            {
+                edt.WriteMessage("\n" + ex.Message);
+            }
+            
+           
+           
+           
+            
+           
+           
+           
+            
+           
+           
+            
+           
+            
+            
+            //myblock.DrawTitleBlock(210, 827);
+
+           
+        }
+
     }
 }

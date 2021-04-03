@@ -16,3 +16,8 @@ https://www.c-sharpcorner.com/UploadFile/9b86d4/how-to-return-multiple-values-fr
 https://adndevblog.typepad.com/autocad/autocad/ #AutoCAD Dev Blog
 https://through-the-interface.typepad.com/through_the_interface/2007/08/using-autocads-.html  #opening filedialog from autocad C# .net api
 https://www.geeksforgeeks.org/2d-transformation-rotation-objects/      #transformation of 2d objects
+http://docs.autodesk.com/ACD/2011/CHS/filesMDG/WS1a9193826455f5ff2566ffd511ff6f8c7ca-3b81.htm  #text style in .net api
+https://forums.autodesk.com/t5/net/vb-net-create-mtext-define-align/td-p/6588550   #alignment of mtext in autocad.net api
+https://through-the-interface.typepad.com/through_the_interface/2007/06/creating_an_aut.html    #autocad .net api table
+https://adndevblog.typepad.com/autocad/2012/07/hatch-using-the-autocad-net-api.html            #autocad.net api hatching
+http://docs.autodesk.com/ACD/2010/ENU/AutoCAD%20.NET%20Developer%27s%20Guide/index.html?url=WS1a9193826455f5ff2566ffd511ff6f8c7ca-3aa9.htm,topicNumber=d0e37210     #formting mtext

@@ -69,7 +69,7 @@
     <Compile Include="DrawKhal.cs" />
     <Compile Include="Mytransformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TBlock.cs" />
+    <Compile Include="DrawingSheet.cs" />
     <Compile Include="XcelInput.cs" />
   </ItemGroup>
   <ItemGroup>

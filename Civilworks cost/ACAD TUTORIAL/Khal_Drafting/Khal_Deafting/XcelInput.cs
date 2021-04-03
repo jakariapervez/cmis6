@@ -6,6 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using OfficeOpenXml;
 using Autodesk.AutoCAD.Windows;
+using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.DatabaseServices;
+using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.Runtime;
+using Autodesk.AutoCAD.Windows;
+using Autodesk.AutoCAD.Geometry;
+
 
 namespace Khal_Deafting
 {
@@ -34,6 +41,7 @@ namespace Khal_Deafting
 
 
         }
+        
         public List<String> getHeadings()
         {
             List<String> mylist=new List<String>();
@@ -48,6 +56,60 @@ namespace Khal_Deafting
             }
             return mylist;
         
+        }
+        public Tuple< List<String>, List<String>, List<String>, List<double>, List<double>, List<double>> getSheetInfo(Editor edt)
+        {
+            
+            List<String> title = new List<String>();
+            List<string> drawing_no = new List<string>();
+            List<string> darwing_date = new List<string>();
+            List<double> xorigins = new List<double>();
+            List<double> yorigins = new List<double>();
+            List<double> sheetwidths = new List<double>();
+            ExcelWorksheet wsheet = this.package.Workbook.Worksheets["Drawing_Sheet"];
+            int rows = wsheet.Dimension.Rows;
+            int cols = wsheet.Dimension.Columns;
+            for (int i = 2; i <= rows; i++)
+            {
+                try
+
+                {
+                    string mytitle = wsheet.Cells[i, 2].Value.ToString();                    
+                    string dno = wsheet.Cells[i, 3].Value.ToString();                    
+                    string mydate = wsheet.Cells[i, 4].Value.ToString();
+                   
+                    string xorigin = wsheet.Cells[i, 5].Value.ToString();                    
+                    string yorigin = wsheet.Cells[i, 6].Value.ToString();                    
+                    string sheetwidth = wsheet.Cells[i, 7].Value.ToString();                   
+                    title.Add(mytitle);
+                    drawing_no.Add(dno);
+                    darwing_date.Add(mydate);
+                    xorigins.Add(double.Parse(xorigin));
+                    yorigins.Add(double.Parse(yorigin));
+                    sheetwidths.Add(double.Parse(sheetwidth));
+                 /*   edt.WriteMessage("\n title=" + mytitle+" drrawing_no="+dno
+                        +" date="+mydate+" xroigin="+xorigin+" yorigin="+yorigin+
+                        " sheet width="+sheetwidth
+                        
+                        ); */
+
+
+
+
+                }
+
+                catch (System.Exception ex)
+                {
+                    edt.WriteMessage("Error Encounterd:" + ex.Message);
+
+
+                }
+
+            }
+
+            return new Tuple<List<String>, List<String>, List<String>,
+                List<double>, List<double>, List<double>>(title, drawing_no, darwing_date, xorigins, yorigins, sheetwidths);
+
         }
     }
 }

@@ -1,0 +1,24 @@
+https://data-flair.training/blogs/django-send-email/     #settingup environment
+https://stackoverflow.com/questions/46567889/django-attach-pdf-generated-by-a-view-to-an-email    #attaching pdf file
+https://stackoverflow.com/questions/15044778/how-to-get-user-id-from-auth-user-table-in-django   #retrieving user.pk
+https://vitorfs.com/                                             #Vitor Freitas simple is better than complex
+https://codingwithmitch.com/courses/building-a-website-django-python/        #coding with mitch django tutorial
+Django Password Reset Tutorial                                               #django password reset
+https://stackoverflow.com/questions/3584145/how-to-change-the-text-of-a-label  #changing label in jquery
+https://www.youtube.com/watch?v=ziegOuE7M4A                                    #django logging tutorial
+https://www.youtube.com/watch?v=-vVml7cpWzY                                    #django logging tutorial
+https://data-flair.training/blogs/django-logging/                              #django logging tutorial 
+https://devtutorial.io/how-to-manage-file-permissions-on-ubuntu-server-20-04.html #how to  give write permission in linux
+https://stackoverflow.com/questions/9304908/how-can-i-filter-a-django-query-with-a-list-of-values #how to filter using list in django
+http://www.dotnet-tutorials.net/Article/read-a-csv-file-in-csharp
+Reportlab Tables – Creating Tables in PDFs with Python               #table generation in reportlab
+https://www.c-sharpcorner.com/UploadFile/9b86d4/how-to-return-multiple-values-from-a-function-in-C-Sharp/  #how to return multiple values from C#
+https://adndevblog.typepad.com/autocad/autocad/ #AutoCAD Dev Blog
+https://through-the-interface.typepad.com/through_the_interface/2007/08/using-autocads-.html  #opening filedialog from autocad C# .net api
+https://www.geeksforgeeks.org/2d-transformation-rotation-objects/      #transformation of 2d objects
+http://docs.autodesk.com/ACD/2011/CHS/filesMDG/WS1a9193826455f5ff2566ffd511ff6f8c7ca-3b81.htm  #text style in .net api
+https://forums.autodesk.com/t5/net/vb-net-create-mtext-define-align/td-p/6588550   #alignment of mtext in autocad.net api
+https://through-the-interface.typepad.com/through_the_interface/2007/06/creating_an_aut.html    #autocad .net api table
+https://adndevblog.typepad.com/autocad/2012/07/hatch-using-the-autocad-net-api.html            #autocad.net api hatching
+http://docs.autodesk.com/ACD/2010/ENU/AutoCAD%20.NET%20Developer%27s%20Guide/index.html?url=WS1a9193826455f5ff2566ffd511ff6f8c7ca-3aa9.htm,topicNumber=d0e37210     #formting mtext
+https://adndevblog.typepad.com/autocad/2017/09/dissecting-mtext-format-codes.html  #formating charcter for autocad mtext
