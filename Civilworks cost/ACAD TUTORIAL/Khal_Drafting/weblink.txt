@@ -22,3 +22,6 @@ https://through-the-interface.typepad.com/through_the_interface/2007/06/creating
 https://adndevblog.typepad.com/autocad/2012/07/hatch-using-the-autocad-net-api.html            #autocad.net api hatching
 http://docs.autodesk.com/ACD/2010/ENU/AutoCAD%20.NET%20Developer%27s%20Guide/index.html?url=WS1a9193826455f5ff2566ffd511ff6f8c7ca-3aa9.htm,topicNumber=d0e37210     #formting mtext
 https://adndevblog.typepad.com/autocad/2017/09/dissecting-mtext-format-codes.html  #formating charcter for autocad mtext
+http://docs.autodesk.com/ACD/2010/ENU/AutoCAD%20.NET%20Developer%27s%20Guide/index.html?url=WS1a9193826455f5ff2566ffd511ff6f8c7ca-3cf7.htm,topicNumber=d0e30666   #autocad colors
+https://wtertinek.com/2016/07/06/linq-and-the-autocad-net-api-final-part/    #autocad color
+http://docs.autodesk.com/ACD/2010/ENU/AutoCAD%20.NET%20Developer%27s%20Guide/index.html?url=WS73099cc142f48755-5c83e7b1120018de8c0-1fd2.htm,topicNumber=d0e42282  #Autocad Leader

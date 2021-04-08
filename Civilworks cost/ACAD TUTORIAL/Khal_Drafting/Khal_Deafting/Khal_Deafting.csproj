@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="DrawKhal.cs" />
     <Compile Include="Mytransformation.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DrawingSheet.cs" />
     <Compile Include="XcelInput.cs" />

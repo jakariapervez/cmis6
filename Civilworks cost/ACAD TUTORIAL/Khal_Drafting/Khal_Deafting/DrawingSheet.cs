@@ -657,6 +657,7 @@ namespace Khal_Deafting
 
 
                 doc.SendStringToExecute("._zoom _all ", false, false, false);
+                Application.SetSystemVariable("LWDISPLAY", 1);
                 trans.Commit();
 
             }

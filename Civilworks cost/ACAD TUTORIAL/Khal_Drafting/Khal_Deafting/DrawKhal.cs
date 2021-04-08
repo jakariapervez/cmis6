@@ -323,25 +323,36 @@ namespace Khal_Deafting
 
                 }
                 edt.WriteMessage("Sucessfully completed Title Block");
-                using (Transaction trans=db.TransactionManager.StartTransaction() ) 
-                {
-                    BlockTable bt;
-                    bt = trans.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
-                    BlockTableRecord btr;
-                    btr = trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
-                    //Drawing Long Sections 
-                    DrawingSheet ds = mydrawingSheets[1];
-                    Point2d draftingOrigin = ds.DrawingOriginA();
-                    Polyline cl = mykhal.DrawProfile(xvalues, clvalues, 28410, 0, 1, 100, draftingOrigin.X,
-                        draftingOrigin.Y);
-                    btr.AppendEntity(cl);
-                    trans.AddNewlyCreatedDBObject(cl, true);
-                    trans.Commit();
-                    edt.WriteMessage("Sucessfully completed Profile......");
+               
+                DrawingSheet ds = mydrawingSheets[1];
+                Point2d draftingOrigin = ds.DrawingOriginA();
+                double dw = ds.width;
+                edt.WriteMessage("\n Draeing CL of Long Profile................");
+                Profile myprofile = new Profile(xvalues, clvalues, 28410, 0, 1, 100,4360, dw);
+                string[] mylabels = { "Center Line", "Outfall" };
+                double[] mylocations = { 2, 0 };
+                myprofile.setLabelParameter(mylabels, mylocations);
+                edt.WriteMessage("\n Sucessfully Set Drawing Labels................");
+                myprofile.fixProfileColor(157);
+                myprofile.setLineWeight(12);
+                myprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
 
-                }
-                    
-                    //mykhal.DrawProfile(xvalues, clvalues,   28410, 0, 1, 100, 200, 200);
+                edt.WriteMessage("\n LB of Long Profile................");
+                Profile lbprofile = new Profile(xvalues, lbvalues, 28410, 0, 1, 100,4260,dw);
+                lbprofile.fixProfileColor(211);
+                lbprofile.setLineWeight(8);
+                lbprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
+                edt.WriteMessage("\n RB of Long Profile................");
+                Profile rbprofile = new Profile(xvalues, rbvalues, 28410, 0, 1, 100,4360,dw);
+                rbprofile.fixProfileColor(107);
+                rbprofile.setLineWeight(8);
+                rbprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
+                edt.WriteMessage("\n DL of Long Profile................");
+                Profile dlprofile = new Profile(xvalues, dlvalues, 28410, 0, 1, 100,4260,dw);
+                dlprofile.fixProfileColor(155);
+                dlprofile.setLineWeight(8);
+                dlprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
+                //mykhal.DrawProfile(xvalues, clvalues,   28410, 0, 1, 100, 200, 200);
 
             }
             catch(System.Exception ex)
