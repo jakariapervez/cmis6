@@ -29,7 +29,7 @@ namespace Khal_Deafting
         public double profileLength { get; set; }
         public LineWeight profileWeight;
         public List<string> profileLables;
-        public List<double> pofileLabelLocation;
+        public List<Point2d> pofileLabelLocation;
         public double draftingWidth {get;set;}
         public Profile(List<double> xvalues,
             List<double> yvalues, double xog, double yog, double sx,
@@ -44,7 +44,7 @@ namespace Khal_Deafting
             this.profileLength = profileLength;
             this.draftingWidth = draftingWidth;
             this.profileLables = new List<string>();
-            this.pofileLabelLocation = new List<double>();
+            this.pofileLabelLocation = new List<Point2d>();
 
 
 
@@ -116,7 +116,7 @@ namespace Khal_Deafting
                 profileLables.Add(labels[i]);
                 if (labelLocations[i] == 0)
                     { 
-                    pofileLabelLocation.Add(0);
+                    pofileLabelLocation.Add(new Point2d(this.geometric_x[0], this.geometric_y[0]));
                 
                 
                 }
@@ -128,7 +128,7 @@ namespace Khal_Deafting
                     int found = (~index1) - 1;
                     double xvalue = this.geometric_x[found];
 
-                    pofileLabelLocation.Add(xvalue);
+                    pofileLabelLocation.Add(new Point2d(this.geometric_x[found],this.geometric_y[found]));
                 
                 }
                 
@@ -239,12 +239,13 @@ namespace Khal_Deafting
                     {
 
                         try {
-                            Point2d mypoint = new Point2d(this.pofileLabelLocation[i]+ mybox[0], mybox[3]*1.5);
+                            Point2d mypoint = new Point2d(this.pofileLabelLocation[i].X, mybox[3]+1.1);
                             Point2d tog = trs.Translate(mypoint, -this.geometric_origin_x, -this.geometric_origin_y);
                             Point2d scaledPoint = trs.Scale(tog, this.xscale_fator, this.yscale_factor);
                             Point2d p1 = trs.Translate(scaledPoint, xod, yod);
                             // myxvalue=
-                            Point2d mypoint2;
+                            Point2d mypoint2= this.pofileLabelLocation[i];
+                            /*
                             if (this.pofileLabelLocation[i] == 0)
                             {
                                  mypoint2 = new Point2d(mybox[0],
@@ -256,7 +257,8 @@ namespace Khal_Deafting
                                    this.getYFromX(this.pofileLabelLocation[i]));
 
                             }
-                           
+                            */
+
                             Point2d tog2 = trs.Translate(mypoint2, -this.geometric_origin_x, -this.geometric_origin_y);
                             Point2d scaledPoint2 = trs.Scale(tog2, this.xscale_fator, this.yscale_factor);
                             Point2d p2 = trs.Translate(scaledPoint2, xod, yod);

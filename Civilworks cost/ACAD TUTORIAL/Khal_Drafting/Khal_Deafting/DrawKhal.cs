@@ -224,6 +224,9 @@ namespace Khal_Deafting
                     }
                     */
                     //cl.SetDatabaseDefaults();
+                   
+
+
                     Polyline cl = mykhal.DrawProfile(xvalues, clvalues,
                        28410, 0, 1, 100, 200, 200);
                     btr.AppendEntity(cl);
@@ -323,41 +326,59 @@ namespace Khal_Deafting
 
                 }
                 edt.WriteMessage("Sucessfully completed Title Block");
-               
+                /*Finding the maximum values for yoffset*/
+                List<double> maxyvalues = new List<double>();
+                maxyvalues.Add(clvalues.Max() - clvalues.Min());
+                maxyvalues.Add(lbvalues.Max() - lbvalues.Min());
+                maxyvalues.Add(rbvalues.Max() - rbvalues.Min());
+                double maximum_y_offset = maxyvalues.Max();
+
                 DrawingSheet ds = mydrawingSheets[1];
                 Point2d draftingOrigin = ds.DrawingOriginA();
                 double dw = ds.width;
                 edt.WriteMessage("\n Draeing CL of Long Profile................");
                 Profile myprofile = new Profile(xvalues, clvalues, 28410, 0, 1, 100,4360, dw);
-                string[] mylabels = { "Center Line", "Outfall" };
-                double[] mylocations = { 2, 0 };
+                string[] mylabels = { "Existing Bed Level", "Outfall" };
+                double[] mylocations = { 1.75, 0 };
                 myprofile.setLabelParameter(mylabels, mylocations);
                 edt.WriteMessage("\n Sucessfully Set Drawing Labels................");
                 myprofile.fixProfileColor(157);
                 myprofile.setLineWeight(12);
-                myprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
+                myprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y-maximum_y_offset* myprofile.yscale_factor);
 
                 edt.WriteMessage("\n LB of Long Profile................");
                 Profile lbprofile = new Profile(xvalues, lbvalues, 28410, 0, 1, 100,4260,dw);
+                string [] mylabels2 = { "Existing Left Bank" };
+                double [] mylocations2 = { 8 };
+                lbprofile.setLabelParameter(mylabels2, mylocations2);
                 lbprofile.fixProfileColor(211);
                 lbprofile.setLineWeight(8);
-                lbprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
+                lbprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y - maximum_y_offset * lbprofile.yscale_factor);
                 edt.WriteMessage("\n RB of Long Profile................");
                 Profile rbprofile = new Profile(xvalues, rbvalues, 28410, 0, 1, 100,4360,dw);
+                string[] mylabels3 = { "Existing Right Bank" };
+                double[] mylocations3 = { 2.5 };
+                rbprofile.setLabelParameter(mylabels3, mylocations3);
                 rbprofile.fixProfileColor(107);
                 rbprofile.setLineWeight(8);
-                rbprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
+                rbprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y - maximum_y_offset * rbprofile.yscale_factor);
                 edt.WriteMessage("\n DL of Long Profile................");
                 Profile dlprofile = new Profile(xvalues, dlvalues, 28410, 0, 1, 100,4260,dw);
+                string[] mylabels4 = { "Design Bed Level" };
+                double[] mylocations4 = {1.33 };
+                dlprofile.setLabelParameter(mylabels4, mylocations4);
                 dlprofile.fixProfileColor(155);
                 dlprofile.setLineWeight(8);
-                dlprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y);
+                dlprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y - maximum_y_offset * dlprofile.yscale_factor);
                 //mykhal.DrawProfile(xvalues, clvalues,   28410, 0, 1, 100, 200, 200);
-
+                /*Drawing Table*/
+                ProfileTable mytable = new ProfileTable(xvalues, lbvalues, rbvalues, clvalues, dlvalues, dw);
+                mytable.drawTable(draftingOrigin.X, draftingOrigin.Y - maximum_y_offset* dlprofile.yscale_factor);
             }
             catch(System.Exception ex)
             {
                 edt.WriteMessage("\n" + ex.Message);
+                edt.WriteMessage(ex.ToString());
             }
             
            

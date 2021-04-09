@@ -466,7 +466,7 @@ namespace Khal_Deafting
             double x0 = this.TopLeft.X;
             double y0 = this.TopLeft.Y;
             double w = this.width;
-            Point2d a = new Point2d(x0 + 0.05 * w, y0 - 0.24 * w);
+            Point2d a = new Point2d(x0 + 0.05 * w, y0 - 0.05 * w);
             return a;
         }
         public void DrawRevisonBlock()

@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProfileTable.cs" />
     <Compile Include="DrawKhal.cs" />
     <Compile Include="Mytransformation.cs" />
     <Compile Include="Profile.cs" />
