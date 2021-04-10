@@ -51,6 +51,25 @@ namespace Khal_Deafting
 
 
         }
+        public Profile(
+            double xog, double yog, double sx,
+           double sy,  double draftingWidth)
+        {
+           
+            this.geometric_origin_x = xog;
+            this.geometric_origin_y = yog;
+            this.xscale_fator = sx;
+            this.yscale_factor = sy;
+           // this.profileLength = profileLength;
+            this.draftingWidth = draftingWidth;
+            this.profileLables = new List<string>();
+            this.pofileLabelLocation = new List<Point2d>();
+
+
+
+
+
+        }
 
         public void fixProfileColor(short colorIndex)
         {
@@ -156,7 +175,7 @@ namespace Khal_Deafting
                 double yCoord = yloc;
                 Point3d insPt = new Point3d(xCoord, yCoord, 0);
                 txtLabel.Location = insPt;
-                txtLabel.Attachment = AttachmentPoint.TopRight;
+                txtLabel.Attachment = AttachmentPoint.TopLeft;
                 return txtLabel;
             }
             

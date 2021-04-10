@@ -1,28 +1,20 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.Windows;
 using OfficeOpenXml;
-using Autodesk.AutoCAD.Windows;
-using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.EditorInput;
-using Autodesk.AutoCAD.Runtime;
-using Autodesk.AutoCAD.Windows;
-using Autodesk.AutoCAD.Geometry;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 
 namespace Khal_Deafting
 {
-   
-  
-   
+
+
+
     class XcelInput
     {
         public ExcelPackage package { get; set; }
-        public XcelInput() 
+        public XcelInput()
         {
 
             OpenFileDialog ofd = new OpenFileDialog("Slect xlsx file", null,
@@ -36,15 +28,15 @@ namespace Khal_Deafting
 
 
             }
-               
-           
+
+
 
 
         }
-        
+
         public List<String> getHeadings()
         {
-            List<String> mylist=new List<String>();
+            List<String> mylist = new List<String>();
             ExcelWorksheet wsheet = this.package.Workbook.Worksheets["Headers"];
             int rows = wsheet.Dimension.Rows;
             int cols = wsheet.Dimension.Columns;
@@ -52,14 +44,14 @@ namespace Khal_Deafting
             {
                 string xcontent = wsheet.Cells[i, 2].Value.ToString();
                 mylist.Add(xcontent);
-            
+
             }
             return mylist;
-        
+
         }
-        public Tuple< List<String>, List<String>, List<String>, List<double>, List<double>, List<double>> getSheetInfo(Editor edt)
+        public Tuple<List<String>, List<String>, List<String>, List<double>, List<double>, List<double>> getSheetInfo(Editor edt)
         {
-            
+
             List<String> title = new List<String>();
             List<string> drawing_no = new List<string>();
             List<string> darwing_date = new List<string>();
@@ -74,24 +66,24 @@ namespace Khal_Deafting
                 try
 
                 {
-                    string mytitle = wsheet.Cells[i, 2].Value.ToString();                    
-                    string dno = wsheet.Cells[i, 3].Value.ToString();                    
+                    string mytitle = wsheet.Cells[i, 2].Value.ToString();
+                    string dno = wsheet.Cells[i, 3].Value.ToString();
                     string mydate = wsheet.Cells[i, 4].Value.ToString();
-                   
-                    string xorigin = wsheet.Cells[i, 5].Value.ToString();                    
-                    string yorigin = wsheet.Cells[i, 6].Value.ToString();                    
-                    string sheetwidth = wsheet.Cells[i, 7].Value.ToString();                   
+
+                    string xorigin = wsheet.Cells[i, 5].Value.ToString();
+                    string yorigin = wsheet.Cells[i, 6].Value.ToString();
+                    string sheetwidth = wsheet.Cells[i, 7].Value.ToString();
                     title.Add(mytitle);
                     drawing_no.Add(dno);
                     darwing_date.Add(mydate);
                     xorigins.Add(double.Parse(xorigin));
                     yorigins.Add(double.Parse(yorigin));
                     sheetwidths.Add(double.Parse(sheetwidth));
-                 /*   edt.WriteMessage("\n title=" + mytitle+" drrawing_no="+dno
-                        +" date="+mydate+" xroigin="+xorigin+" yorigin="+yorigin+
-                        " sheet width="+sheetwidth
-                        
-                        ); */
+                    /*   edt.WriteMessage("\n title=" + mytitle+" drrawing_no="+dno
+                           +" date="+mydate+" xroigin="+xorigin+" yorigin="+yorigin+
+                           " sheet width="+sheetwidth
+
+                           ); */
 
 
 

@@ -66,12 +66,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DraftingSettings.cs" />
     <Compile Include="ProfileTable.cs" />
     <Compile Include="DrawKhal.cs" />
     <Compile Include="Mytransformation.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DrawingSheet.cs" />
+    <Compile Include="Vscale.cs" />
+    <Compile Include="Vscale2.cs" />
     <Compile Include="XcelInput.cs" />
   </ItemGroup>
   <ItemGroup>

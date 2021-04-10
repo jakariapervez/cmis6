@@ -267,6 +267,8 @@ namespace Khal_Deafting
            
                 edt.WriteMessage("\n"+myheadings[0].ToString());
         }
+        
+
         [CommandMethod("KHAL_DRAFTING")]
         public void DrawMyKhal2()
         {
@@ -276,6 +278,7 @@ namespace Khal_Deafting
             Document doc = myreferences.Item1;
             Database db = myreferences.Item2;
             Editor edt = myreferences.Item3;
+            DraftingSettings mysettings = new DraftingSettings();
             try
             {
                 string excelpath = mykhal.SelectSpredsheet();
@@ -371,9 +374,24 @@ namespace Khal_Deafting
                 dlprofile.setLineWeight(8);
                 dlprofile.drawProfile(draftingOrigin.X, draftingOrigin.Y - maximum_y_offset * dlprofile.yscale_factor);
                 //mykhal.DrawProfile(xvalues, clvalues,   28410, 0, 1, 100, 200, 200);
+                
+
+
+                //darwing the vertical scale
+                Point2d vscale_location = new Point2d(draftingOrigin.X - dw * 0.03, draftingOrigin.Y);               
+                double[] max_min_yavalue = mysettings.maxmin_y(lbvalues, rbvalues, clvalues, dlvalues);
+                edt.WriteMessage("\n minimum=" + max_min_yavalue[0].ToString());
+                edt.WriteMessage("\n maximum=" + max_min_yavalue[1].ToString());
+                Vscale myver_scale = new Vscale(28410, 0,1,100,dw,28350, max_min_yavalue[1],max_min_yavalue[0]);
+                myver_scale.drawVscale(draftingOrigin.X, draftingOrigin.Y- maximum_y_offset * dlprofile.yscale_factor);
                 /*Drawing Table*/
                 ProfileTable mytable = new ProfileTable(xvalues, lbvalues, rbvalues, clvalues, dlvalues, dw);
-                mytable.drawTable(draftingOrigin.X, draftingOrigin.Y - maximum_y_offset* dlprofile.yscale_factor);
+                mytable.drawTable(vscale_location.X, draftingOrigin.Y - maximum_y_offset * dlprofile.yscale_factor);
+
+
+                // myver_scale.drawVscale(draftingOrigin.Y - maximum_y_offset * myprofile.yscale_factor);
+                //new Vscale(10, -1, vscale_location, dlprofile.yscale_factor);
+                // myver_scale.drawVscale();
             }
             catch(System.Exception ex)
             {
