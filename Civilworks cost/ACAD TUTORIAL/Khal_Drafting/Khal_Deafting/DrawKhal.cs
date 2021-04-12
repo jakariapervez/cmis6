@@ -382,18 +382,53 @@ namespace Khal_Deafting
                 double[] max_min_yavalue = mysettings.maxmin_y(lbvalues, rbvalues, clvalues, dlvalues);
                 edt.WriteMessage("\n minimum=" + max_min_yavalue[0].ToString());
                 edt.WriteMessage("\n maximum=" + max_min_yavalue[1].ToString());
-                Vscale myver_scale = new Vscale(28410, 0,1,100,dw,28350, max_min_yavalue[1],max_min_yavalue[0]);
+                Vscale myver_scale = new Vscale(28410, 0,1,100,dw,28410-dw*0.01, max_min_yavalue[1],max_min_yavalue[0]);
                 myver_scale.drawVscale(draftingOrigin.X, draftingOrigin.Y- maximum_y_offset * dlprofile.yscale_factor);
                 /*Drawing Table*/
                 ProfileTable mytable = new ProfileTable(xvalues, lbvalues, rbvalues, clvalues, dlvalues, dw);
-                mytable.drawTable(vscale_location.X, draftingOrigin.Y - maximum_y_offset * dlprofile.yscale_factor);
+                mytable.drawTable(vscale_location.X, 
+                    draftingOrigin.Y - maximum_y_offset * dlprofile.yscale_factor-0.005*dw);
+                /*Drawing Xsection*/
+                List<double> sec100_x = new List<double> { 0,8,10,13,15,17.3,20,22,23,26};
+                List<double> sec100_y = new List<double> {3, 3.29, 4.18, 5.2, 5.25, 5.12, 4.25, 3.52, 3.28, 2.89 };
+                ds= mydrawingSheets[2];
+                dw = ds.width;
+                double dl_rl = 1.5;
+                double cl_x = 15;
+                double bottom_width = 6.0;
+                double ls = 1.5;
+                double rs = 1.5;
+                Point2d pivot_point = ds.DrawingOriginA();
+                double[] result = mysettings.calcualte_drafting_paameters_xsection(sec100_x,sec100_y,dw);
+                draftingOrigin = new Point2d(pivot_point.X, pivot_point.Y - result[2] * 10);
+                XSection myxsection = new XSection(sec100_x, sec100_y, sec100_x.Min(), result[1], result[3],result[4], result[5], dw, dl_rl, cl_x, bottom_width,ls,rs);
+                edt.WriteMessage("\n sx=" + result[3]);
+                edt.WriteMessage("\n sy=" + result[4]);
+                string [] mylabels5 = { "LB", "CL","RB" };
+                double [] mylocations5 = {0, 2, 1 };
+                //drawing existing bed_level
+               // myxsection.existing_bedlevel.setLabelParameter(mylabels5, mylocations5);
+                myxsection.existing_bedlevel.fixProfileColor(255);
+                myxsection.existing_bedlevel.setLineWeight(8);
+                myxsection.existing_bedlevel.drawProfile(draftingOrigin.X, draftingOrigin.Y- result[2]* result[4]);
+                //drawing design bed_level
 
-
-                // myver_scale.drawVscale(draftingOrigin.Y - maximum_y_offset * myprofile.yscale_factor);
-                //new Vscale(10, -1, vscale_location, dlprofile.yscale_factor);
-                // myver_scale.drawVscale();
+               // myxsection.design_bedlevel.setLabelParameter(mylabels5, mylocations5);
+                myxsection.design_bedlevel.fixProfileColor(255);
+                myxsection.design_bedlevel.setLineWeight(8);
+                myxsection.design_bedlevel.drawProfile(draftingOrigin.X, draftingOrigin.Y - result[2] * result[4]);
+                myxsection.vertical_scale.drawVscale(draftingOrigin.X, draftingOrigin.Y - result[2] * result[4]);
+                //testing stright line equations
+                GeometryHelper mygeom = new GeometryHelper();
+                double[] myresult = mygeom.findIntersection2Lines(12,1.5, 2.4375, 7.875, 8, 3.39, 10, 4.18);
+                edt.WriteMessage("\n inttersection point x=" + myresult[0].ToString() + "y=" + myresult[1].ToString());
+                //double[] myresult5 = myxsection.findLeftInterSectionPoint(cl_x, bottom_width, dl_rl, ls, 5.25);
+                //edt.WriteMessage("\n index=" + myresult5[0].ToString() + "x=" + myresult5[1].ToString());
+                edt.WriteMessage("\n testing finding left slope point");
+                double[] myresult5= myxsection.findLeftInterSectionPoint(cl_x, bottom_width, dl_rl, ls, 5.25);
+                edt.WriteMessage("\n left intersection point  x=" + myresult5[0].ToString() + " y=" + myresult5[1].ToString());
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 edt.WriteMessage("\n" + ex.Message);
                 edt.WriteMessage(ex.ToString());

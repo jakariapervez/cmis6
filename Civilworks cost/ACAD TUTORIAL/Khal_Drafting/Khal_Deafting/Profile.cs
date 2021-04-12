@@ -320,6 +320,106 @@ namespace Khal_Deafting
         
         
         }
+        public void drawProfile_Without_Color(double xod, double yod)
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Database db = doc.Database;
+            Editor edt = doc.Editor;
+            using (Transaction trans = doc.TransactionManager.StartTransaction())
+            {
+                BlockTable bt = trans.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
+                BlockTableRecord btr = trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
+                Polyline pl = new Polyline();
+                Int32 no_of_points = this.geometric_x.Count;
+                Mytransformation trs = new Mytransformation();
+                for (int i = 0; i < no_of_points; i++)
 
+                {
+                    Point2d mypoint = new Point2d(this.geometric_x[i], this.geometric_y[i]);
+                    Point2d tog = trs.Translate(mypoint, -this.geometric_origin_x, -this.geometric_origin_y);
+                    Point2d scaledPoint = trs.Scale(tog, this.xscale_fator, this.yscale_factor);
+                    Point2d draftingPoint = trs.Translate(scaledPoint, xod, yod);
+                    pl.AddVertexAt(i, draftingPoint, 0, 0, 0);
+
+
+                }
+                pl.SetDatabaseDefaults();
+                pl.Color = this.profilecolor;
+                pl.LineWeight = LineWeight.LineWeight040;
+                btr.AppendEntity(pl);
+                trans.AddNewlyCreatedDBObject(pl, true);
+                List<double> mybox = this.getBoundingBox();
+                MText mylabel;
+                Leader myleader;
+                int totalLabels = this.profileLables.Count;
+                if (totalLabels != 0)
+                {
+                    for (int i = 0; i < totalLabels; i++)
+                    {
+
+                        try
+                        {
+                            Point2d mypoint = new Point2d(this.pofileLabelLocation[i].X, mybox[3] + 1.1);
+                            Point2d tog = trs.Translate(mypoint, -this.geometric_origin_x, -this.geometric_origin_y);
+                            Point2d scaledPoint = trs.Scale(tog, this.xscale_fator, this.yscale_factor);
+                            Point2d p1 = trs.Translate(scaledPoint, xod, yod);
+                            // myxvalue=
+                            Point2d mypoint2 = this.pofileLabelLocation[i];
+                            /*
+                            if (this.pofileLabelLocation[i] == 0)
+                            {
+                                 mypoint2 = new Point2d(mybox[0],
+                                      this.geometric_y[0]);
+                            }
+                            else
+                            {
+                               mypoint2 = new Point2d(this.pofileLabelLocation[i],
+                                   this.getYFromX(this.pofileLabelLocation[i]));
+
+                            }
+                            */
+
+                            Point2d tog2 = trs.Translate(mypoint2, -this.geometric_origin_x, -this.geometric_origin_y);
+                            Point2d scaledPoint2 = trs.Scale(tog2, this.xscale_fator, this.yscale_factor);
+                            Point2d p2 = trs.Translate(scaledPoint2, xod, yod);
+                            mylabel = drawProfileLabel(this.profileLables[i], p1.X, p1.Y);
+                            edt.WriteMessage("\n" + this.profileLables[i].ToString().ToUpper());
+
+
+                            btr.AppendEntity(mylabel);
+                            trans.AddNewlyCreatedDBObject(mylabel, true);
+                            myleader = this.drawLeader(p2, p1);
+                            edt.WriteMessage("\n Sucessfully Returned From Draw Leader Function ");
+                            btr.AppendEntity(myleader);
+                            trans.AddNewlyCreatedDBObject(myleader, true);
+                            myleader.Annotation = mylabel.ObjectId;
+                            myleader.EvaluateLeader();
+
+                        }
+
+                        catch (System.Exception ex)
+                        {
+                            edt.WriteMessage("\n" + ex.Message);
+                            edt.WriteMessage("\n" + ex.Source);
+                            edt.WriteMessage("\n" + ex.HResult);
+
+                        }
+
+                    }
+
+
+
+
+
+                }
+
+
+
+
+                trans.Commit();
+            }
+
+
+        }
     }
 }

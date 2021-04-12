@@ -66,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrossSectionDataTable.cs" />
+    <Compile Include="GeometryHelper.cs" />
+    <Compile Include="XSection.cs" />
     <Compile Include="DraftingSettings.cs" />
     <Compile Include="ProfileTable.cs" />
     <Compile Include="DrawKhal.cs" />

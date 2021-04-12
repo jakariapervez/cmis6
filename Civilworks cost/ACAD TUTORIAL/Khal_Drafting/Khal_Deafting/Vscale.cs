@@ -67,9 +67,42 @@ namespace Khal_Deafting
             Point2d draftingPoint = trs.Translate(scaledPoint, xod, yod);
             pl.AddVertexAt(0, draftingPoint, 0, 0, 0);
              mypoint = new Point2d(this.geometric_x[0]-w*0.005, tick_y);
+            double sx;
+            if (this.xscale_fator > 1)
+            { sx = 1; }
+            else
+            {
+                sx = this.xscale_fator;
+            }
             tog = trs.Translate(mypoint, -this.geometric_origin_x, -this.geometric_origin_y);
-            scaledPoint = trs.Scale(tog, this.xscale_fator, this.yscale_factor);
+            scaledPoint = trs.Scale(tog, sx, this.yscale_factor);
              draftingPoint = trs.Translate(scaledPoint, xod, yod);
+            pl.AddVertexAt(1, draftingPoint, 0, 0, 0);
+            pl.SetDatabaseDefaults();
+            return pl;
+
+        }
+        private Polyline drawMinorTic(double xod, double yod, double tick_y)
+        {
+            double w = this.draftingWidth;
+            Polyline pl = new Polyline();
+            Mytransformation trs = new Mytransformation();
+            Point2d mypoint = new Point2d(this.geometric_x[0], tick_y);
+            Point2d tog = trs.Translate(mypoint, -this.geometric_origin_x, -this.geometric_origin_y);
+            Point2d scaledPoint = trs.Scale(tog, this.xscale_fator, this.yscale_factor);
+            Point2d draftingPoint = trs.Translate(scaledPoint, xod, yod);
+            pl.AddVertexAt(0, draftingPoint, 0, 0, 0);
+            double sx;
+            if (this.xscale_fator > 1)
+            { sx = 1; }
+            else
+            {
+                sx = this.xscale_fator;
+            }
+            mypoint = new Point2d(this.geometric_x[0] - w * 0.003, tick_y);
+            tog = trs.Translate(mypoint, -this.geometric_origin_x, -this.geometric_origin_y);
+            scaledPoint = trs.Scale(tog, sx, this.yscale_factor);
+            draftingPoint = trs.Translate(scaledPoint, xod, yod);
             pl.AddVertexAt(1, draftingPoint, 0, 0, 0);
             pl.SetDatabaseDefaults();
             return pl;
@@ -93,9 +126,16 @@ namespace Khal_Deafting
                 double w = this.draftingWidth;
                 txtLabel.TextHeight = w * 0.008;
                 Mytransformation trs = new Mytransformation();
+                double sx;
+                if (this.xscale_fator > 1)
+                { sx = 1; }
+                else
+                {
+                    sx = this.xscale_fator;
+                }
                 Point2d mypoint = new Point2d(this.geometric_x[0] - w * 0.008, tick_y);
                 Point2d tog = trs.Translate(mypoint, -this.geometric_origin_x, -this.geometric_origin_y);
-                Point2d scaledPoint = trs.Scale(tog, this.xscale_fator, this.yscale_factor);
+                Point2d scaledPoint = trs.Scale(tog, sx, this.yscale_factor);
                 Point2d draftingPoint = trs.Translate(scaledPoint, xod, yod);
 
 
@@ -130,7 +170,8 @@ namespace Khal_Deafting
             {
                 BlockTable bt = trans.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
                 BlockTableRecord btr = trans.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite) as BlockTableRecord;
-                try {
+                try
+                {
                     Polyline pl = new Polyline();
                     Int32 no_of_points = this.geometric_x.Count;
                     Mytransformation trs = new Mytransformation();
@@ -146,11 +187,12 @@ namespace Khal_Deafting
 
                     }
                     pl.SetDatabaseDefaults();
-                   // pl.Color = this.profilecolor;
-                  //  pl.LineWeight = LineWeight.LineWeight040;
+                    // pl.Color = this.profilecolor;
+                    //  pl.LineWeight = LineWeight.LineWeight040;
                     btr.AppendEntity(pl);
                     trans.AddNewlyCreatedDBObject(pl, true);
                     MText label;
+
                     foreach (double y in this.geometric_y)
                     {
                         pl = this.drawMajorTic(xod, yod, y);
@@ -159,9 +201,24 @@ namespace Khal_Deafting
                         trans.AddNewlyCreatedDBObject(pl, true);
                         btr.AppendEntity(label);
                         trans.AddNewlyCreatedDBObject(label, true);
-                        
-                    }
 
+                    }
+                    double y1, y2, y3;
+                    for (int i = 0; i < this.geometric_y.Count - 1; i++)
+                    {
+                        y1 = this.geometric_y[i] + 0.25;
+                        pl = this.drawMinorTic(xod, yod, y1);
+                        btr.AppendEntity(pl);
+                        trans.AddNewlyCreatedDBObject(pl, true);
+                        y2 = this.geometric_y[i] + 0.5;
+                        pl = this.drawMinorTic(xod, yod, y2);
+                        btr.AppendEntity(pl);
+                        trans.AddNewlyCreatedDBObject(pl, true);
+                        y3 = this.geometric_y[i] + 0.75;
+                        pl = this.drawMinorTic(xod, yod, y3);
+                        btr.AppendEntity(pl);
+                        trans.AddNewlyCreatedDBObject(pl, true);
+                    }
                 }
                 catch (System.Exception ex)
                 {

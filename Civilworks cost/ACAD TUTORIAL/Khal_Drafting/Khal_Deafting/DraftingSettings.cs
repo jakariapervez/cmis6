@@ -34,6 +34,31 @@ namespace Khal_Deafting
             myresult[1] = maxyvalues.Max();
             return myresult;
         }
+        public double[] maximum_yoffset(List<double>yvalues)
+        {
+         double []   myresult = new double[3];
+            myresult[0] = Math.Ceiling(yvalues.Max());
+            myresult[1] = Math.Floor(yvalues.Min());
+            myresult[2] = myresult[0] - myresult[1];
 
+            return myresult;
+        
+        }
+        public double[] calcualte_drafting_paameters_xsection(List<double> xvalues,List<double> yvalues,double sheet_width)
+        {
+            double[] myresult = new double[6];
+            double drafting_width= 0.4 * sheet_width;
+            double drafting_height = (0.2 * sheet_width)/Math.Sqrt(2);
+            double profile_width = xvalues.Max() - xvalues.Min();
+            double sx = Math.Floor(drafting_width / profile_width);
+            myresult[0] = Math.Ceiling(yvalues.Max());
+            myresult[1] = Math.Floor(yvalues.Min());
+            myresult[2] = myresult[0] - myresult[1];
+            double sy =Math.Floor (drafting_height / myresult[2]);
+            myresult[3] = sx;
+            myresult[4] = sy;
+            myresult[5] = drafting_width;
+            return myresult;
+        }
     }
 }
