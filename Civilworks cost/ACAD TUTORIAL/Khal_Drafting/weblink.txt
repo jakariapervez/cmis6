@@ -29,3 +29,14 @@ https://stackoverflow.com/questions/19922816/how-to-cut-a-hole-in-a-hatch-autoca
 https://www.geeksforgeeks.org/program-for-point-of-intersection-of-two-lines/   #intersection betwenn two lines
 https://www.c-sharpcorner.com/article/c-sharp-list/   C# list tutorial 
 https://www.geeksforgeeks.org/list-binarysearch-method-in-c-sharp/  C# List Binary Search
+http://docs.autodesk.com/ACD/2010/ENU/AutoCAD%20.NET%20Developer%27s%20Guide/index.html?url=WS1a9193826455f5ff2566ffd511ff6f8c7ca-3d77.htm,topicNumber=d0e27995 #hatching
+https://adndevblog.typepad.com/autocad/2013/01/create-a-hatch-object-and-set-its-scale.html #hatch scale
+https://forums.autodesk.com/t5/net/width-of-text/td-p/7217647 #text width from fontsize
+https://forums.autodesk.com/t5/objectarx/how-do-i-change-the-line-type-of-a-line-in-c/td-p/3031818 #changin linetype in C#
+http://docs.autodesk.com/ACD/2011/ENU/filesMDG/WS1a9193826455f5ff2566ffd511ff6f8c7ca-3cc3.htm    #linetype in C# autocad.net api
+https://vkinfotek.com/oops/base-class-constructor-csharp-net.html       # C# base class constructor inheritance
+https://www.c-sharpcorner.com/article/exception-handling-mechanism-in-c-sharp/  # C# exception handling
+http://docs.autodesk.com/ACD/2010/ENU/AutoCAD%20.NET%20Developer%27s%20Guide/index.html?url=WS1a9193826455f5ff2566ffd511ff6f8c7ca-3cf7.htm,topicNumber=d0e30666 # C# Layers
+https://www.keanw.com/2015/11/creating-an-autocad-layout-with-custom-plot-and-viewport-settings-using-net.html C# viewport Settings
+https://adndevblog.typepad.com/autocad/2012/08/changing-zoom-in-paperspace-viewport.html  #changing zoom in paperspace viewport
+https://blog.submain.com/c-documentation-start-finish-guide/     ## houw to prepare C# documentation

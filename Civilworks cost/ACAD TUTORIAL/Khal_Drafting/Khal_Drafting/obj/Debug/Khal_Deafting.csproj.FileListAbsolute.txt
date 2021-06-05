@@ -1,0 +1,10 @@
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\bin\Debug\Khal_Deafting.dll
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\bin\Debug\Khal_Deafting.pdb
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\bin\Debug\EPPlus.dll
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\bin\Debug\EPPlus.xml
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\obj\Debug\Khal_Deafting.csproj.CoreCompileInputs.cache
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\obj\Debug\Khal_Deafting.csproj.CopyComplete
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\obj\Debug\Khal_Deafting.dll
+E:\Website_24_11_2020\cmis6\cmis6\Civilworks cost\ACAD TUTORIAL\Khal_Drafting\Khal_Deafting\obj\Debug\Khal_Deafting.pdb
