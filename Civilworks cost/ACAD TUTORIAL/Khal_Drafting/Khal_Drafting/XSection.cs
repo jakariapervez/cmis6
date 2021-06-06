@@ -987,6 +987,12 @@ namespace Khal_Deafting
              this.design_bedlevel.geometric_x[6], this.design_bedlevel.geometric_y[6]);
             */
             // w * 0.12;
+
+
+
+
+
+
             draftingOrigin = new Point2d(this.drafting_origin.X, this.drafting_origin.Y - (this.ymax + 1.5 - this.ymin) * this.yscale_factor);
             double x_coord =0.25* (this.draftingwidth / this.xscale_factor);
             double y_coord =this.existing_bedlevel.geometric_origin_y -this.draftingwidth*0.12/this.yscale_factor-2.5;
@@ -994,8 +1000,9 @@ namespace Khal_Deafting
             // text_Location = new Point2d(x_coord,y_coord);
             // text_Location = new Point2d(this.design_bedlevel.geometric_x[3], (draftingOrigin.Y/this.yscale_factor)+0.25);
             // text_Location = new Point2d(x_coord, (draftingOrigin.Y / this.yscale_factor) + 0.25);
-           
-            text_Location = new Point2d(x_coord, y_coord);
+
+            // text_Location = new Point2d(x_coord, y_coord);
+            text_Location = this.sectionNameInsertionPoint();
             myannotations = new Label_Annotation
             (annotation_text, text_Location, geometric_origin, draftingOrigin, false,
             this.xscale_factor, this.yscale_factor, this.draftingwidth);
@@ -1033,6 +1040,40 @@ namespace Khal_Deafting
 
 
      }
+     public Point2d sectionNameInsertionPoint()
+        {
+            /*drawing outer border*/
+            double w = this.existing_bedlevel.draftingWidth;
+            Mytransformation trs = new Mytransformation();
+            //drawing exterior border
+            double xod = this.drafting_origin.X;
+            double yod = this.drafting_origin.Y;
+            double yog = this.existing_bedlevel. geometric_origin_y;
+            double xog = this.existing_bedlevel.geometric_origin_x;
+            double sx = this.existing_bedlevel .xscale_fator;
+            double sy = this.existing_bedlevel.yscale_factor;
+            Polyline pl = new Polyline();
+            Point2d gog = new Point2d(xog, yog);
+            Point2d dog = new Point2d(xod, yod);
+            //   Point2d drafting_location = new Point2d(this.dsheet.TopLeft.X + 0.25 * w, this.dsheet.TopLeft.Y - 0.27 * w);
+            //    Point2d pivot_g = trs.Drafting2GeometricCoordinate(drafting_location, gog, dog, sx, sy);
+            double offset;
+            Point2d pivot_g;
+            //alignment with 1/4th and 3/4 th line with sheet
+         //    offset = this.dsheet.width * 0.20 / this.xscale_factor;
+        //   pivot_g = new Point2d(xog+offset, yog - 0.16 * w / sy);
+            //alignment with mid point of Xsection
+            offset = this.existing_bedlevel.profileLength*0.5;
+            pivot_g = new Point2d(xog + offset, yog - 0.16 * w / sy);
+
+            //  Point2d pivot_d = trs.Geometric2DraftingCoordinate(pivot_g, gog, dog, sx, sy);
+            //  double L = this.profileLength * this.xscale_fator;
+
+            return pivot_g;
+
+
+
+        }
 
 
 
